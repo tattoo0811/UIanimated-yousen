@@ -8,6 +8,7 @@ import { View, ActivityIndicator, Platform } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ErrorBoundary } from '@/src/components/ErrorBoundary';
+import { updateNotificationSchedule, setupNotificationHandlers } from '@/src/lib/notifications';
 import '../global.css';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -27,6 +28,29 @@ export default function RootLayout() {
       SplashScreen.hideAsync();
     }
   }, [loaded, rootNavigationState?.key]);
+
+  // 通知の初期設定
+  useEffect(() => {
+    // 通知ハンドラーを設定
+    setupNotificationHandlers(
+      (notification) => {
+        // フォアグラウンドで通知を受信したときの処理
+        console.log('Notification received:', notification);
+      },
+      (response) => {
+        // 通知がタップされたときの処理
+        console.log('Notification tapped:', response);
+        // 必要に応じて特定の画面に遷移
+        // const router = useRouter();
+        // router.push('/fortune');
+      }
+    );
+
+    // 通知スケジュールを更新
+    updateNotificationSchedule().catch((error) => {
+      console.error('Failed to update notification schedule:', error);
+    });
+  }, []);
 
   // フォントがまだ読み込まれていない場合
   if (!loaded) {
