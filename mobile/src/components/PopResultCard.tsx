@@ -1,6 +1,7 @@
-import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Dimensions, Alert, Platform } from 'react-native';
 import { Sparkles, RefreshCw, Share2 } from 'lucide-react-native';
 import kanshiData from '@/src/data/kanshi-types.json';
+import { shareToSocial, showShareOptions } from '@/src/lib/share';
 
 const { width, height } = Dimensions.get('window');
 
@@ -21,6 +22,42 @@ export default function PopResultCard({ kanshi, onReset }: Props) {
             </View>
         );
     }
+
+    const handleShare = () => {
+        const shareMessage = `${type.icon} ${type.shortName}（${type.kanshi}）\n\n${type.concept}\n\nラッキーカラー: ${type.luckyColor}\nラッキーアイテム: ${type.luckyItem}\n\n#${type.shortName} #${type.kanshi} #占い #運勢`;
+        
+        if (Platform.OS === 'ios' || Platform.OS === 'android') {
+            // ネイティブアプリでは選択ダイアログを表示
+            Alert.alert(
+                'シェア先を選択',
+                'シェアするSNSを選択してください',
+                [
+                    { text: 'キャンセル', style: 'cancel' },
+                    { 
+                        text: 'X(Twitter)', 
+                        onPress: () => shareToSocial('twitter', { 
+                            message: shareMessage 
+                        })
+                    },
+                    { 
+                        text: 'LINE', 
+                        onPress: () => shareToSocial('line', { 
+                            message: shareMessage 
+                        })
+                    },
+                    { 
+                        text: 'Instagram', 
+                        onPress: () => shareToSocial('instagram', { 
+                            message: shareMessage 
+                        })
+                    },
+                ]
+            );
+        } else {
+            // Web版では直接ネイティブシェアを使用
+            showShareOptions({ message: shareMessage });
+        }
+    };
 
     return (
         <View className="flex-1 bg-[#FFF9E6]" style={{ paddingTop: 8, paddingBottom: 8, paddingHorizontal: 16 }}>
@@ -162,6 +199,7 @@ export default function PopResultCard({ kanshi, onReset }: Props) {
                         )}
 
                         <TouchableOpacity
+                            onPress={handleShare}
                             className="flex-1 flex-row items-center justify-center gap-1 bg-[#60A5FA] py-2"
                             style={{
                                 borderWidth: 3,

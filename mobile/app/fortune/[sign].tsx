@@ -1,9 +1,10 @@
-import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Image, Alert, Platform } from 'react-native';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 import { Undo2, Share2, Sparkles } from 'lucide-react-native';
 import { ZODIAC_SIGNS } from '../../src/lib/zodiac';
+import { shareToSocial, showShareOptions, SharePlatform } from '../../src/lib/share';
 
 export default function FortuneScreen() {
     const { sign: signId } = useLocalSearchParams();
@@ -18,6 +19,42 @@ export default function FortuneScreen() {
             </View>
         );
     }
+
+    const handleShare = () => {
+        const shareMessage = `${sign.symbol} ${sign.name}の運勢\n\n${sign.description}\n\n#${sign.name} #占い #運勢`;
+        
+        if (Platform.OS === 'ios' || Platform.OS === 'android') {
+            // ネイティブアプリでは選択ダイアログを表示
+            Alert.alert(
+                'シェア先を選択',
+                'シェアするSNSを選択してください',
+                [
+                    { text: 'キャンセル', style: 'cancel' },
+                    { 
+                        text: 'X(Twitter)', 
+                        onPress: () => shareToSocial('twitter', { 
+                            message: shareMessage 
+                        })
+                    },
+                    { 
+                        text: 'LINE', 
+                        onPress: () => shareToSocial('line', { 
+                            message: shareMessage 
+                        })
+                    },
+                    { 
+                        text: 'Instagram', 
+                        onPress: () => shareToSocial('instagram', { 
+                            message: shareMessage 
+                        })
+                    },
+                ]
+            );
+        } else {
+            // Web版では直接ネイティブシェアを使用
+            showShareOptions({ message: shareMessage });
+        }
+    };
 
     return (
         <View className="flex-1 bg-slate-950">
@@ -95,7 +132,10 @@ export default function FortuneScreen() {
 
             {/* Floating Action Button */}
             <View className="absolute bottom-8 right-6">
-                <TouchableOpacity className="bg-violet-600 w-14 h-14 rounded-full items-center justify-center shadow-lg shadow-violet-900/50 border border-white/10">
+                <TouchableOpacity 
+                    onPress={handleShare}
+                    className="bg-violet-600 w-14 h-14 rounded-full items-center justify-center shadow-lg shadow-violet-900/50 border border-white/10"
+                >
                     <Share2 color="white" size={24} />
                 </TouchableOpacity>
             </View>
