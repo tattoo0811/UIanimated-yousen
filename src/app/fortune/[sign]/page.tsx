@@ -7,6 +7,7 @@ import { CosmicLoader } from '@/components/CosmicLoader';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Sparkles, Star } from 'lucide-react';
 import { ZodiacCard } from '@/components/ZodiacCard';
+import { FiveElementsBalance } from '@/components/FiveElementsBalance';
 
 export default function FortunePage() {
     const params = useParams();
@@ -116,6 +117,24 @@ export default function FortunePage() {
                             </div>
                         </div>
                     </div>
+                </motion.div>
+
+                {/* Five Elements Balance Diagnosis */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.0, duration: 0.6 }}
+                >
+                    <FiveElementsBalance
+                        elements={{
+                            wood: 0,
+                            fire: 38,
+                            earth: 57,
+                            metal: 61,
+                            water: 45
+                        }}
+                        totalEnergy={201}
+                    />
                 </motion.div>
 
             </motion.div>
