@@ -1054,3 +1054,40 @@ export const viralCharactersData: ViralCharactersData = {
     }
   ]
 };
+
+/**
+ * 干支からキャラクターデータを取得
+ */
+export function getCharacterByKanshi(kanshi: string): ViralCharacterData | undefined {
+  return viralCharactersData.characters.find(char => char.name === kanshi);
+}
+
+/**
+ * キャラクターの「あるある」フレーズをランダムに取得
+ * バズり表現、強み/弱点、社会関係、家庭関係などからランダムに1つを返す
+ */
+export function getRandomAruAru(kanshi: string): string | null {
+  const character = getCharacterByKanshi(kanshi);
+  
+  if (!character) {
+    return null;
+  }
+
+  // 「あるある」フレーズの候補を配列にまとめる
+  const aruAruPhrases: string[] = [
+    character.core_style.viral_expression,
+    character.core_style.strengths_weaknesses,
+    character.social_face.superior,
+    character.social_face.subordinate,
+    character.private_face.society,
+    character.private_face.family,
+  ].filter(phrase => phrase && phrase.trim().length > 0); // 空文字を除外
+
+  if (aruAruPhrases.length === 0) {
+    return null;
+  }
+
+  // ランダムに1つを選ぶ
+  const randomIndex = Math.floor(Math.random() * aruAruPhrases.length);
+  return aruAruPhrases[randomIndex];
+}
