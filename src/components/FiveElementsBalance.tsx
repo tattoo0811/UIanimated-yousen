@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import type { FiveElements } from '@/lib/types';
+import { CountUpNumber } from './CountUpNumber';
 
 interface FiveElementsBalanceProps {
     elements: FiveElements;
@@ -78,7 +79,12 @@ export function FiveElementsBalance({ elements, totalEnergy }: FiveElementsBalan
                     </p>
                     {totalEnergy && (
                         <p className="text-xs text-muted-foreground mt-2">
-                            総合計エネルギー数: <span className="font-medium text-white">{total}</span>点
+                            総合計エネルギー数: <span className="font-medium text-white">
+                                <CountUpNumber 
+                                    value={total} 
+                                    duration={2.0}
+                                />
+                            </span>点
                         </p>
                     )}
                 </div>
@@ -101,13 +107,19 @@ export function FiveElementsBalance({ elements, totalEnergy }: FiveElementsBalan
                                     ease: "easeOut"
                                 }}
                             >
-                                {/* Value */}
+                                {/* Value with count-up animation */}
                                 <div className="mb-2 text-center">
                                     <div className="text-white/90 text-sm font-bold">
-                                        {element.value}
+                                        <CountUpNumber 
+                                            value={element.value} 
+                                            duration={1.5}
+                                        />
                                     </div>
                                     <div className="text-xs text-muted-foreground">
-                                        {maxValue > 0 ? Math.round((element.value / maxValue) * 100) : 0}%
+                                        <CountUpNumber 
+                                            value={maxValue > 0 ? Math.round((element.value / maxValue) * 100) : 0} 
+                                            duration={1.5}
+                                        />%
                                     </div>
                                 </div>
 
