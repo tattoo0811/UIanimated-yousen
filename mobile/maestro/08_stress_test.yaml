@@ -1,0 +1,117 @@
+appId: com.anonymous.mobile
+---
+# ストレステスト: 複数回の操作を連続実行
+- stopApp
+- launchApp
+
+# DevTools overlay を閉じる
+- tapOn:
+    point: "50%,10%"
+
+# ホーム画面表示待ち
+- extendedWaitUntil:
+    visible: "自分の性別を選択"
+    timeout: 30000
+- takeScreenshot: "08_stress_home"
+
+# 1回目: 男性 1985年7月15日
+- tapOn:
+    id: "gender-male"
+- extendedWaitUntil:
+    visible: "1980s"
+    timeout: 10000
+- tapOn:
+    id: "decade-1980"
+- extendedWaitUntil:
+    visible: "1985年"
+    timeout: 10000
+- tapOn:
+    id: "year-1985"
+- extendedWaitUntil:
+    visible: "7月"
+    timeout: 10000
+- tapOn:
+    id: "month-7"
+- extendedWaitUntil:
+    visible: "15"
+    timeout: 10000
+- tapOn:
+    id: "day-15"
+- extendedWaitUntil:
+    visible: "鑑定結果"
+    timeout: 20000
+- takeScreenshot: "08_stress_result_1"
+
+# アプリを再起動
+- stopApp
+- launchApp
+- tapOn:
+    point: "50%,10%"
+- extendedWaitUntil:
+    visible: "自分の性別を選択"
+    timeout: 30000
+
+# 2回目: 女性 1992年11月8日
+- tapOn:
+    id: "gender-female"
+- extendedWaitUntil:
+    visible: "1990s"
+    timeout: 10000
+- tapOn:
+    id: "decade-1990"
+- extendedWaitUntil:
+    visible: "1992年"
+    timeout: 10000
+- tapOn:
+    id: "year-1992"
+- extendedWaitUntil:
+    visible: "11月"
+    timeout: 10000
+- tapOn:
+    id: "month-11"
+- extendedWaitUntil:
+    visible: "8"
+    timeout: 10000
+- tapOn:
+    id: "day-8"
+- extendedWaitUntil:
+    visible: "鑑定結果"
+    timeout: 20000
+- takeScreenshot: "08_stress_result_2"
+
+# アプリを再起動
+- stopApp
+- launchApp
+- tapOn:
+    point: "50%,10%"
+- extendedWaitUntil:
+    visible: "自分の性別を選択"
+    timeout: 30000
+
+# 3回目: 男性 2005年4月30日
+- tapOn:
+    id: "gender-male"
+- extendedWaitUntil:
+    visible: "2000s"
+    timeout: 10000
+- tapOn:
+    id: "decade-2000"
+- extendedWaitUntil:
+    visible: "2005年"
+    timeout: 10000
+- tapOn:
+    id: "year-2005"
+- extendedWaitUntil:
+    visible: "4月"
+    timeout: 10000
+- tapOn:
+    id: "month-4"
+- extendedWaitUntil:
+    visible: "30"
+    timeout: 10000
+- tapOn:
+    id: "day-30"
+- extendedWaitUntil:
+    visible: "鑑定結果"
+    timeout: 20000
+- takeScreenshot: "08_stress_result_3"

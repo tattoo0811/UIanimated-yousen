@@ -1,0 +1,132 @@
+{
+    "formatVersion": "1.0",
+    "lastUpdated": "2026-01-04",
+    "philosophy": "陰陽五行は帝王学。すべての配置は成長のためのギフト。「悪い」は存在しない。",
+    "toneOfVoice": {
+        "keywords": [
+            "導き手",
+            "寄り添う",
+            "背中を押す",
+            "可能性を照らす"
+        ],
+        "prohibitedWords": [
+            "悪い",
+            "不運",
+            "危険",
+            "注意",
+            "問題",
+            "弱い",
+            "欠点",
+            "できない"
+        ],
+        "recommendedWords": [
+            "成長の機会",
+            "学びのテーマ",
+            "磨くべき資質",
+            "活かして",
+            "強み",
+            "チャレンジング",
+            "深い学び"
+        ]
+    },
+    "reframes": {
+        "tenchusatsu": {
+            "original": "天中殺",
+            "negativeView": "不運の時期、何をやってもうまくいかない",
+            "positiveReframe": "宇宙からの招待状",
+            "description": "内なる声に耳を傾け、本当に大切なものを見極める12年に一度の特別な時期。外に向かうエネルギーが内に向かい、自分軸を確立するチャンス。",
+            "actionAdvice": "新しいことを始めるより、今あるものを深める時期。焦らず、自分と向き合う時間を大切に。"
+        },
+        "seinentenchusatsu": {
+            "original": "生年天中殺",
+            "negativeView": "社会運が悪い、出世できない",
+            "positiveReframe": "自由な魂の開拓者",
+            "description": "社会の枠にとらわれない独自の道を切り開く使命を持つ。既存のルールより、新しい価値を創造する才能。",
+            "actionAdvice": "組織の中で評価されにくくても、あなたの価値は別のところにある。独自の分野を開拓しよう。"
+        },
+        "seigetsutenchusatsu": {
+            "original": "生月天中殺",
+            "negativeView": "家庭運・職場運が悪い",
+            "positiveReframe": "変容を導く触媒",
+            "description": "家庭や職場に変化をもたらす役割を持つ。安定より革新を選ぶことで、周囲に新しい風を吹き込む。",
+            "actionAdvice": "居心地の悪さを感じたら、それは成長のサイン。変化を恐れず、新しい環境を作り出そう。"
+        },
+        "seijitsutenchusatsu": {
+            "original": "生日天中殺",
+            "negativeView": "配偶者運が悪い、自分自身の運が悪い",
+            "positiveReframe": "魂の深い学び手",
+            "description": "パートナーシップを通じて深い気づきを得る運命。表面的な関係より、魂レベルの絆を求める。",
+            "actionAdvice": "相手に完璧を求めず、共に成長する関係を築こう。一人の時間も大切にして自分軸を保つこと。"
+        },
+        "taichuu": {
+            "original": "対冲（沖）",
+            "negativeView": "衝突、不和、相性が悪い",
+            "positiveReframe": "緊張と統合のダイナミズム",
+            "description": "正反対のエネルギーが出会うことで、より大きな全体性へと成長する関係。補い合い、高め合う力を持つ。",
+            "actionAdvice": "ぶつかり合いは成長の証。相手の視点を取り入れることで、自分だけでは見えなかった世界が開ける。"
+        },
+        "gou": {
+            "original": "合",
+            "negativeView": "（もともとポジティブだが依存の可能性）",
+            "positiveReframe": "調和と協力の絆",
+            "description": "自然と惹かれ合い、力を合わせられる関係。一人では成し得ないことを共に実現できる。",
+            "actionAdvice": "心地よい関係に感謝しつつ、互いの個性も尊重しよう。依存ではなく、共創の関係を目指して。"
+        },
+        "kei": {
+            "original": "刑",
+            "negativeView": "自分を傷つける、トラブルを起こす",
+            "positiveReframe": "変容のプロセス",
+            "description": "古い自分を脱ぎ捨て、新しい自分へと生まれ変わるための葛藤。成長痛のような一時的な苦しみ。",
+            "actionAdvice": "葛藤を避けず、向き合うことで本当の強さが生まれる。この経験が将来の糧になる。"
+        },
+        "gai": {
+            "original": "害",
+            "negativeView": "人間関係のトラブル、裏切り",
+            "positiveReframe": "隠れた学びの機会",
+            "description": "見えにくい課題が表面化することで、深い気づきをもたらす。表面的な関係を超えた本質的なつながりを求めるきっかけ。",
+            "actionAdvice": "一見ネガティブな出来事も、長い目で見れば必要な学び。感情的にならず、何を学べるか考えよう。"
+        },
+        "kuubou": {
+            "original": "空亡",
+            "negativeView": "欠けている、足りない",
+            "positiveReframe": "可能性の空白キャンバス",
+            "description": "白紙のキャンバスのように、自分で意味を創造できる自由な領域。既存の枠にとらわれない独創性の源。",
+            "actionAdvice": "「ない」ことを嘆くより、「自由に描ける」と捉えよう。あなただけのオリジナルを創造するチャンス。"
+        },
+        "shinjaku": {
+            "original": "身弱",
+            "negativeView": "弱い、力がない",
+            "positiveReframe": "柔軟性と協調の才能",
+            "description": "環境や周囲の力を借りて輝くタイプ。チームで力を発揮し、人を活かすリーダーシップを持つ。",
+            "actionAdvice": "一人で抱え込まず、人の力を借りることを恥じない。あなたの強みは「つなぐ力」にある。"
+        },
+        "shinkyou": {
+            "original": "身強",
+            "negativeView": "強すぎる、独善的",
+            "positiveReframe": "自立と開拓の力",
+            "description": "自分の力で道を切り開く強さを持つ。独立独歩で新しい分野を開拓できるパイオニア。",
+            "actionAdvice": "その強さを周囲のために使おう。引っ張る力があるからこそ、チームを導く責任もある。"
+        },
+        "katayori": {
+            "original": "五行の偏り",
+            "negativeView": "バランスが悪い、問題がある",
+            "positiveReframe": "突出した個性・専門性",
+            "description": "一点集中で極められる専門家タイプ。ジェネラリストより、スペシャリストとして輝く運命。",
+            "actionAdvice": "バランスを取ろうとせず、得意分野を極めよう。足りない部分は得意な人に任せればいい。"
+        }
+    },
+    "relationshipReframes": {
+        "badCompatibility": {
+            "original": "相性が悪い",
+            "positiveReframe": "互いを成長させる関係",
+            "description": "魂の学びの相手。楽ではないが、この人との関係を通じて人間として大きく成長できる。",
+            "actionAdvice": "相性の良し悪しより、何を学べるかに注目しよう。この人が人生に現れた意味がある。"
+        },
+        "conflict": {
+            "original": "衝突する関係",
+            "positiveReframe": "化学反応を起こす関係",
+            "description": "異なる視点がぶつかることで、新しいアイデアが生まれる。共に何かを創造する可能性を秘めている。",
+            "actionAdvice": "ぶつかりを恐れず、建設的な議論を心がけよう。妥協ではなく、統合を目指して。"
+        }
+    }
+}

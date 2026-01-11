@@ -1,0 +1,48 @@
+appId: com.anonymous.mobile
+---
+- stopApp
+- launchApp
+# DevTools overlay を閉じる
+- tapOn:
+    point: "50%,10%"
+# ホーム画面表示待ち
+- extendedWaitUntil:
+    visible: "自分の性別を選択"
+    timeout: 30000
+- takeScreenshot: "00_home_with_modal"
+# 性別選択 (ホーム画面から直接)
+- tapOn:
+    id: "gender-male"
+# 年代選択 (1983年なので 1980s)
+- extendedWaitUntil:
+    visible: "1980s"
+    timeout: 10000
+- takeScreenshot: "01_decade"
+- tapOn:
+    id: "decade-1980"
+# 年選択 (1983年)
+- extendedWaitUntil:
+    visible: "1983年"
+    timeout: 10000
+- takeScreenshot: "02_year"
+- tapOn:
+    id: "year-1983"
+# 月選択 (8月)
+- extendedWaitUntil:
+    visible: "8月"
+    timeout: 10000
+- takeScreenshot: "03_month"
+- tapOn:
+    id: "month-8"
+# 日選択 (11日)
+- extendedWaitUntil:
+    visible: "11"
+    timeout: 10000
+- takeScreenshot: "04_day"
+- tapOn:
+    id: "day-11"
+# 結果画面の表示を確認
+- extendedWaitUntil:
+    visible: "鑑定結果"
+    timeout: 20000
+- takeScreenshot: "05_final_result"
