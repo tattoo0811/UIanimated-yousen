@@ -11,6 +11,25 @@ export interface CharacterData {
     features: string[];
 }
 
+// 陽占ハック：バイラルキャラクターデータ
+export interface ViralCharacterData {
+    id: number;
+    name: string; // Kanshi name e.g. 甲子
+    character_name: string; // e.g. 水辺の賢者
+    core_style: {
+        viral_expression: string; // バズり表現
+        strengths_weaknesses: string; // 強み/弱点
+    };
+    social_face: {
+        superior: string; // 上司（北）
+        subordinate: string; // 部下（南）
+    };
+    private_face: {
+        society: string; // 社会（東）
+        family: string; // 家庭（西）
+    };
+}
+
 export interface YangSen {
     head: string;
     rightHand: string;
