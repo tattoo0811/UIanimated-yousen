@@ -1,31 +1,84 @@
 import { View, Text, ScrollView } from 'react-native';
-import type { SanmeigakuInsenChart } from '@/src/types';
-import { Calendar, TrendingUp } from 'lucide-react-native';
+import type { SanmeigakuInsenChart, FourPillars } from '@/src/types';
+import { Calendar, TrendingUp, Compass, Sparkles } from 'lucide-react-native';
+import { getDailyFortune } from '@/src/lib/logic/dailyFortune';
+import { calculateBaZi } from '@/src/lib/logic/bazi';
 
 type Props = {
     insen: SanmeigakuInsenChart;
+    birthDate?: Date; // 生年月日（四柱推命計算用）
     currentDate?: Date;
 };
 
-export default function FortuneCard({ insen, currentDate = new Date() }: Props) {
-    // Simple fortune calculation based on current date and day pillar
-    const getDailyFortune = () => {
-        // This is a simplified version - in production, you'd calculate based on:
-        // - Current day's stem/branch
-        // - Relationship with user's day pillar
-        // - Phase relations
-        const dayOfWeek = currentDate.getDay();
-        const fortunes = [
-            { level: '大吉', color: '#10b981', advice: '新しいことを始めるのに最適な日です。' },
-            { level: '吉', color: '#3b82f6', advice: '順調に物事が進む日です。' },
-            { level: '中吉', color: '#8b5cf6', advice: '落ち着いて行動すれば良い結果が得られます。' },
-            { level: '小吉', color: '#f59e0b', advice: '小さな幸運がある日です。' },
-            { level: '末吉', color: '#f97316', advice: '慎重に行動しましょう。' },
-        ];
-        return fortunes[dayOfWeek % fortunes.length];
-    };
+export default function FortuneCard({ insen, birthDate, currentDate = new Date() }: Props) {
+    // 生年月日から四柱推命を計算（なければinsenから推測）
+    let userBazi: FourPillars | null = null;
+    
+    if (birthDate) {
+        userBazi = calculateBaZi(birthDate);
+    } else if (insen?.pillars) {
+        // insenから四柱推命を再構築（簡易版）
+        // 注意: 時柱は推測できないため、日柱のみを使用
+        const dayStemIdx = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'].indexOf(insen.meta.dayStem);
+        const dayBranchIdx = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'].indexOf(insen.pillars.day.branch);
+        
+        if (dayStemIdx >= 0 && dayBranchIdx >= 0) {
+            // 簡易的な四柱推命オブジェクトを作成（日柱のみ使用）
+            userBazi = {
+                year: {
+                    stem: 1,
+                    branch: 1,
+                    stemStr: insen.pillars.year.stem,
+                    branchStr: insen.pillars.year.branch,
+                    name: `${insen.pillars.year.stem}${insen.pillars.year.branch}`,
+                    id: 1,
+                    hiddenStems: []
+                },
+                month: {
+                    stem: 1,
+                    branch: 1,
+                    stemStr: insen.pillars.month.stem,
+                    branchStr: insen.pillars.month.branch,
+                    name: `${insen.pillars.month.stem}${insen.pillars.month.branch}`,
+                    id: 1,
+                    hiddenStems: []
+                },
+                day: {
+                    stem: dayStemIdx + 1,
+                    branch: dayBranchIdx + 1,
+                    stemStr: insen.pillars.day.stem,
+                    branchStr: insen.pillars.day.branch,
+                    name: `${insen.pillars.day.stem}${insen.pillars.day.branch}`,
+                    id: 1,
+                    hiddenStems: []
+                },
+                hour: {
+                    stem: 1,
+                    branch: 1,
+                    stemStr: '甲',
+                    branchStr: '子',
+                    name: '甲子',
+                    id: 1,
+                    hiddenStems: []
+                }
+            };
+        }
+    }
 
-    const fortune = getDailyFortune();
+    // 四柱推命が取得できない場合は簡易版を使用
+    const fortune = userBazi 
+        ? getDailyFortune(userBazi, currentDate)
+        : {
+            level: '中吉' as const,
+            color: '#8b5cf6',
+            advice: '生年月日を入力すると、より正確な運勢が表示されます。',
+            dailyGanZhi: { stem: '?', branch: '?' },
+            dailyTenStar: '?',
+            dailyTwelveStar: { name: '?', score: 0 },
+            specialConditions: [],
+            luckyDirection: '?',
+            date: currentDate.toISOString().split('T')[0]
+        };
 
     return (
         <ScrollView className="flex-1 px-4 pt-4" showsVerticalScrollIndicator={false}>
@@ -82,24 +135,82 @@ export default function FortuneCard({ insen, currentDate = new Date() }: Props) 
                 </View>
             </View>
 
+            {/* Daily GanZhi Info */}
+            {userBazi && (
+                <View className="bg-white/5 rounded-xl p-4 mb-6">
+                    <Text className="text-white font-bold mb-3">今日の干支</Text>
+                    <View className="gap-2">
+                        <View className="flex-row items-center gap-2">
+                            <Text className="text-white/80 text-sm">
+                                日干支: {fortune.dailyGanZhi.stem}{fortune.dailyGanZhi.branch}
+                            </Text>
+                        </View>
+                        <View className="flex-row items-center gap-2">
+                            <Text className="text-white/80 text-sm">
+                                十大主星: {fortune.dailyTenStar}
+                            </Text>
+                        </View>
+                        <View className="flex-row items-center gap-2">
+                            <Text className="text-white/80 text-sm">
+                                十二大従星: {fortune.dailyTwelveStar.name} ({fortune.dailyTwelveStar.score}点)
+                            </Text>
+                        </View>
+                        {fortune.specialConditions.length > 0 && (
+                            <View className="gap-1 mt-2">
+                                {fortune.specialConditions.map((condition, idx) => (
+                                    <Text key={idx} className="text-yellow-400 text-sm">
+                                        ⚠️ {condition}
+                                    </Text>
+                                ))}
+                            </View>
+                        )}
+                    </View>
+                </View>
+            )}
+
             {/* Lucky Elements */}
-            <View className="bg-white/5 rounded-xl p-4 mb-8">
-                <Text className="text-white font-bold mb-3">ラッキーアイテム</Text>
+            <View className="bg-white/5 rounded-xl p-4 mb-6">
+                <View className="flex-row items-center gap-2 mb-3">
+                    <Compass color="#e879f9" size={20} />
+                    <Text className="text-white font-bold">ラッキー情報</Text>
+                </View>
                 <View className="gap-2">
                     <View className="flex-row items-center gap-2">
                         <View className="w-3 h-3 rounded-full bg-primary" />
-                        <Text className="text-white/80 text-sm">ラッキーカラー: 紫</Text>
+                        <Text className="text-white/80 text-sm">
+                            ラッキー方位: {fortune.luckyDirection}
+                        </Text>
                     </View>
-                    <View className="flex-row items-center gap-2">
-                        <View className="w-3 h-3 rounded-full bg-secondary" />
-                        <Text className="text-white/80 text-sm">ラッキー方位: 北</Text>
-                    </View>
-                    <View className="flex-row items-center gap-2">
-                        <View className="w-3 h-3 rounded-full bg-primary" />
-                        <Text className="text-white/80 text-sm">ラッキーナンバー: 7</Text>
-                    </View>
+                    {userBazi && (
+                        <View className="flex-row items-center gap-2">
+                            <View className="w-3 h-3 rounded-full bg-secondary" />
+                            <Text className="text-white/80 text-sm">
+                                今日の干支: {fortune.dailyGanZhi.stem}{fortune.dailyGanZhi.branch}
+                            </Text>
+                        </View>
+                    )}
                 </View>
             </View>
+
+            {/* 開運アドバイス（五行バランスに基づく） */}
+            {userBazi && fortune.fiveElementsAdvice && fortune.fiveElementsAdvice.length > 0 && (
+                <View className="bg-white/5 rounded-xl p-4 mb-8">
+                    <View className="flex-row items-center gap-2 mb-3">
+                        <Sparkles color="#e879f9" size={20} />
+                        <Text className="text-white font-bold">開運アドバイス</Text>
+                    </View>
+                    <View className="gap-3">
+                        {fortune.fiveElementsAdvice.map((advice, idx) => (
+                            <View key={idx} className="flex-row gap-3">
+                                <View className="w-2 h-2 rounded-full bg-primary mt-2" />
+                                <Text className="text-white/90 text-sm flex-1 leading-relaxed">
+                                    {advice}
+                                </Text>
+                            </View>
+                        ))}
+                    </View>
+                </View>
+            )}
         </ScrollView>
     );
 }
