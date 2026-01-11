@@ -1,10 +1,9 @@
 import { View, Text, TouchableOpacity, Dimensions, Alert, Platform } from 'react-native';
-import { useState, useEffect } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Sparkles, RefreshCw, Share2, Zap } from 'lucide-react-native';
 import kanshiData from '@/src/data/kanshi-types.json';
 import { shareToSocial, showShareOptions } from '@/src/lib/share';
-import { getCharacterByKanshi, getRandomAruAru } from '@/src/data/viral-characters';
+import { getCharacterByKanshi } from '@/src/data/viral-characters';
 
 const { width, height } = Dimensions.get('window');
 
