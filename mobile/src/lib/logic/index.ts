@@ -5,3 +5,5 @@ export * from './fiveElements';
 export * from './yangsen';
 export * from './insen';
 export * from './taiun';
+export * from './dailyFortune';
+export * from './weeklyFortune';
