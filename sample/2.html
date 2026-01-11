@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>性別選択</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f425f4",
+                        "primary-content": "#ffffff",
+                        "secondary": "#25f4f4",
+                        "background-light": "#f8f5f8",
+                        "background-dark": "#221022",
+                        "surface-dark": "#2d152d",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                    boxShadow: {
+                        'glow': '0 0 20px -5px rgba(244, 37, 244, 0.5)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
+        }
+
+        .pop-card-selected {
+            border: 2px solid #f425f4;
+            background-color: rgba(244, 37, 244, 0.1);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col items-center justify-start overflow-hidden text-slate-900 dark:text-white transition-colors duration-300">
+    <!-- Mobile Container -->
+    <div
+        class="w-full max-w-md h-full min-h-screen flex flex-col relative bg-background-light dark:bg-background-dark shadow-2xl">
+        <!-- Background Pattern (Abstract Yin Yang / Elements) -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-10 dark:opacity-20 z-0">
+            <div
+                class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-gradient-to-br from-primary to-transparent blur-3xl">
+            </div>
+            <div
+                class="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-tl from-secondary to-transparent blur-3xl">
+            </div>
+        </div>
+        <!-- Top App Bar -->
+        <div class="relative z-10 flex items-center px-4 py-4 justify-between">
+            <button
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-light/20 dark:bg-surface-dark/50 backdrop-blur-sm hover:bg-surface-light/40 dark:hover:bg-surface-dark/80 transition-all text-slate-800 dark:text-white">
+                <span class="material-symbols-outlined text-2xl">arrow_back</span>
+            </button>
+            <h2 class="text-slate-800 dark:text-white text-lg font-bold tracking-tight">性別を選択</h2>
+            <div class="w-10"></div> <!-- Spacer for visual balance -->
+        </div>
+        <!-- Progress Indicators -->
+        <div class="relative z-10 flex w-full flex-row items-center justify-center gap-2 py-4 px-6">
+            <div class="h-1.5 flex-1 rounded-full bg-primary shadow-[0_0_10px_rgba(244,37,244,0.6)]"></div>
+            <div
+                class="h-1.5 flex-1 rounded-full bg-slate-300 dark:bg-surface-dark border border-slate-200 dark:border-white/10">
+            </div>
+            <div
+                class="h-1.5 flex-1 rounded-full bg-slate-300 dark:bg-surface-dark border border-slate-200 dark:border-white/10">
+            </div>
+            <div
+                class="h-1.5 flex-1 rounded-full bg-slate-300 dark:bg-surface-dark border border-slate-200 dark:border-white/10">
+            </div>
+            <div
+                class="h-1.5 flex-1 rounded-full bg-slate-300 dark:bg-surface-dark border border-slate-200 dark:border-white/10">
+            </div>
+        </div>
+        <!-- Main Content Area -->
+        <div class="relative z-10 flex-1 flex flex-col px-6 pt-4 pb-8 overflow-y-auto">
+            <!-- Headline -->
+            <div class="mb-2 text-center">
+                <h1 class="text-3xl font-display font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight">
+                    あなたの性別を<br />教えてください
+                </h1>
+                <p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed">
+                    占いの結果をより正確にするために必要です。<br />後から変更することはできません。
+                </p>
+            </div>
+            <!-- Selection Grid -->
+            <div class="flex-1 flex flex-col justify-center gap-6 py-6">
+                <!-- Male Option -->
+                <label class="group relative cursor-pointer">
+                    <input class="peer sr-only" name="gender" type="radio" value="male" />
+                    <div
+                        class="relative flex items-center p-4 bg-white dark:bg-surface-dark rounded-xl border-2 border-transparent peer-checked:border-secondary peer-checked:bg-secondary/10 hover:bg-slate-50 dark:hover:bg-white/5 transition-all duration-300 shadow-sm peer-checked:shadow-[0_0_20px_rgba(37,244,244,0.3)] h-32">
+                        <!-- Icon Container -->
+                        <div
+                            class="flex-shrink-0 w-20 h-20 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-white text-4xl">male</span>
+                        </div>
+                        <!-- Text -->
+                        <div class="ml-6 flex flex-col">
+                            <span
+                                class="text-2xl font-bold text-slate-800 dark:text-white group-hover:text-cyan-500 transition-colors">男性</span>
+                            <span
+                                class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium tracking-wider uppercase opacity-70">Yang
+                                • 陽</span>
+                        </div>
+                        <!-- Checkmark Indicator -->
+                        <div
+                            class="absolute right-6 w-8 h-8 rounded-full border-2 border-slate-300 dark:border-white/20 peer-checked:border-secondary peer-checked:bg-secondary flex items-center justify-center transition-all">
+                            <span
+                                class="material-symbols-outlined text-white opacity-0 peer-checked:opacity-100 text-lg font-bold">check</span>
+                        </div>
+                    </div>
+                </label>
+                <!-- Female Option -->
+                <label class="group relative cursor-pointer">
+                    <input class="peer sr-only" name="gender" type="radio" value="female" />
+                    <div
+                        class="relative flex items-center p-4 bg-white dark:bg-surface-dark rounded-xl border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/10 hover:bg-slate-50 dark:hover:bg-white/5 transition-all duration-300 shadow-sm peer-checked:shadow-glow h-32">
+                        <!-- Icon Container -->
+                        <div
+                            class="flex-shrink-0 w-20 h-20 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-600 flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-transform duration-300">
+                            <span class="material-symbols-outlined text-white text-4xl">female</span>
+                        </div>
+                        <!-- Text -->
+                        <div class="ml-6 flex flex-col">
+                            <span
+                                class="text-2xl font-bold text-slate-800 dark:text-white group-hover:text-primary transition-colors">女性</span>
+                            <span
+                                class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium tracking-wider uppercase opacity-70">Yin
+                                • 陰</span>
+                        </div>
+                        <!-- Checkmark Indicator -->
+                        <div
+                            class="absolute right-6 w-8 h-8 rounded-full border-2 border-slate-300 dark:border-white/20 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+                            <span
+                                class="material-symbols-outlined text-white opacity-0 peer-checked:opacity-100 text-lg font-bold">check</span>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <!-- Bottom Action -->
+            <div class="mt-auto pt-4">
+                <button
+                    class="w-full bg-primary hover:bg-fuchsia-400 active:scale-[0.98] text-white font-bold text-lg py-4 rounded-full shadow-lg shadow-primary/40 transition-all flex items-center justify-center gap-2 group">
+                    <span>次へ進む</span>
+                    <span
+                        class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
