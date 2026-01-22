@@ -42,3 +42,10 @@ next-env.d.ts
 mobile/
 yinyang-app/
 .claude/
+
+# parallel task execution
+.parallel-logs/
+.parallel-commands/
+
+# planning local files
+.planning/intel/
