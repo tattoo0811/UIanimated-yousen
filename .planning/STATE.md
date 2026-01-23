@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** わかりやすさ × 共感 × 笑い — 専門用語をバズる言葉に翻訳し、自分の診断結果が動画でシェアしたくなる体験を提供する
-**Current focus:** Phase 8: Content Translation
+**Current focus:** Phase 10: Friend Compatibility
 
 ## Current Position
 
-Phase: 8 of 11 (Content Translation)
-Plan: 2 of 2 in current phase
-Status: Phase 08 complete ✓
-Last activity: 2026-01-24 — Completed 08-01, 08-02 (Content Translation)
+Phase: 10 of 11 (Friend Compatibility)
+Plan: 0 of 2 in current phase
+Status: Phase 09 complete ✓
+Last activity: 2026-01-24 — Completed 09-01 (Image Generation Prompts)
 
-Progress: [████████████-] 91%
+Progress: [████████████░] 92%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 19
-- Average duration: 7.1 min
-- Total execution time: 2.1 hours
+- Total plans completed: 20
+- Average duration: 7.3 min
+- Total execution time: 2.3 hours
 
 **By Phase:**
 
@@ -35,13 +35,13 @@ Progress: [████████████-] 91%
 | 6. Video Playback & Share | 2/2 | 55 min | 27.5 min |
 | 7. Direct Social Sharing | 2/2 | 25 min | 12.5 min |
 | 8. Content Translation | 2/2 | 30 min | 15.0 min |
-| 9. Image Generation Prompts | 0/1 | TBD | - |
+| 9. Image Generation Prompts | 1/1 | 8 min | 8.0 min |
 | 10. Friend Compatibility | 0/2 | TBD | - |
 | 11. 2026 Year Fortune | 0/2 | TBD | - |
 
 **Recent Trend:**
-- Last 10 plans: 4 min (04-02), 3 min (04-03), 8 min (04-04), 8 min (05-01), 12 min (05-02), 25 min (06-01), 30 min (06-02), 12 min (07-01), 13 min (07-02), 12 min (08-01), 18 min (08-02)
-- Trend: Phase 8 complete with content translation system
+- Last 10 plans: 4 min (04-02), 3 min (04-03), 8 min (04-04), 8 min (05-01), 12 min (05-02), 25 min (06-01), 30 min (06-02), 12 min (07-01), 13 min (07-02), 12 min (08-01), 18 min (08-02), 8 min (09-01)
+- Trend: Phase 9 complete with image prompt generation system
 
 *Updated after each plan completion*
 
@@ -119,6 +119,13 @@ Recent decisions affecting current work:
 - **TikTok Tone Pattern**: 2-3 sentences, emotional keywords (◎, ✨, 💪, 💕, 🔥), punchlines, direct address format (08-02)
 - **YouTube Tone Pattern**: Conversational (〜だよね, 〜てみてよ), storytelling flow, hook → body → conclusion structure (08-02)
 - **Instagram Tone Pattern**: Visual-focused with line breaks, emoji per line, aesthetic vocabulary, hashtags for discoverability (08-02)
+- **Day Stem Visual Patterns**: 10 stems × visual characteristics for AI image generation (甲: strong tree, 乙: flexible grass, 丙: sun-like radiance, 丁: candle glow, 戊: mountain, 己: fertile field, 庚: sword/metal, 辛: gemstone, 壬: ocean, 癸: rain/dew) (09-01)
+- **Theme Visual Styles**: KiraPop (vibrant pop art, high contrast), MonoEdge (monochrome with indigo, minimalist), ZenWa (Japanese aesthetic, earth tones) for image prompts (09-01)
+- **Tone Mood Mappings**: TikTok (emotional, dramatic, high energy), YouTube (storytelling, warm, relatable), Instagram (aesthetic, curated, visual) applied to image generation (09-01)
+- **Minimal Insen Chart**: Only day stem/branch needed for prompts, not full chart calculation. Simplified helper function creates valid structure with placeholders (09-01)
+- **English Prompt Generation**: Prompts in English for better DALL-E/Midjourney comprehension, visual descriptors translated from Japanese patterns (09-01)
+- **Parallel Prompt Fetching**: All 4 sections fetched simultaneously with Promise.all for faster UX (~1s vs ~4s sequential) (09-01)
+- **AsyncStorage Prompt Caching**: 24-hour cache with kanshi_tone_theme key, auto-deletes expired entries, balances offline access with freshness (09-01)
 
 ### Pending Todos
 
@@ -135,6 +142,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-24 15:30 UTC
-Stopped at: Completed Phase 08 (Content Translation)
+Last session: 2026-01-24 16:05 UTC
+Stopped at: Completed Phase 09 (Image Generation Prompts)
 Resume file: None

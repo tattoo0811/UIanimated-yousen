@@ -1,17 +1,20 @@
-import { View, Text, TouchableOpacity, Alert, ScrollView } from 'react-native';
-import { Stack, useRouter, useLocalSearchParams } from 'expo-router';
-import { ArrowLeft, Settings, Users } from 'lucide-react-native';
+import { View, Text, TouchableOpacity, Alert } from 'react-native';
+import { Stack, useRouter } from 'expo-router';
+import { ArrowLeft, Settings, Users, Image } from 'lucide-react-native';
 import { useEffect, useState } from 'react';
 import PopResultCard from '@/src/components/PopResultCard';
-import { loadResult } from '@/src/utils/storage';
-import type { CalculationResult } from '@/src/types';
+import FortuneTypewriterReveal from '@/src/components/FortuneTypewriterReveal';
+import { loadStorage } from '@/src/lib/storage';
+import kanshiData from '@/src/data/kanshi-types.json';
+import { getCharacterByKanshi } from '@/src/lib/viral-characters-loader';
 
 export default function ResultScreen() {
   const router = useRouter();
-  const params = useLocalSearchParams();
-  const resultId = params.resultId as string;
 
-  const [result, setResult] = useState<CalculationResult | null>(null);
+  const [nickname, setNickname] = useState<string | undefined>();
+  const [kanshi, setKanshi] = useState<string>('甲子');
+  const [viralExpression, setViralExpression] = useState<string | undefined>();
+  const [showAnimation, setShowAnimation] = useState(true);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,24 +23,33 @@ export default function ResultScreen() {
 
   const loadResultData = async () => {
     try {
-      console.log('📖 結果を読み込み中...', resultId);
+      const storage = await loadStorage();
 
-      if (!resultId) {
-        throw new Error('結果IDが見つかりません');
+      if (storage.fortuneResults && storage.fortuneResults.length > 0) {
+        // 最新の結果を取得
+        const latest = storage.fortuneResults[storage.fortuneResults.length - 1];
+        const resultData = latest.resultData;
+
+        // ニックネームを設定
+        setNickname(latest.nickname);
+
+        // 日干支を取得
+        const bazi = resultData?.result?.bazi;
+        const dayKanshi = bazi?.day?.stemStr && bazi?.day?.branchStr
+          ? `${bazi.day.stemStr}${bazi.day.branchStr}`
+          : '甲子';
+
+        setKanshi(dayKanshi);
+        console.log('🎯 表示する干支:', dayKanshi);
+
+        // バズり表現を非同期で取得
+        const viralData = await getCharacterByKanshi(dayKanshi);
+        setViralExpression(viralData?.core_style.viral_expression);
       }
-
-      const data = await loadResult(resultId);
-      console.log('📦 読み込んだデータ:', JSON.stringify(data, null, 2).slice(0, 500));
-
-      if (!data) {
-        throw new Error('結果データが見つかりません');
-      }
-
-      setResult(data);
     } catch (error) {
       console.error('Failed to load result:', error);
       Alert.alert('エラー', '結果データの読み込みに失敗しました', [
-        { text: 'OK', onPress: () => router.back() }
+        { text: 'OK', onPress: () => router.replace('/') }
       ]);
     } finally {
       setLoading(false);
@@ -46,6 +58,14 @@ export default function ResultScreen() {
 
   const handleReset = () => {
     router.replace('/');
+  };
+
+  const handleAnimationComplete = () => {
+    setShowAnimation(false);
+  };
+
+  const handleAnimationSkip = () => {
+    setShowAnimation(false);
   };
 
   if (loading) {
@@ -57,34 +77,24 @@ export default function ResultScreen() {
     );
   }
 
-  if (!result) {
+  // タイピングアニメーション表示中
+  if (showAnimation && nickname) {
+    const type = kanshiData.types.find(t => t.kanshi === kanshi);
+
     return (
-      <View className="flex-1 bg-[#FFF9E6] items-center justify-center">
-        <Text className="text-6xl mb-4">😢</Text>
-        <Text className="text-xl font-black text-[#333]">データが見つかりません</Text>
-        <TouchableOpacity
-          onPress={handleReset}
-          className="mt-8 bg-[#FF7E5F] px-8 py-4"
-          style={{
-            borderWidth: 3,
-            borderColor: '#333',
-            borderRadius: 16,
-          }}
-        >
-          <Text className="text-white font-bold">トップに戻る</Text>
-        </TouchableOpacity>
-      </View>
+      <FortuneTypewriterReveal
+        userName={nickname}
+        kanshi={kanshi}
+        typeName={type?.shortName || kanshi}
+        icon={type?.icon}
+        viralExpression={viralExpression}
+        onComplete={handleAnimationComplete}
+        onSkip={handleAnimationSkip}
+      />
     );
   }
 
-  // 日干支を取得
-  const bazi = result.result?.bazi;
-  const kanshi = bazi?.day?.stemStr && bazi?.day?.branchStr
-    ? `${bazi.day.stemStr}${bazi.day.branchStr}`
-    : '甲子';
-
-  console.log('🎯 表示する干支:', kanshi);
-
+  // メイン結果画面
   return (
     <View className="flex-1 bg-[#FFF9E6]">
       <Stack.Screen options={{ headerShown: false }} />
@@ -126,8 +136,25 @@ export default function ResultScreen() {
       {/* Result Card */}
       <PopResultCard kanshi={kanshi} onReset={handleReset} />
 
-      {/* Bottom Button */}
-      <View className="px-4 pb-8">
+      {/* Bottom Buttons */}
+      <View className="px-4 pb-8 gap-3">
+        <TouchableOpacity
+          onPress={() => router.push('/image-prompts')}
+          className="flex-row items-center justify-center gap-2 bg-[#FF6B9D] p-4"
+          style={{
+            borderWidth: 3,
+            borderColor: '#333',
+            borderRadius: 16,
+            shadowColor: '#333',
+            shadowOffset: { width: 4, height: 4 },
+            shadowOpacity: 1,
+            shadowRadius: 0,
+          }}
+        >
+          <Image size={20} color="#fff" />
+          <Text className="font-bold text-white text-lg">AI画像プロンプト</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity
           onPress={() => router.push('/compatibility')}
           className="flex-row items-center justify-center gap-2 bg-[#60A5FA] p-4"
