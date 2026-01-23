@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** わかりやすさ × 共感 × 笑い — 専門用語をバズる言葉に翻訳し、自分の診断結果が動画でシェアしたくなる体験を提供する
-**Current focus:** Phase 3: Design System
+**Current focus:** Phase 4: Video Generation Backend
 
 ## Current Position
 
 Phase: 4 of 11 (Video Generation Backend)
-Plan: 1 of 4 in current phase
-Status: Plan 04-01 complete ✓
-Last activity: 2026-01-23 — Completed 04-01 (Backend Project Structure)
+Plan: 2 of 4 in current phase
+Status: Plan 04-02 complete ✓
+Last activity: 2026-01-23 — Completed 04-02 (Video Template Base)
 
-Progress: [█████░░░░░] 31%
+Progress: [██████░░░░] 35%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
-- Average duration: 5.5 min
-- Total execution time: 0.7 hours
+- Total plans completed: 9
+- Average duration: 5.3 min
+- Total execution time: 0.8 hours
 
 **By Phase:**
 
@@ -30,7 +30,7 @@ Progress: [█████░░░░░] 31%
 | 1. Foundation & Code Quality | 0/6 | TBD | - |
 | 2. Card UI Core | 4/4 | 30 min | 7.5 min |
 | 3. Design System | 3/3 | 10 min | 3.3 min |
-| 4. Video Generation Backend | 1/4 | 6 min | 6.0 min |
+| 4. Video Generation Backend | 2/4 | 10 min | 5.0 min |
 | 5. Video Content Integration | 0/2 | TBD | - |
 | 6. Video Playback & Share | 0/2 | TBD | - |
 | 7. Direct Social Sharing | 0/2 | TBD | - |
@@ -40,8 +40,8 @@ Progress: [█████░░░░░] 31%
 | 11. 2026 Year Fortune | 0/2 | TBD | - |
 
 **Recent Trend:**
-- Last 8 plans: 9 min (02-01), 8 min (02-02), 6 min (02-03), 5 min (02-04), 4 min (03-01), 3 min (03-02A), 3 min (03-02B), 6 min (04-01)
-- Trend: Backend structure complete, moving to video templates
+- Last 8 plans: 8 min (02-02), 6 min (02-03), 5 min (02-04), 4 min (03-01), 3 min (03-02A), 3 min (03-02B), 6 min (04-01), 4 min (04-02)
+- Trend: Video template base complete, ready for content components
 
 *Updated after each plan completion*
 
@@ -81,6 +81,10 @@ Recent decisions affecting current work:
 - **Cloud Run Integration**: @remotion/cloudrun 4.0.399 for GCP deployment with multi-stage Docker build (04-01)
 - **9:16 Video Format**: 1080x1920, 30fps, 900 frames (30 seconds) for TikTok/Instagram Reels compatibility (04-01)
 - **Zod Validation**: Type-safe composition props with nickname, fortuneData, theme, tone validation (04-01)
+- **Theme Configuration System**: TypeScript object-based configuration with KiraPop, MonoEdge, ZenWa themes matching Phase 3 designs (04-02)
+- **useTheme Hook Pattern**: Simple function returning theme configuration based on theme name, no React Context needed for Remotion compositions (04-02)
+- **VideoTemplate Wrapper**: AbsoluteFill provides full-screen container with theme-based styling for 9:16 video format (04-02)
+- **Animation Parameters per Theme**: Spring physics (damping/stiffness) and typing speed customized per theme (KiraPop: bouncy 15/200, MonoEdge: smooth 50/100, ZenWa: gentle 30/80) (04-02)
 
 ### Pending Todos
 
@@ -97,6 +101,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-23 23:16 UTC
-Stopped at: Completed 04-01 (Backend Project Structure)
+Last session: 2026-01-23 23:37 UTC
+Stopped at: Completed 04-02 (Video Template Base)
 Resume file: None
