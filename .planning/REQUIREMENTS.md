@@ -27,7 +27,7 @@
 
 ### 動画生成 - サーバーサイドRemotion
 
-- [ ] **VID-01**: 9:16縦動画（15-30秒）を生成する
+- [x] **VID-01**: 9:16縦動画（15-30秒）を生成する
   - サーバーサイドでRemotion使用
   - 1080x1920または720x1280解像度
   - H.264 + AAC エンコード
@@ -36,14 +36,14 @@
   - 入力された名前を動画内に表示
   - 動的にテキスト挿入
 
-- [ ] **VID-03**: 7秒フック構成を実装する
+- [x] **VID-03**: 7秒フック構成を実装する
   - 0-2s: ビジュアルフック
   - 2-5s: パーソナライズ表示
   - 5-15s: 占い結果開示
   - 15-20s: CTA
   - 20-30s: ブランディング
 
-- [ ] **VID-04**: タイピングエフェクトを実装する
+- [x] **VID-04**: タイピングエフェクトを実装する
   - 文字が1文字ずつ表示される
   - 背景にプリセット画像を表示
 
@@ -118,7 +118,11 @@
 | UI-01 | Phase 2 | Complete |
 | UI-02 | Phase 3 | Complete |
 | UI-03 | Phase 2 | Complete |
-| VID-01, VID-02, VID-03, VID-04, VID-05 | Phase 4 - サーバーサイド動画生成基盤 | Pending |
+| VID-01 | Phase 4 | Complete |
+| VID-02 | Phase 5 | Pending |
+| VID-03 | Phase 4 | Complete |
+| VID-04 | Phase 4 | Complete |
+| VID-05 | Phase 5 | Pending |
 | CNT-01, CNT-02, CNT-03 | Phase 8 - コンテンツ翻訳と多トーン対応 | Pending |
 | SHR-01, SHR-02, SHR-03 | Phase 6 - シェア機能と動画再生 | Pending |
 | EXT-01, EXT-02 | Phase 10 - 付加機能 | Pending |

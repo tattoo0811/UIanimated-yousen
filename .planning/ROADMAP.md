@@ -13,7 +13,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 1: Foundation & Code Quality** - TypeScript strict mode, bundle size optimization
 - [ ] **Phase 2: Card UI Core** - Scroll-less card-based interface
 - [ ] **Phase 3: Design System** - Multiple design themes
-- [ ] **Phase 4: Video Generation Backend** - Server-side Remotion infrastructure
+- [x] **Phase 4: Video Generation Backend** - Server-side Remotion infrastructure
 - [ ] **Phase 5: Video Content Integration** - Personalized video content with nickname
 - [ ] **Phase 6: Video Playback & Share** - Native share sheet and camera roll save
 - [ ] **Phase 7: Direct Social Sharing** - TikTok/Instagram direct posting
@@ -90,10 +90,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Remotionバックエンドのセットアップ（Node.js + Cloud Run）
-- [ ] 04-02-PLAN.md — 動画テンプレートの作成（9:16フォーマットとテーマシステム）
-- [ ] 04-03-PLAN.md — 7秒フック構成とタイピングエフェクトの実装
-- [ ] 04-04-PLAN.md — 生成APIエンドポイントと進捗ポーリングシステム
+- [x] 04-01: Remotionバックエンドのセットアップ（Node.js + Cloud Run）
+- [x] 04-02: 動画テンプレートの作成（9:16フォーマットとテーマシステム）
+- [x] 04-03: 7秒フック構成とタイピングエフェクトの実装
+- [x] 04-04: 生成APIエンドポイントと進捗ポーリングシステム
 
 ### Phase 5: Video Content Integration
 **Goal**: 動画にパーソナライズされたコンテンツを組み込む
@@ -207,7 +207,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 | 1. Foundation & Code Quality | 0/6 | Not started | - |
 | 2. Card UI Core | 4/4 | ✅ Complete | 2026-01-23 |
 | 3. Design System | 3/3 | ✅ Complete | 2026-01-23 |
-| 4. Video Generation Backend | 0/4 | Not started | - |
+| 4. Video Generation Backend | 4/4 | ✅ Complete | 2026-01-24 |
 | 5. Video Content Integration | 0/2 | Not started | - |
 | 6. Video Playback & Share | 0/2 | Not started | - |
 | 7. Direct Social Sharing | 0/2 | Not started | - |
