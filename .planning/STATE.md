@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** わかりやすさ × 共感 × 笑い — 専門用語をバズる言葉に翻訳し、自分の診断結果が動画でシェアしたくなる体験を提供する
-**Current focus:** Phase 5: Video Content Integration
+**Current focus:** Phase 8: Content Translation
 
 ## Current Position
 
-Phase: 5 of 11 (Video Content Integration)
+Phase: 8 of 11 (Content Translation)
 Plan: 2 of 2 in current phase
-Status: Phase 05 complete ✓
-Last activity: 2026-01-24 — Completed 05-02 (本質→家族→仕事→恋愛→オチ Content Structure)
+Status: Phase 08 complete ✓
+Last activity: 2026-01-24 — Completed 08-01, 08-02 (Content Translation)
 
-Progress: [██████████] 63%
+Progress: [████████████-] 91%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 13
-- Average duration: 5.6 min
-- Total execution time: 1.2 hours
+- Total plans completed: 19
+- Average duration: 7.1 min
+- Total execution time: 2.1 hours
 
 **By Phase:**
 
@@ -32,16 +32,16 @@ Progress: [██████████] 63%
 | 3. Design System | 3/3 | 10 min | 3.3 min |
 | 4. Video Generation Backend | 4/4 | 21 min | 5.3 min |
 | 5. Video Content Integration | 2/2 | 20 min | 10.0 min |
-| 6. Video Playback & Share | 0/2 | TBD | - |
-| 7. Direct Social Sharing | 0/2 | TBD | - |
-| 8. Content Translation | 0/2 | TBD | - |
+| 6. Video Playback & Share | 2/2 | 55 min | 27.5 min |
+| 7. Direct Social Sharing | 2/2 | 25 min | 12.5 min |
+| 8. Content Translation | 2/2 | 30 min | 15.0 min |
 | 9. Image Generation Prompts | 0/1 | TBD | - |
 | 10. Friend Compatibility | 0/2 | TBD | - |
 | 11. 2026 Year Fortune | 0/2 | TBD | - |
 
 **Recent Trend:**
-- Last 10 plans: 6 min (04-01), 4 min (04-02), 3 min (04-03), 8 min (04-04), 8 min (05-01), 12 min (05-02)
-- Trend: Phase 5 complete with 5-section content structure (本質→家族→仕事→恋愛→オチ)
+- Last 10 plans: 4 min (04-02), 3 min (04-03), 8 min (04-04), 8 min (05-01), 12 min (05-02), 25 min (06-01), 30 min (06-02), 12 min (07-01), 13 min (07-02), 12 min (08-01), 18 min (08-02)
+- Trend: Phase 8 complete with content translation system
 
 *Updated after each plan completion*
 
@@ -93,6 +93,32 @@ Recent decisions affecting current work:
 - **Video-Optimized Content**: Content shortened to 1-3 sentences per section for video format (vs full paragraphs in mobile) (05-02)
 - **Progressive Vertical Positioning**: Sections positioned progressively lower (40%→45%→50%→55%→50%) to create visual flow (05-02)
 - **Conditional Content Rendering**: Content sections only render when insen data is available, maintaining backward compatibility (05-02)
+- **expo-video Integration**: Used expo-video instead of react-native-video for native Expo SDK 54 compatibility with VideoView and useVideo hook (06-01)
+- **AsyncStorage Cache Metadata**: Video cache metadata (path, timestamp, size) stored in AsyncStorage for persistence across app restarts (06-01)
+- **URL Hash Cache Keys**: Cache keys generated from URL hash to prevent collisions and support different URLs with same content (06-01)
+- **Background Caching Strategy**: Videos cached in background after first play to avoid blocking initial playback while improving subsequent loads (06-01)
+- **expo-media-library for Camera Roll**: Used expo-media-library for camera roll save with permission handling and "Fortune Videos" album creation (06-02)
+- **expo-sharing Native Share Sheet**: expo-sharing for native share sheet integration with platform-specific app selection (06-02)
+- **Separate VideoControls Component**: Extracted video save/share buttons into separate component for reusability and better separation of concerns (06-02)
+- **Haptic Feedback Integration**: expo-haptics for tactile button press feedback with .catch() for graceful failure on unsupported devices (06-02)
+- **Permission Alert with Settings**: User-friendly alert with "Open Settings" option when camera roll permission denied (06-02)
+- **Cache-Before-Share Pattern**: Share operations check cache first and download remote videos before sharing to ensure local file availability (06-02)
+- **Social Media URL Schemes**: TikTok (snssdk1233://, tiktok://) and Instagram (instagram://, instagram-stories://) URL schemes for direct app integration (07-01)
+- **App Installation Detection**: expo-linking.canOpenURL() for checking social media app installation before attempting deep links (07-01)
+- **iOS URL Scheme Whitelisting**: LSApplicationQueriesSchemes in app.json infoPlist for iOS URL scheme access (07-01)
+- **Conditional Direct Share UI**: showDirectShare prop on VideoControls to optionally show TikTok/Instagram buttons (07-01)
+- **Fallback Dialog UX**: ShareFallbackDialog component with platform-specific colors and 3-option UX (Download, Share via..., Cancel) (07-02)
+- **App Store Deep Linking**: Direct App Store links (TikTok: id835599320, Instagram: id389801252) with web URL fallback (07-02)
+- **Graceful Degradation**: Multi-tier fallback (direct share → app store → native share sheet) ensures users can always share (07-02)
+- **Tone Selection UI Reuse**: ToneSelector reuses SwipeableStack pattern for consistent UX with theme selection (08-01)
+- **Content Translator Infrastructure**: Translation pipeline with ContentTone type and translateToTone function for platform-specific content (08-01)
+- **AsyncStorage Tone Persistence**: User's tone selection saved with '@selected_tone' key, survives app restarts (08-01)
+- **Three Tone Options**: TikTok (short/emotional), YouTube (storytelling), Instagram (visual) covering major use cases (08-01)
+- **Rule-Based Translation**: Content transformation uses keyword extraction and tone-specific templates instead of AI for consistency (08-02)
+- **Six Personality Types**: Keyword extraction detects leadership, flexibility, brightness, sensitivity, stability, and default traits (08-02)
+- **TikTok Tone Pattern**: 2-3 sentences, emotional keywords (◎, ✨, 💪, 💕, 🔥), punchlines, direct address format (08-02)
+- **YouTube Tone Pattern**: Conversational (〜だよね, 〜てみてよ), storytelling flow, hook → body → conclusion structure (08-02)
+- **Instagram Tone Pattern**: Visual-focused with line breaks, emoji per line, aesthetic vocabulary, hashtags for discoverability (08-02)
 
 ### Pending Todos
 
@@ -109,6 +135,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-24 00:05 UTC
-Stopped at: Completed Phase 05 (Video Content Integration)
+Last session: 2026-01-24 15:30 UTC
+Stopped at: Completed Phase 08 (Content Translation)
 Resume file: None
