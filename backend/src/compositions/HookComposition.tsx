@@ -2,8 +2,22 @@ import React from 'react';
 import {AbsoluteFill, Sequence} from 'remotion';
 import {z} from 'zod';
 import {VideoTemplate} from './VideoTemplate';
-import {TypingText} from './TypingText';
 import {NicknameSection} from './sections/NicknameSection';
+import {
+  EssenceSection,
+  FamilySection,
+  WorkSection,
+  LoveSection,
+  OchiSection,
+} from './sections/ContentSections';
+import {
+  generateEssenceContent,
+  generateFamilyContent,
+  generateWorkContent,
+  generateLoveContent,
+  generateOchiContent,
+} from '../lib/contentGenerator';
+import type {SanmeigakuInsenChart} from '../../../mobile/src/types';
 import {useTheme} from './themes/themeConfig';
 
 export const hookCompositionSchema = z.object({
@@ -11,6 +25,7 @@ export const hookCompositionSchema = z.object({
   fortuneData: z.object({
     result: z.string().max(200),
     rating: z.number().min(1).max(5),
+    insen: z.any().optional(), // SanmeigakuInsenChart for content generation
   }),
   theme: z.enum(['KiraPop', 'MonoEdge', 'ZenWa']),
   tone: z.enum(['TikTok', 'YouTube', 'Instagram']),
@@ -21,6 +36,7 @@ interface HookCompositionProps {
   fortuneData: {
     result: string;
     rating: number;
+    insen?: SanmeigakuInsenChart;
   };
   theme: 'KiraPop' | 'MonoEdge' | 'ZenWa';
   tone: 'TikTok' | 'YouTube' | 'Instagram';
@@ -30,8 +46,18 @@ export const HookComposition: React.FC<HookCompositionProps> = ({
   nickname,
   fortuneData,
   theme,
+  tone,
 }) => {
   const themeConfig = useTheme(theme);
+
+  // Generate content if insen data is available
+  const content = fortuneData.insen ? {
+    essence: generateEssenceContent(fortuneData.insen, nickname, tone),
+    family: generateFamilyContent(fortuneData.insen, nickname, tone),
+    work: generateWorkContent(fortuneData.insen, nickname, tone),
+    love: generateLoveContent(fortuneData.insen, nickname, tone),
+    ochi: generateOchiContent(fortuneData.insen, nickname, tone),
+  } : null;
 
   return (
     <VideoTemplate theme={theme}>
@@ -61,30 +87,67 @@ export const HookComposition: React.FC<HookCompositionProps> = ({
           />
         </Sequence>
 
-        {/* 5-15s (300 frames): Revelation - fortune typing */}
-        <Sequence from={150} durationInFrames={300}>
-          <div style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: '80%',
-            textAlign: 'center',
-          }}>
-            <TypingText
-              text={fortuneData.result}
-              speed={themeConfig.animations.typingSpeed}
-              style={{
-                fontSize: fortuneData.result.length > 100 ? 36 : 48,
-                color: themeConfig.colors.text,
-                lineHeight: 1.6,
-              }}
-            />
-          </div>
-        </Sequence>
+        {content && (
+          <>
+            {/* 5-9s (120 frames): 本質 - Essence section */}
+            <Sequence from={150} durationInFrames={120}>
+              <EssenceSection
+                title={content.essence.title}
+                content={content.essence.content}
+                speed={themeConfig.animations.typingSpeed}
+                theme={theme}
+                triggerFrame={0}
+              />
+            </Sequence>
 
-        {/* 15-20s (150 frames): CTA - call to action */}
-        <Sequence from={450} durationInFrames={150}>
+            {/* 9-12s (90 frames): 家族 - Family section */}
+            <Sequence from={270} durationInFrames={90}>
+              <FamilySection
+                title={content.family.title}
+                content={content.family.content}
+                speed={themeConfig.animations.typingSpeed}
+                theme={theme}
+                triggerFrame={0}
+              />
+            </Sequence>
+
+            {/* 12-15s (90 frames): 仕事 - Work section */}
+            <Sequence from={360} durationInFrames={90}>
+              <WorkSection
+                title={content.work.title}
+                content={content.work.content}
+                speed={themeConfig.animations.typingSpeed}
+                theme={theme}
+                triggerFrame={0}
+              />
+            </Sequence>
+
+            {/* 15-18s (90 frames): 恋愛 - Love section */}
+            <Sequence from={450} durationInFrames={90}>
+              <LoveSection
+                title={content.love.title}
+                content={content.love.content}
+                speed={themeConfig.animations.typingSpeed}
+                theme={theme}
+                triggerFrame={0}
+              />
+            </Sequence>
+
+            {/* 18-20s (60 frames): オチ - Ochi section */}
+            <Sequence from={540} durationInFrames={60}>
+              <OchiSection
+                title={content.ochi.title}
+                content={content.ochi.content}
+                speed={themeConfig.animations.typingSpeed}
+                theme={theme}
+                triggerFrame={0}
+              />
+            </Sequence>
+          </>
+        )}
+
+        {/* 20-25s (150 frames): CTA - call to action */}
+        <Sequence from={600} durationInFrames={150}>
           <div style={{
             position: 'absolute',
             bottom: '20%',
@@ -98,8 +161,8 @@ export const HookComposition: React.FC<HookCompositionProps> = ({
           </div>
         </Sequence>
 
-        {/* 20-30s (300 frames): Branding - brand elements */}
-        <Sequence from={600} durationInFrames={300}>
+        {/* 25-30s (150 frames): Branding - brand elements */}
+        <Sequence from={750} durationInFrames={150}>
           <div style={{
             position: 'absolute',
             bottom: '5%',
