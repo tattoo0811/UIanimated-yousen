@@ -5,6 +5,7 @@
 
 import { Router } from 'express';
 import { calculateCompatibility, compareMultiplePeople } from '../../lib/compatibilityCalculator';
+import { triggerRender } from '../controllers/renderController';
 import type { PersonData, CompatibilityResult, MultiPersonComparison } from '../../types/compatibility';
 
 const router = Router();
@@ -99,6 +100,41 @@ router.post('/calculate', async (req, res) => {
     console.error('Compatibility calculation error:', error);
     res.status(500).json({
       error: 'Failed to calculate compatibility',
+      message: error instanceof Error ? error.message : 'Unknown error',
+    });
+  }
+});
+
+// POST /api/compatibility/video
+router.post('/video', async (req, res) => {
+  try {
+    const { people, compatibilityResult, theme, tone } = req.body;
+
+    // Validate input
+    if (!people || !compatibilityResult) {
+      return res.status(400).json({
+        error: 'people and compatibilityResult are required',
+      });
+    }
+
+    const renderResult = await triggerRender({
+      composition: 'CompatibilityComposition',
+      inputProps: {
+        people,
+        compatibilityResult,
+        theme: theme || 'KiraPop',
+        tone: tone || 'TikTok',
+      },
+    });
+
+    res.json({
+      jobId: renderResult.jobId,
+      status: renderResult.status,
+    });
+  } catch (error) {
+    console.error('Video generation error:', error);
+    res.status(500).json({
+      error: 'Failed to generate video',
       message: error instanceof Error ? error.message : 'Unknown error',
     });
   }

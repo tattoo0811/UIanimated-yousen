@@ -1,11 +1,12 @@
-import { View, Text, ScrollView, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, TextInput, ActivityIndicator } from 'react-native';
 import { useState, useEffect } from 'react';
 import type { SanmeigakuInsenChart } from '@/src/types';
-import { Heart, Users, Briefcase, Home, X, Check } from 'lucide-react-native';
+import { Heart, Users, Briefcase, Home, X, Check, Video } from 'lucide-react-native';
 import { Picker } from '@react-native-picker/picker';
 import { calculateBaZi } from '@/src/lib/logic';
 import { getKanshiPopType, ELEMENT_COLORS } from '@/src/data/kanshi-pop-types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useRouter } from 'expo-router';
 
 type Props = {
     insen: SanmeigakuInsenChart;
@@ -21,46 +22,46 @@ interface SavedPartner {
     kanshi: string;
 }
 
+interface CompatibilityResult {
+    scores: {
+        overall: number;
+        love: number;
+        work: number;
+        friendship: number;
+    };
+    level: 'perfect' | 'great' | 'good' | 'neutral' | 'challenging';
+    message: string;
+    advice: string;
+    comparisons: Array<{
+        person1: string;
+        person2: string;
+        score: number;
+        strengths: string[];
+        challenges: string[];
+    }>;
+}
+
+interface MultiPersonComparison {
+    people: Array<{
+        name: string;
+        birthDate: string;
+        gender: 'male' | 'female';
+        insen: any;
+    }>;
+    matrix: number[][];
+    rankings: Array<{
+        person: string;
+        averageScore: number;
+        bestMatch: string;
+        bestMatchScore: number;
+    }>;
+}
+
 const SAVED_PARTNERS_KEY = 'saved_partners';
-
-// 相性計算
-const calculateCompatibility = (myKanshi: string, partnerKanshi: string, relationType: RelationType) => {
-    const myStem = myKanshi[0];
-    const partnerStem = partnerKanshi[0];
-
-    const stemElements: Record<string, string> = {
-        '甲': '木', '乙': '木', '丙': '火', '丁': '火', '戊': '土',
-        '己': '土', '庚': '金', '辛': '金', '壬': '水', '癸': '水',
-    };
-
-    const myElement = stemElements[myStem];
-    const partnerElement = stemElements[partnerStem];
-
-    const kangoSets = [['甲', '己'], ['乙', '庚'], ['丙', '辛'], ['丁', '壬'], ['戊', '癸']];
-    const isKango = kangoSets.some(set =>
-        (set[0] === myStem && set[1] === partnerStem) || (set[0] === partnerStem && set[1] === myStem)
-    );
-
-    let score = 50;
-    if (isKango) score += 30;
-    else if (myElement === partnerElement) score += 15;
-    else score += 10;
-
-    score = Math.min(100, Math.max(0, score + Math.floor(Math.random() * 20)));
-
-    const myType = getKanshiPopType(myKanshi);
-    const partnerType = getKanshiPopType(partnerKanshi);
-
-    return {
-        score,
-        scoreLevel: score >= 80 ? '最高の相性！' : score >= 60 ? 'いい感じ！' : score >= 40 ? 'まあまあ' : 'ちょっと...',
-        myType,
-        partnerType,
-        advice: isKango ? '運命的な出会い！お互いを高め合える関係です。' : '刺激し合える関係。違いを楽しんで！',
-    };
-};
+const BACKEND_URL = 'http://localhost:8080'; // TODO: Use environment variable
 
 export default function CompatibilityCard({ insen }: Props) {
+    const router = useRouter();
     const currentYear = new Date().getFullYear();
     const [nickname, setNickname] = useState('');
     const [year, setYear] = useState(1990);
@@ -68,9 +69,11 @@ export default function CompatibilityCard({ insen }: Props) {
     const [day, setDay] = useState(1);
     const [editingField, setEditingField] = useState<'year' | 'month' | 'day' | null>(null);
     const [relationType, setRelationType] = useState<RelationType>('romantic');
-    const [compatibility, setCompatibility] = useState<any>(null);
+    const [compatibility, setCompatibility] = useState<CompatibilityResult | null>(null);
+    const [groupResults, setGroupResults] = useState<MultiPersonComparison | null>(null);
     const [savedPartners, setSavedPartners] = useState<SavedPartner[]>([]);
     const [selectedPartnerIndex, setSelectedPartnerIndex] = useState<number | null>(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     const myKanshi = `${insen.pillars.day.stem}${insen.pillars.day.branch}`;
     const myType = getKanshiPopType(myKanshi);
@@ -87,7 +90,7 @@ export default function CompatibilityCard({ insen }: Props) {
     };
 
     const saveAndDiagnose = async () => {
-        if (savedPartners.length >= 3) return;
+        if (savedPartners.length >= 10) return; // Increased from 3 to 10
 
         const partnerBirthdate = new Date(year, month - 1, day);
         const partnerBazi = calculateBaZi(partnerBirthdate);
@@ -104,7 +107,7 @@ export default function CompatibilityCard({ insen }: Props) {
         await AsyncStorage.setItem(SAVED_PARTNERS_KEY, JSON.stringify(updated));
 
         setSelectedPartnerIndex(updated.length - 1);
-        calculateWithPartner(partnerKanshi);
+        await calculateWithBackend();
         setNickname('');
         setEditingField(null);
     };
@@ -116,17 +119,63 @@ export default function CompatibilityCard({ insen }: Props) {
         if (selectedPartnerIndex === index) {
             setSelectedPartnerIndex(null);
             setCompatibility(null);
+            setGroupResults(null);
         }
     };
 
     const selectPartner = (index: number) => {
         setSelectedPartnerIndex(index);
-        calculateWithPartner(savedPartners[index].kanshi);
+        calculateWithBackend();
     };
 
-    const calculateWithPartner = (partnerKanshi: string) => {
-        const result = calculateCompatibility(myKanshi, partnerKanshi, relationType);
-        setCompatibility(result);
+    const calculateWithBackend = async () => {
+        setIsLoading(true);
+        try {
+            const myBirthDate = await getMyBirthDate();
+            const people = [
+                {
+                    name: 'あなた',
+                    birthDate: myBirthDate,
+                    gender: 'female' as const, // TODO: Get from user profile
+                },
+                ...savedPartners.map(p => ({
+                    name: p.name,
+                    birthDate: `${p.year}-${String(p.month).padStart(2, '0')}-${String(p.day).padStart(2, '0')}`,
+                    gender: 'female' as const, // TODO: Add gender input
+                })),
+            ];
+
+            const response = await fetch(`${BACKEND_URL}/api/compatibility/calculate`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ people }),
+            });
+
+            if (!response.ok) {
+                throw new Error('API request failed');
+            }
+
+            const data = await response.json();
+
+            if (savedPartners.length === 0 || (savedPartners.length === 1 && selectedPartnerIndex === 0)) {
+                setCompatibility(data as CompatibilityResult);
+                setGroupResults(null);
+            } else {
+                setGroupResults(data as MultiPersonComparison);
+                setCompatibility(null);
+            }
+        } catch (error) {
+            console.error('API error:', error);
+            // Fallback to local calculation could go here
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const getMyBirthDate = async (): Promise<string> => {
+        // TODO: Get from AsyncStorage or user profile
+        // For now, return a default date
+        return '1990-01-01';
     };
 
     const getScoreColor = (score: number) => {
@@ -134,6 +183,40 @@ export default function CompatibilityCard({ insen }: Props) {
         if (score >= 60) return '#60A5FA';
         if (score >= 40) return '#FACC15';
         return '#FB7185';
+    };
+
+    const getLevelEmoji = (level: string) => {
+        const emojis: Record<string, string> = {
+            perfect: '💕✨',
+            great: '💗',
+            good: '😊',
+            neutral: '🤝',
+            challenging: '💪',
+        };
+        return emojis[level] || '❓';
+    };
+
+    const navigateToResult = () => {
+        if (!compatibility && !groupResults) return;
+
+        const resultJson = JSON.stringify(compatibility || groupResults);
+        const peopleJson = JSON.stringify([
+            { name: 'あなた', birthDate: '1990-01-01', gender: 'female' },
+            ...savedPartners.map(p => ({
+                name: p.name,
+                birthDate: `${p.year}-${String(p.month).padStart(2, '0')}-${String(p.day).padStart(2, '0')}`,
+                gender: 'female',
+            })),
+        ]);
+
+        router.push({
+            pathname: '/result',
+            params: {
+                type: 'compatibility',
+                result: resultJson,
+                people: peopleJson,
+            },
+        } as any);
     };
 
     const years = Array.from({ length: currentYear - 1920 + 1 }, (_, i) => 1920 + i);
@@ -151,23 +234,26 @@ export default function CompatibilityCard({ insen }: Props) {
             {/* Saved Partners */}
             {savedPartners.length > 0 && (
                 <View className="mb-4">
-                    <Text className="text-sm font-bold text-gray-500 mb-2">保存済み（タップで診断）</Text>
-                    <View className="flex-row gap-2">
+                    <Text className="text-sm font-bold text-gray-500 mb-2">
+                        保存済み {savedPartners.length}/10 (タップで診断)
+                    </Text>
+                    <View className="flex-row gap-2 flex-wrap">
                         {savedPartners.map((partner, index) => {
                             const type = getKanshiPopType(partner.kanshi);
                             return (
                                 <TouchableOpacity
                                     key={index}
                                     onPress={() => selectPartner(index)}
-                                    className="flex-1 p-3"
+                                    className="p-3 mb-2"
                                     style={{
                                         backgroundColor: selectedPartnerIndex === index ? (type?.color || '#fff') : '#fff',
                                         borderWidth: 3,
                                         borderColor: '#333',
                                         borderRadius: 12,
+                                        minWidth: 100,
                                     }}
                                 >
-                                    <View className="flex-row justify-between">
+                                    <View className="flex-row justify-between items-center">
                                         <Text className="text-sm font-bold text-[#333]">{partner.name}</Text>
                                         <TouchableOpacity onPress={() => removePartner(index)}>
                                             <X size={14} color="#333" />
@@ -182,7 +268,7 @@ export default function CompatibilityCard({ insen }: Props) {
             )}
 
             {/* Add New */}
-            {savedPartners.length < 3 && (
+            {savedPartners.length < 10 && (
                 <View
                     className="bg-white p-4 mb-4"
                     style={{
@@ -268,12 +354,20 @@ export default function CompatibilityCard({ insen }: Props) {
                 </View>
             )}
 
-            {/* Result */}
-            {compatibility && (
+            {/* Loading */}
+            {isLoading && (
+                <View className="py-12 items-center">
+                    <ActivityIndicator size="large" color="#FF7E5F" />
+                    <Text className="text-gray-600 font-bold mt-4">診断中...</Text>
+                </View>
+            )}
+
+            {/* Pairwise Result */}
+            {compatibility && !isLoading && (
                 <View
-                    className="p-6 mb-8"
+                    className="p-6 mb-4"
                     style={{
-                        backgroundColor: getScoreColor(compatibility.score),
+                        backgroundColor: getScoreColor(compatibility.scores.overall),
                         borderWidth: 4,
                         borderColor: '#333',
                         borderRadius: 24,
@@ -283,33 +377,103 @@ export default function CompatibilityCard({ insen }: Props) {
                         shadowRadius: 0,
                     }}
                 >
-                    <Text className="text-6xl font-black text-center mb-2">{compatibility.score}</Text>
-                    <Text className="text-2xl font-black text-center text-[#333] mb-4">
-                        {compatibility.scoreLevel}
+                    <Text className="text-6xl font-black text-center mb-2">{compatibility.scores.overall}</Text>
+                    <Text className="text-2xl font-black text-center text-[#333] mb-2">
+                        {getLevelEmoji(compatibility.level)} {compatibility.message}
                     </Text>
 
                     <View className="flex-row items-center justify-center gap-4 mb-4">
                         <View className="items-center">
-                            <Text className="text-4xl">{compatibility.myType?.icon}</Text>
+                            <Text className="text-4xl">{myType?.icon}</Text>
                             <Text className="font-bold text-xs text-[#333]/60">あなた</Text>
                         </View>
                         <Text className="text-3xl">💕</Text>
                         <View className="items-center">
-                            <Text className="text-4xl">{compatibility.partnerType?.icon || '❓'}</Text>
+                            <Text className="text-4xl">{getKanshiPopType(savedPartners[0]?.kanshi || '')?.icon || '❓'}</Text>
                             <Text className="font-bold text-xs text-[#333]/60">相手</Text>
                         </View>
                     </View>
 
+                    {/* Aspect Scores */}
+                    <View className="mb-4">
+                        {[
+                            { label: '恋愛', score: compatibility.scores.love, icon: '💕' },
+                            { label: '仕事', score: compatibility.scores.work, icon: '💼' },
+                            { label: '友情', score: compatibility.scores.friendship, icon: '🤝' },
+                        ].map((aspect) => (
+                            <View key={aspect.label} className="flex-row items-center py-1">
+                                <Text className="text-lg mr-2">{aspect.icon}</Text>
+                                <Text className="flex-1 font-bold text-sm">{aspect.label}</Text>
+                                <Text className="font-bold text-sm">{aspect.score}点</Text>
+                            </View>
+                        ))}
+                    </View>
+
                     <View
-                        className="bg-white/50 p-4"
+                        className="bg-white/50 p-4 mb-4"
                         style={{ borderRadius: 12 }}
                     >
-                        <Text className="font-bold text-[#333] text-center">{compatibility.advice}</Text>
+                        <Text className="font-bold text-[#333] text-center text-sm">{compatibility.advice}</Text>
                     </View>
+
+                    {/* Generate Video Button */}
+                    <TouchableOpacity
+                        onPress={navigateToResult}
+                        className="bg-[#60A5FA] p-3 flex-row items-center justify-center"
+                        style={{ borderRadius: 12, borderWidth: 2, borderColor: '#333' }}
+                    >
+                        <Video size={20} color="#fff" />
+                        <Text className="text-white font-bold ml-2">動画で見る 🎬</Text>
+                    </TouchableOpacity>
                 </View>
             )}
 
-            {!compatibility && (
+            {/* Group Comparison Result */}
+            {groupResults && !isLoading && (
+                <View className="mb-4">
+                    <Text className="text-xl font-bold mb-3">グループ相性ランキング 🏆</Text>
+                    {groupResults.rankings.map((ranking, index) => {
+                        const type = getKanshiPopType(savedPartners.find(p => p.name === ranking.person)?.kanshi || '');
+                        return (
+                            <View
+                                key={index}
+                                className="p-4 mb-2"
+                                style={{
+                                    backgroundColor: index === 0 ? '#A3E635' : '#fff',
+                                    borderWidth: 3,
+                                    borderColor: '#333',
+                                    borderRadius: 12,
+                                }}
+                            >
+                                <View className="flex-row justify-between items-center">
+                                    <View className="flex-row items-center">
+                                        <Text className="text-2xl font-black mr-2">#{index + 1}</Text>
+                                        <Text className="text-lg font-bold">{ranking.person} {type?.icon}</Text>
+                                    </View>
+                                    <View className="items-end">
+                                        <Text className="text-2xl font-black">{ranking.averageScore}点</Text>
+                                        <Text className="text-xs text-gray-600">
+                                            ベスト: {ranking.bestMatch} ({ranking.bestMatchScore}点)
+                                        </Text>
+                                    </View>
+                                </View>
+                            </View>
+                        );
+                    })}
+
+                    {/* Generate Video Button for Group */}
+                    <TouchableOpacity
+                        onPress={navigateToResult}
+                        className="bg-[#60A5FA] p-4 flex-row items-center justify-center mt-4"
+                        style={{ borderRadius: 12, borderWidth: 2, borderColor: '#333' }}
+                    >
+                        <Video size={20} color="#fff" />
+                        <Text className="text-white font-bold ml-2">動画でシェア 🎬</Text>
+                    </TouchableOpacity>
+                </View>
+            )}
+
+            {!compatibility && !groupResults && !isLoading && (
                 <View className="items-center py-12">
                     <Text className="text-5xl mb-4">👆</Text>
                     <Text className="text-gray-500 font-bold text-center">
