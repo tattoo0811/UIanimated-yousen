@@ -152,8 +152,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 08-01: トーン選択システムと翻訳ロジックの実装
-- [ ] 08-02: 3つのトーンパターン（TikTok/YouTube/Instagram）の作成
+- [ ] 08-01-PLAN.md — トーン選択システムと翻訳ロジックの実装
+- [ ] 08-02-PLAN.md — 3つのトーンパターン（TikTok/YouTube/Instagram）の作成
 
 ### Phase 9: Image Generation Prompts
 **Goal**: プリセット画像用の生成AIプロンプトを提供する
