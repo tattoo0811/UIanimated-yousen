@@ -115,11 +115,13 @@
 
 | REQ-ID | Phase | Status |
 |--------|-------|--------|
-| UI-01, UI-02, UI-03 | Phase 1 - カード型UI刷新 | Pending |
-| VID-01, VID-02, VID-03, VID-04, VID-05 | Phase 2 - サーバーサイド動画生成基盤 | Pending |
-| CNT-01, CNT-02, CNT-03 | Phase 3 - コンテンツ翻訳と多トーン対応 | Pending |
-| SHR-01, SHR-02, SHR-03 | Phase 4 - シェア機能と動画再生 | Pending |
-| EXT-01, EXT-02 | Phase 5 - 付加機能とエンゲージメント強化 | Pending |
+| UI-01 | Phase 2 | Complete |
+| UI-02 | Phase 3 | Complete |
+| UI-03 | Phase 2 | Complete |
+| VID-01, VID-02, VID-03, VID-04, VID-05 | Phase 4 - サーバーサイド動画生成基盤 | Pending |
+| CNT-01, CNT-02, CNT-03 | Phase 8 - コンテンツ翻訳と多トーン対応 | Pending |
+| SHR-01, SHR-02, SHR-03 | Phase 6 - シェア機能と動画再生 | Pending |
+| EXT-01, EXT-02 | Phase 10 - 付加機能 | Pending |
 
 ---
 
