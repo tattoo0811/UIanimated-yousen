@@ -5,9 +5,9 @@ import path from 'path';
 interface DeploymentConfig {
   region: string;
   projectName: string;
-  memorySizeInMb?: number;
-  cpuCount?: number;
-  timeoutInSeconds?: number;
+  memoryLimit?: string;
+  cpuLimit?: string;
+  timeoutSeconds?: number;
 }
 
 interface DeploymentResult {
@@ -22,47 +22,51 @@ export const deployCloudRunService = async (
   const {
     region = 'us-central1',
     projectName,
-    memorySizeInMb = 2048,  // 2GiB recommended minimum
-    cpuCount = 2,            // 2 vCPU
-    timeoutInSeconds = 300,  // 5 minutes
+    memoryLimit = '2048Mi',  // 2GiB recommended minimum
+    cpuLimit = '2',            // 2 vCPU
+    timeoutSeconds = 300,      // 5 minutes
   } = config;
 
   // Step 1: Create or get existing GCS bucket
   const {bucketName} = await getOrCreateBucket({
-    region,
+    region: region as any,
   });
 
   // Step 2: Bundle Remotion site
-  const bundlePath = await bundle({
-    entryPoint: path.resolve('./src/index.ts'),
-    webpackConfiguration: (config) => ({
-      ...config,
-      externals: [...(config.externals || []), 'sharp'],
-    }),
-  });
+  await bundle(
+    path.resolve('./src/index.tsx'),
+    undefined,
+    {
+      webpackOverride: (config: any) => ({
+        ...config,
+        externals: [...(config.externals || []), 'sharp'],
+      }),
+    }
+  );
 
   // Step 3: Deploy Cloud Run service
-  const {serviceName, uri} = await deployService({
-    region,
-    memorySizeInMb,
-    cpuCount,
-    timeoutInSeconds,
+  const {fullName, uri} = await deployService({
+    region: region as any,
+    projectID: projectName,
+    memoryLimit,
+    cpuLimit,
+    timeoutSeconds,
   });
 
   // Step 4: Deploy Remotion site bundle
   const {serveUrl} = await deploySite({
-    entryPoint: path.resolve('./src/index.ts'),
+    entryPoint: path.resolve('./src/index.tsx'),
     bucketName,
     siteName: `${projectName}-site`,
   });
 
-  console.log(`Cloud Run service deployed: ${serviceName}`);
+  console.log(`Cloud Run service deployed: ${fullName}`);
   console.log(`Service URI: ${uri}`);
   console.log(`Site deployed: ${serveUrl}`);
   console.log(`Bucket: ${bucketName}`);
 
   return {
-    serviceName,
+    serviceName: fullName || '',
     serveUrl,
     bucketName,
   };
