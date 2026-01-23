@@ -18,6 +18,9 @@
     "ios:export": "xcodebuild -exportArchive -archivePath build/mobile.xcarchive -exportPath build/ipa -exportOptionsPlist ios/ExportOptions.plist"
   },
   "dependencies": {
+    "@expo-google-fonts/m-plus-rounded-1c": "0.4.2",
+    "@expo-google-fonts/noto-sans-jp": "0.4.2",
+    "@expo-google-fonts/noto-serif-jp": "0.4.2",
     "@expo/vector-icons": "^15.0.3",
     "@react-native-async-storage/async-storage": "2.2.0",
     "@react-native-community/datetimepicker": "8.4.4",
