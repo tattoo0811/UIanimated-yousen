@@ -9,18 +9,18 @@ See: .planning/PROJECT.md (updated 2026-01-23)
 
 ## Current Position
 
-Phase: 3 of 11 (Design System)
-Plan: 3 of 3 in current phase
-Status: Phase complete ✓
-Last activity: 2026-01-23 — Completed 03-02B (Theme Selection UI and Integration)
+Phase: 4 of 11 (Video Generation Backend)
+Plan: 1 of 4 in current phase
+Status: Plan 04-01 complete ✓
+Last activity: 2026-01-23 — Completed 04-01 (Backend Project Structure)
 
-Progress: [████░░░░░░] 27%
+Progress: [█████░░░░░] 31%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
-- Average duration: 5.7 min
+- Total plans completed: 8
+- Average duration: 5.5 min
 - Total execution time: 0.7 hours
 
 **By Phase:**
@@ -30,7 +30,7 @@ Progress: [████░░░░░░] 27%
 | 1. Foundation & Code Quality | 0/6 | TBD | - |
 | 2. Card UI Core | 4/4 | 30 min | 7.5 min |
 | 3. Design System | 3/3 | 10 min | 3.3 min |
-| 4. Video Generation Backend | 0/4 | TBD | - |
+| 4. Video Generation Backend | 1/4 | 6 min | 6.0 min |
 | 5. Video Content Integration | 0/2 | TBD | - |
 | 6. Video Playback & Share | 0/2 | TBD | - |
 | 7. Direct Social Sharing | 0/2 | TBD | - |
@@ -40,8 +40,8 @@ Progress: [████░░░░░░] 27%
 | 11. 2026 Year Fortune | 0/2 | TBD | - |
 
 **Recent Trend:**
-- Last 7 plans: 9 min (02-01), 8 min (02-02), 6 min (02-03), 5 min (02-04), 4 min (03-01), 3 min (03-02A), 3 min (03-02B)
-- Trend: Design system complete, moving to Phase 4
+- Last 8 plans: 9 min (02-01), 8 min (02-02), 6 min (02-03), 5 min (02-04), 4 min (03-01), 3 min (03-02A), 3 min (03-02B), 6 min (04-01)
+- Trend: Backend structure complete, moving to video templates
 
 *Updated after each plan completion*
 
@@ -77,6 +77,10 @@ Recent decisions affecting current work:
 - **Japanese Color Integration**: Akane (madder red), kinari-iro (natural cream) in ZenWa for cultural authenticity (03-02A)
 - **SwipeableStack Theme Integration**: Reused SwipeableStack for theme selection UI consistency (03-02B)
 - **Theme-Aware Animations**: SwipeableStack uses theme.animations.spring and theme.animations.swipe for per-theme animation feel (03-02B)
+- **Backend Project Structure**: Node.js 18 + Remotion 4.0 + TypeScript with strict mode for server-side video rendering (04-01)
+- **Cloud Run Integration**: @remotion/cloudrun 4.0.399 for GCP deployment with multi-stage Docker build (04-01)
+- **9:16 Video Format**: 1080x1920, 30fps, 900 frames (30 seconds) for TikTok/Instagram Reels compatibility (04-01)
+- **Zod Validation**: Type-safe composition props with nickname, fortuneData, theme, tone validation (04-01)
 
 ### Pending Todos
 
@@ -93,6 +97,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-23 13:13 UTC
-Stopped at: Completed 03-02B (Theme Selection UI and Integration)
+Last session: 2026-01-23 23:16 UTC
+Stopped at: Completed 04-01 (Backend Project Structure)
 Resume file: None
