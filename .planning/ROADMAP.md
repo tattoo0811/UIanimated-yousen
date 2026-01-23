@@ -166,7 +166,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 09-01: 画像生成プロンプトテンプレートの作成と表示UI
+- [ ] 09-01-PLAN.md — 画像生成プロンプトテンプレートの作成と表示UI
 
 ### Phase 10: Friend Compatibility
 **Goal**: 友達との相性診断機能を実装する
