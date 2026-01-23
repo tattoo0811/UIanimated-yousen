@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
 import { useEffect, useState, useRef } from 'react';
-import { Send, Sparkles, Calendar, ArrowRight } from 'lucide-react-native';
+import { Send, Sparkles, Calendar, ArrowRight, Flame } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
 import { useResponsive } from '@/src/hooks/useResponsive';
 import { loadStorage } from '@/src/lib/storage';
@@ -338,7 +338,7 @@ export default function FortuneTab() {
 
             {/* Zodiac Swipe Entry Card */}
             <View
-                className="mx-4 -mt-2 p-4"
+                className="mx-4 -mt-2 p-4 mb-3"
                 style={{
                     backgroundColor: '#8B5CF6',
                     borderWidth: 3,
@@ -378,6 +378,52 @@ export default function FortuneTab() {
                         }}
                     >
                         <ArrowRight size={20} color="#8B5CF6" />
+                    </View>
+                </TouchableOpacity>
+            </View>
+
+            {/* 2026年運 Entry Card */}
+            <View
+                className="mx-4 p-4 mb-3"
+                style={{
+                    backgroundColor: '#FFD700',
+                    borderWidth: 3,
+                    borderColor: '#333',
+                    borderRadius: 20,
+                    shadowColor: '#000',
+                    shadowOffset: { width: 0, height: 4 },
+                    shadowOpacity: 0.3,
+                    shadowRadius: 8,
+                    elevation: 8,
+                }}
+            >
+                <TouchableOpacity
+                    onPress={() => router.push('/year-fortune')}
+                    className="flex-row items-center justify-between"
+                >
+                    <View className="flex-row items-center gap-3">
+                        <View
+                            className="w-14 h-14 items-center justify-center"
+                            style={{
+                                backgroundColor: 'rgba(26, 10, 10, 0.3)',
+                                borderRadius: 12,
+                            }}
+                        >
+                            <Flame size={28} color="#1A0A0A" />
+                        </View>
+                        <View>
+                            <Text className="font-black text-[#1A0A0A] text-lg">2026年運</Text>
+                            <Text className="text-[#1A0A0A]/70 text-sm">丙午の年の運勢をチェック</Text>
+                        </View>
+                    </View>
+                    <View
+                        className="w-10 h-10 items-center justify-center"
+                        style={{
+                            backgroundColor: '#1A0A0A',
+                            borderRadius: 10,
+                        }}
+                    >
+                        <ArrowRight size={20} color="#FFD700" />
                     </View>
                 </TouchableOpacity>
             </View>

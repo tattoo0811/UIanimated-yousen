@@ -1,6 +1,8 @@
 import {Composition} from 'remotion';
 import {HookComposition} from './compositions/HookComposition';
 import {CompatibilityComposition} from './compositions/CompatibilityComposition';
+import {YearFortuneComposition} from './compositions/YearFortuneComposition';
+import type {YearFortuneResult} from './types/yearFortune';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -39,6 +41,47 @@ export const RemotionRoot: React.FC = () => {
             comparisons: [],
           },
           theme: 'KiraPop',
+          tone: 'TikTok',
+        }}
+      />
+      <Composition
+        id="YearFortune"
+        component={YearFortuneComposition as any}
+        durationInFrames={900}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          nickname: 'テストユーザー',
+          yearFortune: {
+            yearData: {
+              year: 2026,
+              kanshi: '丙午',
+              tenStem: '丙',
+              twelveBranch: '午',
+              element: 'fire',
+              yinYang: 'yang',
+              description: '丙午は火の気が最も強い年です。情熱とエネルギーに満ちた一年となるでしょう。',
+              themes: ['情熱', '変革', '活動的'],
+            },
+            userElement: 'fire',
+            userStem: '丙',
+            compatibilityScore: 95,
+            relationship: 'same',
+            fortune: {
+              overall: '大吉！火の気が強まり、運気上昇的一年です。',
+              love: '恋愛運も上昇。積極的に行動することで良い出会いがありそうです。',
+              work: '仕事ではリーダーシップを発揮する好機です。',
+              health: '活力に満ちていますが、無理は禁物です。',
+              advice: 'この年のエネルギーを活かして、新しいことに挑戦してみましょう！',
+            },
+            highlights: [
+              '火の気が最も強い年で、エネルギー満点',
+              '情熱的な行動が実を結ぶ',
+              'リーダーシップを発揮できるチャンス',
+            ],
+          } as YearFortuneResult,
+          theme: 'HeinoE2026',
           tone: 'TikTok',
         }}
       />
