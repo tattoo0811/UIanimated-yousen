@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import generateRoutes from './routes/generate';
 import statusRoutes from './routes/status';
+import contentRoutes from './routes/content';
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.get('/health', (req, res) => {
 // API routes
 app.use('/api/video', generateRoutes);
 app.use('/api/video', statusRoutes);
+app.use('/api', contentRoutes);
 
 // Error handler
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
