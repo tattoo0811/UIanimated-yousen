@@ -1,7 +1,7 @@
 import {z} from 'zod';
 
 export const themeSchema = z.object({
-  theme: z.enum(['KiraPop', 'MonoEdge', 'ZenWa']),
+  theme: z.enum(['KiraPop', 'MonoEdge', 'ZenWa', 'HeinoE2026']),
   tone: z.enum(['TikTok', 'YouTube', 'Instagram']),
 });
 
@@ -21,6 +21,11 @@ export interface ThemeConfig {
   animations: {
     spring: {damping: number; stiffness: number};
     typingSpeed: number;
+  };
+  glow?: {
+    intensity: 'low' | 'medium' | 'high';
+    color: string;
+    speed: number;
   };
 }
 
@@ -71,6 +76,27 @@ export const themeConfig: Record<VideoTheme['theme'], ThemeConfig> = {
     animations: {
       spring: {damping: 30, stiffness: 80},
       typingSpeed: 12,
+    },
+  },
+  HeinoE2026: {
+    colors: {
+      background: '#1A0A0A',  // Dark red-black base
+      primary: '#FFD700',      // Gold
+      text: '#FFF8E7',         // Cream white
+      accent: '#FF4500',       // Fire red-orange
+    },
+    fonts: {
+      heading: 'Noto Serif JP, serif',
+      body: 'Noto Sans JP, sans-serif',
+    },
+    animations: {
+      spring: {damping: 20, stiffness: 180},
+      typingSpeed: 18,
+    },
+    glow: {
+      intensity: 'high',
+      color: '#FFD700',
+      speed: 2,
     },
   },
 };
