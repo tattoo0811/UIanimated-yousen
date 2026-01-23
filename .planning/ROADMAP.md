@@ -137,8 +137,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 07-01: URLスキームによるTikTok/Instagram連携の実装
-- [ ] 07-02: アップリインストール検出とフォールバック処理
+- [ ] 07-01-PLAN.md — URLスキームによるTikTok/Instagram連携の実装
+- [ ] 07-02-PLAN.md — アプリインストール検出とフォールバック処理
 
 ### Phase 8: Content Translation
 **Goal**: 専門用語をバズりやすい言葉に翻訳するシステムを実装する
