@@ -1,23 +1,21 @@
 ---
 phase: 01-foundation-code-quality
-plan: 03
+plan: 03A
 type: execute
-wave: 2
-depends_on: [01-01, 01-02]
+wave: 3
+depends_on: [01B, 02B]
 files_modified:
   - mobile/package.json
   - mobile/eslint.config.js
   - mobile/jest.config.js
   - mobile/jest.setup.js
-  - mobile/.gitignore
 autonomous: true
 user_setup: []
 
 must_haves:
   truths:
     - "ESLintが実行可能で、プロジェクトルールが適用されている"
-    - "既存の回帰テストが全てパスする"
-    - "テストカバレッジが設定された基準を満たす"
+    - "Jest設定がExpo SDK 54と互換性がある"
     - "lintスクリプトとtestスクリプトが正常に動作する"
   artifacts:
     - path: "mobile/package.json"
@@ -44,10 +42,10 @@ must_haves:
 ---
 
 <objective>
-ESLint/テスト基盤を強化し、既存機能の回帰を検証する
+ESLint/テスト基盤を構築する（パート1: 設定）
 
-Purpose: コード品質を維持するためのLint基盤を確立し、既存機能が正しく動作していることをテストで検証する。Expo公式のESLint設定を適用し、Jestテストが正しく実行されることを確認する。
-Output: ESLint設定、実行中のJestテスト、テストカバレッジレポート
+Purpose: コード品質を維持するためのLint基盤を確立し、Jestテストが正しく実行されるように設定を整える。Expo公式のESLint設定を適用し、Jest設定をExpo SDK 54と互換性がある状態にする。
+Output: ESLint設定、更新されたJest設定、npmスクリプト
 </objective>
 
 <execution_context>
@@ -135,69 +133,20 @@ Output: ESLint設定、実行中のJestテスト、テストカバレッジレ�
   <done>Jest設定がExpo SDK 54と互換性がある</done>
 </task>
 
-<task type="auto">
-  <name>Task 5: Jest setupを拡張</name>
-  <files>mobile/jest.setup.js</files>
-  <action>
-    jest.setup.jsに@testing-library/jest-nativeを追加していない場合は追加。
-    1. 先頭に`import '@testing-library/jest-native/extend-expect';`を追加
-    2. ネイティブモジュールのモックが適切に設定されていることを確認
-  </action>
-  <verify>grep -q "@testing-library/jest-native/extend-expect" mobile/jest.setup.js</verify>
-  <done>jest.setup.jsにテストライブラリ拡張が含まれている</done>
-</task>
-
-<task type="auto">
-  <name>Task 6: 既存テストを実行して回帰を検証</name>
-  <files>mobile/__tests__/**/*</files>
-  <action>
-    `npm test`を実行して全ての既存テストがパスすることを確認。
-    失敗するテストがある場合は、01-01または01-02の変更による影響を確認し修正。
-  </action>
-  <verify>npm test exits with code 0 and all tests pass</verify>
-  <done>全ての既存テストがパスする</done>
-</task>
-
-<task type="auto">
-  <name>Task 7: テストカバレッジを確認</name>
-  <files>mobile/jest.config.js</files>
-  <action>
-    `npm run test:coverage`を実行してカバレッジレポートを生成。
-    設定されたカバレッジ基準（80%）を満たしているか確認。
-    不足している場合は、どのファイルのカバレッジを追加すべきかログに記録。
-  </action>
-  <verify>npm run test:coverage generates coverage report</verify>
-  <done>テストカバレッジレポートが生成され、現状のカバレッジが確認できた</done>
-</task>
-
-<task type="auto">
-  <name>Task 8: .gitignoreを確認</name>
-  <files>mobile/.gitignore</files>
-  <action>
-    .gitignoreにcoverage/とdist/が含まれていることを確認。
-    含まれていない場合は追加。
-  </action>
-  <verify>grep -q "coverage" mobile/.gitignore && grep -q "dist" mobile/.gitignore</verify>
-  <done>テスト生成物がGitにコミットされないよう設定済み</done>
-</task>
-
 </tasks>
 
 <verification>
 1. `npm run lint` が正常に実行できること
-2. `npm test` が全てパスすること
-3. `npm run test:coverage` でカバレッジレポートが生成されること
-4. jest.setup.jsに@testing-library/jest-nativeが含まれていること
-5. .gitignoreにcoverage/が含まれていること
+2. jest.config.jsにjest-expo設定が含まれていること
+3. eslint.config.jsが存在し、Expo設定が読み込まれていること
 </verification>
 
 <success_criteria>
 1. ESLintが実行可能で、重大なエラーがない
-2. 既存の回帰テスト（17個）が全てパス
-3. テストカバレッジレポートが生成可能
-4. lint/testスクリプトがpackage.jsonに登録されている
+2. Jest設定がExpo SDK 54と互換性がある
+3. lintスクリプトがpackage.jsonに登録されている
 </success_criteria>
 
 <output>
-After completion, create `.planning/phases/01-foundation-code-quality/01-03-SUMMARY.md`
+After completion, create `.planning/phases/01-foundation-code-quality/01-03A-SUMMARY.md`
 </output>

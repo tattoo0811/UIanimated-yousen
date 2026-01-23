@@ -1,23 +1,21 @@
 ---
 phase: 01-foundation-code-quality
-plan: 02
+plan: 02A
 type: execute
 wave: 1
 depends_on: []
 files_modified:
-  - mobile/src/data/viral-characters.ts
-  - mobile/src/data/viral-characters.json
   - mobile/src/data/viral-characters.types.ts
+  - mobile/src/data/viral-characters.json
   - mobile/src/lib/viral-characters-loader.ts
 autonomous: true
 user_setup: []
 
 must_haves:
   truths:
-    - "viral-characters.tsがJavaScriptバンドルに含まれない"
-    - "データはJSONアセットとして外部化されている"
-    - "動的読み込みでキャッシュ機能が実装されている"
-    - "バンドルサイズが削減されている"
+    - "型定義ファイルが作成されている"
+    - "データがJSONアセットとして外部化されている"
+    - "動的読み込みローダーが実装されている"
   artifacts:
     - path: "mobile/src/data/viral-characters.json"
       provides: "バイラルキャラクターの静的データ"
@@ -33,17 +31,13 @@ must_haves:
       to: "mobile/src/data/viral-characters.json"
       via: "expo-asset for dynamic loading"
       pattern: "Asset.fromModule.*viral-characters"
-    - from: "mobile/src/components/cards/*.tsx"
-      to: "mobile/src/lib/viral-characters-loader.ts"
-      via: "import loadViralCharacters function"
-      pattern: "loadViralCharacters.*await"
 ---
 
 <objective>
-viral-characters.ts（72KB、1,093行）を外部JSONアセット化し、バンドルサイズを削減する
+viral-characters.ts（72KB、1,093行）を型定義・JSON・ローダーに分割する（パート1）
 
-Purpose: 現在JavaScriptバンドルに含まれている大規模データファイルを静的アセットとして分離し、初期バンドルサイズを削減する。expo-assetを使用した動的読み込みとメモリキャッシュを実装して、パフォーマンスを維持する。
-Output: JSONアセットファイル、型定義ファイル、ローダー関数、バンドルサイズ削減
+Purpose: 現在JavaScriptバンドルに含まれている大規模データファイルを、型定義・JSONデータ・動的ローダーの3ファイルに分割する。この計画では型定義作成、JSON変換、ローダー実装を行う。
+Output: 型定義ファイル、JSONアセットファイル、ローダー関数
 </objective>
 
 <execution_context>
@@ -120,67 +114,20 @@ Output: JSONアセットファイル、型定義ファイル、ローダー関�
   <done>loadViralCharacters関数が実装され、expo-assetで動的読み込みが可能</done>
 </task>
 
-<task type="auto">
-  <name>Task 4: 既存のimportを置き換え</name>
-  <files>
-    mobile/src/components/cards/FamilyCard.tsx
-    mobile/src/components/cards/LoveCard.tsx
-    mobile/src/components/cards/WorkCard.tsx
-  </files>
-  <action>
-    viral-characters.tsの直接importをloadViralCharacters関数に置き換え。
-    1. 既存の`import { viralCharactersData }`を削除
-    2. `import { loadViralCharacters }`と`import type { ViralCharacterData }`を追加
-    3. データ使用箇所で`await loadViralCharacters()`を呼び出し
-    4. 必要に応じてuseEffectまたはasync関数内で呼び出し
-  </action>
-  <verify>grep -r "from.*viral-characters" mobile/src/components/cards/ shows only type imports or loader imports</verify>
-  <done>直接のデータimportが削除され、動的ローダー経由に置き換わっている</done>
-</task>
-
-<task type="auto">
-  <name>Task 5: 元のviral-characters.tsを削除</name>
-  <files>mobile/src/data/viral-characters.ts</files>
-  <action>
-    型定義とデータが分離されたため、元のviral-characters.tsファイルを削除。
-    バックアップとして.gitの歴史は残すが、作業コピーからは削除。
-  </action>
-  <verify>test ! -f mobile/src/data/viral-characters.ts && ls mobile/src/data/viral-characters.* | wc -l | grep -q 2</verify>
-  <done>viral-characters.tsが削除され、.jsonと.types.tsのみが存在</done>
-</task>
-
-<task type="auto">
-  <name>Task 6: バンドルサイズを確認</name>
-  <files>mobile/package.json</files>
-  <action>
-    バンドルサイズ削減を確認。
-    1. `npx expo export`を実行してバンドルを生成
-    2. 生成されたバンドルサイズを確認
-    3. viral-charactersデータがメインバンドルに含まれていないことを確認
-    （このタスクは検証用）
-  </action>
-  <verify>bundle size is reduced and viral-characters.json is in assets folder, not in main bundle</verify>
-  <done>バンドルサイズが削減され、データが外部アセットとして分離されている</done>
-</task>
-
 </tasks>
 
 <verification>
-1. `mobile/src/data/viral-characters.ts` が削除されていること
+1. `mobile/src/data/viral-characters.types.ts` が型定義をエクスポートしていること
 2. `mobile/src/data/viral-characters.json` が存在し、有効なJSONであること
-3. `mobile/src/data/viral-characters.types.ts` が型定義をエクスポートしていること
-4. `mobile/src/lib/viral-characters-loader.ts` がloadViralCharacters関数をエクスポートしていること
-5. 既存のコンポーネントがloadViralCharactersを使用していること
-6. ビルドが正常に完了すること
+3. `mobile/src/lib/viral-characters-loader.ts` がloadViralCharacters関数をエクスポートしていること
 </verification>
 
 <success_criteria>
-1. viral-characters.ts（72KB）がJavaScriptバンドルから除外
-2. データがviral-characters.jsonとして静的アセット化
-3. 動的読み込み（loadViralCharacters）が実装され、キャッシュ機能が動作
-4. 既存機能が正常に動作し、回帰がない
+1. 型定義ファイルが作成されている
+2. データがJSON形式で出力されている
+3. 動的ローダー関数が実装されている
 </success_criteria>
 
 <output>
-After completion, create `.planning/phases/01-foundation-code-quality/01-02-SUMMARY.md`
+After completion, create `.planning/phases/01-foundation-code-quality/01-02A-SUMMARY.md`
 </output>

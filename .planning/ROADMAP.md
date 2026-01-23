@@ -34,12 +34,15 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. ビルドがエラーなく通過する（iOS/Android両方）
   4. ESLintルールが適用され、コード品質が向上する
   5. 既存機能の回帰テストがパスする
-**Plans**: 3 plans
+**Plans**: 6 plans
 
 Plans:
-- [ ] 01-01: TypeScript strict modeの有効化と型エラー修正
-- [ ] 01-02: viral-characters.tsの外部化とバンドルサイズ最適化
-- [ ] 01-03: ESLint/テスト基盤の強化と既存機能の検証
+- [ ] 01-01A: lib/*配下のTypeScript strict modeエラー修正（types, storage, cache, monitoring, share, migrations）
+- [ ] 01-01B: components/*とその他のTypeScript strict modeエラー修正（notifications, cards, settings）
+- [ ] 01-02A: viral-characters.tsの型定義・JSON・ローダーへの分割
+- [ ] 01-02B: 既存コンポーネントの動的ローダー移行とviral-characters.ts削除
+- [ ] 01-03A: ESLint/テスト基盤の構築（設定ファイル作成）
+- [ ] 01-03B: Jestテスト実行と既存機能の回帰検証
 
 ### Phase 2: Card UI Core
 **Goal**: スクロールレスなカードベースのUIを実装する
@@ -132,7 +135,7 @@ Plans:
 
 Plans:
 - [ ] 07-01: URLスキームによるTikTok/Instagram連携の実装
-- [ ] 07-02: アップルインストール検出とフォールバック処理
+- [ ] 07-02: アップリインストール検出とフォールバック処理
 
 ### Phase 8: Content Translation
 **Goal**: 専門用語をバズりやすい言葉に翻訳するシステムを実装する
@@ -198,7 +201,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Code Quality | 0/3 | Not started | - |
+| 1. Foundation & Code Quality | 0/6 | Not started | - |
 | 2. Card UI Core | 0/2 | Not started | - |
 | 3. Design System | 0/2 | Not started | - |
 | 4. Video Generation Backend | 0/4 | Not started | - |
