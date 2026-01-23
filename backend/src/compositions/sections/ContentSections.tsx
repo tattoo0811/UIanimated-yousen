@@ -1,13 +1,13 @@
 import React from 'react';
 import {TypingText} from '../TypingText';
 import {TransitionEffect} from './TransitionEffect';
-import {useTheme} from '../themes/themeConfig';
+import {useTheme, type VideoTheme} from '../themes/themeConfig';
 
 interface SectionProps {
   title: string;
   content: string;
   speed: number;
-  theme: 'KiraPop' | 'MonoEdge' | 'ZenWa';
+  theme: VideoTheme['theme'];
   triggerFrame?: number; // When transition starts
 }
 
