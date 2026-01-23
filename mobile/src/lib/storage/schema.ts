@@ -1,9 +1,11 @@
 /**
  * Storage Schema Version 2
- * 
+ *
  * データバージョニングシステム
  * アプリアップデート時のデータ互換性を保証
  */
+
+import type { CalculationResult } from '../../types';
 
 export const STORAGE_VERSION = 2;
 
@@ -20,8 +22,9 @@ export interface FortuneResult {
     id: string;
     birthDate: string;
     resultType: string;
-    resultData: any;
+    resultData: CalculationResult | null;
     createdAt: number;
+    nickname?: string;  // ユーザーのニックネーム（タイピング演出用）
 }
 
 export interface UserSettings {

@@ -1,6 +1,7 @@
 import { View, Text, ScrollView, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
 import { useEffect, useState, useRef } from 'react';
-import { Send, Sparkles, Calendar } from 'lucide-react-native';
+import { Send, Sparkles, Calendar, ArrowRight } from 'lucide-react-native';
+import { useRouter } from 'expo-router';
 import { useResponsive } from '@/src/hooks/useResponsive';
 import { loadStorage } from '@/src/lib/storage';
 import type { CalculationResult } from '@/src/types';
@@ -17,6 +18,7 @@ interface Message {
 type TabType = 'daily' | 'weekly' | 'chat';
 
 export default function FortuneTab() {
+    const router = useRouter();
     const { contentPadding, fontSize } = useResponsive();
     const [activeTab, setActiveTab] = useState<TabType>('daily');
     const [result, setResult] = useState<CalculationResult | null>(null);
@@ -332,6 +334,52 @@ export default function FortuneTab() {
                         </TouchableOpacity>
                     </View>
                 </View>
+            </View>
+
+            {/* Zodiac Swipe Entry Card */}
+            <View
+                className="mx-4 -mt-2 p-4"
+                style={{
+                    backgroundColor: '#8B5CF6',
+                    borderWidth: 3,
+                    borderColor: '#fff',
+                    borderRadius: 20,
+                    shadowColor: '#000',
+                    shadowOffset: { width: 0, height: 4 },
+                    shadowOpacity: 0.3,
+                    shadowRadius: 8,
+                    elevation: 8,
+                }}
+            >
+                <TouchableOpacity
+                    onPress={() => router.push('/zodiac-select')}
+                    className="flex-row items-center justify-between"
+                >
+                    <View className="flex-row items-center gap-3">
+                        <View
+                            className="w-14 h-14 items-center justify-center"
+                            style={{
+                                backgroundColor: 'rgba(255,255,255,0.2)',
+                                borderRadius: 12,
+                            }}
+                        >
+                            <Sparkles size={28} color="#fff" />
+                        </View>
+                        <View>
+                            <Text className="font-black text-white text-lg">干支スワイプ占い</Text>
+                            <Text className="text-white/80 text-sm">スワイプして運勢をチェック</Text>
+                        </View>
+                    </View>
+                    <View
+                        className="w-10 h-10 items-center justify-center"
+                        style={{
+                            backgroundColor: '#fff',
+                            borderRadius: 10,
+                        }}
+                    >
+                        <ArrowRight size={20} color="#8B5CF6" />
+                    </View>
+                </TouchableOpacity>
             </View>
 
             {/* Tab Content */}

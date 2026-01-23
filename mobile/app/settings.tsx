@@ -3,12 +3,14 @@ import { Stack, useRouter } from 'expo-router';
 import { ArrowLeft, Crown, Settings as SettingsIcon, Trash2 } from 'lucide-react-native';
 import { usePurchases } from '@/src/hooks/usePurchases';
 import { resetUsageCounts, getUsageCounts } from '@/src/utils/usage';
+import type { UsageCounts } from '@/src/utils/usage';
 import { useState, useEffect } from 'react';
+import { ThemePicker } from '@/src/components/ThemePicker';
 
 export default function SettingsScreen() {
     const router = useRouter();
     const { isPremium, enablePremium, disablePremium } = usePurchases();
-    const [usageCounts, setUsageCounts] = useState({ diagnoses: 0, compatibility: [] });
+    const [usageCounts, setUsageCounts] = useState<UsageCounts>({ diagnoses: 0, compatibility: [], lastReset: new Date().toISOString() });
 
     useEffect(() => {
         loadUsage();
@@ -79,6 +81,13 @@ export default function SettingsScreen() {
                             </Text>
                         </View>
                     )}
+                </View>
+
+                {/* Theme Selection */}
+                <View className="bg-surface-dark rounded-2xl p-6 mb-6">
+                    <Text className="text-white text-lg font-bold mb-2">テーマ選択</Text>
+                    <Text className="text-white/60 text-sm mb-4">スワイプしてテーマを選択</Text>
+                    <ThemePicker />
                 </View>
 
                 {/* Usage Stats */}

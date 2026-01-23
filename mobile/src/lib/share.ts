@@ -129,8 +129,8 @@ async function shareNative(content: ShareContent): Promise<boolean> {
                     url: content.url || '',
                 });
                 return true;
-            } catch (error: any) {
-                if (error.name !== 'AbortError') {
+            } catch (error: unknown) {
+                if (error instanceof Error && error.name !== 'AbortError') {
                     console.error('Failed to share:', error);
                 }
                 return false;

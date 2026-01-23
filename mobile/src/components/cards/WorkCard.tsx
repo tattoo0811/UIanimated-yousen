@@ -46,7 +46,7 @@ export default function WorkCard({ insen }: Props) {
             const kanshi = `${dayStem}${dayBranch}`;
 
             // ローカルアドバイス生成
-            const adviceText = getWorkAdvice(kanshi, insen.meta.characterName);
+            const adviceText = getWorkAdvice(kanshi);
             setAdvice(adviceText);
         } catch (error) {
             console.error('Failed to generate advice:', error);

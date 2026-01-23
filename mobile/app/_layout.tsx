@@ -8,26 +8,32 @@ import { View, ActivityIndicator, Platform } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ErrorBoundary } from '@/src/components/ErrorBoundary';
+import { ThemeProvider, useTheme } from '@/src/contexts/ThemeContext';
 import { updateNotificationSchedule, setupNotificationHandlers } from '@/src/lib/notifications';
 import '../global.css';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
-export default function RootLayout() {
+/**
+ * RootLayoutInner component
+ * Handles font loading, theme loading, and splash screen coordination.
+ */
+function RootLayoutInner() {
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     Tamanegi: require('../assets/fonts/Tamanegi.ttf'),
   });
+  const { isLoading: themeLoading } = useTheme();
 
   // ナビゲーション状態を確認
   const rootNavigationState = useRootNavigationState();
 
   useEffect(() => {
-    if (loaded && rootNavigationState?.key) {
+    if (loaded && !themeLoading && rootNavigationState?.key) {
       SplashScreen.hideAsync();
     }
-  }, [loaded, rootNavigationState?.key]);
+  }, [loaded, themeLoading, rootNavigationState?.key]);
 
   // 通知の初期設定
   useEffect(() => {
@@ -52,8 +58,8 @@ export default function RootLayout() {
     });
   }, []);
 
-  // フォントがまだ読み込まれていない場合
-  if (!loaded) {
+  // フォントまたはテーマがまだ読み込まれていない場合
+  if (!loaded || themeLoading) {
     return null;
   }
 
@@ -67,22 +73,34 @@ export default function RootLayout() {
   }
 
   return (
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        contentStyle: { backgroundColor: '#FFF9E6' },
+        animation: 'slide_from_right',
+      }}
+    />
+  );
+}
+
+/**
+ * Root layout component
+ * Wraps app with providers and manages global state.
+ */
+export default function RootLayout() {
+  return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <ErrorBoundary>
-          <Stack
-            screenOptions={{
-              headerShown: false,
-              contentStyle: { backgroundColor: '#FFF9E6' },
-              animation: 'slide_from_right',
-            }}
-          />
-          <StatusBar
-            style="dark"
-            backgroundColor={Platform.OS === 'android' ? '#FFF9E6' : undefined}
-            translucent={Platform.OS === 'android' ? false : true}
-          />
-        </ErrorBoundary>
+        <ThemeProvider>
+          <ErrorBoundary>
+            <RootLayoutInner />
+            <StatusBar
+              style="dark"
+              backgroundColor={Platform.OS === 'android' ? '#FFF9E6' : undefined}
+              translucent={Platform.OS === 'android' ? false : true}
+            />
+          </ErrorBoundary>
+        </ThemeProvider>
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );

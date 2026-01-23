@@ -4,14 +4,44 @@ import { BlurView } from 'expo-blur';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Sparkles } from 'lucide-react-native';
 import { ZodiacSign } from '../lib/zodiac';
+import Animated, {
+    useSharedValue,
+    useAnimatedStyle,
+    runOnJS,
+    withSpring
+} from 'react-native-reanimated';
+import { GestureDetector, Gesture } from 'react-native-gesture-handler';
+import { useHapticFeedback } from '../hooks/useHapticFeedback';
 
 interface ZodiacCardProps {
     sign: ZodiacSign;
     active?: boolean;
+    onPress?: () => void;
 }
 
-export function ZodiacCard({ sign, active }: ZodiacCardProps) {
-    return (
+export function ZodiacCard({ sign, active, onPress }: ZodiacCardProps) {
+    const scale = useSharedValue(1);
+    const { light } = useHapticFeedback();
+
+    const tapGesture = Gesture.Tap()
+        .onStart(() => {
+            'worklet';
+            scale.value = withSpring(0.95, { damping: 15, stiffness: 400 });
+        })
+        .onEnd(() => {
+            'worklet';
+            scale.value = withSpring(1, { damping: 15, stiffness: 400 });
+            if (onPress) {
+                runOnJS(onPress)();
+            }
+            runOnJS(light)();
+        });
+
+    const animatedStyle = useAnimatedStyle(() => ({
+        transform: [{ scale: scale.value }],
+    }));
+
+    const content = (
         <View className="relative w-full h-full rounded-3xl overflow-hidden bg-slate-900 border border-white/10 shadow-sm shadow-black/50">
 
             {/* Background decoration - simulated as absolute views */}
@@ -59,6 +89,19 @@ export function ZodiacCard({ sign, active }: ZodiacCardProps) {
             </BlurView>
         </View>
     );
+
+    // Only enable tap gesture when onPress is provided
+    if (onPress) {
+        return (
+            <GestureDetector gesture={tapGesture}>
+                <Animated.View style={animatedStyle} className="w-full h-full">
+                    {content}
+                </Animated.View>
+            </GestureDetector>
+        );
+    }
+
+    return content;
 }
 
 const zodiacStyles = StyleSheet.create({

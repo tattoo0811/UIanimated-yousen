@@ -35,7 +35,7 @@ class MonitoringService {
     }
 
     // エラー記録
-    recordError(error: Error, context?: Record<string, any>) {
+    recordError(error: Error, context?: Record<string, string>) {
         if (__DEV__) {
             console.error('[Monitoring] Error:', error, context);
             return;
@@ -70,7 +70,7 @@ class MonitoringService {
     }
 
     // イベント計測
-    async logEvent(eventName: string, params?: Record<string, any>) {
+    async logEvent(eventName: string, params?: Record<string, string | number>) {
         if (__DEV__) {
             console.log(`[Monitoring] Event: ${eventName}`, params);
             return;

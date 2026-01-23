@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
-import { Calendar, ArrowRight, RefreshCw } from 'lucide-react-native';
+import { Calendar, ArrowRight, RefreshCw, Sparkles } from 'lucide-react-native';
 import { useEffect, useState } from 'react';
 import { loadStorage } from '@/src/lib/storage';
 import { useResponsive } from '@/src/hooks/useResponsive';
@@ -116,6 +116,25 @@ export default function DiagnosisTab() {
                         </View>
                     ))}
                 </View>
+
+                {/* Zodiac Swipe Link */}
+                <TouchableOpacity
+                    onPress={() => router.push('/zodiac-select')}
+                    className="flex-row items-center justify-center gap-2 p-4 mb-6"
+                    style={{
+                        backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                        borderWidth: 2,
+                        borderColor: '#8B5CF6',
+                        borderRadius: 16,
+                        width: cardWidth,
+                    }}
+                >
+                    <Sparkles size={18} color="#8B5CF6" />
+                    <Text className="font-bold" style={{ color: '#8B5CF6', fontSize: fontSize.sm }}>
+                        まずは干支を選んでみる
+                    </Text>
+                    <ArrowRight size={18} color="#8B5CF6" />
+                </TouchableOpacity>
 
                 {/* Start Button */}
                 {!hasResult ? (

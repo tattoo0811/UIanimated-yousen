@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import { View, StyleSheet } from 'react-native';
-import { Sparkles, Zap, Heart, MessageCircle } from 'lucide-react-native';
+import { Sparkles, Zap, Heart, MessageCircle, Star } from 'lucide-react-native';
 
 function TabBarIcon({ icon: Icon, focused }: { icon: any; focused: boolean; color: string }) {
     return (
@@ -64,6 +64,15 @@ export default function TabLayout() {
                     title: '占い',
                     tabBarIcon: ({ focused, color }) => (
                         <TabBarIcon icon={MessageCircle} focused={focused} color={color} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="yosen"
+                options={{
+                    title: '陽占',
+                    tabBarIcon: ({ focused, color }) => (
+                        <TabBarIcon icon={Star} focused={focused} color={color} />
                     ),
                 }}
             />

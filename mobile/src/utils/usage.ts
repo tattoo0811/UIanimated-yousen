@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const USAGE_KEY = 'usage_counts';
 const FREE_LIMIT = 3;
 
-interface UsageCounts {
+export interface UsageCounts {
     diagnoses: number;
     compatibility: string[]; // Array of partner kanshi
     lastReset: string;

@@ -1,4 +1,3 @@
-import { memoizeSimple } from '../cache';
 import type { FourPillars, YangSen } from '@/src/types';
 import {
     STEM_TO_INDEX,
@@ -76,7 +75,21 @@ function getTenGreatStarRaw(dayStemIdx: number, targetStemIdx: number): string {
     return TEN_STARS[index];
 }
 
-export const getTenGreatStar = memoizeSimple(getTenGreatStarRaw);
+// 二つの数値引数を取る関数専用のメモ化
+const twoArgMemoCache = new Map<string, string>();
+function memoizeTwoNumberArgs<T extends (a: number, b: number) => string>(fn: T): T {
+    return ((a: number, b: number): string => {
+        const key = `${a},${b}`;
+        if (twoArgMemoCache.has(key)) {
+            return twoArgMemoCache.get(key)!;
+        }
+        const result = fn(a, b);
+        twoArgMemoCache.set(key, result);
+        return result;
+    }) as T;
+}
+
+export const getTenGreatStar = memoizeTwoNumberArgs(getTenGreatStarRaw);
 
 /**
  * 十二大従星を算出

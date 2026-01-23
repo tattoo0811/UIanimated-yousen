@@ -13,9 +13,11 @@ import Animated, {
 } from 'react-native-reanimated';
 import { ZodiacSign } from '../lib/zodiac';
 import { ZodiacCard } from './ZodiacCard';
+import { useHapticFeedback } from '../hooks/useHapticFeedback';
+import { useTheme } from '../hooks/useTheme';
+import { SWIPE_CONFIG } from '../lib/animations';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
-const SWIPE_THRESHOLD = SCREEN_WIDTH * 0.25;
 
 interface SwipeableStackProps {
     signs: ZodiacSign[];
@@ -26,13 +28,32 @@ interface SwipeableStackProps {
 export function SwipeableStack({ signs, onSwipeComplete, onSelect }: SwipeableStackProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const translationX = useSharedValue(0);
+    const contextX = useSharedValue(0);  // Add context for smooth dragging
+    const { success, selection } = useHapticFeedback();
+    const { theme } = useTheme();
+
+    // Use theme-based animations with fallback to SWIPE_CONFIG
+    const animations = theme.animations || SWIPE_CONFIG;
+    const springConfig = animations.spring || SWIPE_CONFIG.SPRING_CONFIG;
+    const swipeConfig = animations.swipe || {
+        maxRotation: SWIPE_CONFIG.MAX_ROTATION,
+        scaleAmount: SWIPE_CONFIG.NEXT_CARD_SCALE.max,
+        fadeSpeed: SWIPE_CONFIG.NEXT_CARD_OPACITY.max,
+    };
 
     const activeCard = signs[currentIndex % signs.length];
     const nextCard = signs[(currentIndex + 1) % signs.length];
 
     const handleSwipeComplete = (direction: 'left' | 'right') => {
-        if (direction === 'right' && onSelect) {
-            onSelect(activeCard);
+        // 右スワイプ（選択）時は成功フィードバック
+        if (direction === 'right') {
+            success();
+            if (onSelect) {
+                onSelect(activeCard);
+            }
+        } else {
+            // 左スワイプ（スキップ）時は選択フィードバック
+            selection();
         }
         if (onSwipeComplete) {
             onSwipeComplete(activeCard);
@@ -42,31 +63,55 @@ export function SwipeableStack({ signs, onSwipeComplete, onSelect }: SwipeableSt
     };
 
     const pan = Gesture.Pan()
+        .onStart(() => {
+            'worklet';
+            // Initialize context to prevent jumps during dragging
+            contextX.value = translationX.value;
+        })
         .onUpdate((event) => {
-            translationX.value = event.translationX;
+            'worklet';
+            // Calculate relative position from context
+            translationX.value = contextX.value + event.translationX;
         })
         .onEnd((event) => {
-            if (event.translationX > SWIPE_THRESHOLD) {
-                // Swipe Right
-                translationX.value = withTiming(SCREEN_WIDTH * 1.5, {}, () => {
-                    runOnJS(handleSwipeComplete)('right');
-                });
-            } else if (event.translationX < -SWIPE_THRESHOLD) {
-                // Swipe Left
-                translationX.value = withTiming(-SCREEN_WIDTH * 1.5, {}, () => {
-                    runOnJS(handleSwipeComplete)('left');
-                });
+            'worklet';
+            const isSwipeRight =
+                event.translationX > SWIPE_CONFIG.THRESHOLD ||
+                event.velocityX > SWIPE_CONFIG.VELOCITY_THRESHOLD;
+            const isSwipeLeft =
+                event.translationX < -SWIPE_CONFIG.THRESHOLD ||
+                event.velocityX < -SWIPE_CONFIG.VELOCITY_THRESHOLD;
+
+            if (isSwipeRight) {
+                // Swipe Right - fly off to right (use theme spring config)
+                translationX.value = withSpring(
+                    SCREEN_WIDTH * 2,
+                    springConfig,
+                    () => {
+                        runOnJS(handleSwipeComplete)('right');
+                    }
+                );
+            } else if (isSwipeLeft) {
+                // Swipe Left - fly off to left (use theme spring config)
+                translationX.value = withSpring(
+                    -SCREEN_WIDTH * 2,
+                    springConfig,
+                    () => {
+                        runOnJS(handleSwipeComplete)('left');
+                    }
+                );
             } else {
-                // Reset
-                translationX.value = withSpring(0);
+                // Reset - spring back to center (use theme spring config)
+                translationX.value = withSpring(0, springConfig);
             }
         });
 
     const activeCardStyle = useAnimatedStyle(() => {
+        // Rotation interpolation based on screen width (use theme swipe config)
         const rotate = interpolate(
             translationX.value,
-            [-200, 200],
-            [-25, 25],
+            [-SWIPE_CONFIG.ANIMATION_DISTANCE, 0, SWIPE_CONFIG.ANIMATION_DISTANCE],
+            [-swipeConfig.maxRotation, 0, swipeConfig.maxRotation],
             Extrapolation.CLAMP
         );
 
@@ -79,22 +124,26 @@ export function SwipeableStack({ signs, onSwipeComplete, onSelect }: SwipeableSt
     });
 
     const nextCardStyle = useAnimatedStyle(() => {
+        // Scale based on swipe distance (use theme swipe config)
         const scale = interpolate(
             Math.abs(translationX.value),
-            [0, SCREEN_WIDTH],
-            [0.9, 1],
+            [0, SWIPE_CONFIG.ANIMATION_DISTANCE / 2],  // Adjusted to react faster
+            [1, swipeConfig.scaleAmount],  // Use theme scaleAmount
             Extrapolation.CLAMP
         );
 
+        // Opacity based on swipe distance (use theme swipe config)
         const opacity = interpolate(
             Math.abs(translationX.value),
-            [0, SCREEN_WIDTH / 2],
-            [0.5, 1],
+            [0, SWIPE_CONFIG.ANIMATION_DISTANCE / 4],  // Fade in faster
+            [0, swipeConfig.fadeSpeed],  // Use theme fadeSpeed
             Extrapolation.CLAMP
         );
 
         return {
-            transform: [{ scale }],
+            transform: [
+                { scale }
+            ],
             opacity: opacity
         };
     });
@@ -108,7 +157,7 @@ export function SwipeableStack({ signs, onSwipeComplete, onSelect }: SwipeableSt
     }));
 
     return (
-        <View className="relative w-full h-[600px] items-center justify-center">
+        <View className="relative w-full flex-1 items-center justify-center bg-slate-950">
             {/* Next Card (Background) */}
             <Animated.View className="absolute w-full max-w-sm h-[500px]" style={nextCardStyle} key={`next-${nextCard.id}`}>
                 <ZodiacCard sign={nextCard} />

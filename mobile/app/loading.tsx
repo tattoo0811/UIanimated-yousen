@@ -60,12 +60,15 @@ export default function LoadingScreen() {
       // 結果ID生成
       const resultId = `result_${Date.now()}`;
 
+      const nickname = params.nickname as string;
+
       const newFortuneResult = {
         id: resultId,
         birthDate: fullDateTime.toISOString(),
         resultType: 'diagnosis',
         resultData: result,
-        createdAt: Date.now()
+        createdAt: Date.now(),
+        nickname: nickname || undefined,
       };
 
       const updatedStorage = {

@@ -3,6 +3,7 @@ import cors from 'cors';
 import generateRoutes from './routes/generate';
 import statusRoutes from './routes/status';
 import contentRoutes from './routes/content';
+import compatibilityRoutes from './routes/compatibility';
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.get('/health', (req, res) => {
 app.use('/api/video', generateRoutes);
 app.use('/api/video', statusRoutes);
 app.use('/api', contentRoutes);
+app.use('/api/compatibility', compatibilityRoutes);
 
 // Error handler
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {

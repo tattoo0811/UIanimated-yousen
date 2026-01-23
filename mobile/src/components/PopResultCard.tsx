@@ -1,9 +1,12 @@
 import { View, Text, TouchableOpacity, Dimensions, Alert, Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Sparkles, RefreshCw, Share2, Zap } from 'lucide-react-native';
+import { useState, useEffect } from 'react';
 import kanshiData from '@/src/data/kanshi-types.json';
 import { shareToSocial, showShareOptions } from '@/src/lib/share';
-import { getCharacterByKanshi } from '@/src/data/viral-characters';
+import { getCharacterByKanshi } from '@/src/lib/viral-characters-loader';
+import TypewriterText from './TypewriterText';
+import type { ViralCharacterData } from '@/src/data/viral-characters.types';
 
 const { width, height } = Dimensions.get('window');
 
@@ -15,8 +18,16 @@ interface Props {
 export default function PopResultCard({ kanshi, onReset }: Props) {
     // kanshi-types.jsonから該当タイプを検索
     const type = kanshiData.types.find(t => t.kanshi === kanshi);
-    // バズり表現データを取得
-    const viralData = getCharacterByKanshi(kanshi);
+    // バズり表現データを非同期で取得
+    const [viralData, setViralData] = useState<ViralCharacterData | null>(null);
+
+    useEffect(() => {
+        getCharacterByKanshi(kanshi).then(data => {
+            setViralData(data ?? null);
+        }).catch(err => {
+            console.error('Failed to load viral character data:', err);
+        });
+    }, [kanshi]);
 
     if (!type) {
         return (
@@ -26,6 +37,23 @@ export default function PopResultCard({ kanshi, onReset }: Props) {
             </View>
         );
     }
+
+    // タイピングアニメーション管理
+    const [currentSummaryIndex, setCurrentSummaryIndex] = useState(0);
+
+    const summaryTexts = [
+        ...(viralData?.core_style.viral_expression ? [viralData.core_style.viral_expression] : []),
+        type.concept,
+        ...type.personality.slice(0, 2),
+    ];
+
+    const handleTextComplete = () => {
+        setTimeout(() => {
+            if (currentSummaryIndex < summaryTexts.length - 1) {
+                setCurrentSummaryIndex(prev => prev + 1);
+            }
+        }, 800); // 次のテキストまでの待ち時間
+    };
 
     const handleShare = () => {
         const viralText = viralData?.core_style.viral_expression || type.concept;
@@ -67,12 +95,11 @@ export default function PopResultCard({ kanshi, onReset }: Props) {
     // カラーからグラデーション色を生成
     const getGradientColors = (baseColor: string) => {
         // より視覚的にインパクトのあるグラデーション
-        // 同じ色を3回使用して統一感を保ちつつ、LinearGradientの効果で自然なグラデーションを生成
+        // ベースカラーと少し明るい色のグラデーション
         return [
             baseColor,
             baseColor,
-            baseColor,
-        ];
+        ] as const;
     };
 
     return (
@@ -152,8 +179,8 @@ export default function PopResultCard({ kanshi, onReset }: Props) {
                         </Text>
                     </View>
 
-                    {/* バズり表現 - メインコンテンツとして強調 */}
-                    {character?.core_style.viral_expression && (
+                    {/* バズり表現 & 総合サマリー - タイピングアニメーション */}
+                    {viralData?.core_style.viral_expression && (
                         <View
                             className="p-4 mb-3"
                             style={{
@@ -167,54 +194,65 @@ export default function PopResultCard({ kanshi, onReset }: Props) {
                                 shadowRadius: 8,
                             }}
                         >
+                            {/* ヘッダーとプログレス */}
                             <View className="flex-row items-center gap-2 mb-2">
                                 <Sparkles size={20} color="#FF6B6B" />
                                 <Text className="text-xs font-black text-[#FF6B6B] uppercase tracking-wider">
-                                    バズり表現
+                                    {currentSummaryIndex === 0 ? 'バズり表現' : '総合サマリー'}
+                                </Text>
+                                <Text className="text-xs text-gray-500 ml-auto">
+                                    {currentSummaryIndex + 1}/{summaryTexts.length}
                                 </Text>
                             </View>
-                            <Text className="text-base font-black text-[#000] leading-relaxed" style={{ lineHeight: 24 }}>
-                                {character.core_style.viral_expression}
-                            </Text>
+
+                            {/* プログレスバー */}
+                            <View
+                                className="h-1.5 bg-gray-200 rounded-full mb-3 overflow-hidden"
+                                style={{ backgroundColor: 'rgba(0,0,0,0.1)' }}
+                            >
+                                <View
+                                    className="h-full bg-gradient-to-r from-pink-500 to-yellow-500 rounded-full"
+                                    style={{
+                                        width: `${((currentSummaryIndex + 1) / summaryTexts.length) * 100}%`,
+                                        backgroundColor: '#FF6B6B',
+                                    }}
+                                />
+                            </View>
+
+                            {/* タイピングテキスト */}
+                            <TypewriterText
+                                key={currentSummaryIndex}
+                                text={summaryTexts[currentSummaryIndex]}
+                                speed={25}
+                                showCursor={true}
+                                onComplete={handleTextComplete}
+                                textStyle={{
+                                    fontSize: 14,
+                                    fontWeight: '600',
+                                    color: '#000',
+                                    lineHeight: 22,
+                                }}
+                                cursorStyle={{ color: '#FF6B6B' }}
+                            />
                         </View>
                     )}
 
-                    {/* Concept - サブコンテンツ */}
-                    <View
-                        className="p-3 items-center"
-                        style={{
-                            backgroundColor: 'rgba(255,255,255,0.6)',
-                            borderWidth: 2,
-                            borderColor: 'rgba(0,0,0,0.2)',
-                            borderRadius: 16,
-                        }}
-                    >
-                        <Text className="font-bold text-[#000] text-center text-sm leading-tight" numberOfLines={2}>
-                            {type.concept}
-                        </Text>
-                    </View>
-                </View>
-
-                {/* Middle: Personality (コンパクト) */}
-                <View className="gap-2 my-2">
-                    {type.personality.slice(0, 2).map((trait, idx) => (
+                    {/* Concept - サブコンテンツ（アニメーション非対応の場合用） */}
+                    {!viralData?.core_style.viral_expression && (
                         <View
-                            key={idx}
-                            className="flex-row items-start gap-2"
+                            className="p-3 items-center"
                             style={{
-                                backgroundColor: 'rgba(255,255,255,0.5)',
-                                padding: 8,
-                                borderRadius: 12,
-                                borderWidth: 1.5,
-                                borderColor: 'rgba(0,0,0,0.15)',
+                                backgroundColor: 'rgba(255,255,255,0.6)',
+                                borderWidth: 2,
+                                borderColor: 'rgba(0,0,0,0.2)',
+                                borderRadius: 16,
                             }}
                         >
-                            <Text className="text-sm">✨</Text>
-                            <Text className="flex-1 text-xs font-bold text-[#000] leading-snug" numberOfLines={2}>
-                                {trait}
+                            <Text className="font-bold text-[#000] text-center text-sm leading-tight" numberOfLines={2}>
+                                {type.concept}
                             </Text>
                         </View>
-                    ))}
+                    )}
                 </View>
 
                 {/* Bottom: Lucky Info - より視覚的に魅力的に */}

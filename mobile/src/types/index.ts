@@ -134,7 +134,7 @@ export type SanmeigakuInsenChart = {
   };
   phaseRelations: InsenPhaseRelation[];
   tenchusatsu: InsenTenchusatsu;
-  extensions?: Record<string, any>;
+  extensions?: Record<string, unknown>;
 };
 
 /**
@@ -156,3 +156,28 @@ export type CalculationResult = {
   };
   timestamp: string;  // 計算日時 (ISO 8601形式)
 };
+
+// ==========================================================
+// Video-related types
+// ==========================================================
+
+/**
+ * Video metadata for caching and sharing
+ */
+export interface VideoMetadata {
+  url: string;
+  localPath?: string;
+  cachedAt?: number;
+  duration?: number;
+  size?: number;
+}
+
+/**
+ * Video share result
+ */
+export interface VideoShareResult {
+  success: boolean;
+  method: 'camera-roll' | 'share-sheet';
+  cached: boolean;
+  error?: string;
+}

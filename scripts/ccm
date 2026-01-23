@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# コンフリクトチェック + マージコマンド
+# 使用方法: ccm [target-branch] [--auto]
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+"$SCRIPT_DIR/merge-safe.sh" "$@"

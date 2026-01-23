@@ -43,7 +43,7 @@ export default function LoveCard({ insen }: Props) {
             const dayBranch = insen.pillars.day.branch;
             const kanshi = `${dayStem}${dayBranch}`;
 
-            const adviceText = getLoveAdvice(kanshi, insen.meta.characterName);
+            const adviceText = getLoveAdvice(kanshi);
             setAdvice(adviceText);
         } catch (error) {
             console.error('Failed to generate advice:', error);

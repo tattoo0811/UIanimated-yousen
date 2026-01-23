@@ -43,7 +43,7 @@ export default function FamilyCard({ insen }: Props) {
             const dayBranch = insen.pillars.day.branch;
             const kanshi = `${dayStem}${dayBranch}`;
 
-            const adviceText = getFamilyAdvice(kanshi, insen.meta.characterName);
+            const adviceText = getFamilyAdvice(kanshi);
             setAdvice(adviceText);
         } catch (error) {
             console.error('Failed to generate advice:', error);

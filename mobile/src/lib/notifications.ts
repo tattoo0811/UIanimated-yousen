@@ -5,6 +5,9 @@ import type { StorageSchemaV2 } from './storage/schema';
 import { calculateBaZi } from './logic/bazi';
 import { getDailyFortune } from './logic/dailyFortune';
 
+// DateTriggerInputのtypeプロパティ用の型定義
+type DateTriggerType = Notifications.NotificationTriggerInput & { type: typeof Notifications.SchedulableTriggerInputTypes.DATE };
+
 // 通知の表示形式を設定
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -124,10 +127,9 @@ export async function scheduleDailyFortuneNotification(
           },
         },
         trigger: {
-          type: 'date' as const,
+          type: Notifications.SchedulableTriggerInputTypes.DATE,
           date: notificationDate,
-          channelId: Platform.OS === 'android' ? 'daily-fortune' : undefined,
-        },
+        } as DateTriggerType,
       });
     }
 
