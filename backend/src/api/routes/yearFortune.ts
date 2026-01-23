@@ -29,7 +29,7 @@ router.post('/calculate', async (req, res) => {
       });
     }
 
-    const { insen, year = 2026 }: CalculateRequest = validationResult.data;
+    const { insen, year = 2026 } = validationResult.data;
 
     // Validate insen data
     if (!insen || !insen.meta || !insen.meta.dayStem) {
