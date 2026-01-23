@@ -3,6 +3,7 @@ import type {
   ContentSection,
   ContentGeneratorParams,
 } from '../types/content';
+import { translateToTone, type ContentTone, type TranslationConfig } from './contentTranslator';
 
 /**
  * Generate 本質 (Essence) section content
@@ -31,9 +32,16 @@ export const generateEssenceContent = (
 
   const baseContent = essenceMap[dayStem] || '独自の特徴を持ち、個性を活かして生きる力があります。';
 
+  // Apply tone translation
+  const translatedContent = translateToTone(baseContent, {
+    tone,
+    section: 'essence',
+    nickname,
+  });
+
   return {
     title: `【${nickname}の本質】`,
-    content: baseContent,
+    content: translatedContent,
     duration: 120, // 4 seconds at 30fps
   };
 };
@@ -68,9 +76,16 @@ export const generateFamilyContent = (
   const stem = kanshi[0];
   const baseAdvice = adviceMap[stem] || '家族との関係を大切にすることが重要です。';
 
+  // Apply tone translation
+  const translatedContent = translateToTone(baseAdvice, {
+    tone,
+    section: 'family',
+    nickname,
+  });
+
   return {
     title: '【家族運】',
-    content: baseAdvice,
+    content: translatedContent,
     duration: 90, // 3 seconds at 30fps
   };
 };
@@ -105,9 +120,16 @@ export const generateWorkContent = (
   const stem = kanshi[0];
   const baseAdvice = adviceMap[stem] || '自分の特性を活かした仕事選びが重要です。';
 
+  // Apply tone translation
+  const translatedContent = translateToTone(baseAdvice, {
+    tone,
+    section: 'work',
+    nickname,
+  });
+
   return {
     title: '【仕事運】',
-    content: baseAdvice,
+    content: translatedContent,
     duration: 90, // 3 seconds at 30fps
   };
 };
@@ -142,9 +164,16 @@ export const generateLoveContent = (
   const stem = kanshi[0];
   const baseAdvice = adviceMap[stem] || '自分の恋愛傾向を理解することが大切です。';
 
+  // Apply tone translation
+  const translatedContent = translateToTone(baseAdvice, {
+    tone,
+    section: 'love',
+    nickname,
+  });
+
   return {
     title: '【恋愛運】',
-    content: baseAdvice,
+    content: translatedContent,
     duration: 90, // 3 seconds at 30fps
   };
 };
@@ -212,9 +241,16 @@ export const generateOchiContent = (
   // Select first option for consistency
   const closingMessage = options[0];
 
+  // Apply tone translation
+  const translatedContent = translateToTone(closingMessage, {
+    tone,
+    section: 'ochi',
+    nickname,
+  });
+
   return {
     title: '', // No title for ochi
-    content: closingMessage,
+    content: translatedContent,
     duration: 60, // 2 seconds at 30fps
   };
 };
