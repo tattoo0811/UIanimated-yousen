@@ -122,8 +122,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 06-01: expo-videoによる動画再生機能の実装
-- [ ] 06-02: expo-media-libraryによるカメラロール保存とexpo-sharingによるシェアシート
+- [ ] 06-01-PLAN.md — expo-videoによる動画再生機能の実装
+- [ ] 06-02-PLAN.md — expo-media-libraryによるカメラロール保存とexpo-sharingによるシェアシート
 
 ### Phase 7: Direct Social Sharing
 **Goal**: TikTok/Instagramへの直接投稿を可能にする
