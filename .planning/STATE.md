@@ -10,25 +10,25 @@ See: .planning/PROJECT.md (updated 2026-01-23)
 ## Current Position
 
 Phase: 2 of 11 (Card UI Core)
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-01-23 — Completed 02-02 (スワイプアニメーションの改善)
+Plan: 4 of 4 in current phase
+Status: Phase complete ✓
+Last activity: 2026-01-23 — Completed 02-04 (既存画面からのナビゲーション統合)
 
 Progress: [██░░░░░░░░] 18%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 8.5 min
-- Total execution time: 0.28 hours
+- Total plans completed: 4
+- Average duration: 7.5 min
+- Total execution time: 0.5 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1. Foundation & Code Quality | 0/6 | TBD | - |
-| 2. Card UI Core | 2/2 | 17 min | 8.5 min |
+| 2. Card UI Core | 4/4 | 30 min | 7.5 min |
 | 3. Design System | 0/2 | TBD | - |
 | 4. Video Generation Backend | 0/4 | TBD | - |
 | 5. Video Content Integration | 0/2 | TBD | - |
@@ -40,8 +40,8 @@ Progress: [██░░░░░░░░] 18%
 | 11. 2026 Year Fortune | 0/2 | TBD | - |
 
 **Recent Trend:**
-- Last 5 plans: 9 min (02-01), 8 min (02-02)
-- Trend: Phase 2 complete, maintaining consistent velocity
+- Last 4 plans: 9 min (02-01), 8 min (02-02), 6 min (02-03), 5 min (02-04)
+- Trend: Phase 2 complete, all gap closure plans executed efficiently
 
 *Updated after each plan completion*
 
@@ -63,6 +63,10 @@ Recent decisions affecting current work:
 - **Velocity-Based Swipe Detection**: 800 pts/sec threshold enables natural quick-swipe detection (02-02)
 - **Spring Physics for Card Animations**: damping:20, stiffness:300 for natural card fly-out feel (02-02)
 - **Context-Based Drag Handling**: Initialize contextX in gesture onStart to prevent position jumps (02-02)
+- **Zodiac Select Screen**: Created dedicated zodiac-select.tsx screen for swipeable card selection (02-03)
+- **Full-Screen Card Layout**: Changed SwipeableStack container from fixed 600px to flex-1 for full viewport height (02-03)
+- **Entry Point Cards**: Added prominent Zodiac Swipe entry cards to fortune and index tabs for discoverability (02-04)
+- **Preserved Existing Functionality**: Added entry points without removing existing daily/weekly fortune and AI chat features (02-04)
 
 ### Pending Todos
 

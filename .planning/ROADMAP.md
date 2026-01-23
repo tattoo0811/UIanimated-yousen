@@ -58,8 +58,8 @@ Plans:
 Plans:
 - [x] 02-01: expo-haptics導入とタップフィードバックの実装
 - [x] 02-02: スワイプアニメーションの改善（速度判定、回転補間、次カードスケール/フェード）
-- [ ] 02-03: 干支選択画面の作成とSwipeableStack統合（ギャップクロージャー）
-- [ ] 02-04: 既存画面からのナビゲーション統合（ギャップクロージャー）
+- [x] 02-03: 干支選択画面の作成とSwipeableStack統合（ギャップクロージャー）
+- [x] 02-04: 既存画面からのナビゲーション統合（ギャップクロージャー）
 
 ### Phase 3: Design System
 **Goal**: 複数のデザインテーマを提供し、ユーザーが切り替え可能にする
@@ -204,7 +204,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Code Quality | 0/6 | Not started | - |
-| 2. Card UI Core | 0/2 | Not started | - |
+| 2. Card UI Core | 4/4 | ✅ Complete | 2026-01-23 |
 | 3. Design System | 0/2 | Not started | - |
 | 4. Video Generation Backend | 0/4 | Not started | - |
 | 5. Video Content Integration | 0/2 | Not started | - |
