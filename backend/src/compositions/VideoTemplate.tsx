@@ -1,9 +1,9 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
-import {useTheme} from './themes/themeConfig';
+import {useTheme, type VideoTheme} from './themes/themeConfig';
 
 interface VideoTemplateProps {
-  theme: 'KiraPop' | 'MonoEdge' | 'ZenWa';
+  theme: VideoTheme['theme'];
   children: React.ReactNode;
 }
 
