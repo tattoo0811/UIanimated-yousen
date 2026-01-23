@@ -10,25 +10,25 @@ See: .planning/PROJECT.md (updated 2026-01-23)
 ## Current Position
 
 Phase: 2 of 11 (Card UI Core)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-01-23 — Completed 02-01 (expo-haptics導入とタップフィードバックの実装)
+Plan: 2 of 2 in current phase
+Status: Phase complete
+Last activity: 2026-01-23 — Completed 02-02 (スワイプアニメーションの改善)
 
-Progress: [█░░░░░░░░░] 9%
+Progress: [██░░░░░░░░] 18%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 9 min
-- Total execution time: 0.15 hours
+- Total plans completed: 2
+- Average duration: 8.5 min
+- Total execution time: 0.28 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1. Foundation & Code Quality | 0/6 | TBD | - |
-| 2. Card UI Core | 1/2 | 9 min | 9 min |
+| 2. Card UI Core | 2/2 | 17 min | 8.5 min |
 | 3. Design System | 0/2 | TBD | - |
 | 4. Video Generation Backend | 0/4 | TBD | - |
 | 5. Video Content Integration | 0/2 | TBD | - |
@@ -40,8 +40,8 @@ Progress: [█░░░░░░░░░] 9%
 | 11. 2026 Year Fortune | 0/2 | TBD | - |
 
 **Recent Trend:**
-- Last 5 plans: 9 min (02-01)
-- Trend: Starting phase 2
+- Last 5 plans: 9 min (02-01), 8 min (02-02)
+- Trend: Phase 2 complete, maintaining consistent velocity
 
 *Updated after each plan completion*
 
@@ -59,6 +59,10 @@ Recent decisions affecting current work:
 - **Haptic Feedback**: Add expo-haptics for tactile response
 - **Conditional GestureDetector**: Only apply tap gesture when onPress prop is provided to avoid interfering with pan gestures (02-01)
 - **Silent Haptic Failures**: Use .catch(() => {}) on all haptic calls to prevent crashes on unsupported devices/emulators (02-01)
+- **Centralized Animation Constants**: SWIPE_CONFIG in animations.ts for consistent swipe behavior across components (02-02)
+- **Velocity-Based Swipe Detection**: 800 pts/sec threshold enables natural quick-swipe detection (02-02)
+- **Spring Physics for Card Animations**: damping:20, stiffness:300 for natural card fly-out feel (02-02)
+- **Context-Based Drag Handling**: Initialize contextX in gesture onStart to prevent position jumps (02-02)
 
 ### Pending Todos
 
@@ -75,6 +79,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-23 06:43 UTC
-Stopped at: Completed 02-01 (expo-haptics導入とタップフィードバックの実装)
+Last session: 2026-01-23 07:17 UTC
+Stopped at: Completed 02-02 (スワイプアニメーションの改善)
 Resume file: None
