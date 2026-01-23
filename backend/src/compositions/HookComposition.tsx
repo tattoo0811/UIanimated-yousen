@@ -3,6 +3,7 @@ import {AbsoluteFill, Sequence} from 'remotion';
 import {z} from 'zod';
 import {VideoTemplate} from './VideoTemplate';
 import {TypingText} from './TypingText';
+import {NicknameSection} from './sections/NicknameSection';
 import {useTheme} from './themes/themeConfig';
 
 export const hookCompositionSchema = z.object({
@@ -53,24 +54,11 @@ export const HookComposition: React.FC<HookCompositionProps> = ({
 
         {/* 2-5s (90 frames): Personalization - nickname typing */}
         <Sequence from={60} durationInFrames={90}>
-          <div style={{
-            position: 'absolute',
-            top: '30%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '80%',
-            textAlign: 'center',
-          }}>
-            <TypingText
-              text={`${nickname}さんの運勢`}
-              speed={themeConfig.animations.typingSpeed}
-              style={{
-                fontSize: 48,
-                fontWeight: 'bold',
-                color: themeConfig.colors.primary,
-              }}
-            />
-          </div>
+          <NicknameSection
+            nickname={nickname}
+            speed={themeConfig.animations.typingSpeed}
+            theme={theme}
+          />
         </Sequence>
 
         {/* 5-15s (300 frames): Revelation - fortune typing */}
