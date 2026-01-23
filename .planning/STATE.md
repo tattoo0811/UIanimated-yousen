@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** わかりやすさ × 共感 × 笑い — 専門用語をバズる言葉に翻訳し、自分の診断結果が動画でシェアしたくなる体験を提供する
-**Current focus:** Phase 4: Video Generation Backend
+**Current focus:** Phase 5: Video Content Integration
 
 ## Current Position
 
-Phase: 4 of 11 (Video Generation Backend)
-Plan: 4 of 4 in current phase
-Status: Plan 04-04 complete ✓
-Last activity: 2026-01-23 — Completed 04-04 (Express API with Cloud Run Integration)
+Phase: 5 of 11 (Video Content Integration)
+Plan: 2 of 2 in current phase
+Status: Phase 05 complete ✓
+Last activity: 2026-01-24 — Completed 05-02 (本質→家族→仕事→恋愛→オチ Content Structure)
 
-Progress: [████████░░] 50%
+Progress: [██████████] 63%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
-- Average duration: 5.4 min
-- Total execution time: 1.0 hours
+- Total plans completed: 13
+- Average duration: 5.6 min
+- Total execution time: 1.2 hours
 
 **By Phase:**
 
@@ -31,7 +31,7 @@ Progress: [████████░░] 50%
 | 2. Card UI Core | 4/4 | 30 min | 7.5 min |
 | 3. Design System | 3/3 | 10 min | 3.3 min |
 | 4. Video Generation Backend | 4/4 | 21 min | 5.3 min |
-| 5. Video Content Integration | 0/2 | TBD | - |
+| 5. Video Content Integration | 2/2 | 20 min | 10.0 min |
 | 6. Video Playback & Share | 0/2 | TBD | - |
 | 7. Direct Social Sharing | 0/2 | TBD | - |
 | 8. Content Translation | 0/2 | TBD | - |
@@ -40,8 +40,8 @@ Progress: [████████░░] 50%
 | 11. 2026 Year Fortune | 0/2 | TBD | - |
 
 **Recent Trend:**
-- Last 10 plans: 8 min (02-02), 6 min (02-03), 5 min (02-04), 4 min (03-01), 3 min (03-02A), 3 min (03-02B), 6 min (04-01), 4 min (04-02), 3 min (04-03), 8 min (04-04)
-- Trend: Phase 4 complete with API endpoints and Cloud Run integration ready
+- Last 10 plans: 6 min (04-01), 4 min (04-02), 3 min (04-03), 8 min (04-04), 8 min (05-01), 12 min (05-02)
+- Trend: Phase 5 complete with 5-section content structure (本質→家族→仕事→恋愛→オチ)
 
 *Updated after each plan completion*
 
@@ -85,6 +85,14 @@ Recent decisions affecting current work:
 - **useTheme Hook Pattern**: Simple function returning theme configuration based on theme name, no React Context needed for Remotion compositions (04-02)
 - **VideoTemplate Wrapper**: AbsoluteFill provides full-screen container with theme-based styling for 9:16 video format (04-02)
 - **Animation Parameters per Theme**: Spring physics (damping/stiffness) and typing speed customized per theme (KiraPop: bouncy 15/200, MonoEdge: smooth 50/100, ZenWa: gentle 30/80) (04-02)
+- **Section Component Pattern**: Reusable section components with TypingText and TransitionEffect for consistent video sections (05-01)
+- **Nickname Dynamic Insertion**: NicknameSection component displays user nickname with "さんの運勢" suffix during 2-5s section (05-01)
+- **Utility Hook Pattern**: TransitionEffect returns style object (not JSX) for parent components to apply animations (05-01)
+- **5-Section Content Structure**: 本質→家族→仕事→恋愛→オチ narrative flow with 450 frames (15s) total content duration (05-02)
+- **Stem-Based Content Generation**: All content uses day stem (十干) patterns with 10 variations per section type (05-02)
+- **Video-Optimized Content**: Content shortened to 1-3 sentences per section for video format (vs full paragraphs in mobile) (05-02)
+- **Progressive Vertical Positioning**: Sections positioned progressively lower (40%→45%→50%→55%→50%) to create visual flow (05-02)
+- **Conditional Content Rendering**: Content sections only render when insen data is available, maintaining backward compatibility (05-02)
 
 ### Pending Todos
 
@@ -101,6 +109,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-23 23:44 UTC
-Stopped at: Completed 04-03 (7-Second Hook Composition)
+Last session: 2026-01-24 00:05 UTC
+Stopped at: Completed Phase 05 (Video Content Integration)
 Resume file: None
