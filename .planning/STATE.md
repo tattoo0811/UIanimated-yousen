@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-23)
 
 **Core value:** わかりやすさ × 共感 × 笑い — 専門用語をバズる言葉に翻訳し、自分の診断結果が動画でシェアしたくなる体験を提供する
-**Current focus:** Phase 10: Friend Compatibility
+**Current focus:** Phase 11: 2026 Year Fortune
 
 ## Current Position
 
-Phase: 10 of 11 (Friend Compatibility)
-Plan: 0 of 2 in current phase
-Status: Phase 09 complete ✓
-Last activity: 2026-01-24 — Completed 09-01 (Image Generation Prompts)
+Phase: 11 of 11 (2026 Year Fortune)
+Plan: 1 of 2 in current phase
+Status: Plan 11-01 complete ✓
+Last activity: 2026-01-24 — Completed 11-01 (Year Fortune Calculator)
 
-Progress: [████████████░] 92%
+Progress: [████████████░] 98%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 20
-- Average duration: 7.3 min
-- Total execution time: 2.3 hours
+- Total plans completed: 23
+- Average duration: 7.6 min
+- Total execution time: 2.9 hours
 
 **By Phase:**
 
@@ -36,12 +36,12 @@ Progress: [████████████░] 92%
 | 7. Direct Social Sharing | 2/2 | 25 min | 12.5 min |
 | 8. Content Translation | 2/2 | 30 min | 15.0 min |
 | 9. Image Generation Prompts | 1/1 | 8 min | 8.0 min |
-| 10. Friend Compatibility | 0/2 | TBD | - |
-| 11. 2026 Year Fortune | 0/2 | TBD | - |
+| 10. Friend Compatibility | 2/2 | 35 min | 17.5 min |
+| 11. 2026 Year Fortune | 1/2 | 15 min | 15.0 min |
 
 **Recent Trend:**
-- Last 10 plans: 4 min (04-02), 3 min (04-03), 8 min (04-04), 8 min (05-01), 12 min (05-02), 25 min (06-01), 30 min (06-02), 12 min (07-01), 13 min (07-02), 12 min (08-01), 18 min (08-02), 8 min (09-01)
-- Trend: Phase 9 complete with image prompt generation system
+- Last 10 plans: 4 min (04-02), 3 min (04-03), 8 min (04-04), 8 min (05-01), 12 min (05-02), 25 min (06-01), 30 min (06-02), 12 min (07-01), 13 min (07-02), 12 min (08-01), 18 min (08-02), 8 min (09-01), 15 min (10-01), 20 min (10-02), 15 min (11-01)
+- Trend: Phase 11 started with year fortune calculator implementation
 
 *Updated after each plan completion*
 
@@ -126,6 +126,19 @@ Recent decisions affecting current work:
 - **English Prompt Generation**: Prompts in English for better DALL-E/Midjourney comprehension, visual descriptors translated from Japanese patterns (09-01)
 - **Parallel Prompt Fetching**: All 4 sections fetched simultaneously with Promise.all for faster UX (~1s vs ~4s sequential) (09-01)
 - **AsyncStorage Prompt Caching**: 24-hour cache with kanshi_tone_theme key, auto-deletes expired entries, balances offline access with freshness (09-01)
+- **Five Elements Compatibility**: Backend calculation based on day stem五行 relationships (wood/fire/earth/metal/water) with 相生/相剋 cycles (10-01)
+- **Deterministic Compatibility**: No randomness in calculations - same inputs always produce same outputs for consistent video generation (10-01)
+- **Multi-Person Comparison**: Support for 2-10 people with pairwise detailed results for 2 people, matrix comparison for 3+ (10-01)
+- **干合 (Kango) Bonus**: +20 points for ten stem combinations (甲己, 乙庚, 丙辛, 丁壬, 戊癸) (10-01)
+- **Backend Compatibility API**: POST /api/compatibility/calculate accepts people array and returns structured results (10-01)
+- **Enhanced CompatibilityCard**: Increased from 3 to 10 max partners with backend API integration and group comparison display (10-02)
+- **Compatibility Video Structure**: 7-section video (900 frames): Hook → Intro → Score → Aspects → Advice → CTA → Branding (10-02)
+- **Aspect Bars Animation**: Animated progress bars for love/work/friendship scores with interpolate (10-02)
+- **Compatibility Result Screen**: Dedicated screen with detailed scores, advice, and video generation/sharing (10-02)
+- **Year Fortune Calculator**: Extensible year data registry with YEAR_DATA_MAP for adding future years (2027, 2028, etc.) (11-01)
+- **Year Fortune API**: POST /api/year-fortune/calculate endpoint with Zod validation, supports optional year parameter (11-01)
+- **Element-Specific Fortune Content**: Five element types (wood/fire/earth/metal/water) each have customized fortune text for 2026 丙午 (11-01)
+- **Year-User Compatibility**: Reuses compatibilityCalculator patterns (STEM_TO_ELEMENT, ELEMENT_RELATIONS, KANGO_COMBINATIONS) for year fortune (11-01)
 
 ### Pending Todos
 
@@ -139,9 +152,14 @@ None yet.
 
 **From Execution:**
 - **mobile/ is gitignored**: All mobile/ changes are not tracked in git. This is intentional but requires awareness when reviewing git history.
+- **Phase 10 Known Issues**:
+  - Backend URL hardcoded (TODO: environment variable)
+  - User birthdate/gender placeholders (TODO: user profile integration)
+  - Video polling logic incomplete (TODO: Phase 6 pattern integration)
+  - Placeholder insen calculation from birth year instead of full bazi
 
 ## Session Continuity
 
-Last session: 2026-01-24 16:05 UTC
-Stopped at: Completed Phase 09 (Image Generation Prompts)
+Last session: 2026-01-24 10:15 UTC
+Stopped at: Completed Plan 11-01 (Year Fortune Calculator)
 Resume file: None
