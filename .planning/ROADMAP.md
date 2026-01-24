@@ -20,7 +20,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 8: Content Translation** - Buzz-worthy word translation system
 - [ ] **Phase 9: Image Generation Prompts** - AI image prompts for preset images
 - [ ] **Phase 10: Friend Compatibility** - Compatibility diagnosis feature
-- [ ] **Phase 11: 2026 Year Fortune** - Year-specific fortune content
+- [x] **Phase 11: 2026 Year Fortune** - Year-specific fortune content
 
 ## Phase Details
 
@@ -37,6 +37,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 6 plans
 
 Plans:
+- [x] 11-01-PLAN.md — 丙午の年の特徴データと2026年運勢ロジックの実装
+- [x] 11-02-PLAN.md — 2026年特化動画テンプレートの作成
 - [ ] 01-01A: lib/*配下のTypeScript strict modeエラー修正（types, storage, cache, monitoring, share, migrations）
 - [ ] 01-01B: components/*とその他のTypeScript strict modeエラー修正（notifications, cards, settings）
 - [ ] 01-02A: viral-characters.tsの型定義・JSON・ローダーへの分割
@@ -56,6 +58,8 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
+- [x] 11-01-PLAN.md — 丙午の年の特徴データと2026年運勢ロジックの実装
+- [x] 11-02-PLAN.md — 2026年特化動画テンプレートの作成
 - [x] 02-01: expo-haptics導入とタップフィードバックの実装
 - [x] 02-02: スワイプアニメーションの改善（速度判定、回転補間、次カードスケール/フェード）
 - [x] 02-03: 干支選択画面の作成とSwipeableStack統合（ギャップクロージャー）
@@ -73,6 +77,8 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
+- [x] 11-01-PLAN.md — 丙午の年の特徴データと2026年運勢ロジックの実装
+- [x] 11-02-PLAN.md — 2026年特化動画テンプレートの作成
 - [x] 03-01: デザインテーマシステムの設計と実装
 - [x] 03-02A: 3つのテーマ実装（KiraPop, MonoEdge, ZenWa）とフォント設定
 - [x] 03-02B: テーマ選択UIとSwipeableStackへのアニメーション統合
@@ -90,6 +96,8 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
+- [x] 11-01-PLAN.md — 丙午の年の特徴データと2026年運勢ロジックの実装
+- [x] 11-02-PLAN.md — 2026年特化動画テンプレートの作成
 - [x] 04-01: Remotionバックエンドのセットアップ（Node.js + Cloud Run）
 - [x] 04-02: 動画テンプレートの作成（9:16フォーマットとテーマシステム）
 - [x] 04-03: 7秒フック構成とタイピングエフェクトの実装
@@ -107,6 +115,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
+- [x] 11-01-PLAN.md — 丙午の年の特徴データと2026年運勢ロジックの実装
+- [x] 11-02-PLAN.md — 2026年特化動画テンプレートの作成
 - [ ] 05-01-PLAN.md — ニックネーム動的挿入機能とセクション切り替え演出の実装
 - [ ] 05-02-PLAN.md — 本質→家族→仕事→恋愛→オチ構成の実装
 
@@ -122,6 +132,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
+- [x] 11-01-PLAN.md — 丙午の年の特徴データと2026年運勢ロジックの実装
+- [x] 11-02-PLAN.md — 2026年特化動画テンプレートの作成
 - [ ] 06-01-PLAN.md — expo-videoによる動画再生機能の実装
 - [ ] 06-02-PLAN.md — expo-media-libraryによるカメラロール保存とexpo-sharingによるシェアシート
 
@@ -137,6 +149,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
+- [x] 11-01-PLAN.md — 丙午の年の特徴データと2026年運勢ロジックの実装
+- [x] 11-02-PLAN.md — 2026年特化動画テンプレートの作成
 - [ ] 07-01-PLAN.md — URLスキームによるTikTok/Instagram連携の実装
 - [ ] 07-02-PLAN.md — アプリインストール検出とフォールバック処理
 
@@ -152,6 +166,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
+- [x] 11-01-PLAN.md — 丙午の年の特徴データと2026年運勢ロジックの実装
+- [x] 11-02-PLAN.md — 2026年特化動画テンプレートの作成
 - [ ] 08-01-PLAN.md — トーン選択システムと翻訳ロジックの実装
 - [ ] 08-02-PLAN.md — 3つのトーンパターン（TikTok/YouTube/Instagram）の作成
 
@@ -166,6 +182,8 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
+- [x] 11-01-PLAN.md — 丙午の年の特徴データと2026年運勢ロジックの実装
+- [x] 11-02-PLAN.md — 2026年特化動画テンプレートの作成
 - [ ] 09-01-PLAN.md — 画像生成プロンプトテンプレートの作成と表示UI
 
 ### Phase 10: Friend Compatibility
@@ -180,6 +198,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
+- [x] 11-01-PLAN.md — 丙午の年の特徴データと2026年運勢ロジックの実装
+- [x] 11-02-PLAN.md — 2026年特化動画テンプレートの作成
 - [ ] 10-01-PLAN.md — バックエンド相性計算ロジックの実装（五行関係・干合・多人数比較）
 - [ ] 10-02-PLAN.md — モバイル多人数比較UIと動画生成統合
 
@@ -194,8 +214,10 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 11-01: 丙午の年の特徴データと2026年運勢ロジックの実装
-- [ ] 11-02: 2026年特化動画テンプレートの作成
+- [x] 11-01-PLAN.md — 丙午の年の特徴データと2026年運勢ロジックの実装
+- [x] 11-02-PLAN.md — 2026年特化動画テンプレートの作成
+- [ ] 11-01-PLAN.md — 丙午の年の特徴データと2026年運勢ロジックの実装
+- [ ] 11-02-PLAN.md — 2026年特化動画テンプレートの作成
 
 ## Progress
 
@@ -214,7 +236,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 | 8. Content Translation | 0/2 | Not started | - |
 | 9. Image Generation Prompts | 0/1 | Not started | - |
 | 10. Friend Compatibility | 0/2 | Not started | - |
-| 11. 2026 Year Fortune | 0/2 | Not started | - |
+| 11. 2026 Year Fortune | 2/2 | ✅ Complete | 2026-01-24 |
 
 ## Coverage
 
