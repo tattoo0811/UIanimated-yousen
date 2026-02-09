@@ -49,3 +49,42 @@ yinyang-app/
 
 # planning local files
 .planning/intel/
+
+# temporary and local files
+.tmp/
+*.tmp
+test.txt
+
+# documentation and content files (separate repo)
+brand-strategy*.md
+character-redesign.md
+gogyo-viral-engineering.md
+meguri-*.html
+meguri-*.jsx
+meguri-*.json
+meguri-*.md
+meguri-*.docx
+mobile-manga-research.md
+screen-*.html
+shohousen-*.html
+shohousen-dev-flow.md
+verification-report.md
+
+# local data and fonts
+data/
+fonts/
+jsons/
+types/
+
+# local development directories
+example/
+manga/
+mobile-shohousen/
+strategy-dashboard/
+
+# build outputs
+backend/build/
+bun.lock
+
+# config files (local)
+.textlintrc

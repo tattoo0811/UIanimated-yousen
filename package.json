@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify:all": "tsx .tmp/scripts/sanmeigaku/verify-all.ts",
+    "verify:stats": "tsx .tmp/scripts/sanmeigaku/stats-analysis.ts",
+    "verify:report": "tsx .tmp/scripts/sanmeigaku/report-generator.ts"
   },
   "dependencies": {
     "@vercel/og": "^0.8.6",
@@ -20,12 +23,16 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@textlint-ja/textlint-rule-preset-ai-writing": "^1.6.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
+    "lunisolar": "^2.6.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "textlint": "^15.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   }
 }
