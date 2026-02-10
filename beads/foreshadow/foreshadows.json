@@ -1,0 +1,105 @@
+{
+  "$schema": "../schemas/foreshadow-foreshadows.json",
+  "version": "1.0",
+  "last_updated": "2026-02-10",
+  "note": "伏線管理システム - 状態遷移で管理",
+  "status_workflow": ["planned", "introduced", "hinted", "unresolved", "resolved"],
+  "foreshadows": [
+    {
+      "foreshadow_id": "F001",
+      "introduced_episode": "episode_01",
+      "introduced_by": "C001",
+      "surface_description": "巡が祖母のノートを読むシーン",
+      "true_meaning": "運命診断師としての始まり",
+      "status": "introduced",
+      "must_resolve_by": "episode_90",
+      "resolution_event": "E004",
+      "linked_constraints": ["AST-008"],
+      "risk_level": "high"
+    },
+    {
+      "foreshadow_id": "F002",
+      "introduced_episode": "episode_01",
+      "introduced_by": "C002",
+      "surface_description": "慧から電話がかかってくる",
+      "true_meaning": "裏切り後の再接触の始まり",
+      "status": "introduced",
+      "must_resolve_by": "episode_40",
+      "resolution_event": null,
+      "linked_constraints": ["AST-003"],
+      "risk_level": "high"
+    },
+    {
+      "foreshadow_id": "F003",
+      "introduced_episode": "episode_03",
+      "introduced_by": "C003",
+      "surface_description": "美咲がSNSで巡の診断を発信",
+      "true_meaning": "美咲の感受性が物語を動かす起点",
+      "status": "introduced",
+      "must_resolve_by": "episode_10",
+      "resolution_event": null,
+      "linked_constraints": ["AST-007"],
+      "risk_level": "medium"
+    },
+    {
+      "foreshadow_id": "F004",
+      "introduced_episode": "episode_03",
+      "introduced_by": "C001",
+      "surface_description": "巡が「2%」について言及",
+      "true_meaning": "データでは測れない運命の存在",
+      "status": "hinted",
+      "must_resolve_by": "episode_120",
+      "resolution_event": null,
+      "linked_constraints": ["AST-001"],
+      "risk_level": "high"
+    },
+    {
+      "foreshadow_id": "F005",
+      "introduced_episode": "episode_85",
+      "introduced_by": "C005",
+      "surface_description": "紫織が慧に「残りの2%」について問いかける",
+      "true_meaning": "慧の技術主義への転換点",
+      "status": "planned",
+      "must_resolve_by": "episode_95",
+      "resolution_event": null,
+      "linked_constraints": ["AST-005"],
+      "risk_level": "high"
+    },
+    {
+      "foreshadow_id": "F006",
+      "introduced_episode": "episode_41",
+      "introduced_by": "C002",
+      "surface_description": "慧が美咲に興味を示す",
+      "true_meaning": "美咲を利用する下準備",
+      "status": "planned",
+      "must_resolve_by": "episode_80",
+      "resolution_event": null,
+      "linked_constraints": ["AST-010"],
+      "risk_level": "high"
+    },
+    {
+      "foreshadow_id": "F007",
+      "introduced_episode": "episode_15",
+      "introduced_by": "C001",
+      "surface_description": "巡が慧との裏切りを回想",
+      "true_meaning": "二人の天中殺の対立が根底にある",
+      "status": "planned",
+      "must_resolve_by": "episode_40",
+      "resolution_event": null,
+      "linked_constraints": ["AST-003"],
+      "risk_level": "medium"
+    },
+    {
+      "foreshadow_id": "F008",
+      "introduced_episode": "episode_60",
+      "introduced_by": "C003",
+      "surface_description": "美咲が慧に利用されていることに気づく",
+      "true_meaning": "三角関係の崩壊の始まり",
+      "status": "planned",
+      "must_resolve_by": "episode_85",
+      "resolution_event": null,
+      "linked_constraints": ["AST-009", "AST-010"],
+      "risk_level": "high"
+    }
+  ]
+}

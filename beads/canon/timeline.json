@@ -1,0 +1,127 @@
+{
+  "$schema": "../schemas/canon-timeline.json",
+  "version": "1.0",
+  "last_updated": "2026-02-10",
+  "note": "絶対不変の正史タイムライン",
+  "events": [
+    {
+      "event_id": "E001",
+      "date": "1990-11-01",
+      "episode": "backstory",
+      "type": "birth",
+      "characters": ["C002"],
+      "description": "藤堂慧誕生",
+      "irreversible": true
+    },
+    {
+      "event_id": "E002",
+      "date": "1991-03-02",
+      "episode": "backstory",
+      "type": "birth",
+      "characters": ["C001"],
+      "description": "九条巡誕生",
+      "irreversible": true
+    },
+    {
+      "event_id": "E003",
+      "date": "2009-04-01",
+      "episode": "backstory",
+      "type": "education",
+      "characters": ["C001", "C002"],
+      "description": "西洛大学理学類入学（同学年）",
+      "irreversible": true
+    },
+    {
+      "event_id": "E004",
+      "date": "2011-04-01",
+      "episode": "backstory",
+      "type": "education",
+      "characters": ["C001", "C002"],
+      "description": "巡が医学部に、慧が工学部に編入",
+      "irreversible": true
+    },
+    {
+      "event_id": "E005",
+      "date": "2017-01-15",
+      "episode": "backstory",
+      "type": "career",
+      "characters": ["C001", "C002"],
+      "description": "MedAI設立",
+      "irreversible": true
+    },
+    {
+      "event_id": "E006",
+      "date": "2020-11-15",
+      "episode": "backstory",
+      "type": "betrayal",
+      "characters": ["C001", "C002"],
+      "description": "慧が巡を裏切り、MedAIを乗っ取る",
+      "irreversible": true,
+      "notes": "このイベントが二人の対立の根底"
+    },
+    {
+      "event_id": "E007",
+      "date": "2022-03-01",
+      "episode": "backstory",
+      "type": "depression",
+      "characters": ["C001"],
+      "description": "巡、うつ状態に陥る",
+      "irreversible": true
+    },
+    {
+      "event_id": "E008",
+      "date": "2023-04-01",
+      "episode": "backstory",
+      "type": "meeting",
+      "characters": ["C002", "C005"],
+      "description": "慧、紫織と出会う",
+      "irreversible": true
+    },
+    {
+      "event_id": "E009",
+      "date": "2024-03-15",
+      "episode": "backstory",
+      "type": "death",
+      "characters": ["C004"],
+      "description": "九条桜（祖母）99歳で逝去",
+      "irreversible": true,
+      "notes": "巡に陰陽道のノートを遺す"
+    },
+    {
+      "event_id": "E010",
+      "date": "2024-06-01",
+      "episode": "backstory",
+      "type": "career",
+      "characters": ["C001"],
+      "description": "巡、運命診断師として開院準備",
+      "irreversible": true
+    },
+    {
+      "event_id": "E011",
+      "date": "2026-04-01",
+      "episode": "episode_01",
+      "type": "story_start",
+      "characters": ["C001"],
+      "description": "「九条巡 運命診断室」開院",
+      "irreversible": true
+    },
+    {
+      "event_id": "E012",
+      "date": "2026-04-05",
+      "episode": "episode_01",
+      "type": "meeting",
+      "characters": ["C001", "C003"],
+      "description": "美咲、初診を受ける",
+      "irreversible": true
+    },
+    {
+      "event_id": "E013",
+      "date": "2026-05-01",
+      "episode": "episode_10",
+      "type": "career",
+      "characters": ["C001", "C003"],
+      "description": "美咲、アシスタント就任",
+      "irreversible": true
+    }
+  ]
+}

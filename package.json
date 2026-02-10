@@ -22,9 +22,11 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.29.0",
+    "@babel/preset-typescript": "^7.28.5",
     "@tailwindcss/postcss": "^4",
     "@textlint-ja/textlint-rule-preset-ai-writing": "^1.6.1",
-    "@types/node": "^20",
+    "@types/node": "^20.19.33",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
@@ -32,6 +34,7 @@
     "lunisolar": "^2.6.0",
     "tailwindcss": "^4",
     "textlint": "^15.5.1",
+    "ts-node": "^10.9.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }

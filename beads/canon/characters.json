@@ -1,0 +1,130 @@
+{
+  "$schema": "../schemas/canon-characters.json",
+  "version": "1.0",
+  "last_updated": "2026-02-10",
+  "characters": [
+    {
+      "character_id": "C001",
+      "name": "九条 巡",
+      "name_kana": "くじょう めぐる",
+      "birth_id": "B001",
+      "sex": "male",
+      "status": "alive",
+      "first_appearance": "episode_01",
+      "death_episode": null,
+      "core_traits": [
+        "冷静な観察眼",
+        "問い続ける知性",
+        "運命を読む力",
+        "救えなかった患者への罪悪感"
+      ],
+      "immutable_rules": [
+        "医師国家試験に合格している",
+        "MedAIで慧に裏切られた",
+        "祖母の陰陽道を継承している",
+        "うつ状態から運命診断師に転身"
+      ],
+      "relationships": {
+        "C002": "former_partner_betrayed",
+        "C003": "assistant",
+        "C004": "grandmother_deceased"
+      }
+    },
+    {
+      "character_id": "C002",
+      "name": "藤堂 慧",
+      "name_kana": "とうどう けい",
+      "birth_id": "B002",
+      "sex": "male",
+      "status": "alive",
+      "first_appearance": "episode_01",
+      "death_episode": null,
+      "core_traits": [
+        "「技術で人間を救える」という確信",
+        "医療AIでの挫折",
+        "「残りの2%が分からない」という問い",
+        "巡を裏切った罪悪感"
+      ],
+      "immutable_rules": [
+        "巡を裏切ってMedAIを乗っ取った",
+        "「星みてる」を開発",
+        "技術主義の限界を痛感している"
+      ],
+      "relationships": {
+        "C001": "former_partner_betrayed",
+        "C005": "mentor_diviner"
+      }
+    },
+    {
+      "character_id": "C003",
+      "name": "高橋 美咲",
+      "name_kana": "たかはし みさき",
+      "birth_id": "B003",
+      "sex": "female",
+      "status": "alive",
+      "first_appearance": "episode_01",
+      "death_episode": null,
+      "core_traits": [
+        "感受性が高い（調舒星）",
+        "SNSでの発信力",
+        "巡に支えられたいという欲求"
+      ],
+      "immutable_rules": [
+        "第一話で巡の診断を受ける",
+        "SNSで巡の診断を発信",
+        "巡のアシスタントになる"
+      ],
+      "relationships": {
+        "C001": "employer_love_interest",
+        "C002": "manipulative_contact"
+      }
+    },
+    {
+      "character_id": "C004",
+      "name": "九条 桜",
+      "name_kana": "くじょう さくら",
+      "birth_id": "B004",
+      "sex": "female",
+      "status": "deceased",
+      "first_appearance": "episode_01",
+      "death_episode": "episode_90",
+      "death_date": "2024-03-15",
+      "core_traits": [
+        "戦争を生きた強さ",
+        "陰陽道の継承者",
+        "18年間巡を育てた"
+      ],
+      "immutable_rules": [
+        "1925年生まれ",
+        "戦争体験者（1945年・20歳）",
+        "巡に陰陽道を教える",
+        "99歳で逝去"
+      ],
+      "relationships": {
+        "C001": "grandson"
+      }
+    },
+    {
+      "character_id": "C005",
+      "name": "星野 紫織",
+      "name_kana": "ほしの しおり",
+      "birth_id": "B005",
+      "sex": "female",
+      "status": "alive",
+      "first_appearance": "episode_85",
+      "death_episode": null,
+      "core_traits": [
+        "占い師（手相・タロット）",
+        "「残りの2%」について問いかける",
+        "慧の精神的指導者"
+      ],
+      "immutable_rules": [
+        "2023年に慧と出会う",
+        "慧に「技術の限界」を気づかせる"
+      ],
+      "relationships": {
+        "C002": "mentee"
+      }
+    }
+  ]
+}
