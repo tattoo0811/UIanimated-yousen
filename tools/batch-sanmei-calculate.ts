@@ -8,6 +8,10 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // --- sanmei-with-energy-cli.ts の calculateSanmei をそのまま組み込み ---
 // （import だと CLI 部分も実行されるため、ロジックだけ抽出）
@@ -461,7 +465,7 @@ async function main() {
         if (c.name === "藤堂 慧") continue; // 主要キャラは別管理
         if (c.name.includes('&')) {
             // 双子 (EP66: 星野 蓮 & 星野 颯太 など) → 一人目だけ処理（代表）
-            const names = c.name.split('&').map(n => n.trim());
+            const names = c.name.split('&').map((n: string) => n.trim());
             const primaryName = names[0];
             // birth_date format: "2001-04-12T03:30:00（蓮）, ..."
             // Simply take the first 10 chars for YYYY-MM-DD

@@ -128,14 +128,14 @@
   },
   {
     "episode": 99,
-    "name": "高橋 優花",
-    "name_reading": "たかはし ゆうこ",
+    "name": "高橋 アリサ",
+    "name_reading": "たかはし ありさ",
     "birth_date": "1996-03-10",
     "birth_time": "08:45",
     "age": 28,
     "gender": 2,
     "life_event": "F05: 出産・育児",
-    "worry": "第一子出産後、産後うつ。赤ちゃんを愛せない罪悪感",
+    "worry": "第一子出産後、産後うつ。ハーフとしてのアイデンティティの揺らぎと、母としての自信喪失",
     "occupation": "育児休業中（元事務）",
     "sanmeigaku_verified": {
       "bazi": {
@@ -762,14 +762,14 @@
   },
   {
     "episode": 109,
-    "name": "宮下 美咲",
-    "name_reading": "みやした みさき",
+    "name": "宮下 玲奈",
+    "name_reading": "みやした れいな",
     "birth_date": "1989-07-30",
     "birth_time": "16:00",
     "age": 35,
     "gender": 2,
     "life_event": "F07: 不倫・浮気",
-    "worry": "夫の浮気発覚。子供のために離婚せず、信頼回復の苦悩",
+    "worry": "夫の浮気発覚。女王（Reina）としての誇りを傷つけられ、許すべきか去るべきか苦悩",
     "occupation": "パート",
     "sanmeigaku_verified": {
       "bazi": {
@@ -952,15 +952,15 @@
   },
   {
     "episode": 112,
-    "name": "佐藤 美咲",
-    "name_reading": "さとう みさき",
+    "name": "佐藤 舞",
+    "name_reading": "さとう まい",
     "birth_date": "1994-04-10",
     "birth_time": "14:00",
     "age": 30,
     "gender": 2,
     "life_event": "E01: 幼稚園受験",
-    "worry": "第一子の幼稚園受験に奔走。夫との教育方針の対立、母親同士の競争に疲弊",
-    "occupation": "専業主婦（元会社員）",
+    "worry": "第一子の幼稚園受験。海外赴任経験から日本の受験戦争に違和感を持つが、周囲に流されてしまう",
+    "occupation": "専業主婦（元商社勤務）",
     "sanmeigaku_verified": {
       "bazi": {
         "year": "丙寅",
@@ -1142,15 +1142,15 @@
   },
   {
     "episode": 115,
-    "name": "天野 優花",
-    "name_reading": "おかもと りこ",
+    "name": "天野 サラ",
+    "name_reading": "あまの さら",
     "birth_date": "1996-08-20",
     "birth_time": "12:00",
     "age": 28,
     "gender": 2,
     "life_event": "F07: 不倫・浮気（相手側）",
-    "worry": "既婚者と知りながら恋愛、別れられない依存",
-    "occupation": "会社員",
+    "worry": "既婚者との関係。リベラルな価値観と伝統的な家柄（天野家）との板挟み",
+    "occupation": "会社員（外資系）",
     "sanmeigaku_verified": {
       "bazi": {
         "year": "己丑",
@@ -1394,14 +1394,14 @@
   },
   {
     "episode": 119,
-    "name": "近藤 美咲",
-    "name_reading": "こんどう みさき",
+    "name": "近藤 杏",
+    "name_reading": "こんどう あん",
     "birth_date": "1984-07-18",
     "birth_time": "14:00",
     "age": 40,
     "gender": 2,
     "life_event": "X05: 自己破産（妻）",
-    "worry": "夫の借金発覚、離婚を考える",
+    "worry": "夫の借金発覚。贅沢を捨て、シンプルに生きる（An）ことへの転換を迫られる",
     "occupation": "パート",
     "sanmeigaku_verified": {
       "bazi": {

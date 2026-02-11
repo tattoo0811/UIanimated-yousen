@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2026-02-11T11:21:40.622Z",
+    "generated": "2026-02-11T11:31:23.151Z",
     "tool": "batch-sanmei-calculate.ts (sanmei-with-energy-cli logic)",
     "totalCharacters": 107,
     "warnings": [],
@@ -6329,7 +6329,7 @@
     },
     {
       "episode": 29,
-      "name": "鍛冶 美月",
+      "name": "鍛冶 ルナ",
       "birthDate": "1992-08-30",
       "gender": "female",
       "source": "EPISODES-25-48",
@@ -18333,7 +18333,7 @@
     },
     {
       "episode": 83,
-      "name": "岡本 美咲",
+      "name": "岡本 エマ",
       "birthDate": "1995-10-03",
       "gender": "female",
       "age": 29,
@@ -19731,7 +19731,7 @@
     },
     {
       "episode": 99,
-      "name": "高橋 優花",
+      "name": "高橋 アリサ",
       "birthDate": "1996-03-10",
       "gender": "female",
       "age": 28,
@@ -22029,7 +22029,7 @@
     },
     {
       "episode": 109,
-      "name": "宮下 美咲",
+      "name": "宮下 玲奈",
       "birthDate": "1989-07-30",
       "gender": "female",
       "age": 35,
@@ -22740,7 +22740,7 @@
     },
     {
       "episode": 112,
-      "name": "佐藤 美咲",
+      "name": "佐藤 舞",
       "birthDate": "1994-04-10",
       "gender": "female",
       "age": 30,
@@ -23415,7 +23415,7 @@
     },
     {
       "episode": 115,
-      "name": "天野 優花",
+      "name": "天野 サラ",
       "birthDate": "1996-08-20",
       "gender": "female",
       "age": 28,
@@ -24351,7 +24351,7 @@
     },
     {
       "episode": 119,
-      "name": "近藤 美咲",
+      "name": "近藤 杏",
       "birthDate": "1984-07-18",
       "gender": "female",
       "age": 40,

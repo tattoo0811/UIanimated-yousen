@@ -1055,11 +1055,12 @@
           "episode": 83,
           "title": "副業から独立",
           "patient": {
-            "name": "岡本 美咲",
-            "name_reading": "おかもと ななこ",
+            "name": "岡本 エマ",
+            "name_reading": "おかもと えま",
             "age": 29,
             "birth_date": "1995-10-03",
             "gender": "female",
+            "background": "ドイツ系クォーター。完璧主義だが、ルーツによる疎外感を抱え、自分の居場所を探し続けている。",
             "occupation": "会社員（年収450万円）× イラストレーター（副業年収150万円）、独立を検討",
             "economic": {
               "salary": "本業450万円＋副業150万円",
