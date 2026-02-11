@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2026-02-11T10:42:45.057Z",
+    "generated": "2026-02-11T11:21:40.622Z",
     "tool": "batch-sanmei-calculate.ts (sanmei-with-energy-cli logic)",
     "totalCharacters": 107,
     "warnings": [],
@@ -477,7 +477,7 @@
     },
     {
       "episode": 4,
-      "name": "田中 優子",
+      "name": "田中 凛",
       "birthDate": "1995-04-18",
       "gender": "female",
       "source": "EPISODES-1-24",
@@ -6329,7 +6329,7 @@
     },
     {
       "episode": 29,
-      "name": "中村優子",
+      "name": "鍛冶 美月",
       "birthDate": "1992-08-30",
       "gender": "female",
       "source": "EPISODES-25-48",
@@ -7201,7 +7201,7 @@
     },
     {
       "episode": 33,
-      "name": "小川真理子",
+      "name": "小川 彩",
       "birthDate": "1990-09-05",
       "gender": "female",
       "source": "EPISODES-25-48",
@@ -8805,7 +8805,7 @@
     },
     {
       "episode": 40,
-      "name": "長谷川麻美",
+      "name": "長谷川 愛",
       "birthDate": "1991-06-22",
       "gender": "female",
       "source": "EPISODES-25-48",
@@ -14235,7 +14235,7 @@
     },
     {
       "episode": 63,
-      "name": "山本 慎太郎",
+      "name": "山本 隼人",
       "birthDate": "1993-03-27",
       "gender": "male",
       "age": 31,
@@ -14709,7 +14709,7 @@
     },
     {
       "episode": 66,
-      "name": "大野 翔",
+      "name": "星野 蓮",
       "birthDate": "2001-04-12",
       "gender": "male",
       "age": 23,
@@ -15408,7 +15408,7 @@
     },
     {
       "episode": 69,
-      "name": "大杉 美和子",
+      "name": "雨宮 愛莉",
       "birthDate": "1996-10-15",
       "gender": "female",
       "age": 28,
@@ -18333,7 +18333,7 @@
     },
     {
       "episode": 83,
-      "name": "岡本 菜々子",
+      "name": "岡本 美咲",
       "birthDate": "1995-10-03",
       "gender": "female",
       "age": 29,
@@ -19731,7 +19731,7 @@
     },
     {
       "episode": 99,
-      "name": "高橋 優子",
+      "name": "高橋 優花",
       "birthDate": "1996-03-10",
       "gender": "female",
       "age": 28,
@@ -23415,7 +23415,7 @@
     },
     {
       "episode": 115,
-      "name": "岡本 莉子",
+      "name": "天野 優花",
       "birthDate": "1996-08-20",
       "gender": "female",
       "age": 28,

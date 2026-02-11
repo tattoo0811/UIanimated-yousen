@@ -743,7 +743,7 @@
     },
     {
       "episode": 63,
-      "name": "山本 慎太郎",
+      "name": "山本 隼人",
       "name_reading": "やまもと しんたろう",
       "age": 31,
       "gender": "male",
@@ -897,11 +897,11 @@
     },
     {
       "episode": 66,
-      "name": "大野 翔 & 大野 颯太",
-      "name_reading": "おおの しょう & おおの そうた",
+      "name": "星野 蓮 & 星野 颯太",
+      "name_reading": "ほしの れん & ほしの そうた",
       "age": 23,
       "gender": "male",
-      "birth_date": "2001-04-12T03:30:00（翔）, 2001-04-12T03:35:00（颯太）",
+      "birth_date": "2001-04-12T03:30:00（蓮）, 2001-04-12T03:35:00（颯太）",
       "birth_longitude": 135,
       "occupation": "翔：大学生、颯太：フリーター",
       "economic": {
@@ -1050,7 +1050,7 @@
     },
     {
       "episode": 69,
-      "name": "大杉 美和子",
+      "name": "雨宮 愛莉",
       "name_reading": "おおすぎ みわこ",
       "age": 28,
       "gender": "female",

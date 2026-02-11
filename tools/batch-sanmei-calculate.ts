@@ -460,10 +460,15 @@ async function main() {
     for (const c of ep3Data.characters) {
         if (c.name === "藤堂 慧") continue; // 主要キャラは別管理
         if (c.name.includes('&')) {
-            // 双子 (EP66: 大野 翔 & 大野 颯太) → 翔だけ処理
-            const births = c.birth_date.split('（翔）')[0].trim();
+            // 双子 (EP66: 星野 蓮 & 星野 颯太 など) → 一人目だけ処理（代表）
+            const names = c.name.split('&').map(n => n.trim());
+            const primaryName = names[0];
+            // birth_date format: "2001-04-12T03:30:00（蓮）, ..."
+            // Simply take the first 10 chars for YYYY-MM-DD
+            const birthDate = c.birth_date.substring(0, 10);
+
             allCharacters.push({
-                episode: c.episode, name: "大野 翔", birthDate: births.split('T')[0],
+                episode: c.episode, name: primaryName, birthDate: birthDate,
                 gender: c.gender, age: c.age, source: 'EPISODES-49-72'
             });
             continue;

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2026-02-11T10:45:46.291Z",
+    "generated": "2026-02-11T11:21:40.890Z",
     "totalPersonas": 107,
     "gogoTenchusatsuCount": 26,
     "centerStarDistribution": {
@@ -81,7 +81,7 @@
     },
     {
       "episode": 4,
-      "name": "田中 優子",
+      "name": "田中 凛",
       "birthDate": "1995-04-18",
       "gender": "female",
       "nikkan": "己",
@@ -756,7 +756,7 @@
     },
     {
       "episode": 29,
-      "name": "中村優子",
+      "name": "鍛冶 美月",
       "birthDate": "1992-08-30",
       "gender": "female",
       "nikkan": "戊",
@@ -864,7 +864,7 @@
     },
     {
       "episode": 33,
-      "name": "小川真理子",
+      "name": "小川 彩",
       "birthDate": "1990-09-05",
       "gender": "female",
       "nikkan": "癸",
@@ -1053,7 +1053,7 @@
     },
     {
       "episode": 40,
-      "name": "長谷川麻美",
+      "name": "長谷川 愛",
       "birthDate": "1991-06-22",
       "gender": "female",
       "nikkan": "癸",
@@ -1674,7 +1674,7 @@
     },
     {
       "episode": 63,
-      "name": "山本 慎太郎",
+      "name": "山本 隼人",
       "birthDate": "1993-03-27",
       "gender": "male",
       "nikkan": "丁",
@@ -1728,7 +1728,7 @@
     },
     {
       "episode": 66,
-      "name": "大野 翔",
+      "name": "星野 蓮",
       "birthDate": "2001-04-12",
       "gender": "male",
       "nikkan": "乙",
@@ -1809,7 +1809,7 @@
     },
     {
       "episode": 69,
-      "name": "大杉 美和子",
+      "name": "雨宮 愛莉",
       "birthDate": "1996-10-15",
       "gender": "female",
       "nikkan": "乙",
@@ -2160,7 +2160,7 @@
     },
     {
       "episode": 83,
-      "name": "岡本 菜々子",
+      "name": "岡本 美咲",
       "birthDate": "1995-10-03",
       "gender": "female",
       "nikkan": "丁",
@@ -2322,7 +2322,7 @@
     },
     {
       "episode": 99,
-      "name": "高橋 優子",
+      "name": "高橋 優花",
       "birthDate": "1996-03-10",
       "gender": "female",
       "nikkan": "丙",
@@ -2754,7 +2754,7 @@
     },
     {
       "episode": 115,
-      "name": "岡本 莉子",
+      "name": "天野 優花",
       "birthDate": "1996-08-20",
       "gender": "female",
       "nikkan": "己",
