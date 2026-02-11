@@ -1,0 +1,39 @@
+{
+  "basic_info": {
+    "name": "尚美",
+    "name_reading": "なおみ",
+    "birth_date": "1981-12-04",
+    "birth_time": "12:00",
+    "age_2025": 44,
+    "gender": "female"
+  },
+  "four_pillars": {
+    "year_pillar": "辛酉",
+    "month_pillar": "己亥",
+    "day_pillar": "丙辰",
+    "hour_pillar": "甲午",
+    "nikkan": "丙",
+    "gesshi": "辰",
+    "tenchusatsu": "辰巳天中殺"
+  },
+  "jugdai": {
+    "head": "牽牛星",
+    "chest": "司禄星",
+    "belly": "司禄星",
+    "right_hand": "禄存星",
+    "left_hand": "牽牛星"
+  },
+  "junidai": {
+    "left_shoulder": "天極星 (2点)",
+    "left_leg": "天南星 (10点)",
+    "right_leg": "天馳星 (1点)"
+  },
+  "five_elements": {
+    "wood": 2,
+    "fire": 4,
+    "earth": 4,
+    "metal": 4,
+    "water": 2,
+    "total": 16
+  }
+}

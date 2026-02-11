@@ -1,0 +1,38 @@
+{
+  "params": {
+    "name": "涼子",
+    "birthDate": "1977-08-20",
+    "birthTime": "14:00",
+    "gender": "female"
+  },
+  "data": {
+    "basicInfo": {
+      "name": "涼子",
+      "birthDate": "1977年8月20日",
+      "gender": "女性",
+      "location": null
+    },
+    "fourPillars": {
+      "year": "丁巳",
+      "month": "戊申",
+      "day": "己酉",
+      "hour": null
+    },
+    "jugdai": {
+      "head": "龍高星",
+      "chest": "司禄星",
+      "belly": "石門星",
+      "rightHand": "鳳閣星",
+      "leftHand": "調舒星"
+    },
+    "junidai": {
+      "leftShoulder": "天将星",
+      "leftLeg": "天貴星",
+      "rightLeg": "天恍星"
+    },
+    "tenchusatsu": "己酉",
+    "screenshot": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/screenshots/shugakuin/涼子-1977-08-20-shugakuin.png",
+    "verifiedAt": "2026-02-10T10:30:00.000Z",
+    "source": "朱学院 https://www.shugakuin.co.jp/fate_calculation?ge=2&ye=1977&mo=8&da=20"
+  }
+}
