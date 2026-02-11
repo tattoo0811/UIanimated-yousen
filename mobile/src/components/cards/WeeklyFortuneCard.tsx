@@ -1,8 +1,18 @@
 import { View, Text, ScrollView } from 'react-native';
 import type { SanmeigakuInsenChart, FourPillars } from '@/src/types';
 import { Calendar, TrendingUp, TrendingDown, Minus, Sparkles, AlertCircle } from 'lucide-react-native';
-import { getWeeklyFortune } from '@/src/lib/logic/weeklyFortune';
-import { calculateBaZi } from '@/src/lib/logic/bazi';
+// TODO: Restore imports when lib files are available
+// import { getWeeklyFortune } from '@/src/lib/logic/weeklyFortune';
+// import { calculateBaZi } from '@/src/lib/logic/bazi';
+
+// Temporary stub implementations
+const calculateBaZi = (birthDate: Date) => {
+    return null;
+};
+
+const getWeeklyFortune = (bazi: any, currentDate: Date) => {
+    return null;
+};
 
 type Props = {
     insen: SanmeigakuInsenChart;

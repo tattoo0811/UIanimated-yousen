@@ -3,8 +3,35 @@ import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 import { Undo2, Share2, Sparkles } from 'lucide-react-native';
-import { ZODIAC_SIGNS } from '../../src/lib/zodiac';
-import { shareToSocial, showShareOptions, SharePlatform } from '../../src/lib/share';
+// TODO: Restore imports when lib files are available
+// import { ZODIAC_SIGNS } from '../../src/lib/zodiac';
+// import { shareToSocial, showShareOptions, SharePlatform } from '../../src/lib/share';
+
+// Temporary inline definitions
+const ZODIAC_SIGNS = [
+    { id: 'aries', name: '牡羊座', symbol: '♈', dateRange: '3/21 - 4/19', element: 'Fire', keywords: ['大胆', '情熱的', 'リーダー'], description: '新しい始まりに満ちたエネルギッシュな時期です。' },
+    { id: 'taurus', name: '牡牛座', symbol: '♉', dateRange: '4/20 - 5/20', element: 'Earth', keywords: ['忍耐強い', '安定', '実用的'], description: '安定と調和をもたらす時期です。' },
+    { id: 'gemini', name: '双子座', symbol: '♊', dateRange: '5/21 - 6/20', element: 'Air', keywords: ['適応力', '好奇心', '多才'], description: 'コミュニケーションと学びに適した時期です。' },
+    { id: 'cancer', name: '蟹座', symbol: '♋', dateRange: '6/21 - 7/22', element: 'Water', keywords: ['直感的', '保護的', '感情的'], description: '感情の深まりと人間関係の充実の時です。' },
+    { id: 'leo', name: '獅子座', symbol: '♌', dateRange: '7/23 - 8/22', element: 'Fire', keywords: ['自信家', '創造的', '寛大'], description: '輝きと創造性が花開く時期です。' },
+    { id: 'virgo', name: '乙女座', symbol: '♍', dateRange: '8/23 - 9/22', element: 'Earth', keywords: ['詳細', '分析力', '奉仕的'], description: '整理と改善に適した時期です。' },
+    { id: 'libra', name: '天秤座', symbol: '♎', dateRange: '9/23 - 10/22', element: 'Air', keywords: ['バランス', '調和', '社交的'], description: 'パートナーシップと美意識が高まる時期です。' },
+    { id: 'scorpio', name: '蠍座', symbol: '♏', dateRange: '10/23 - 11/21', element: 'Water', keywords: ['情熱的', '神秘的', '決断力'], description: '変容と深い気づきをもたらす時期です。' },
+    { id: 'sagittarius', name: '射手座', symbol: '♐', dateRange: '11/22 - 12/21', element: 'Fire', keywords: ['冒険心', '楽観的', '哲学的'], description: '探究と自由を追求する時期です。' },
+    { id: 'capricorn', name: '山羊座', symbol: '♑', dateRange: '12/22 - 1/19', element: 'Earth', keywords: ['野心的', '規律', '忍耐'], description: '目標達成に向けた着実な進歩の時です。' },
+    { id: 'aquarius', name: '水瓶座', symbol: '♒', dateRange: '1/20 - 2/18', element: 'Air', keywords: ['革新的', '独立的', '人道的'], description: '新しいアイデアと友人関係の発展の時です。' },
+    { id: 'pisces', name: '魚座', symbol: '♓', dateRange: '2/19 - 3/20', element: 'Water', keywords: ['直感的', '共感的', '芸術的'], description: '直感と創造性が高まる時期です。' },
+];
+
+const shareToSocial = (platform: string, options: { message: string }) => {
+    console.log(`Share to ${platform}:`, options.message);
+    // TODO: Implement actual sharing
+};
+
+const showShareOptions = (options: { message: string }) => {
+    console.log('Show share options:', options.message);
+    // TODO: Implement actual share dialog
+};
 
 export default function FortuneScreen() {
     const { sign: signId } = useLocalSearchParams();

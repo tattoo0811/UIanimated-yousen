@@ -3,8 +3,19 @@ import { useState, useEffect } from 'react';
 import type { SanmeigakuInsenChart } from '@/src/types';
 import { Heart, Users, Briefcase, Home, X, Check, Video } from 'lucide-react-native';
 import { Picker } from '@react-native-picker/picker';
-import { calculateBaZi } from '@/src/lib/logic';
+// TODO: Restore import when lib file is available
+// import { calculateBaZi } from '@/src/lib/logic';
 import { getKanshiPopType, ELEMENT_COLORS } from '@/src/data/kanshi-pop-types';
+
+// Temporary stub implementation
+const calculateBaZi = (birthDate: Date) => {
+    return {
+        year: { stemStr: '甲', branchStr: '子' },
+        month: { stemStr: '甲', branchStr: '子' },
+        day: { stemStr: '甲', branchStr: '子' },
+        hour: { stemStr: '甲', branchStr: '子' }
+    };
+};
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
 

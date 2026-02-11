@@ -1,16 +1,16 @@
 import { View, Text, FlatList, Dimensions } from 'react-native';
 import { useEffect, useState } from 'react';
-import { loadStorage } from '@/src/lib/storage';
-import { useResponsive } from '@/src/hooks/useResponsive';
-import { FortuneCard, CardSection } from '@/src/components/FortuneCard';
-import YangSenDiagram from '@/src/components/YangSenDiagram';
-import type { CalculationResult } from '@/src/types';
-import tenStarsData from '@/src/data/ten-stars.json';
-import twelveStarsData from '@/src/data/twelve-stars.json';
-import relationshipAdviceData from '@/src/data/relationship-advice.json';
-import positiveReframes from '@/src/data/positive-reframes.json';
-import phaseRelationsData from '@/src/data/phase-relations.json';
-import { checkSpecialTenchusatsu } from '@/src/lib/logic';
+import { loadStorage } from '@/lib/storage';
+import { useResponsive } from '@/hooks/useResponsive';
+import { FortuneCard, CardSection } from '@/components/FortuneCard';
+import YangSenDiagram from '@/components/YangSenDiagram';
+import type { CalculationResult } from '@/types';
+import tenStarsData from '@/data/ten-stars.json';
+import twelveStarsData from '@/data/twelve-stars.json';
+import relationshipAdviceData from '@/data/relationship-advice.json';
+import positiveReframes from '@/data/positive-reframes.json';
+import phaseRelationsData from '@/data/phase-relations.json';
+import { checkSpecialTenchusatsu } from '@/lib/logic';
 
 const { width } = Dimensions.get('window');
 

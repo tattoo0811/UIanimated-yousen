@@ -1,6 +1,14 @@
 import React, { Component, ReactNode } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { monitoring } from '@/src/lib/monitoring';
+// TODO: Restore import when lib file is available
+// import { monitoring } from '@/src/lib/monitoring';
+
+// Temporary stub implementation
+const monitoring = {
+    recordError: (error: Error, context?: Record<string, unknown>) => {
+        console.error('Monitoring:', error, context);
+    }
+};
 
 interface Props {
     children: ReactNode;

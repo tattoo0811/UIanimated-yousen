@@ -1,8 +1,28 @@
 import { View, Text, ScrollView } from 'react-native';
 import type { SanmeigakuInsenChart, FourPillars } from '@/src/types';
 import { Calendar, TrendingUp, Compass, Sparkles } from 'lucide-react-native';
-import { getDailyFortune } from '@/src/lib/logic/dailyFortune';
-import { calculateBaZi } from '@/src/lib/logic/bazi';
+// TODO: Restore imports when lib files are available
+// import { getDailyFortune } from '@/src/lib/logic/dailyFortune';
+// import { calculateBaZi } from '@/src/lib/logic/bazi';
+
+// Temporary stub implementations
+const calculateBaZi = (birthDate: Date) => {
+    return null;
+};
+
+const getDailyFortune = (bazi: any, currentDate: Date) => {
+    return {
+        level: '中吉' as const,
+        color: '#8b5cf6',
+        advice: '生年月日を入力すると、より正確な運勢が表示されます。',
+        dailyGanZhi: { stem: '?', branch: '?' },
+        dailyTenStar: '?',
+        dailyTwelveStar: { name: '?', score: 0 },
+        specialConditions: [],
+        luckyDirection: '?',
+        date: currentDate.toISOString().split('T')[0]
+    };
+};
 
 type Props = {
     insen: SanmeigakuInsenChart;

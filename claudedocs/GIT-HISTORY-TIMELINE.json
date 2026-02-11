@@ -1,0 +1,533 @@
+{
+  "timeline": [
+    {
+      "date": "2026-01-24",
+      "commits": [
+        {
+          "hash": "06046f20",
+          "message": "docs(11): complete 2026 Year Fortune phase",
+          "files_affected": [
+            ".planning/REQUIREMENTS.md",
+            ".planning/ROADMAP.md",
+            ".planning/phases/10-friend-compatibility/10-02-SUMMARY.md",
+            ".planning/phases/11-2026-year-fortune/11-01-PLAN.md",
+            ".planning/phases/11-2026-year-fortune/11-02-PLAN.md",
+            ".planning/phases/11-2026-year-fortune/VERIFICATION.md"
+          ],
+          "description": "Completed Phase 11 for 2026 Year Fortune feature, including requirements, roadmap updates, and verification documentation"
+        },
+        {
+          "hash": "e621d7af",
+          "message": "docs(11-02): create SUMMARY and update STATE for year fortune video template",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/11-2026-year-fortune/11-02-SUMMARY.md"
+          ],
+          "description": "Created summary documentation for year fortune video template implementation and updated project state"
+        },
+        {
+          "hash": "3747db4c",
+          "message": "docs(11-01): create SUMMARY.md and update STATE.md",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/11-2026-year-fortune/11-01-SUMMARY.md"
+          ],
+          "description": "Documented Phase 11-01 completion with summary and updated project state tracking"
+        },
+        {
+          "hash": "059cdf73",
+          "message": "docs(11): research phase domain",
+          "files_affected": [
+            ".planning/phases/11-2026-year-fortune/11-RESEARCH.md"
+          ],
+          "description": "Researched domain knowledge for 2026 Year Fortune feature implementation"
+        },
+        {
+          "hash": "817e88d4",
+          "message": "docs(11): capture phase context",
+          "files_affected": [
+            ".planning/phases/11-2026-year-fortune/11-CONTEXT.md"
+          ],
+          "description": "Captured context and requirements for Phase 11 development"
+        },
+        {
+          "hash": "c0433653",
+          "message": "docs(04): complete phase 04 verification",
+          "files_affected": [
+            ".planning/REQUIREMENTS.md",
+            ".planning/ROADMAP.md",
+            ".planning/phases/04-video-generation-backend/04-VERIFICATION.md"
+          ],
+          "description": "Completed verification of Phase 04 (Video Generation Backend) with updated requirements and roadmap"
+        },
+        {
+          "hash": "a8d794fc",
+          "message": "feat(10-02): implement mobile UI and compatibility video generation",
+          "files_affected": [
+            ".planning/phases/10-friend-compatibility/10-01-SUMMARY.md"
+          ],
+          "description": "Implemented mobile UI and compatibility video generation features for friend compatibility"
+        },
+        {
+          "hash": "258dae87",
+          "message": "feat(10-01): implement multi-person compatibility calculation logic",
+          "files_affected": [
+            ".planning/PROJECT.md",
+            ".planning/phases/02-card-ui-core/02-01-PLAN.md",
+            ".planning/phases/02-card-ui-core/02-02-PLAN.md",
+            ".planning/phases/02-card-ui-core/02-03-PLAN.md",
+            ".planning/phases/02-card-ui-core/02-04-PLAN.md",
+            ".planning/phases/02-card-ui-core/02-PLAN-CHECK.md",
+            ".planning/phases/02-card-ui-core/02-VERIFICATION.md",
+            ".planning/phases/04-video-generation-backend/04-CONTEXT.md",
+            ".planning/phases/06-video-playback-share/06-01-SUMMARY.md",
+            ".planning/phases/06-video-playback-share/06-02-SUMMARY.md",
+            ".planning/phases/07-direct-social-sharing/07-SUMMARY.md",
+            "AGENTS.md",
+            "scripts/README-parallel.md"
+          ],
+          "description": "Implemented multi-person compatibility calculation logic with comprehensive documentation updates across multiple phases"
+        },
+        {
+          "hash": "0b836d17",
+          "message": "docs(10): create phase plan for friend compatibility",
+          "files_affected": [
+            ".planning/ROADMAP.md",
+            ".planning/phases/10-friend-compatibility/10-01-PLAN.md",
+            ".planning/phases/10-friend-compatibility/10-02-PLAN.md"
+          ],
+          "description": "Created Phase 10 plans for friend compatibility feature with two sub-phases"
+        },
+        {
+          "hash": "2fda7f8c",
+          "message": "docs(09-01): complete image generation prompt system plan",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/09-image-generation-prompts/09-01-SUMMARY.md"
+          ],
+          "description": "Completed plan for image generation prompt system with state updates"
+        },
+        {
+          "hash": "1b77c9c2",
+          "message": "feat(09-01): create phase 09 plan for image generation prompts",
+          "files_affected": [
+            ".planning/ROADMAP.md",
+            ".planning/phases/09-image-generation-prompts/09-01-PLAN.md"
+          ],
+          "description": "Created Phase 09 plan for implementing image generation prompt system"
+        },
+        {
+          "hash": "c492e71b",
+          "message": "docs(08-01,08-02): complete content translation phase documentation",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/08-content-translation/08-01-SUMMARY.md",
+            ".planning/phases/08-content-translation/08-02-SUMMARY.md"
+          ],
+          "description": "Completed documentation for content translation phase with two sub-phases"
+        },
+        {
+          "hash": "a2ff3672",
+          "message": "feat(08): create Phase 08 content translation plans",
+          "files_affected": [
+            ".planning/ROADMAP.md",
+            ".planning/phases/08-content-translation/08-01-PLAN.md",
+            ".planning/phases/08-content-translation/08-02-PLAN.md"
+          ],
+          "description": "Created Phase 08 plans for content translation feature"
+        },
+        {
+          "hash": "a2c6df79",
+          "message": "feat(07): create phase plans for direct social sharing",
+          "files_affected": [
+            ".planning/ROADMAP.md",
+            ".planning/phases/07-direct-social-sharing/07-01-PLAN.md",
+            ".planning/phases/07-direct-social-sharing/07-02-PLAN.md"
+          ],
+          "description": "Created Phase 07 plans for direct social sharing functionality"
+        },
+        {
+          "hash": "8295a036",
+          "message": "feat(06): create Phase 06 plan files for video playback and sharing",
+          "files_affected": [
+            ".planning/ROADMAP.md",
+            ".planning/phases/06-video-playback-share/06-01-PLAN.md",
+            ".planning/phases/06-video-playback-share/06-02-PLAN.md"
+          ],
+          "description": "Created Phase 06 plans for video playback and sharing features"
+        },
+        {
+          "hash": "38dc9f45",
+          "message": "docs(05): complete Phase 05 - Video Content Integration",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/05-video-content-integration/05-01-SUMMARY.md",
+            ".planning/phases/05-video-content-integration/05-02-SUMMARY.md"
+          ],
+          "description": "Completed Phase 05 for video content integration with comprehensive documentation"
+        },
+        {
+          "hash": "5ed0c19e",
+          "message": "docs(05): create phase plan",
+          "files_affected": [
+            ".planning/ROADMAP.md",
+            ".planning/phases/05-video-content-integration/05-01-PLAN.md",
+            ".planning/phases/05-video-content-integration/05-02-PLAN.md"
+          ],
+          "description": "Created Phase 05 plans for video content integration"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-23",
+      "commits": [
+        {
+          "hash": "4e11756c",
+          "message": "docs(04-04): add summary and update state",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/04-video-generation-backend/04-04-SUMMARY.md"
+          ],
+          "description": "Added summary for Phase 04-04 and updated project state"
+        },
+        {
+          "hash": "88efe16e",
+          "message": "docs(04-03): update state and create summary",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/04-video-generation-backend/04-03-SUMMARY.md"
+          ],
+          "description": "Updated state and created summary for Phase 04-03"
+        },
+        {
+          "hash": "dd27db47",
+          "message": "docs(04-02): complete video template base plan",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/04-video-generation-backend/04-02-SUMMARY.md"
+          ],
+          "description": "Completed video template base plan with state updates"
+        },
+        {
+          "hash": "39c1c8fb",
+          "message": "docs(04-01): add phase summary and update state",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/04-video-generation-backend/04-01-SUMMARY.md"
+          ],
+          "description": "Added Phase 04-01 summary and updated project state"
+        },
+        {
+          "hash": "6034864d",
+          "message": "docs(04): create phase plan",
+          "files_affected": [
+            ".planning/ROADMAP.md",
+            ".planning/phases/04-video-generation-backend/04-01-PLAN.md",
+            ".planning/phases/04-video-generation-backend/04-02-PLAN.md",
+            ".planning/phases/04-video-generation-backend/04-03-PLAN.md",
+            ".planning/phases/04-video-generation-backend/04-04-PLAN.md"
+          ],
+          "description": "Created comprehensive Phase 04 plans for video generation backend with 4 sub-phases"
+        },
+        {
+          "hash": "15193b72",
+          "message": "docs(04): research phase domain",
+          "files_affected": [
+            ".planning/phases/04-video-generation-backend/04-RESEARCH.md"
+          ],
+          "description": "Researched video generation backend domain knowledge"
+        },
+        {
+          "hash": "abce13bb",
+          "message": "docs(03): complete design system phase",
+          "files_affected": [
+            ".planning/REQUIREMENTS.md",
+            ".planning/ROADMAP.md",
+            ".planning/STATE.md",
+            ".planning/phases/03-design-system/03-VERIFICATION.md"
+          ],
+          "description": "Completed Phase 03 (Design System) with verification and updated requirements/roadmap"
+        },
+        {
+          "hash": "0ba5dd79",
+          "message": "docs(03): complete design system phase",
+          "files_affected": [
+            ".planning/phases/03-design-system/03-02-PLAN.md"
+          ],
+          "description": "Completed design system phase documentation"
+        },
+        {
+          "hash": "ea619e2b",
+          "message": "docs(03-02B): complete theme selection UI plan",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/03-design-system/03-02B-SUMMARY.md"
+          ],
+          "description": "Completed theme selection UI plan for Phase 03-02B"
+        },
+        {
+          "hash": "193303ff",
+          "message": "docs(03-02A): complete three theme implementations plan",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/03-design-system/03-02A-SUMMARY.md"
+          ],
+          "description": "Completed three theme implementations plan for Phase 03-02A"
+        },
+        {
+          "hash": "2594c95b",
+          "message": "docs(03-01): complete design system foundation plan",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/03-design-system/03-01-SUMMARY.md"
+          ],
+          "description": "Completed design system foundation plan for Phase 03-01"
+        },
+        {
+          "hash": "b391f5ef",
+          "message": "fix(03): split 03-02 into 03-02A and 03-02B for scope sanity",
+          "files_affected": [
+            ".planning/ROADMAP.md",
+            ".planning/phases/03-design-system/03-02A-PLAN.md",
+            ".planning/phases/03-design-system/03-02B-PLAN.md"
+          ],
+          "description": "Split Phase 03-02 into two sub-phases (03-02A and 03-02B) for better scope management"
+        },
+        {
+          "hash": "eedc61e6",
+          "message": "docs(03): create phase 3 design system plans",
+          "files_affected": [
+            ".planning/phases/03-design-system/03-01-PLAN.md",
+            ".planning/phases/03-design-system/03-02-PLAN.md",
+            ".planning/phases/03-design-system/03-CONTEXT.md"
+          ],
+          "description": "Created Phase 3 design system plans with context documentation"
+        },
+        {
+          "hash": "4f0fd17c",
+          "message": "docs(03): complete design system research",
+          "files_affected": [
+            ".planning/phases/03-design-system/03-RESEARCH.md"
+          ],
+          "description": "Completed research for design system implementation"
+        },
+        {
+          "hash": "c9532c85",
+          "message": "docs(02-03, 02-04): complete gap closure plans",
+          "files_affected": [
+            ".planning/phases/02-card-ui-core/02-03-SUMMARY.md",
+            ".planning/phases/02-card-ui-core/02-04-SUMMARY.md"
+          ],
+          "description": "Completed gap closure plans for SwipeableStack integration (Phases 02-03 and 02-04)"
+        },
+        {
+          "hash": "e958a957",
+          "message": "docs(02): complete phase 2 execution",
+          "files_affected": [
+            ".planning/ROADMAP.md",
+            ".planning/STATE.md",
+            ".planning/phases/02-card-ui-core/02-card-ui-core-VERIFICATION.md"
+          ],
+          "description": "Completed Phase 2 execution with verification and updated roadmap/state"
+        },
+        {
+          "hash": "ec9d02c1",
+          "message": "docs(02): create gap closure plans for SwipeableStack integration",
+          "files_affected": [
+            ".planning/ROADMAP.md",
+            ".planning/phases/02-card-ui-core/02-03-PLAN.md",
+            ".planning/phases/02-card-ui-core/02-04-PLAN.md"
+          ],
+          "description": "Created gap closure plans for SwipeableStack integration"
+        },
+        {
+          "hash": "1127eac0",
+          "message": "docs(02-02): complete swipe animation improvements plan",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/02-card-ui-core/02-02-SUMMARY.md"
+          ],
+          "description": "Completed swipe animation improvements plan for Phase 02-02"
+        },
+        {
+          "hash": "a5ae478c",
+          "message": "docs(02-01): complete expo-haptics implementation plan",
+          "files_affected": [
+            ".planning/STATE.md",
+            ".planning/phases/02-card-ui-core/02-01-SUMMARY.md"
+          ],
+          "description": "Completed expo-haptics implementation plan for Phase 02-01"
+        },
+        {
+          "hash": "e395ad56",
+          "message": "docs(02): research phase domain",
+          "files_affected": [
+            ".planning/phases/02-card-ui-core/02-RESEARCH.md"
+          ],
+          "description": "Researched card UI core domain knowledge"
+        },
+        {
+          "hash": "263d43ba",
+          "message": "docs(01): split phase 1 plans to meet context budget",
+          "files_affected": [
+            ".planning/ROADMAP.md",
+            ".planning/phases/01-foundation-code-quality/01-01A-PLAN.md",
+            ".planning/phases/01-foundation-code-quality/01-01B-PLAN.md",
+            ".planning/phases/01-foundation-code-quality/01-02A-PLAN.md",
+            ".planning/phases/01-foundation-code-quality/01-02B-PLAN.md",
+            ".planning/phases/01-foundation-code-quality/01-03A-PLAN.md",
+            ".planning/phases/01-foundation-code-quality/01-03B-PLAN.md"
+          ],
+          "description": "Split Phase 1 plans into A and B versions to manage context budget effectively"
+        },
+        {
+          "hash": "4afa893b",
+          "message": "docs(01): create phase plans for Foundation & Code Quality",
+          "files_affected": [
+            ".planning/phases/01-foundation-code-quality/01-01-PLAN.md",
+            ".planning/phases/01-foundation-code-quality/01-02-PLAN.md",
+            ".planning/phases/01-foundation-code-quality/01-03-PLAN.md"
+          ],
+          "description": "Created Phase 01 plans for Foundation & Code Quality improvements"
+        },
+        {
+          "hash": "927ed6dd",
+          "message": "docs(01): research phase domain",
+          "files_affected": [
+            ".planning/phases/01-foundation-code-quality/01-RESEARCH.md"
+          ],
+          "description": "Researched foundation and code quality domain knowledge"
+        },
+        {
+          "hash": "52abf61a",
+          "message": "docs: create roadmap (5 phases)",
+          "files_affected": [
+            ".planning/REQUIREMENTS.md",
+            ".planning/ROADMAP.md",
+            ".planning/STATE.md"
+          ],
+          "description": "Created comprehensive project roadmap with 5 development phases"
+        },
+        {
+          "hash": "c6557989",
+          "message": "docs: define v1 requirements",
+          "files_affected": [
+            ".planning/REQUIREMENTS.md"
+          ],
+          "description": "Defined v1 requirements for the project"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-22",
+      "commits": [
+        {
+          "hash": "7e1c7144",
+          "message": "docs: complete project research",
+          "files_affected": [
+            ".planning/research/ARCHITECTURE.md",
+            ".planning/research/FEATURES.md",
+            ".planning/research/PITFALLS.md",
+            ".planning/research/STACK.md",
+            ".planning/research/SUMMARY.md"
+          ],
+          "description": "Completed comprehensive project research covering architecture, features, pitfalls, and technology stack"
+        },
+        {
+          "hash": "5a319d2f",
+          "message": "docs: initialize project",
+          "files_affected": [
+            ".planning/PROJECT.md"
+          ],
+          "description": "Initialized project documentation structure"
+        },
+        {
+          "hash": "1afe3af8",
+          "message": "docs: map existing codebase",
+          "files_affected": [
+            ".planning/codebase/ARCHITECTURE.md",
+            ".planning/codebase/CONCERNS.md",
+            ".planning/codebase/CONVENTIONS.md",
+            ".planning/codebase/INTEGRATIONS.md",
+            ".planning/codebase/STACK.md",
+            ".planning/codebase/STRUCTURE.md",
+            ".planning/codebase/TESTING.md"
+          ],
+          "description": "Mapped existing codebase architecture, conventions, integrations, structure, and testing approach"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "commits": [
+        {
+          "hash": "28308af3",
+          "message": "feat: monorepo化 - mobileとyinyang-appを統合",
+          "files_affected": [
+            "mobile/claudedocs/architecture-review.md",
+            "mobile/claudedocs/chest-calculation-contradiction.md",
+            "mobile/claudedocs/chest-center-star-analysis.md",
+            "mobile/claudedocs/current-yangsen-logic.md",
+            "mobile/claudedocs/long-term-stability-review.md",
+            "mobile/claudedocs/twelve-stars-analysis.md",
+            "mobile/claudedocs/yangsen-calculation-complete-analysis.md",
+            "mobile/claudedocs/yangsen-head-question.md",
+            "mobile/claudedocs/yangsen-research-prompt.md",
+            "mobile/claudedocs/yangsen-verification-report.md",
+            "mobile/maestro/README.md",
+            "yinyang-app/README.md",
+            "yinyang-app/docs/ui_structure.md"
+          ],
+          "description": "Integrated mobile and yinyang-app into monorepo structure with comprehensive yangsen calculation analysis documentation"
+        },
+        {
+          "hash": "d5674bfb",
+          "message": "feat: 陽占ハック統合仕様 - analytics-data追加、シークレット含むディレクトリを除外",
+          "files_affected": [
+            ".beads/README.md"
+          ],
+          "description": "Added analytics-data and configured secret directory exclusions for yangsen hacks integration"
+        },
+        {
+          "hash": "34c4d595",
+          "message": "feat: 陽占ハック統合仕様 - 十二大従星のOS化、脱IT用語へのピボット、60キャラクターのリライト完了",
+          "files_affected": [
+            ".agent/workflows/expo-debug.md",
+            ".agent/workflows/rules/bd.md",
+            "analytics-data/viral-characters-1-30.md",
+            "analytics-data/viral-characters-31-60.md",
+            "analytics-data/yousen-hacks-core.md",
+            "gemini.md"
+          ],
+          "description": "Completed yangsen hacks integration: OS-ified 12 major stars, pivoted away from IT terminology, rewrote 60 characters"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-23",
+      "commits": [
+        {
+          "hash": "5da26aa4",
+          "message": "Initial commit from Create Next App",
+          "files_affected": [
+            "README.md"
+          ],
+          "description": "Initial project setup with Next App template"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_commits": 49,
+    "date_range": "2025-12-23 to 2026-01-24",
+    "documentation_files": 148,
+    "phases_planned": 11,
+    "key_milestones": [
+      "2025-12-23: Initial project setup",
+      "2026-01-11: Monorepo integration and yangsen hacks",
+      "2026-01-22: Project research and codebase mapping",
+      "2026-01-23: 5-phase roadmap creation",
+      "2026-01-24: Phase 11 (2026 Year Fortune) completion"
+    ]
+  }
+}

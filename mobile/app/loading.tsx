@@ -1,9 +1,9 @@
 import { View, Text, ActivityIndicator, Alert, StyleSheet } from 'react-native';
 import { Stack, useRouter, useLocalSearchParams } from 'expo-router';
 import { useEffect } from 'react';
-import { calculateBaZi, calculateFiveElements, calculateYangSen, calculateEnergyScore, calculateSanmeigakuInsen, calculateTaiun } from '@/src/lib/logic';
-import { loadStorage, saveStorage } from '@/src/lib/storage';
-import type { CalculationResult } from '@/src/types';
+import { calculateBaZi, calculateFiveElements, calculateYangSen, calculateEnergyScore, calculateSanmeigakuInsen, calculateTaiun } from '@/lib/logic';
+import { loadStorage, saveStorage } from '@/lib/storage';
+import type { CalculationResult } from '@/types';
 
 export default function LoadingScreen() {
   const router = useRouter();

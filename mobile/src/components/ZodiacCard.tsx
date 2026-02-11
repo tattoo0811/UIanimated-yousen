@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { BlurView } from 'expo-blur';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Sparkles } from 'lucide-react-native';
-import { ZodiacSign } from '../lib/zodiac';
+import { ZodiacSign } from '@/lib/zodiac';
 import Animated, {
     useSharedValue,
     useAnimatedStyle,
@@ -11,7 +11,7 @@ import Animated, {
     withSpring
 } from 'react-native-reanimated';
 import { GestureDetector, Gesture } from 'react-native-gesture-handler';
-import { useHapticFeedback } from '../hooks/useHapticFeedback';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 
 interface ZodiacCardProps {
     sign: ZodiacSign;

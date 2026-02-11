@@ -1,0 +1,1064 @@
+[
+  {
+    "episode": 2,
+    "name": "佐藤 翔",
+    "birth_date": "2003-02-20",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "甲子",
+        "month": "甲寅",
+        "day": "癸未",
+        "hour": "戊午"
+      },
+      "jugdais": [
+        "車騎星",
+        "車騎星",
+        "司禄星",
+        "石門星",
+        "貫索星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天禄星",
+          "points": 11
+        },
+        {
+          "part": "右足",
+          "star": "天貴星",
+          "points": 9
+        },
+        {
+          "part": "左足",
+          "star": "天恍星",
+          "points": 7
+        }
+      ],
+      "five_elements": "木64火0土11金0水25",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が癸（水属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "木属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=甲, 計算=癸"
+  },
+  {
+    "episode": 3,
+    "name": "双子の姉妹（葵・凛）",
+    "birth_date": "1999-11-15",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "辛未",
+        "month": "乙亥",
+        "day": "己卯",
+        "hour": "庚午"
+      },
+      "jugdais": [
+        "調舒星",
+        "調舒星",
+        "調舒星",
+        "調舒星",
+        "調舒星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天印星",
+          "points": 6
+        },
+        {
+          "part": "右足",
+          "star": "天南星",
+          "points": 10
+        },
+        {
+          "part": "左足",
+          "star": "天貴星",
+          "points": 9
+        }
+      ],
+      "five_elements": "木28火0土25金47水0",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が己（土属性）",
+      "十大主星が調舒星に集中（一貫性のある性格）",
+      "金属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=辛, 計算=己"
+  },
+  {
+    "episode": 4,
+    "name": "田中 優子",
+    "birth_date": "1995-04-18",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "己卯",
+        "month": "庚辰",
+        "day": "乙亥",
+        "hour": "壬午"
+      },
+      "jugdais": [
+        "禄存星",
+        "牽牛星",
+        "貫索星",
+        "石門星",
+        "貫索星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天禄星",
+          "points": 11
+        },
+        {
+          "part": "右足",
+          "star": "天南星",
+          "points": 10
+        },
+        {
+          "part": "左足",
+          "star": "天極星",
+          "points": 2
+        }
+      ],
+      "five_elements": "木25火0土36金28水11",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が乙（木属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "土属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=己, 計算=乙"
+  },
+  {
+    "episode": 5,
+    "name": "山田 太郎",
+    "birth_date": "1988-07-22",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "戊寅",
+        "month": "己未",
+        "day": "戊辰",
+        "hour": "戊午"
+      },
+      "jugdais": [
+        "貫索星",
+        "石門星",
+        "調舒星",
+        "司禄星",
+        "貫索星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天貴星",
+          "points": 9
+        },
+        {
+          "part": "右足",
+          "star": "天貴星",
+          "points": 9
+        },
+        {
+          "part": "左足",
+          "star": "天南星",
+          "points": 10
+        }
+      ],
+      "five_elements": "木0火0土100金0水0",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が戊（土属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "土属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "計算完了"
+  },
+  {
+    "episode": 6,
+    "name": "佐々木 美咲",
+    "birth_date": "2004-09-10",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "壬辰",
+        "month": "癸酉",
+        "day": "甲申",
+        "hour": "庚午"
+      },
+      "jugdais": [
+        "龍高星",
+        "牽牛星",
+        "車騎星",
+        "龍高星",
+        "禄存星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天堂星",
+          "points": 8
+        },
+        {
+          "part": "右足",
+          "star": "天貴星",
+          "points": 9
+        },
+        {
+          "part": "左足",
+          "star": "天貴星",
+          "points": 9
+        }
+      ],
+      "five_elements": "木25火0土0金11水64",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が甲（木属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "水属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=壬, 計算=甲"
+  },
+  {
+    "episode": 7,
+    "name": "中村 大輔",
+    "birth_date": "1981-12-05",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "丁巳",
+        "month": "己亥",
+        "day": "辛酉",
+        "hour": "甲午"
+      },
+      "jugdais": [
+        "龍高星",
+        "禄存星",
+        "禄存星",
+        "貫索星",
+        "玉堂星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天極星",
+          "points": 2
+        },
+        {
+          "part": "右足",
+          "star": "天恍星",
+          "points": 7
+        },
+        {
+          "part": "左足",
+          "star": "天禄星",
+          "points": 11
+        }
+      ],
+      "five_elements": "木11火36土28金25水0",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が辛（金属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "火属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=丁, 計算=辛"
+  },
+  {
+    "episode": 8,
+    "name": "小林 真由",
+    "birth_date": "1992-03-28",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "癸卯",
+        "month": "癸卯",
+        "day": "壬申",
+        "hour": "丙午"
+      },
+      "jugdais": [
+        "調舒星",
+        "調舒星",
+        "玉堂星",
+        "鳳閣星",
+        "玉堂星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天極星",
+          "points": 2
+        },
+        {
+          "part": "右足",
+          "star": "天極星",
+          "points": 2
+        },
+        {
+          "part": "左足",
+          "star": "天堂星",
+          "points": 8
+        }
+      ],
+      "five_elements": "木0火11土0金0水89",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が壬（水属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "十二大従星が低得力（内省的・慎重な性格）",
+      "水属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=癸, 計算=壬"
+  },
+  {
+    "episode": 9,
+    "name": "加藤 誠",
+    "birth_date": "1968-06-14",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "乙卯",
+        "month": "戊午",
+        "day": "戊申",
+        "hour": "戊午"
+      },
+      "jugdais": [
+        "司禄星",
+        "貫索星",
+        "調舒星",
+        "龍高星",
+        "司禄星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天恍星",
+          "points": 7
+        },
+        {
+          "part": "右足",
+          "star": "天将星",
+          "points": 12
+        },
+        {
+          "part": "左足",
+          "star": "天堂星",
+          "points": 8
+        }
+      ],
+      "five_elements": "木36火0土64金0水0",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が戊（土属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "土属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=乙, 計算=戊"
+  },
+  {
+    "episode": 10,
+    "name": "松本 愛",
+    "birth_date": "1997-08-30",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "甲辰",
+        "month": "戊申",
+        "day": "丁丑",
+        "hour": "丙午"
+      },
+      "jugdais": [
+        "調舒星",
+        "司禄星",
+        "貫索星",
+        "禄存星",
+        "龍高星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天堂星",
+          "points": 8
+        },
+        {
+          "part": "右足",
+          "star": "天恍星",
+          "points": 7
+        },
+        {
+          "part": "左足",
+          "star": "天庫星",
+          "points": 5
+        }
+      ],
+      "five_elements": "木36火36土28金0水0",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が丁（火属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "木属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=甲, 計算=丁"
+  },
+  {
+    "episode": 11,
+    "name": "井上 健一",
+    "birth_date": "1975-11-20",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "庚午",
+        "month": "丁亥",
+        "day": "乙卯",
+        "hour": "壬午"
+      },
+      "jugdais": [
+        "牽牛星",
+        "鳳閣星",
+        "石門星",
+        "貫索星",
+        "禄存星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天貴星",
+          "points": 9
+        },
+        {
+          "part": "右足",
+          "star": "天極星",
+          "points": 2
+        },
+        {
+          "part": "左足",
+          "star": "天禄星",
+          "points": 11
+        }
+      ],
+      "five_elements": "木25火28土0金36水11",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が乙（木属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "金属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=庚, 計算=乙"
+  },
+  {
+    "episode": 12,
+    "name": "木村 彩花",
+    "birth_date": "2000-02-14",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "壬寅",
+        "month": "戊寅",
+        "day": "庚辰",
+        "hour": "壬午"
+      },
+      "jugdais": [
+        "鳳閣星",
+        "禄存星",
+        "龍高星",
+        "調舒星",
+        "龍高星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天馳星",
+          "points": 1
+        },
+        {
+          "part": "右足",
+          "star": "天馳星",
+          "points": 1
+        },
+        {
+          "part": "左足",
+          "star": "天印星",
+          "points": 6
+        }
+      ],
+      "five_elements": "木0火0土28金25水47",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が庚（金属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "十二大従星が低得力（内省的・慎重な性格）",
+      "水属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=壬, 計算=庚"
+  },
+  {
+    "episode": 13,
+    "name": "林 翔太",
+    "birth_date": "1990-05-08",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "癸酉",
+        "month": "辛巳",
+        "day": "庚午",
+        "hour": "壬午"
+      },
+      "jugdais": [
+        "調舒星",
+        "石門星",
+        "貫索星",
+        "司禄星",
+        "石門星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天将星",
+          "points": 12
+        },
+        {
+          "part": "右足",
+          "star": "天貴星",
+          "points": 9
+        },
+        {
+          "part": "左足",
+          "star": "天恍星",
+          "points": 7
+        }
+      ],
+      "five_elements": "木0火0土0金53水47",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が庚（金属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "金属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=癸, 計算=庚"
+  },
+  {
+    "episode": 14,
+    "name": "斎藤 舞",
+    "birth_date": "1986-10-25",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "壬寅",
+        "month": "戊戌",
+        "day": "丙寅",
+        "hour": "甲午"
+      },
+      "jugdais": [
+        "龍高星",
+        "禄存星",
+        "牽牛星",
+        "禄存星",
+        "禄存星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天貴星",
+          "points": 9
+        },
+        {
+          "part": "右足",
+          "star": "天庫星",
+          "points": 5
+        },
+        {
+          "part": "左足",
+          "star": "天貴星",
+          "points": 9
+        }
+      ],
+      "five_elements": "木11火25土28金0水36",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が丙（火属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "水属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=壬, 計算=丙"
+  },
+  {
+    "episode": 15,
+    "name": "清水 隆之",
+    "birth_date": "1994-07-03",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "庚寅",
+        "month": "庚午",
+        "day": "甲戌",
+        "hour": "庚午"
+      },
+      "jugdais": [
+        "禄存星",
+        "禄存星",
+        "司禄星",
+        "車騎星",
+        "禄存星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天禄星",
+          "points": 11
+        },
+        {
+          "part": "右足",
+          "star": "天極星",
+          "points": 2
+        },
+        {
+          "part": "左足",
+          "star": "天印星",
+          "points": 6
+        }
+      ],
+      "five_elements": "木25火0土0金75水0",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が甲（木属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "金属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=庚, 計算=甲"
+  },
+  {
+    "episode": 16,
+    "name": "渡辺 和子",
+    "birth_date": "1972-04-12",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "癸酉",
+        "month": "甲辰",
+        "day": "壬子",
+        "hour": "丙午"
+      },
+      "jugdais": [
+        "調舒星",
+        "龍高星",
+        "玉堂星",
+        "調舒星",
+        "牽牛星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天恍星",
+          "points": 7
+        },
+        {
+          "part": "右足",
+          "star": "天庫星",
+          "points": 5
+        },
+        {
+          "part": "左足",
+          "star": "天将星",
+          "points": 12
+        }
+      ],
+      "five_elements": "木28火11土0金0水61",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が壬（水属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "水属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=癸, 計算=壬"
+  },
+  {
+    "episode": 17,
+    "name": "伊藤 拓哉",
+    "birth_date": "1983-09-19",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "庚戌",
+        "month": "辛酉",
+        "day": "癸亥",
+        "hour": "戊午"
+      },
+      "jugdais": [
+        "玉堂星",
+        "鳳閣星",
+        "鳳閣星",
+        "石門星",
+        "司禄星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天貴星",
+          "points": 9
+        },
+        {
+          "part": "右足",
+          "star": "天胡星",
+          "points": 4
+        },
+        {
+          "part": "左足",
+          "star": "天将星",
+          "points": 12
+        }
+      ],
+      "five_elements": "木0火0土11金64水25",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が癸（水属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "金属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=庚, 計算=癸"
+  },
+  {
+    "episode": 18,
+    "name": "遠藤 萌",
+    "birth_date": "1999-06-28",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "辛亥",
+        "month": "庚午",
+        "day": "己卯",
+        "hour": "庚午"
+      },
+      "jugdais": [
+        "調舒星",
+        "禄存星",
+        "調舒星",
+        "調舒星",
+        "調舒星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天南星",
+          "points": 10
+        },
+        {
+          "part": "右足",
+          "star": "天禄星",
+          "points": 11
+        },
+        {
+          "part": "左足",
+          "star": "天貴星",
+          "points": 9
+        }
+      ],
+      "five_elements": "木0火0土25金75水0",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が己（土属性）",
+      "十大主星が調舒星・禄存星に集中（一貫性のある性格）",
+      "十二大従星が高得力（行動力・実行力が強い）",
+      "金属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=辛, 計算=己"
+  },
+  {
+    "episode": 19,
+    "name": "武田 健二",
+    "birth_date": "1965-11-30",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "戊子",
+        "month": "丁亥",
+        "day": "乙巳",
+        "hour": "壬午"
+      },
+      "jugdais": [
+        "司禄星",
+        "鳳閣星",
+        "石門星",
+        "牽牛星",
+        "玉堂星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天胡星",
+          "points": 4
+        },
+        {
+          "part": "右足",
+          "star": "天極星",
+          "points": 2
+        },
+        {
+          "part": "左足",
+          "star": "天恍星",
+          "points": 7
+        }
+      ],
+      "five_elements": "木25火28土36金0水11",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が乙（木属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "土属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=戊, 計算=乙"
+  },
+  {
+    "episode": 20,
+    "name": "上原 里奈",
+    "birth_date": "2002-12-24",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "丙寅",
+        "month": "壬子",
+        "day": "壬午",
+        "hour": "丙午"
+      },
+      "jugdais": [
+        "貫索星",
+        "鳳閣星",
+        "調舒星",
+        "石門星",
+        "龍高星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天胡星",
+          "points": 4
+        },
+        {
+          "part": "右足",
+          "star": "天将星",
+          "points": 12
+        },
+        {
+          "part": "左足",
+          "star": "天報星",
+          "points": 3
+        }
+      ],
+      "five_elements": "木0火47土0金0水53",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が壬（水属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "水属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=丙, 計算=壬"
+  },
+  {
+    "episode": 21,
+    "name": "森田 悠真",
+    "birth_date": "2007-01-15",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "己酉",
+        "month": "辛丑",
+        "day": "丙戌",
+        "hour": "甲午"
+      },
+      "jugdais": [
+        "司禄星",
+        "牽牛星",
+        "司禄星",
+        "牽牛星",
+        "牽牛星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天極星",
+          "points": 2
+        },
+        {
+          "part": "右足",
+          "star": "天印星",
+          "points": 6
+        },
+        {
+          "part": "左足",
+          "star": "天庫星",
+          "points": 5
+        }
+      ],
+      "five_elements": "木11火25土36金28水0",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が丙（火属性）",
+      "十大主星が司禄星・牽牛星に集中（一貫性のある性格）",
+      "土属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=己, 計算=丙"
+  },
+  {
+    "episode": 22,
+    "name": "土屋 美穂",
+    "birth_date": "1979-03-17",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "癸未",
+        "month": "丁卯",
+        "day": "己未",
+        "hour": "庚午"
+      },
+      "jugdais": [
+        "調舒星",
+        "調舒星",
+        "調舒星",
+        "調舒星",
+        "調舒星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天印星",
+          "points": 6
+        },
+        {
+          "part": "右足",
+          "star": "天貴星",
+          "points": 9
+        },
+        {
+          "part": "左足",
+          "star": "天印星",
+          "points": 6
+        }
+      ],
+      "five_elements": "木0火28土25金11水36",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が己（土属性）",
+      "十大主星が調舒星に集中（一貫性のある性格）",
+      "水属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=癸, 計算=己"
+  },
+  {
+    "episode": 23,
+    "name": "大野 翔",
+    "birth_date": "1993-08-05",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "戊午",
+        "month": "己未",
+        "day": "癸酉",
+        "hour": "戊午"
+      },
+      "jugdais": [
+        "司禄星",
+        "司禄星",
+        "司禄星",
+        "鳳閣星",
+        "司禄星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天馳星",
+          "points": 1
+        },
+        {
+          "part": "右足",
+          "star": "天恍星",
+          "points": 7
+        },
+        {
+          "part": "左足",
+          "star": "天胡星",
+          "points": 4
+        }
+      ],
+      "five_elements": "木0火0土75金0水25",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が癸（水属性）",
+      "十大主星が司禄星・鳳閣星に集中（一貫性のある性格）",
+      "十二大従星が低得力（内省的・慎重な性格）",
+      "土属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=戊, 計算=癸"
+  },
+  {
+    "episode": 24,
+    "name": "菊地 真理子",
+    "birth_date": "1961-10-08",
+    "sanmeigaku_verified": {
+      "bazi": {
+        "year": "甲戌",
+        "month": "戊戌",
+        "day": "辛丑",
+        "hour": "甲午"
+      },
+      "jugdais": [
+        "牽牛星",
+        "司禄星",
+        "貫索星",
+        "禄存星",
+        "貫索星"
+      ],
+      "junidai": [
+        {
+          "part": "左肩",
+          "star": "天南星",
+          "points": 10
+        },
+        {
+          "part": "右足",
+          "star": "天南星",
+          "points": 10
+        },
+        {
+          "part": "左足",
+          "star": "天印星",
+          "points": 6
+        }
+      ],
+      "five_elements": "木47火0土28金25水0",
+      "total_energy": 100
+    },
+    "persona_traits": [
+      "日干が辛（金属性）",
+      "十大主星が多岐にわたる（多面的な性格）",
+      "木属性が強く偏重"
+    ],
+    "verified_with_shugakuin": false,
+    "notes": "日干不一致: 既存=甲, 計算=辛"
+  }
+]

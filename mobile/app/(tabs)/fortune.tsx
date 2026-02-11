@@ -2,11 +2,11 @@ import { View, Text, ScrollView, TextInput, TouchableOpacity, KeyboardAvoidingVi
 import { useEffect, useState, useRef } from 'react';
 import { Send, Sparkles, Calendar, ArrowRight, Flame } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
-import { useResponsive } from '@/src/hooks/useResponsive';
-import { loadStorage } from '@/src/lib/storage';
-import type { CalculationResult } from '@/src/types';
-import FortuneCard from '@/src/components/cards/FortuneCard';
-import WeeklyFortuneCard from '@/src/components/cards/WeeklyFortuneCard';
+import { useResponsive } from '@/hooks/useResponsive';
+import { loadStorage } from '@/lib/storage';
+import type { CalculationResult } from '@/types';
+import FortuneCard from '@/components/cards/FortuneCard';
+import WeeklyFortuneCard from '@/components/cards/WeeklyFortuneCard';
 
 interface Message {
     id: string;

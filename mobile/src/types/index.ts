@@ -41,11 +41,11 @@ export type FiveElements = {
  * 正式な九点構成: 日干を基準に年干・年支・月干・月支で計算
  */
 export type YangSen = {
-  head: string;           // 頭（第一命星）: 年干
-  rightHand: string;      // 右手: 年支の本気
-  chest: string;          // 胸（中心星）: 日干
-  leftHand: string;       // 左手: 月支の本気
-  belly: string;          // 腹: 月干
+  head: string;           // 頭（第一命星）: 日干 × 年干
+  rightHand: string;      // 右手: 日干 × 日支蔵干
+  chest: string;          // 胸（中心星）: 日干 × 月支蔵干
+  leftHand: string;       // 左手: 日干 × 年支蔵干
+  belly: string;          // 腹: 日干 × 月干
   leftShoulder: { name: string; score: number };  // 左肩（十二大従星・年支）
   rightLeg: { name: string; score: number };      // 右足（十二大従星・月支）
   leftLeg: { name: string; score: number };       // 左足（十二大従星・日支）

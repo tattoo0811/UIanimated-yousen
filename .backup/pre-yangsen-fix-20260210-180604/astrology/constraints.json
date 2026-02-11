@@ -1,0 +1,118 @@
+{
+  "$schema": "../schemas/astrology-constraints.json",
+  "version": "1.0",
+  "last_updated": "2026-02-10",
+  "note": "物語制約エンジン - 占い・命式由来のルール",
+  "constraints": [
+    {
+      "constraint_id": "AST-001",
+      "birth_id": "B001",
+      "character_id": "C001",
+      "type": "character_arc",
+      "rule": "辛未（金陰・土陰）の性質：繊細さとプライドが葛藤の源泉",
+      "severity": "hard",
+      "applies_to": ["character_behavior"],
+      "description": "巡の宝石（辛金）としての繊細さと、未（土陰）の受容性が物語を動かす",
+      "validation": "巡がプライドを傷つけられる展開が必要"
+    },
+    {
+      "constraint_id": "AST-002",
+      "birth_id": "B002",
+      "character_id": "C002",
+      "type": "character_arc",
+      "rule": "庚午（金陽・火陽）の性質：断固たる決断と情熱が裏切りを正当化",
+      "severity": "hard",
+      "applies_to": ["character_behavior"],
+      "description": "慧の鋼鉄（庚金）としての強さと、午（火陽）の情熱が行動を駆動",
+      "validation": "慧の裏切りに「正当な理由」が必要"
+    },
+    {
+      "constraint_id": "AST-003",
+      "birth_ids": ["B001", "B002"],
+      "character_ids": ["C001", "C002"],
+      "type": "relationship",
+      "rule": "天中殺の補完関係：巡（申酉）× 慧（寅卯）＝ 完全な対立",
+      "severity": "hard",
+      "applies_to": ["relationship", "foreshadow"],
+      "description": "二人の天中殺は対照的であり、衝突と統合の物語的必然性がある",
+      "validation": "最終的な和解か決別のどちらかが必要（中途半端な終わりは禁止）"
+    },
+    {
+      "constraint_id": "AST-004",
+      "birth_id": "B001",
+      "character_id": "C001",
+      "type": "timing",
+      "rule": "31〜33歳で「うつ状態」を経験し、運命診断師に転身",
+      "severity": "hard",
+      "applies_to": ["timeline"],
+      "description": "巡の天中殺（申酉）の時期に、人生の転機が訪れる",
+      "validation": "2022〜2024年の間に転身イベントが必要"
+    },
+    {
+      "constraint_id": "AST-005",
+      "birth_id": "B002",
+      "character_id": "C002",
+      "type": "timing",
+      "rule": "34歳で「残りの2%」に気づき、「星みてる」を開発",
+      "severity": "hard",
+      "applies_to": ["timeline"],
+      "description": "慧の技術主義が限界を迎え、占い市場へ転換",
+      "validation": "2024年に紫織（C005）との出会いイベントが必要"
+    },
+    {
+      "constraint_id": "AST-006",
+      "birth_ids": ["B001", "B002"],
+      "character_ids": ["C001", "C002"],
+      "type": "event_constraint",
+      "rule": "2009年に西洛大学理学類で同学年として出会う",
+      "severity": "hard",
+      "applies_to": ["timeline", "character_background"],
+      "description": "慧（1990-11-01）と巡（1991-05-01）は早生まれで2009年入学",
+      "validation": "18歳での出会いイベントが必要"
+    },
+    {
+      "constraint_id": "AST-007",
+      "birth_id": "B003",
+      "character_id": "C003",
+      "type": "character_arc",
+      "rule": "調舒星の感受性：SNS発信から巡との関係へ",
+      "severity": "soft",
+      "applies_to": ["character_behavior"],
+      "description": "美咲の感受性が物語を動かす",
+      "validation": "SNS経由で巡に興味を持つ展開が必要"
+    },
+    {
+      "constraint_id": "AST-008",
+      "birth_id": "B004",
+      "character_id": "C004",
+      "type": "event_constraint",
+      "rule": "2024年に99歳で逝去。巡に陰陽道のノートを遺す",
+      "severity": "hard",
+      "applies_to": ["timeline"],
+      "description": "さくらの死が巡の運命診断師としての始まり",
+      "validation": "第90話付近での逝去イベントが必要"
+    },
+    {
+      "constraint_id": "AST-009",
+      "birth_ids": ["B001", "B003"],
+      "character_ids": ["C001", "C003"],
+      "type": "relationship",
+      "rule": "巡（35歳）× 美咲（28歳）の恋愛関係",
+      "severity": "soft",
+      "applies_to": ["relationship"],
+      "description": "年齢差7歳の師弟関係から恋愛へ",
+      "validation": "第41話以降で関係性が進展する必要がある"
+    },
+    {
+      "constraint_id": "AST-010",
+      "birth_ids": ["B002", "B003"],
+      "character_ids": ["C002", "C003"],
+      "type": "relationship",
+      "rule": "慧が美咲を利用する可能性",
+      "severity": "soft",
+      "applies_to": ["foreshadow"],
+      "description": "美咲の感受性を慧が利用する伏線",
+      "validation": "第61話以降で露見する伏線が必要"
+    }
+  ]
+}

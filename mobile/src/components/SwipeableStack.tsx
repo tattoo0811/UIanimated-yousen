@@ -11,11 +11,11 @@ import Animated, {
     Extrapolation,
     SharedValue
 } from 'react-native-reanimated';
-import { ZodiacSign } from '../lib/zodiac';
+import { ZodiacSign } from '@/lib/zodiac';
 import { ZodiacCard } from './ZodiacCard';
-import { useHapticFeedback } from '../hooks/useHapticFeedback';
-import { useTheme } from '../hooks/useTheme';
-import { SWIPE_CONFIG } from '../lib/animations';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { useTheme } from '@/hooks/useTheme';
+import { SWIPE_CONFIG } from '@/lib/animations';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 

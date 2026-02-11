@@ -3,8 +3,23 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Sparkles, RefreshCw, Share2, Zap } from 'lucide-react-native';
 import { useState, useEffect } from 'react';
 import kanshiData from '@/src/data/kanshi-types.json';
-import { shareToSocial, showShareOptions } from '@/src/lib/share';
-import { getCharacterByKanshi } from '@/src/lib/viral-characters-loader';
+// TODO: Restore imports when lib files are available
+// import { shareToSocial, showShareOptions } from '@/src/lib/share';
+// import { getCharacterByKanshi } from '@/src/lib/viral-characters-loader';
+
+// Temporary stub implementations
+const shareToSocial = (platform: string, options: { message: string }) => {
+    console.log(`Share to ${platform}:`, options.message);
+};
+
+const showShareOptions = (options: { message: string }) => {
+    console.log('Show share options:', options.message);
+};
+
+const getCharacterByKanshi = async (kanshi: string) => {
+    // Stub implementation - returns null to trigger fallback behavior
+    return null;
+};
 import TypewriterText from './TypewriterText';
 import type { ViralCharacterData } from '@/src/data/viral-characters.types';
 

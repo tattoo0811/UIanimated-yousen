@@ -1,0 +1,31 @@
+{
+  "name": "accurate-logic",
+  "version": "1.0.0",
+  "description": "正確な算命学・陰陽五行の計算ロジック",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "算命学",
+    "陰陽五行",
+    "四柱推命",
+    "占い"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.0.0",
+    "@types/puppeteer": "^5.4.7",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "lunar-javascript": "^1.6.12",
+    "puppeteer": "^24.37.2"
+  }
+}

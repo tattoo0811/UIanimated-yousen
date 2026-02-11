@@ -1,11 +1,11 @@
 import { View, Text, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 import { ArrowLeft, Crown, Settings as SettingsIcon, Trash2 } from 'lucide-react-native';
-import { usePurchases } from '@/src/hooks/usePurchases';
-import { resetUsageCounts, getUsageCounts } from '@/src/utils/usage';
-import type { UsageCounts } from '@/src/utils/usage';
+import { usePurchases } from '@/hooks/usePurchases';
+import { resetUsageCounts, getUsageCounts } from '@/utils/usage';
+import type { UsageCounts } from '@/utils/usage';
 import { useState, useEffect } from 'react';
-import { ThemePicker } from '@/src/components/ThemePicker';
+import { ThemePicker } from '@/components/ThemePicker';
 
 export default function SettingsScreen() {
     const router = useRouter();

@@ -1,0 +1,458 @@
+[
+  {
+    "filename": "tmux-commands-manual.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/tmux-commands-manual.md",
+    "mod_date": "2026-02-07 23:52:38",
+    "size_bytes": 10978,
+    "topic_preview": "Tmux コマンド使い方マニュアル - Agent Teams で複数セッションを管理するためのガイド",
+    "category": "system"
+  },
+  {
+    "filename": "agent-teams-complete-guide.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/agent-teams-complete-guide.md",
+    "mod_date": "2026-02-07 22:16:39",
+    "size_bytes": 12935,
+    "topic_preview": "Agent Teams 完全ガイド - Claude Codeのマルチエージェント協調機能 設定から実践まで",
+    "category": "system"
+  },
+  {
+    "filename": "test-quality-integrated-report.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/test-quality-integrated-report.md",
+    "mod_date": "2026-02-07 23:40:12",
+    "size_bytes": 10826,
+    "topic_preview": "テスト品質分析統合レポート - Agent Teams 並列分析プロジェクト",
+    "category": "system"
+  },
+  {
+    "filename": "prescription-system-implementation.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/prescription-system-implementation.md",
+    "mod_date": "2026-02-07 23:59:36",
+    "size_bytes": 8080,
+    "topic_preview": "処方箋データシステム構築完了レポート - shohousen-dev-flow.md と gogyo-viral-engineering.md に基づき、処方箋データシステムの基盤を構築",
+    "category": "integration"
+  },
+  {
+    "filename": "prescription-system-summary.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/prescription-system-summary.md",
+    "mod_date": "2026-02-08 00:03:05",
+    "size_bytes": 8188,
+    "topic_preview": "処方箋データシステム構築完了レポート - 処方箋データシステムの構築が完了。Phase 0（処方箋テンプレート設計）とPhase 1（パイロット5干支生成）が正常に完了",
+    "category": "integration"
+  },
+  {
+    "filename": "処方箋システム構築完了報告.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/処方箋システム構築完了報告.md",
+    "mod_date": "2026-02-08 00:00:12",
+    "size_bytes": 11247,
+    "topic_preview": "処方箋データシステム構築完了報告 - shohousen-dev-flow.md に基づき、Phase 0（処方箋テンプレート設計）とPhase 1（パイロット生成）の基盤構築が完了",
+    "category": "integration"
+  },
+  {
+    "filename": "60kanshi-verification-report.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/60kanshi-verification-report.md",
+    "mod_date": "2026-02-08 00:21:47",
+    "size_bytes": 3658,
+    "topic_preview": "60干支元素属性検証レポート - 検証対象: shohousen-all-60.html 検証結果: 完璧（不整合0件）",
+    "category": "integration"
+  },
+  {
+    "filename": "shohousen-implementation-report.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/shohousen-implementation-report.md",
+    "mod_date": "2026-02-08 00:29:13",
+    "size_bytes": 8029,
+    "topic_preview": "処方箋機能実装レポート - Expoアプリに処方箋（Shohousen）機能を統合。HTMLデザインをベースにReact Nativeで実装し、60干支すべての処方箋データを表示",
+    "category": "integration"
+  },
+  {
+    "filename": "shohousen-task-completion.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/shohousen-task-completion.md",
+    "mod_date": "2026-02-08 00:29:49",
+    "size_bytes": 4001,
+    "topic_preview": "処方箋機能実装完了報告 - Expoアプリに処方箋機能を統合",
+    "category": "integration"
+  },
+  {
+    "filename": "SCREEN_SHOHOUSEN_COMPLETE_REPORT.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/SCREEN_SHOHOUSEN_COMPLETE_REPORT.md",
+    "mod_date": "2026-02-08 00:29:52",
+    "size_bytes": 4997,
+    "topic_preview": "処方箋画面 完全版 更新完了レポート - screen-shohousen-complete.html を更新",
+    "category": "integration"
+  },
+  {
+    "filename": "SCREEN_SHOHOUSEN_COMPLETE_VERIFICATION.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/SCREEN_SHOHOUSEN_COMPLETE_VERIFICATION.md",
+    "mod_date": "2026-02-08 00:31:14",
+    "size_bytes": 4719,
+    "topic_preview": "screen-shohousen-complete.html 動作検証完了",
+    "category": "integration"
+  },
+  {
+    "filename": "speech-bubble-pattern-report.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/speech-bubble-pattern-report.md",
+    "mod_date": "2026-02-08 00:38:53",
+    "size_bytes": 8517,
+    "topic_preview": "吹き出しパターン推奨レポート - ドクター巡の人生処方箋アプリにおける吹き出しUIパターンの検証結果と、各シーンでの推奨パターン",
+    "category": "other"
+  },
+  {
+    "filename": "speech-bubble-quality-review.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/speech-bubble-quality-review.md",
+    "mod_date": "2026-02-08 00:48:50",
+    "size_bytes": 19742,
+    "topic_preview": "吹き出し実装 品質レビューレポート - 吹き出しUIの品質レビュー",
+    "category": "other"
+  },
+  {
+    "filename": "SANMEIGAKU-MODULE-ANALYSIS.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/SANMEIGAKU-MODULE-ANALYSIS.md",
+    "mod_date": "2026-02-08 23:33:48",
+    "size_bytes": 19232,
+    "topic_preview": "算命学計算モジュール分析レポート - 使用可能な関数の特定と統一エントリーポイント",
+    "category": "system"
+  },
+  {
+    "filename": "mother-daughter-alternative-dates-report.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/mother-daughter-alternative-dates-report.md",
+    "mod_date": "2026-02-08 23:33:21",
+    "size_bytes": 5042,
+    "topic_preview": "森川母娘 代替生年月日探索レポート - 母・森川真紀の設定の問題点と代替案",
+    "category": "character"
+  },
+  {
+    "filename": "CHARACTER-BIRTHDATE-ADJUSTMENT-FINAL.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/CHARACTER-BIRTHDATE-ADJUSTMENT-FINAL.md",
+    "mod_date": "2026-02-08 23:37:08",
+    "size_bytes": 9597,
+    "topic_preview": "ドクター巡の人生処方箋 キャラクター生年月日調整 最終提案 - 算命学的整合性を保ちながら、物語の条件を維持する代替生年月日の提示",
+    "category": "character"
+  },
+  {
+    "filename": "AGENT-TEAM-SUMMARY.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/AGENT-TEAM-SUMMARY.md",
+    "mod_date": "2026-02-08 23:37:35",
+    "size_bytes": 4763,
+    "topic_preview": "エージェントチーム作業完了報告 - 結成チーム数: 5つ",
+    "category": "system"
+  },
+  {
+    "filename": "tmux-iphone-ssh-guide.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/tmux-iphone-ssh-guide.md",
+    "mod_date": "2026-02-08 17:50:38",
+    "size_bytes": 8222,
+    "topic_preview": "iPhone + SSH + Tailscale + tmux 設定ガイド - モバイル環境からリモート開発を行うための完全ガイド",
+    "category": "system"
+  },
+  {
+    "filename": "CHARACTER-DESIGN-MANUAL.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/CHARACTER-DESIGN-MANUAL.md",
+    "mod_date": "2026-02-09 00:06:07",
+    "size_bytes": 23780,
+    "topic_preview": "キャラクター設計マニュアル - Doctor Meguru's Life Prescription - Character Design Guidelines - 全96話エピソードキャラクター設計",
+    "category": "character"
+  },
+  {
+    "filename": "INTEGRATION-TEAM-MANUAL.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/INTEGRATION-TEAM-MANUAL.md",
+    "mod_date": "2026-02-09 00:07:03",
+    "size_bytes": 7078,
+    "topic_preview": "統合JSON生成チーム - 運用マニュアル - 担当: 統合JSON生成チーム ステータス: 準備完了 - 他チームの作業待ち",
+    "category": "system"
+  },
+  {
+    "filename": "96-EPISODES-STRUCTURE.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/96-EPISODES-STRUCTURE.md",
+    "mod_date": "2026-02-09 00:08:59",
+    "size_bytes": 18777,
+    "topic_preview": "96話ストーリー構造案 - Doctor Meguru's Life Prescription - 96 Episodes Structure - meguri-96episodes-final.json の章構成",
+    "category": "episode"
+  },
+  {
+    "filename": "EPISODES-1-24-CHARACTER-REPORT.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/EPISODES-1-24-CHARACTER-REPORT.md",
+    "mod_date": "2026-02-09 00:08:39",
+    "size_bytes": 7438,
+    "topic_preview": "エピソード1-24 キャラクター設計完了レポート - 設計範囲: エピソード1-24（全24話）",
+    "category": "episode"
+  },
+  {
+    "filename": "EPISODES-25-48-COMPLETION-REPORT.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/EPISODES-25-48-COMPLETION-REPORT.md",
+    "mod_date": "2026-02-09 00:11:29",
+    "size_bytes": 10233,
+    "topic_preview": "エピソード25-48 キャラクター設計完了報告 - エピソード25-48（中盤の展開）のキャラクター設計が完了",
+    "category": "episode"
+  },
+  {
+    "filename": "CHARACTER-RELATIONSHIP-MAP.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/CHARACTER-RELATIONSHIP-MAP.md",
+    "mod_date": "2026-02-09 00:11:49",
+    "size_bytes": 20279,
+    "topic_preview": "主要キャラクター関係図 - Doctor Meguru's Life Prescription - Character Relationship Map - 全96話のキャラクター関係設計",
+    "category": "character"
+  },
+  {
+    "filename": "EPISODES-73-96-DESIGN-REPORT.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/EPISODES-73-96-DESIGN-REPORT.md",
+    "mod_date": "2026-02-09 00:15:21",
+    "size_bytes": 9591,
+    "topic_preview": "エピソード73-96 キャラクター設計完了報告 - フェーズ: エピソード73-96「クライマックスと結末」",
+    "category": "episode"
+  },
+  {
+    "filename": "MARKETING-STRATEGY.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/MARKETING-STRATEGY.md",
+    "mod_date": "2026-02-09 09:23:31",
+    "size_bytes": 27308,
+    "topic_preview": "運命診断室 マーケティング戦略 - 算命学 based の「運命診断」を広め、多くの人の「なぜ？」を解決するためのマーケティング戦略",
+    "category": "other"
+  },
+  {
+    "filename": "MISAKI-SNS-POSTS.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/MISAKI-SNS-POSTS.md",
+    "mod_date": "2026-02-09 09:23:30",
+    "size_bytes": 33935,
+    "topic_preview": "高橋美咲のSNS投稿例集（15-20件） - 運命診断室のアシスタント兼広報、高橋美咲（29歳）が運営するSNSアカウントの具体的な投稿例",
+    "category": "character"
+  },
+  {
+    "filename": "MISAKI-CHARACTER-ARC.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/MISAKI-CHARACTER-ARC.md",
+    "mod_date": "2026-02-09 09:25:36",
+    "size_bytes": 32526,
+    "topic_preview": "高橋美咲の成長物語 - 元広告代理店の29歳が、算命学と巡との出会いを通じて、自分自身を発見していく物語",
+    "category": "character"
+  },
+  {
+    "filename": "MEGURU-KEI-RELATIONSHIP.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/MEGURU-KEI-RELATIONSHIP.md",
+    "mod_date": "2026-02-09 09:29:45",
+    "size_bytes": 25170,
+    "topic_preview": "藤堂慧と九条巡の関係性 全体設計 - Doctor Meguru's Life Prescription - Kei & Meguru Relationship Design - 全96話エピソード（特にエピソード64-96）",
+    "category": "character"
+  },
+  {
+    "filename": "MEDAI-ERA-DETAIL.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/MEDAI-ERA-DETAIL.md",
+    "mod_date": "2026-02-09 09:31:40",
+    "size_bytes": 20772,
+    "topic_preview": "MedAI時代の詳細設計 - Doctor Meguru's Life Prescription - MedAI Era (2013-2015) - エピソード64-96（回想シーン）",
+    "category": "story"
+  },
+  {
+    "filename": "CONFLICT-STRUCTURE.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/CONFLICT-STRUCTURE.md",
+    "mod_date": "2026-02-09 09:32:52",
+    "size_bytes": 22795,
+    "topic_preview": "対立構造の深化（エピソード64-96） - Doctor Meguru's Life Prescription - Conflict Structure Design",
+    "category": "story"
+  },
+  {
+    "filename": "INTEGRATION-PLAN.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/INTEGRATION-PLAN.md",
+    "mod_date": "2026-02-09 09:34:04",
+    "size_bytes": 19933,
+    "topic_preview": "物語全体への統合案 - Doctor Meguru's Life Prescription - Overall Integration Plan - 全96話エピソード",
+    "category": "story"
+  },
+  {
+    "filename": "SAI-CHARACTER-DEVELOPMENT.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/SAI-CHARACTER-DEVELOPMENT.md",
+    "mod_date": "2026-02-09 09:34:30",
+    "size_bytes": 12540,
+    "topic_preview": "藤堂慧 キャラクター展開・詳細設計 - 医療系スタートアップからAI占いへの論理的な繋がりを構築",
+    "category": "character"
+  },
+  {
+    "filename": "FINAL-INTEGRATION-REPORT.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/FINAL-INTEGRATION-REPORT.md",
+    "mod_date": "2026-02-09 09:39:14",
+    "size_bytes": 31022,
+    "topic_preview": "ドクター巡の人生処方箋 最終統合レポート - プロジェクト: 九条巡の運命診断室 エピソード数: 全96話",
+    "category": "story"
+  },
+  {
+    "filename": "CHARACTERS-RELATIONSHIP.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/CHARACTERS-RELATIONSHIP.md",
+    "mod_date": "2026-02-09 10:57:53",
+    "size_bytes": 6771,
+    "topic_preview": "キャラクター関係性マーメイド図 - 主要キャラクター関係図",
+    "category": "character"
+  },
+  {
+    "filename": "EPISODE-CORRELATION.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/EPISODE-CORRELATION.md",
+    "mod_date": "2026-02-09 10:57:53",
+    "size_bytes": 8637,
+    "topic_preview": "エピソード間相関図 - 主要エピソードの関連性",
+    "category": "episode"
+  },
+  {
+    "filename": "STORYLINE-MERMAID.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/STORYLINE-MERMAID.md",
+    "mod_date": "2026-02-09 10:57:53",
+    "size_bytes": 8075,
+    "topic_preview": "ストーリーラインマーメイド図 - 120話全体の3部構造",
+    "category": "story"
+  },
+  {
+    "filename": "120-EPISODE-DASHBOARD.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/120-EPISODE-DASHBOARD.md",
+    "mod_date": "2026-02-09 10:58:11",
+    "size_bytes": 11878,
+    "topic_preview": "ドクター巡の人生処方箋 120話拡張版 統合ダッシュボード - 全体期間: 2026年4月〜2027年12月（1年9ヶ月）",
+    "category": "episode"
+  },
+  {
+    "filename": "120-EPISODES-TABLE.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/120-EPISODES-TABLE.md",
+    "mod_date": "2026-02-09 10:58:26",
+    "size_bytes": 15561,
+    "topic_preview": "120話拡張版 進行表（メインテーマ×サブテーマ×ストーリーライン） - 目的: 120話拡張版の物語全体を俯瞰的に理解するための進行表",
+    "category": "episode"
+  },
+  {
+    "filename": "README-120-EPISODES.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/README-120-EPISODES.md",
+    "mod_date": "2026-02-09 10:58:39",
+    "size_bytes": 5910,
+    "topic_preview": "ドクター巡の人生処方箋 120話拡張版 ドキュメント - 算命学に基づく人生診断ストーリー 期間: 2026年4月〜2027年12月（1年9ヶ月）総話数: 120話",
+    "category": "episode"
+  },
+  {
+    "filename": "QUICK-START.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/QUICK-START.md",
+    "mod_date": "2026-02-09 10:59:21",
+    "size_bytes": 6400,
+    "topic_preview": "ドクター巡の人生処方箋 120話拡張版 クイックスタート - このドキュメントを5分で読めば、120話全体が理解できます",
+    "category": "episode"
+  },
+  {
+    "filename": "MEGURU-GROWTH-STATE.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/MEGURU-GROWTH-STATE.md",
+    "mod_date": "2026-02-09 10:59:02",
+    "size_bytes": 11053,
+    "topic_preview": "九条巡の成長 State Machine 図 - 対象: 九条巡（主人公）目的: 巡の内面の状態遷移を視覚化",
+    "category": "character"
+  },
+  {
+    "filename": "STORY-STATE-MACHINE.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/STORY-STATE-MACHINE.md",
+    "mod_date": "2026-02-09 10:59:02",
+    "size_bytes": 11486,
+    "topic_preview": "120話拡張版 物語全体 State Machine 図 - 目的: 120話の物語構造を状態遷移図として視覚化",
+    "category": "story"
+  },
+  {
+    "filename": "THEME-STRUCTURE.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/THEME-STRUCTURE.md",
+    "mod_date": "2026-02-09 10:59:40",
+    "size_bytes": 13723,
+    "topic_preview": "120話拡張版 テーマ構造分析 - 目的: 120話拡張版のテーマ構造を分析し、全体像を明確化する",
+    "category": "story"
+  },
+  {
+    "filename": "SANMEIGAKU-CORRELATION.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/SANMEIGAKU-CORRELATION.md",
+    "mod_date": "2026-02-09 11:00:33",
+    "size_bytes": 9058,
+    "topic_preview": "算命学要素相関図 - 天中殺の全体相関",
+    "category": "story"
+  },
+  {
+    "filename": "TIMELINE-MERMAID.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/TIMELINE-MERMAID.md",
+    "mod_date": "2026-02-09 11:00:33",
+    "size_bytes": 7877,
+    "topic_preview": "タイムラインマーメイド図 - 120話全体タイムライン",
+    "category": "story"
+  },
+  {
+    "filename": "TRIANGLE-RELATIONSHIP.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/TRIANGLE-RELATIONSHIP.md",
+    "mod_date": "2026-02-09 11:00:33",
+    "size_bytes": 9389,
+    "topic_preview": "三者関係の動的変化 - 巡・美咲・慧の三角形：全体図",
+    "category": "character"
+  },
+  {
+    "filename": "KEI-GROWTH-STATE.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/KEI-GROWTH-STATE.md",
+    "mod_date": "2026-02-09 11:00:45",
+    "size_bytes": 9677,
+    "topic_preview": "藤堂慧の成長 State Machine 図 - 対象: 藤堂慧（巡の共同創業者→ライバル→協力者）目的: 慧の成長の状態遷移を視覚化",
+    "category": "character"
+  },
+  {
+    "filename": "MISAKI-GROWTH-STATE.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/MISAKI-GROWTH-STATE.md",
+    "mod_date": "2026-02-09 11:00:45",
+    "size_bytes": 9790,
+    "topic_preview": "高橋美咲の成長 State Machine 図 - 対象: 高橋美咲（第1話の患者）目的: 美咲の成長の状態遷移を視覚化",
+    "category": "character"
+  },
+  {
+    "filename": "DETAILED-ANALYSIS.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/DETAILED-ANALYSIS.md",
+    "mod_date": "2026-02-09 11:01:12",
+    "size_bytes": 19476,
+    "topic_preview": "ドクター巡の人生処方箋 120話拡張版 詳細分析 - 各章の深い掘り下げと分析",
+    "category": "story"
+  },
+  {
+    "filename": "STATISTICS.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/STATISTICS.md",
+    "mod_date": "2026-02-09 11:01:00",
+    "size_bytes": 15468,
+    "topic_preview": "120話拡張版 統計情報 - 目的: 120話拡張版の統計情報を提供する",
+    "category": "episode"
+  },
+  {
+    "filename": "TIMELINE.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/TIMELINE.md",
+    "mod_date": "2026-02-09 11:02:33",
+    "size_bytes": 11936,
+    "topic_preview": "120話拡張版 タイムライン（月次） - 目的: 120話拡張版の月次タイムラインを提供する",
+    "category": "story"
+  },
+  {
+    "filename": "VISUAL-GUIDE.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/VISUAL-GUIDE.md",
+    "mod_date": "2026-02-09 11:02:34",
+    "size_bytes": 8402,
+    "topic_preview": "ドクター巡の人生処方箋 120話拡張版 可視化ガイド - Mermaid図の使い方と解説",
+    "category": "other"
+  },
+  {
+    "filename": "CONFLICT-STATE.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/CONFLICT-STATE.md",
+    "mod_date": "2026-02-09 11:04:26",
+    "size_bytes": 13791,
+    "topic_preview": "対立構造の State Machine 図 - 対象: 巡 vs 慧 の対立構造 目的: 二人の関係性の状態遷移を視覚化",
+    "category": "story"
+  },
+  {
+    "filename": "PATIENT-TRANSITION.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/PATIENT-TRANSITION.md",
+    "mod_date": "2026-02-09 11:03:08",
+    "size_bytes": 12512,
+    "topic_preview": "患者の状態遷移パターン State Machine 図 - 目的: 典型的な患者の診療プロセスを状態遷移図として視覚化",
+    "category": "story"
+  },
+  {
+    "filename": "TENCHUSATSU-STATE.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/TENCHUSATSU-STATE.md",
+    "mod_date": "2026-02-09 11:03:08",
+    "size_bytes": 13529,
+    "topic_preview": "天中殺の State Machine 図 - 目的: 天中殺のサイクルと患者への影響を状態遷移図として視覚化",
+    "category": "story"
+  },
+  {
+    "filename": "DASHBOARD-COMPLETION-REPORT.md",
+    "path": "/Users/kitamuratatsuhiko/UIanimated/claudedocs/DASHBOARD-COMPLETION-REPORT.md",
+    "mod_date": "2026-02-09 11:03:07",
+    "size_bytes": 8386,
+    "topic_preview": "120話拡張版 統合ダッシュボード 完了報告 - ステータス: 完了",
+    "category": "episode"
+  }
+]

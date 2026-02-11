@@ -2,8 +2,8 @@ import { View, Text, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Calendar, ArrowRight, RefreshCw, Sparkles } from 'lucide-react-native';
 import { useEffect, useState } from 'react';
-import { loadStorage } from '@/src/lib/storage';
-import { useResponsive } from '@/src/hooks/useResponsive';
+import { loadStorage } from '@/lib/storage';
+import { useResponsive } from '@/hooks/useResponsive';
 
 export default function DiagnosisTab() {
     const router = useRouter();

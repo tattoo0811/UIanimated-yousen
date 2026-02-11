@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react-native';
 import { useState } from 'react';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import clsx from 'clsx';
-import { validateBirthDate } from '@/src/utils/validation';
+import { validateBirthDate } from '@/utils/validation';
 
 export default function BirthInputScreen() {
   const router = useRouter();

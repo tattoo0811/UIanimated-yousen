@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import { X, Check, Sparkles, Settings } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { usePurchases } from '@/src/hooks/usePurchases';
+import { usePurchases } from '@/hooks/usePurchases';
 
 export default function PaywallScreen() {
     const router = useRouter();

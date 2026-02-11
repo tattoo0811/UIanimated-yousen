@@ -1,4 +1,4 @@
-import {Composition} from 'remotion';
+import {Composition, registerRoot} from 'remotion';
 import {HookComposition} from './compositions/HookComposition';
 import {CompatibilityComposition} from './compositions/CompatibilityComposition';
 import {YearFortuneComposition} from './compositions/YearFortuneComposition';
@@ -88,3 +88,5 @@ export const RemotionRoot: React.FC = () => {
     </>
   );
 };
+
+registerRoot(RemotionRoot);

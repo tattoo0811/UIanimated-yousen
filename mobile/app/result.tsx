@@ -1,12 +1,12 @@
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
-import { ArrowLeft, Settings, Users, Image } from 'lucide-react-native';
+import { ArrowLeft, Settings, Users, Image, FileText } from 'lucide-react-native';
 import { useEffect, useState } from 'react';
-import PopResultCard from '@/src/components/PopResultCard';
-import FortuneTypewriterReveal from '@/src/components/FortuneTypewriterReveal';
-import { loadStorage } from '@/src/lib/storage';
-import kanshiData from '@/src/data/kanshi-types.json';
-import { getCharacterByKanshi } from '@/src/lib/viral-characters-loader';
+import PopResultCard from '@/components/PopResultCard';
+import FortuneTypewriterReveal from '@/components/FortuneTypewriterReveal';
+import { loadStorage } from '@/lib/storage';
+import kanshiData from '@/data/kanshi-types.json';
+import { getCharacterByKanshi } from '@/lib/viral-characters-loader';
 
 export default function ResultScreen() {
   const router = useRouter();
@@ -138,6 +138,23 @@ export default function ResultScreen() {
 
       {/* Bottom Buttons */}
       <View className="px-4 pb-8 gap-3">
+        <TouchableOpacity
+          onPress={() => router.push(`/shohousen/${kanshi}` as any)}
+          className="flex-row items-center justify-center gap-2 bg-[#c41e3a] p-4"
+          style={{
+            borderWidth: 3,
+            borderColor: '#333',
+            borderRadius: 16,
+            shadowColor: '#333',
+            shadowOffset: { width: 4, height: 4 },
+            shadowOpacity: 1,
+            shadowRadius: 0,
+          }}
+        >
+          <FileText size={20} color="#fff" />
+          <Text className="font-bold text-white text-lg">人生処方箋</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity
           onPress={() => router.push('/image-prompts')}
           className="flex-row items-center justify-center gap-2 bg-[#FF6B9D] p-4"

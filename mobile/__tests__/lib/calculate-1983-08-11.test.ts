@@ -3,19 +3,25 @@
  * このテストケースで申の本気が「戊」であることを検証
  */
 
-import { calculateBaZi, calculateYangSen, calculateFiveElements, calculateEnergyScore } from '@/src/lib/logic';
+import { calculateBaZi, calculateYangSen } from '@/lib/logic';
+import { calculateFiveElements } from '@/lib/logic/fiveElements';
+import { calculateSanmeigakuInsen } from '@/lib/logic/insen';
+
+// Stub for energy score (not implemented yet)
+const calculateEnergyScore = () => 0;
 
 describe('1983年8月11日 12:00の陽占計算', () => {
     const testDate = new Date(1983, 7, 11, 12, 0, 0); // 1983-08-11 12:00
     const longitude = 135;
 
-    it('完全な陽占結果を出力', () => {
+    it('完全な陽占・陰占結果を出力', () => {
         const bazi = calculateBaZi(testDate, longitude);
         const yangSen = calculateYangSen(bazi, testDate);
         const fiveElements = calculateFiveElements(bazi);
         const energyScore = calculateEnergyScore(bazi);
+        const insen = calculateSanmeigakuInsen(bazi, testDate);
 
-        console.log('\n=== 1983年8月11日 12:00 陽占結果 ===\n');
+        console.log('\n=== 1983年8月11日 12:00 陽占・陰占結果 ===\n');
 
         // 四柱推命
         console.log('【四柱推命】');
@@ -31,8 +37,8 @@ describe('1983年8月11日 12:00の陽占計算', () => {
         console.log('        頭');
         console.log(`       ${yangSen.head}`);
         console.log('');
-        console.log('   左手   胸');
-        console.log(`  ${yangSen.leftHand} ${yangSen.chest}`);
+        console.log('  右手   左手   胸');
+        console.log(` ${yangSen.rightHand} ${yangSen.leftHand} ${yangSen.chest}`);
         console.log('');
         console.log('        腹');
         console.log(`       ${yangSen.belly}`);
@@ -58,6 +64,57 @@ describe('1983年8月11日 12:00の陽占計算', () => {
         // エネルギー点数
         console.log('【エネルギー点数】');
         console.log(`${energyScore}点 / 120点`);
+        console.log('');
+
+        // ========== 陰占 ==========
+        console.log('========== 陰占（算命学） ==========');
+        console.log('');
+
+        // 通変星
+        console.log('【通変星】');
+        console.log(`年干: ${bazi.year.stemStr} → ${insen.tsuhensei.find(t => t.pillar === 'year' && t.source === 'heavenlyStem')?.name}`);
+        console.log(`月干: ${bazi.month.stemStr} → ${insen.tsuhensei.find(t => t.pillar === 'month' && t.source === 'heavenlyStem')?.name}`);
+        console.log(`日干: ${bazi.day.stemStr} → ${insen.tsuhensei.find(t => t.pillar === 'day' && t.source === 'heavenlyStem')?.name}`);
+        console.log('');
+
+        // 蔵干と通変星
+        console.log('【蔵干と通変星】');
+        insen.hiddenStems.forEach(hidden => {
+            const tsuhensei = insen.tsuhensei.find(t => t.source === 'hiddenStem' && t.pillar === hidden.pillar && t.hiddenType === hidden.type);
+            console.log(`${hidden.pillar === 'year' ? '年' : hidden.pillar === 'month' ? '月' : '日'}支(${hidden.branch})の蔵干(${hidden.type === 'main' ? '主' : hidden.type === 'sub' ? '次' : '副'}): ${hidden.stem} → ${tsuhensei?.name}`);
+        });
+        console.log('');
+
+        // 十二運星（十二運星）
+        console.log('【十二運星】');
+        insen.junishiUn.forEach(jun => {
+            console.log(`${jun.pillar === 'year' ? '年' : jun.pillar === 'month' ? '月' : '日'}支(${jun.branch}): ${jun.state}`);
+        });
+        console.log('');
+
+        // 身強弱
+        console.log('【身強弱】');
+        console.log(`日干: ${insen.meta.dayStem}`);
+        console.log(`判定: ${insen.fiveElements.dayStemStrength === 'strong' ? '身強' : insen.fiveElements.dayStemStrength === 'weak' ? '身弱' : '中和'}`);
+        console.log('');
+
+        // 位相法
+        console.log('【位相法（地支の関係）】');
+        if (insen.phaseRelations.length > 0) {
+            insen.phaseRelations.forEach(rel => {
+                const fromPillar = rel.from === 'year' ? '年' : rel.from === 'month' ? '月' : '日';
+                const toPillar = rel.to === 'year' ? '年' : rel.to === 'month' ? '月' : '日';
+                console.log(`${fromPillar}支 ↔ ${toPillar}支: ${rel.relation}`);
+            });
+        } else {
+            console.log('特別な関係なし');
+        }
+        console.log('');
+
+        // 天中殺
+        console.log('【天中殺】');
+        console.log(`種類: ${insen.tenchusatsu.type}`);
+        console.log(`空亡の地支: ${insen.tenchusatsu.missingBranches.join(', ')}`);
         console.log('');
 
         // 胸の検証（重要: 月支=申で玉堂星になるか）

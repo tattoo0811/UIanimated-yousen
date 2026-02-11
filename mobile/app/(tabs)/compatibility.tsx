@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Heart, UserPlus, Trash2, Settings } from 'lucide-react-native';
 import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useResponsive } from '@/src/hooks/useResponsive';
+import { useResponsive } from '@/hooks/useResponsive';
 
 interface Partner {
     id: string;
