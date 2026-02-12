@@ -274,7 +274,7 @@ async function checkTursoConsistency() {
 /**
  * 実行
  */
-async async function main() {
+async function main() {
   console.log('🔍 データ整合性レビュー 開始\n');
   console.log('='.repeat(60));
 
@@ -312,4 +312,7 @@ async async function main() {
   process.exit(0);
 }
 
-main();
+main().catch((error) => {
+  console.error('Unhandled error:', error);
+  process.exit(1);
+});
