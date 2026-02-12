@@ -15,16 +15,18 @@ import { GlossaryPanel } from '@/components/features/GlossaryPanel';
 import { OnboardingFlow } from '@/components/features/OnboardingFlow';
 import { OverviewStats } from '@/components/features/OverviewStats';
 import { SubthemesStats } from '@/components/features/SubthemesStats';
+import { ThirteenChapters } from '@/components/features/ThirteenChapters';
 import { Tooltip } from '@/components/ui/Tooltip';
 import { Badge } from '@/components/ui/Badge';
 
 type ViewMode = 'simple' | 'detailed';
-type Tab = 'overview' | 'characters' | 'storyline' | 'meishiki';
+type Tab = 'overview' | 'characters' | 'storyline' | 'thirteen-chapters' | 'meishiki';
 
 const TABS: { id: Tab; label: string; icon: React.ElementType }[] = [
   { id: 'overview', label: '概要', icon: BarChart3 },
   { id: 'characters', label: 'キャラクター', icon: Users },
   { id: 'storyline', label: 'ストーリー', icon: Map },
+  { id: 'thirteen-chapters', label: '13章', icon: BookOpen },
   { id: 'meishiki', label: '命式比較', icon: Sparkles },
 ];
 
@@ -133,6 +135,7 @@ export default function DashboardPage() {
         {activeTab === 'overview' && <OverviewTab viewMode={viewMode} />}
         {activeTab === 'characters' && <CharactersTab viewMode={viewMode} />}
         {activeTab === 'storyline' && <StorylineTab viewMode={viewMode} />}
+        {activeTab === 'thirteen-chapters' && <ThirteenChaptersTab viewMode={viewMode} />}
         {activeTab === 'meishiki' && <MeishikiTab viewMode={viewMode} />}
       </main>
     </div>
@@ -354,6 +357,21 @@ function MeishikiTab({ viewMode }: { viewMode: ViewMode }) {
           </div>
         </section>
       )}
+    </div>
+  );
+}
+
+/* ==================== 13章タブ ==================== */
+function ThirteenChaptersTab({ viewMode }: { viewMode: ViewMode }) {
+  return (
+    <div className="space-y-6">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <ThirteenChapters viewMode={viewMode} />
+      </motion.section>
     </div>
   );
 }
