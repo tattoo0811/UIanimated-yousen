@@ -182,28 +182,7 @@ function OverviewTab({ viewMode }: { viewMode: ViewMode }) {
       </div>
 
       {/* 統計サマリー */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        {[
-          { label: '全エピソード', value: '120話', sub: '三部構成' },
-          { label: 'キャラクター', value: '4名', sub: '主要キャラクター' },
-          { label: 'ターニングポイント', value: '8箇所', sub: '物語の転換点' },
-          { label: 'テーマ', value: '在り方', sub: '「占い ≠ 未来予測」' },
-        ].map((stat, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 + i * 0.05 }}
-            className="bg-slate-800/30 rounded-xl p-4 text-center"
-          >
-            <p className="text-2xl font-bold text-white">{stat.value}</p>
-            <p className="text-xs text-slate-400 mt-0.5">{stat.label}</p>
-            {viewMode === 'detailed' && (
-              <p className="text-[10px] text-slate-500 mt-1">{stat.sub}</p>
-            )}
-          </motion.div>
-        ))}
-      </div>
+      <OverviewStats viewMode={viewMode} />
 
       {/* CTA */}
       <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-4">
