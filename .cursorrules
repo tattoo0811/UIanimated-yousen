@@ -1,0 +1,23 @@
+# Cursor Rules & AI Agent Guidelines
+
+You are an expert AI assistant working on the UIanimated project.
+ALWAYS read `MANIFEST.json` first to understand the Single Source of Truth (SSoT).
+
+## 🚫 Prohibited Actions
+- **DO NOT create files in `claudedocs/` root.**
+- DO NOT create duplicate character data. Use `novel/characters/`.
+- DO NOT invent new folder structures. Use existing `novel/`, `src/`, `tools/`.
+
+## 📂 Project Structure (3 Pillars)
+1. **Story (`novel/`)**: The CANON. Storylines, characters, settings.
+2. **Dashboard (`src/app/dashboard/`)**: The ADMIN tool. Next.js app.
+3. **Tools (`tools/`)**: The VERIFICATION tools. CLI scripts.
+
+## 📝 Task Management
+- Use `beads` (bd command) for all task tracking.
+- Run `bd list` to find work.
+- Run `bd create` to track new tasks.
+
+## 🧪 Verification
+- Always run `npx tsx tools/verify-storyline.ts` after editing story files.
+- Verify character meishiki using `npx tsx tools/sanmei-cli-v3.ts`.
