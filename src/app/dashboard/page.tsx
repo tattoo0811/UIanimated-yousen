@@ -16,17 +16,19 @@ import { OnboardingFlow } from '@/components/features/OnboardingFlow';
 import { OverviewStats } from '@/components/features/OverviewStats';
 import { SubthemesStats } from '@/components/features/SubthemesStats';
 import { ThirteenChapters } from '@/components/features/ThirteenChapters';
+import { SakuraFlashbacks } from '@/components/features/SakuraFlashbacks';
 import { Tooltip } from '@/components/ui/Tooltip';
 import { Badge } from '@/components/ui/Badge';
 
 type ViewMode = 'simple' | 'detailed';
-type Tab = 'overview' | 'characters' | 'storyline' | 'thirteen-chapters' | 'meishiki';
+type Tab = 'overview' | 'characters' | 'storyline' | 'thirteen-chapters' | 'sakura-flashbacks' | 'meishiki';
 
 const TABS: { id: Tab; label: string; icon: React.ElementType }[] = [
   { id: 'overview', label: '概要', icon: BarChart3 },
   { id: 'characters', label: 'キャラクター', icon: Users },
   { id: 'storyline', label: 'ストーリー', icon: Map },
   { id: 'thirteen-chapters', label: '13章', icon: BookOpen },
+  { id: 'sakura-flashbacks', label: 'さくら回想', icon: Sparkles },
   { id: 'meishiki', label: '命式比較', icon: Sparkles },
 ];
 
@@ -136,6 +138,7 @@ export default function DashboardPage() {
         {activeTab === 'characters' && <CharactersTab viewMode={viewMode} />}
         {activeTab === 'storyline' && <StorylineTab viewMode={viewMode} />}
         {activeTab === 'thirteen-chapters' && <ThirteenChaptersTab viewMode={viewMode} />}
+        {activeTab === 'sakura-flashbacks' && <SakuraFlashbacksTab viewMode={viewMode} />}
         {activeTab === 'meishiki' && <MeishikiTab viewMode={viewMode} />}
       </main>
     </div>
@@ -371,6 +374,21 @@ function ThirteenChaptersTab({ viewMode }: { viewMode: ViewMode }) {
         transition={{ duration: 0.5 }}
       >
         <ThirteenChapters viewMode={viewMode} />
+      </motion.section>
+    </div>
+  );
+}
+
+/* ==================== さくら回想タブ ==================== */
+function SakuraFlashbacksTab({ viewMode }: { viewMode: ViewMode }) {
+  return (
+    <div className="space-y-6">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <SakuraFlashbacks viewMode={viewMode} />
       </motion.section>
     </div>
   );
