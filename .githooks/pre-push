@@ -1,0 +1,112 @@
+#!/bin/bash
+
+# ============================================================
+# Pre-push Hook: Story Quality Checks
+# ============================================================
+# ブランチを push する前に4つのレビューチェックを実行します。
+# いずれかが失敗した場合、push はブロックされます。
+#
+# チェック項目:
+# 1. データ整合性レビュー (database-consistency)
+# 2. 物語整合性レビュー (story-coherence)
+# 3. キャラクター表現レビュー (character-voice)
+# 4. 史実・専門性レビュー (factual-authenticity)
+#
+# スキップする場合: git push --no-verify
+# ============================================================
+
+set -e
+
+# 色
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+echo -e "${BLUE}================================================${NC}"
+echo -e "${BLUE}  Story Quality Pre-push Checks${NC}"
+echo -e "${BLUE}================================================${NC}"
+
+# エラーカウンター
+ERRORS=0
+CHECKS_PASSED=()
+
+# ============================================================
+# チェック関数
+# ============================================================
+
+run_check() {
+  local name=$1
+  local script=$2
+
+  echo ""
+  echo -e "${BLUE}Checking: ${name}...${NC}"
+
+  if npx tsx "${script}" 2>&1; then
+    echo -e "${GREEN}✓ ${name}: PASSED${NC}"
+    CHECKS_PASSED+=("${name}")
+  else
+    echo -e "${RED}✗ ${name}: FAILED${NC}"
+    ERRORS=$((ERRORS + 1))
+  fi
+}
+
+# ============================================================
+# メインチェック実行
+# ============================================================
+
+# プロジェクトルートに移動
+cd "$(git rev-parse --show-toplevel)"
+
+# 依存関係チェック
+if [ ! -d "tools/node_modules" ]; then
+  echo -e "${YELLOW}⚠ Installing dependencies...${NC}"
+  cd tools && npm install >/dev/null 2>&1 && cd ..
+fi
+
+echo ""
+echo -e "${BLUE}Running 4 quality checks...${NC}"
+
+# 1. データ整合性レビュー
+run_check "データ整合性" "tools/reviews/database-consistency.ts"
+
+# 2. 物語整合性レビュー
+run_check "物語整合性" "tools/reviews/story-coherence.ts"
+
+# 3. キャラクター表現レビュー
+run_check "キャラクター表現" "tools/reviews/character-voice.ts"
+
+# 4. 史実・専門性レビュー
+run_check "史実・専門性" "tools/reviews/factual-authenticity.ts"
+
+# ============================================================
+# 結果判定
+# ============================================================
+
+echo ""
+echo -e "${BLUE}================================================${NC}"
+
+if [ $ERRORS -eq 0 ]; then
+  echo -e "${GREEN}✓ All checks passed! (${#CHECKS_PASSED[@]}/4)${NC}"
+  echo -e "${GREEN}Proceeding with push...${NC}"
+  echo -e "${BLUE}================================================${NC}"
+  exit 0
+else
+  echo -e "${RED}✗ Push blocked: ${ERRORS} check(s) failed${NC}"
+  echo ""
+  echo -e "${YELLOW}Failed checks:${NC}"
+
+  # 失敗したチェックを表示
+  ALL_CHECKS=("データ整合性" "物語整合性" "キャラクター表現" "史実・専門性")
+  for check in "${ALL_CHECKS[@]}"; do
+    if [[ ! " ${CHECKS_PASSED[@]} " =~ " ${check} " ]]; then
+      echo -e "  ${RED}✗${NC} ${check}"
+    fi
+  done
+
+  echo ""
+  echo -e "${YELLOW}To skip these checks, use:${NC} git push --no-verify"
+  echo -e "${BLUE}================================================${NC}"
+  exit 1
+fi
