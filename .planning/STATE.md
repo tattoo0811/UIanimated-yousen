@@ -19,19 +19,19 @@ Progress: [████░░░░░░] 33%
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 4.5 min
-- Total execution time: 0.1 hours
+- Total plans completed: 2
+- Average duration: 6.3 min
+- Total execution time: 0.2 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-overview-stats | 1/3 | 4.5 min | 4.5 min |
+| 01-overview-stats | 2/3 | 4.5-8.0 min | 6.3 min |
 
 **Recent Trend:**
-- Last 5 plans: 4.5 min
-- Trend: Starting phase execution
+- Last 5 plans: 4.5 min, 8.0 min
+- Trend: Stable execution (平均 6.3 min/plan)
 
 *Updated after each plan completion*
 
@@ -44,6 +44,9 @@ Recent decisions affecting current work:
 
 - Phase 1: 正典データを静的TypeScriptファイルに変換して使用
 - Phase 1: 既存タブ構造を維持しつつ、新規タブ追加で拡張
+- 01-01: 6 statistics cards with icons (Database, Clock, Layers, Users, UserPlus, BookOpen)
+- 01-01: Responsive grid layout (2 columns mobile, 3 columns desktop)
+- 01-01: UserGroup icon replaced with UserPlus due to lucide-react availability
 - 01-02: Extended StoryPart interface with period, theme, and sakuraFlashbacks fields for detailed 3-part structure display
 - 01-02: Warning badge design (amber) for flashback limit overages in visual feedback
 
