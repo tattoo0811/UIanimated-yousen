@@ -121,3 +121,4 @@ npx tsx tools/verify-storyline.ts
 故意のエラー
 故意のエラー
 検証2: 権限修正後のコメント投稿テスト
+テスト: Ruleset 検証
