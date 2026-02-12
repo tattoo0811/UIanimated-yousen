@@ -9,6 +9,8 @@ on:
       - 'meguru-storyline-v3.md'
       - 'tools/**/*.ts'
       - '.claudedocs/**/*'
+      - 'AGENTS.md'
+      - '.github/**/*'
   pull_request:
     paths:
       - 'novel/**/*.md'
@@ -16,6 +18,8 @@ on:
       - 'meguru-storyline-v3.md'
       - 'tools/**/*.ts'
       - '.claudedocs/**/*'
+      - 'AGENTS.md'
+      - '.github/**/*'
   workflow_dispatch:
 
 jobs:
