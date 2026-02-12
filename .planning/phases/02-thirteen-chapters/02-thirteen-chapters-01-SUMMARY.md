@@ -2,7 +2,7 @@
 phase: 02-thirteen-chapters
 plan: 01
 subsystem: ui
-tags: [react, typescript, framer-motion, accordion, chapters-visualization]
+tags: [react, typescript, framer-motion, accordion, chapters-data]
 
 # Dependency graph
 requires:
