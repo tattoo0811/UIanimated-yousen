@@ -8,9 +8,12 @@ import {
 } from 'lucide-react';
 import { CHARACTERS } from '@/data/characters';
 import { CharacterCard } from '@/components/features/CharacterCard';
+import { CharactersList } from '@/components/features/CharactersList';
 import { StoryTimeline } from '@/components/features/StoryTimeline';
+import { StoryPartsDisplay } from '@/components/features/StoryPartsDisplay';
 import { GlossaryPanel } from '@/components/features/GlossaryPanel';
 import { OnboardingFlow } from '@/components/features/OnboardingFlow';
+import { OverviewStats } from '@/components/features/OverviewStats';
 import { Tooltip } from '@/components/ui/Tooltip';
 import { Badge } from '@/components/ui/Badge';
 
@@ -224,27 +227,32 @@ function OverviewTab({ viewMode }: { viewMode: ViewMode }) {
 
 /* ==================== キャラクタータブ ==================== */
 function CharactersTab({ viewMode }: { viewMode: ViewMode }) {
-  return (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between mb-2">
-        <h2 className="text-lg font-semibold text-white">主要キャラクター</h2>
-        <p className="text-xs text-slate-500">{CHARACTERS.length}名</p>
-      </div>
-      <div className="grid gap-4 lg:grid-cols-2">
-        {CHARACTERS.map((char, i) => (
-          <CharacterCard key={char.id} character={char} viewMode={viewMode} index={i} />
-        ))}
-      </div>
-    </div>
-  );
+  return <CharactersList viewMode={viewMode} />;
 }
 
 /* ==================== ストーリータブ ==================== */
 function StorylineTab({ viewMode }: { viewMode: ViewMode }) {
   return (
-    <div className="space-y-4">
-      <h2 className="text-lg font-semibold text-white">ストーリーライン</h2>
-      <StoryTimeline viewMode={viewMode} />
+    <div className="space-y-6">
+      {/* 3部構成セクション */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-lg font-semibold text-white mb-4">3部構成</h2>
+        <StoryPartsDisplay viewMode={viewMode} />
+      </motion.section>
+
+      {/* ターニングポイントセクション */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        <h2 className="text-lg font-semibold text-white mb-4 mt-8">ターニングポイント</h2>
+        <StoryTimeline viewMode={viewMode} />
+      </motion.section>
     </div>
   );
 }
