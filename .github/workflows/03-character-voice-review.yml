@@ -1,0 +1,73 @@
+name: キャラクター表現レビュー
+
+on:
+  pull_request:
+    paths:
+      - 'novel/**/*.md'
+      - 'meguru-storyline-v3.md'
+      - 'claudedocs/active/character*.md'
+  workflow_dispatch:
+
+jobs:
+  character-voice:
+    name: キャラクターの声と発言の矛盾チェック
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: |
+          cd tools && npm ci
+
+      - name: キャラクター表現チェック
+        id: voice
+        run: |
+          set +e
+          OUTPUT=$(npx tsx tools/reviews/character-voice.ts 2>&1)
+          EXIT_CODE=$?
+          echo "$OUTPUT"
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+          echo "$OUTPUT" > /tmp/voice-output.txt
+          exit 0
+
+      - name: PRにコメント投稿
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const output = fs.readFileSync('/tmp/voice-output.txt', 'utf8');
+            const exitCode = '${{ steps.voice.outputs.exit_code }}';
+            const icon = exitCode === '0' ? '✅' : '💡';
+
+            const body = `## ${icon} キャラクター表現レビュー
+
+            ### チェック項目
+            - 発言の矛盾（性格一貫性）
+            - より良いセリフの提案
+            - キャラクターの「声」の品質評価
+            - 言葉遣いのキャラクター性
+
+            ### 結果
+
+            \`\`\`
+            ${output}
+            \`\`\`
+
+            > _担当: CharacterVoiceReviewer_
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo,
+              body: body
+            });
+
+      - name: 失敗時にジョブを失敗にする
+        if: steps.voice.outputs.exit_code != '0'
+        run: exit 1

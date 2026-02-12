@@ -1,0 +1,74 @@
+name: 史実・専門性レビュー
+
+on:
+  pull_request:
+    paths:
+      - 'novel/**/*.md'
+      - 'meguru-storyline-v3.md'
+      - 'tools/**/*.ts'
+      - 'claudedocs/**/*'
+  workflow_dispatch:
+
+jobs:
+  factual-authenticity:
+    name: 占星術・四柱推命の専門性と史実チェック
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: |
+          cd tools && npm ci
+
+      - name: 専門性チェック
+        id: authenticity
+        run: |
+          set +e
+          OUTPUT=$(npx tsx tools/reviews/factual-authenticity.ts 2>&1)
+          EXIT_CODE=$?
+          echo "$OUTPUT"
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+          echo "$OUTPUT" > /tmp/authenticity-output.txt
+          exit 0
+
+      - name: PRにコメント投稿
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const output = fs.readFileSync('/tmp/authenticity-output.txt', 'utf8');
+            const exitCode = '${{ steps.authenticity.outputs.exit_code }}';
+            const icon = exitCode === '0' ? '✅' : '📚';
+
+            const body = `## ${icon} 史実・専門性レビュー
+
+            ### チェック項目
+            - 占星術・四柱推命の専門性
+            - 歴史的背景の正確性
+            - 哲学・心理学引用の妥当性
+            - 朱学院サイトとの整合性
+
+            ### 結果
+
+            \`\`\`
+            ${output}
+            \`\`\`
+
+            > _担当: FactualAuthenticityReviewer_
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo,
+              body: body
+            });
+
+      - name: 失敗時にジョブを失敗にする
+        if: steps.authenticity.outputs.exit_code != '0'
+        run: exit 1

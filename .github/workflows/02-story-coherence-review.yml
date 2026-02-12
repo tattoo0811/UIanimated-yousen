@@ -1,0 +1,74 @@
+name: 物語整合性レビュー
+
+on:
+  pull_request:
+    paths:
+      - 'novel/**/*.md'
+      - 'meguru-storyline-v3.md'
+      - '120-EPISODE-DASHBOARD.md'
+      - 'claudedocs/**/*.md'
+  workflow_dispatch:
+
+jobs:
+  story-coherence:
+    name: ストーリー全体の矛盾チェック
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: |
+          cd tools && npm ci
+
+      - name: 物語整合性チェック
+        id: coherence
+        run: |
+          set +e
+          OUTPUT=$(npx tsx tools/reviews/story-coherence.ts 2>&1)
+          EXIT_CODE=$?
+          echo "$OUTPUT"
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+          echo "$OUTPUT" > /tmp/coherence-output.txt
+          exit 0
+
+      - name: PRにコメント投稿
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const output = fs.readFileSync('/tmp/coherence-output.txt', 'utf8');
+            const exitCode = '${{ steps.coherence.outputs.exit_code }}';
+            const icon = exitCode === '0' ? '✅' : '⚠️';
+
+            const body = `## ${icon} 物語整合性レビュー
+
+            ### チェック項目
+            - 全120話の時系列矛盾
+            - キャラクター成長/変化の一貫性
+            - 伏線と回収の整合性
+            - パラレル・回想シーンの矛盾
+
+            ### 結果
+
+            \`\`\`
+            ${output}
+            \`\`\`
+
+            > _担当: StoryCoherenceReviewer_
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo,
+              body: body
+            });
+
+      - name: 失敗時にジョブを失敗にする
+        if: steps.coherence.outputs.exit_code != '0'
+        run: exit 1
