@@ -1,3 +1,20 @@
+---
+agents:
+  - name: StoryReviewer
+    role: ストーリー整合性レビュアー
+    description: 算命学の制約とストーリーの理論的一貫性をチェックする専門エージェント
+    instructions: |
+      1. novel/ 配下の STORYLINE v3 と DASHBOARD の同期チェック
+      2. 算命学ツール (sanmei-cli-v3) を使用した命式の検証
+      3. 伏線 (foreshadow) の回収漏れチェック
+  - name: CodeReviewer
+    role: 技術スタックレビュアー
+    description: Next.js 15, Tailwind v4 等の最新技術スタックに準拠しているか確認
+    instructions: |
+      1. nextjs.org/docs/llms.txt の最新プラクティスとの照合
+      2. beads (bd) ワークフローの遵守確認
+---
+
 # Agent Instructions
 
 This project uses **bd** (beads) for issue tracking. Run `bd onboard` to get started.
