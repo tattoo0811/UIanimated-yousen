@@ -14,6 +14,7 @@ import { StoryPartsDisplay } from '@/components/features/StoryPartsDisplay';
 import { GlossaryPanel } from '@/components/features/GlossaryPanel';
 import { OnboardingFlow } from '@/components/features/OnboardingFlow';
 import { OverviewStats } from '@/components/features/OverviewStats';
+import { SubthemesStats } from '@/components/features/SubthemesStats';
 import { Tooltip } from '@/components/ui/Tooltip';
 import { Badge } from '@/components/ui/Badge';
 
@@ -183,6 +184,16 @@ function OverviewTab({ viewMode }: { viewMode: ViewMode }) {
 
       {/* 統計サマリー */}
       <OverviewStats viewMode={viewMode} />
+
+      {/* サブテーマ統計 */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+        className="mt-8"
+      >
+        <SubthemesStats viewMode={viewMode} />
+      </motion.section>
 
       {/* CTA */}
       <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-4">
