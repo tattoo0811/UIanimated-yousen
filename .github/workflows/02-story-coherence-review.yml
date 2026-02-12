@@ -1,4 +1,4 @@
-name: 物語整合性レビュー
+name: story-coherence-review
 
 on:
   push:
@@ -18,7 +18,7 @@ on:
 
 jobs:
   story-coherence:
-    name: ストーリー全体の矛盾チェック
+    name: story-coherence-review
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -65,7 +65,7 @@ jobs:
 
             \`\`\`
             ${output}
-            \`\`\`
+            \`\`\
 
             > _担当: StoryCoherenceReviewer_
             `;

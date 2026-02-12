@@ -1,4 +1,4 @@
-name: データ整合性レビュー
+name: database-consistency-review
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
       - 'tools/**/*.ts'
       - '.claudedocs/**/*'
       - 'AGENTS.md'
-      - '.github/**/*'
+      - '.github/workflows/**'
   pull_request:
     paths:
       - 'novel/**/*.md'
@@ -19,12 +19,12 @@ on:
       - 'tools/**/*.ts'
       - '.claudedocs/**/*'
       - 'AGENTS.md'
-      - '.github/**/*'
+      - '.github/workflows/**'
   workflow_dispatch:
 
 jobs:
   database-consistency:
-    name: データベースとMDファイルの整合性チェック
+    name: database-consistency-review
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

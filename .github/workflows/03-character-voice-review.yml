@@ -1,4 +1,4 @@
-name: キャラクター表現レビュー
+name: character-voice-review
 
 on:
   push:
@@ -16,7 +16,7 @@ on:
 
 jobs:
   character-voice:
-    name: キャラクターの声と発言の矛盾チェック
+    name: character-voice-review
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -63,7 +63,7 @@ jobs:
 
             \`\`\`
             ${output}
-            \`\`\`
+            \`\`\
 
             > _担当: CharacterVoiceReviewer_
             `;
