@@ -5,13 +5,11 @@ on:
     branches: ['**']
     paths:
       - 'novel/**/*.md'
-      - 'meguru-storyline-v3.md'
-      - 'claudedocs/active/character*.md'
+      - 'AGENTS.md'
   pull_request:
     paths:
       - 'novel/**/*.md'
-      - 'meguru-storyline-v3.md'
-      - 'claudedocs/active/character*.md'
+      - 'AGENTS.md'
   workflow_dispatch:
 
 jobs:

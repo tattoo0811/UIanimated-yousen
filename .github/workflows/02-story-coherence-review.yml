@@ -6,14 +6,10 @@ on:
     paths:
       - 'novel/**/*.md'
       - 'meguru-storyline-v3.md'
-      - '120-EPISODE-DASHBOARD.md'
-      - 'claudedocs/**/*.md'
   pull_request:
     paths:
       - 'novel/**/*.md'
       - 'meguru-storyline-v3.md'
-      - '120-EPISODE-DASHBOARD.md'
-      - 'claudedocs/**/*.md'
   workflow_dispatch:
 
 jobs:
