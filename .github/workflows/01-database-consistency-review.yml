@@ -1,6 +1,14 @@
 name: データ整合性レビュー
 
 on:
+  push:
+    branches: ['**']
+    paths:
+      - 'novel/**/*.md'
+      - '120-EPISODE-DASHBOARD.md'
+      - 'meguru-storyline-v3.md'
+      - 'tools/**/*.ts'
+      - '.claudedocs/**/*'
   pull_request:
     paths:
       - 'novel/**/*.md'

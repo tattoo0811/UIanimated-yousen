@@ -1,6 +1,12 @@
 name: キャラクター表現レビュー
 
 on:
+  push:
+    branches: ['**']
+    paths:
+      - 'novel/**/*.md'
+      - 'meguru-storyline-v3.md'
+      - 'claudedocs/active/character*.md'
   pull_request:
     paths:
       - 'novel/**/*.md'

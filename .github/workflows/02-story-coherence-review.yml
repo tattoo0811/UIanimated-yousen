@@ -1,6 +1,13 @@
 name: 物語整合性レビュー
 
 on:
+  push:
+    branches: ['**']
+    paths:
+      - 'novel/**/*.md'
+      - 'meguru-storyline-v3.md'
+      - '120-EPISODE-DASHBOARD.md'
+      - 'claudedocs/**/*.md'
   pull_request:
     paths:
       - 'novel/**/*.md'

@@ -1,6 +1,13 @@
 name: 史実・専門性レビュー
 
 on:
+  push:
+    branches: ['**']
+    paths:
+      - 'novel/**/*.md'
+      - 'meguru-storyline-v3.md'
+      - 'tools/**/*.ts'
+      - 'claudedocs/**/*'
   pull_request:
     paths:
       - 'novel/**/*.md'
