@@ -1,4 +1,4 @@
-name: 物語整合性レビュー
+name: story-coherence-review
 
 on:
   push:
@@ -6,19 +6,15 @@ on:
     paths:
       - 'novel/**/*.md'
       - 'meguru-storyline-v3.md'
-      - '120-EPISODE-DASHBOARD.md'
-      - 'claudedocs/**/*.md'
   pull_request:
     paths:
       - 'novel/**/*.md'
       - 'meguru-storyline-v3.md'
-      - '120-EPISODE-DASHBOARD.md'
-      - 'claudedocs/**/*.md'
   workflow_dispatch:
 
 jobs:
   story-coherence:
-    name: ストーリー全体の矛盾チェック
+    name: story-coherence-review
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -43,7 +39,7 @@ jobs:
           exit 0
 
       - name: PRにコメント投稿
-        if: always()
+        if: always() && github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -65,7 +61,7 @@ jobs:
 
             \`\`\`
             ${output}
-            \`\`\`
+            \`\`\
 
             > _担当: StoryCoherenceReviewer_
             `;

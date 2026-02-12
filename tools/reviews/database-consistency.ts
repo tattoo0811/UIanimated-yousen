@@ -6,6 +6,7 @@
  * - 生年月日と命式データの整合性
  * - 人物相関図の矛盾
  * - 大運順行・逆行ルールの遵守
+ * - Turso データベースとの整合性
  */
 
 import { readFileSync, existsSync } from 'fs';
@@ -163,15 +164,133 @@ function checkAgentsMDConsistency() {
 }
 
 /**
+ * Turso データベースとの整合性チェック
+ */
+async function checkTursoConsistency() {
+  // 環境変数チェック
+  if (!process.env.TURSO_URL || !process.env.TURSO_TOKEN) {
+    console.log('\n⏭️  Turso データベースチェックをスキップ (環境変数未設定)');
+    console.log('   CI環境では Turso チェックはスキップされます');
+    return;
+  }
+
+  try {
+    console.log('\n🔍 Turso データベース整合性チェック...');
+
+    // 動的インポート
+    const { turso } = await import('../turso.js');
+
+    // キャラクター数のチェック
+    const charsResult = await turso.execute('SELECT COUNT(*) as count FROM characters');
+    const dbCharCount = charsResult.rows[0].count as number;
+
+    // TypeScript データファイルと比較
+    const charactersData = readFileSync('src/data/characters.ts', 'utf-8');
+    const tsCharMatch = charactersData.match(/export const characters.*?=\s*\[(.*?)\]/s);
+    const tsCharCount = tsCharMatch ? (tsCharMatch[1].match(/\{/g) || []).length : 0;
+
+    if (dbCharCount !== tsCharCount) {
+      addIssue(
+        'warning',
+        'Turso整合性',
+        `キャラクター数が不一致: DB=${dbCharCount}件, TS=${tsCharCount}件`,
+        'データベースと TypeScript データを同期してください'
+      );
+    } else {
+      console.log(`  ✅ キャラクター数: ${dbCharCount}件 (一致)`);
+    }
+
+    // 主要キャラクターの Turso データ確認
+    const mainChars = [
+      { id: 'meguru', name: '九条 巡', birthDate: '1990-03-02' },
+      { id: 'satoru', name: '藤堂 慧', birthDate: '1990-05-25' },
+      { id: 'sakura', name: '九条 さくら', birthDate: '1925-07-30' },
+      { id: 'misaki', name: '高橋 美咲', birthDate: '1999-05-03' },
+    ];
+
+    for (const char of mainChars) {
+      const result = await turso.execute({
+        sql: 'SELECT c.name, c.birth_date, m.energy_total FROM characters c LEFT JOIN meishiki m ON c.id = m.character_id WHERE c.id = ?',
+        args: [char.id]
+      });
+
+      if (result.rows.length === 0) {
+        addIssue(
+          'error',
+          'Turso整合性',
+          `${char.name} (${char.id}) がデータベースに見つかりません`,
+          'tools/seed-characters.ts を実行してデータを投入してください'
+        );
+      } else {
+        const row = result.rows[0];
+        const dbBirthDate = row.birth_date as string;
+
+        if (dbBirthDate !== char.birthDate) {
+          addIssue(
+            'error',
+            'Turso整合性',
+            `${char.name}: 生年月日が不一致 (DB=${dbBirthDate}, Expected=${char.birthDate})`
+          );
+        }
+      }
+    }
+
+    // AGENTS.md と Turso の整合性
+    if (existsSync('AGENTS.md')) {
+      const agentsContent = readFileSync('AGENTS.md', 'utf-8');
+
+      for (const char of mainChars) {
+        const result = await turso.execute({
+          sql: 'SELECT c.name, c.birth_date, m.energy_total FROM characters c LEFT JOIN meishiki m ON c.id = m.character_id WHERE c.name = ?',
+          args: [char.name]
+        });
+
+        if (result.rows.length > 0) {
+          const row = result.rows[0];
+          const dbEnergy = row.energy_total as number;
+
+          // AGENTS.md にエネルギー値が記載されているかチェック
+          const energyPattern = new RegExp(`${char.name}.*?(\\d+)点`, 's');
+          const match = agentsContent.match(energyPattern);
+
+          if (match) {
+            const agentsEnergy = parseInt(match[1], 10);
+            if (agentsEnergy !== dbEnergy) {
+              addIssue(
+                'warning',
+                'Turso整合性',
+                `${char.name}: エネルギー値が不一致 (AGENTS.md=${agentsEnergy}, DB=${dbEnergy})`
+              );
+            }
+          }
+        }
+      }
+    }
+
+    console.log('  ✅ Turso データベースチェック完了');
+  } catch (error) {
+    if (error instanceof Error) {
+      addIssue(
+        'error',
+        'Turso接続',
+        `Turso データベース接続エラー: ${error.message}`,
+        'TURSO_URL と TURSO_TOKEN が正しく設定されているか確認してください'
+      );
+    }
+  }
+}
+
+/**
  * 実行
  */
-function main() {
+async function main() {
   console.log('🔍 データ整合性レビュー 開始\n');
   console.log('='.repeat(60));
 
   checkMainCharacters();
   checkMDDatabaseSync();
   checkAgentsMDConsistency();
+  await checkTursoConsistency();
 
   console.log('\n' + '='.repeat(60));
   console.log(`\n✓ チェック完了: ${results.length} 件の issues\n`);
@@ -202,4 +321,7 @@ function main() {
   process.exit(0);
 }
 
-main();
+main().catch((error) => {
+  console.error('Unhandled error:', error);
+  process.exit(1);
+});

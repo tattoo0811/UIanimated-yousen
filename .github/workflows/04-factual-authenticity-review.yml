@@ -1,24 +1,18 @@
-name: 史実・専門性レビュー
+name: factual-authenticity-review
 
 on:
   push:
     branches: ['**']
     paths:
       - 'novel/**/*.md'
-      - 'meguru-storyline-v3.md'
-      - 'tools/**/*.ts'
-      - 'claudedocs/**/*'
   pull_request:
     paths:
       - 'novel/**/*.md'
-      - 'meguru-storyline-v3.md'
-      - 'tools/**/*.ts'
-      - 'claudedocs/**/*'
   workflow_dispatch:
 
 jobs:
   factual-authenticity:
-    name: 占星術・四柱推命の専門性と史実チェック
+    name: factual-authenticity-review
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -43,7 +37,7 @@ jobs:
           exit 0
 
       - name: PRにコメント投稿
-        if: always()
+        if: always() && github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -65,7 +59,7 @@ jobs:
 
             \`\`\`
             ${output}
-            \`\`\`
+            \`\`\
 
             > _担当: FactualAuthenticityReviewer_
             `;

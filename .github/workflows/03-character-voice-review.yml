@@ -1,22 +1,20 @@
-name: キャラクター表現レビュー
+name: character-voice-review
 
 on:
   push:
     branches: ['**']
     paths:
       - 'novel/**/*.md'
-      - 'meguru-storyline-v3.md'
-      - 'claudedocs/active/character*.md'
+      - 'AGENTS.md'
   pull_request:
     paths:
       - 'novel/**/*.md'
-      - 'meguru-storyline-v3.md'
-      - 'claudedocs/active/character*.md'
+      - 'AGENTS.md'
   workflow_dispatch:
 
 jobs:
   character-voice:
-    name: キャラクターの声と発言の矛盾チェック
+    name: character-voice-review
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -41,7 +39,7 @@ jobs:
           exit 0
 
       - name: PRにコメント投稿
-        if: always()
+        if: always() && github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -63,7 +61,7 @@ jobs:
 
             \`\`\`
             ${output}
-            \`\`\`
+            \`\`\
 
             > _担当: CharacterVoiceReviewer_
             `;
