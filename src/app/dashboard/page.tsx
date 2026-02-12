@@ -8,19 +8,27 @@ import {
 } from 'lucide-react';
 import { CHARACTERS } from '@/data/characters';
 import { CharacterCard } from '@/components/features/CharacterCard';
+import { CharactersList } from '@/components/features/CharactersList';
 import { StoryTimeline } from '@/components/features/StoryTimeline';
+import { StoryPartsDisplay } from '@/components/features/StoryPartsDisplay';
 import { GlossaryPanel } from '@/components/features/GlossaryPanel';
 import { OnboardingFlow } from '@/components/features/OnboardingFlow';
+import { OverviewStats } from '@/components/features/OverviewStats';
+import { SubthemesStats } from '@/components/features/SubthemesStats';
+import { ThirteenChapters } from '@/components/features/ThirteenChapters';
+import { SakuraFlashbacks } from '@/components/features/SakuraFlashbacks';
 import { Tooltip } from '@/components/ui/Tooltip';
 import { Badge } from '@/components/ui/Badge';
 
 type ViewMode = 'simple' | 'detailed';
-type Tab = 'overview' | 'characters' | 'storyline' | 'meishiki';
+type Tab = 'overview' | 'characters' | 'storyline' | 'thirteen-chapters' | 'sakura-flashbacks' | 'meishiki';
 
 const TABS: { id: Tab; label: string; icon: React.ElementType }[] = [
   { id: 'overview', label: '概要', icon: BarChart3 },
   { id: 'characters', label: 'キャラクター', icon: Users },
   { id: 'storyline', label: 'ストーリー', icon: Map },
+  { id: 'thirteen-chapters', label: '13章', icon: BookOpen },
+  { id: 'sakura-flashbacks', label: 'さくら回想', icon: Sparkles },
   { id: 'meishiki', label: '命式比較', icon: Sparkles },
 ];
 
@@ -129,6 +137,8 @@ export default function DashboardPage() {
         {activeTab === 'overview' && <OverviewTab viewMode={viewMode} />}
         {activeTab === 'characters' && <CharactersTab viewMode={viewMode} />}
         {activeTab === 'storyline' && <StorylineTab viewMode={viewMode} />}
+        {activeTab === 'thirteen-chapters' && <ThirteenChaptersTab viewMode={viewMode} />}
+        {activeTab === 'sakura-flashbacks' && <SakuraFlashbacksTab viewMode={viewMode} />}
         {activeTab === 'meishiki' && <MeishikiTab viewMode={viewMode} />}
       </main>
     </div>
@@ -179,28 +189,17 @@ function OverviewTab({ viewMode }: { viewMode: ViewMode }) {
       </div>
 
       {/* 統計サマリー */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        {[
-          { label: '全エピソード', value: '120話', sub: '三部構成' },
-          { label: 'キャラクター', value: '4名', sub: '主要キャラクター' },
-          { label: 'ターニングポイント', value: '8箇所', sub: '物語の転換点' },
-          { label: 'テーマ', value: '在り方', sub: '「占い ≠ 未来予測」' },
-        ].map((stat, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 + i * 0.05 }}
-            className="bg-slate-800/30 rounded-xl p-4 text-center"
-          >
-            <p className="text-2xl font-bold text-white">{stat.value}</p>
-            <p className="text-xs text-slate-400 mt-0.5">{stat.label}</p>
-            {viewMode === 'detailed' && (
-              <p className="text-[10px] text-slate-500 mt-1">{stat.sub}</p>
-            )}
-          </motion.div>
-        ))}
-      </div>
+      <OverviewStats viewMode={viewMode} />
+
+      {/* サブテーマ統計 */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+        className="mt-8"
+      >
+        <SubthemesStats viewMode={viewMode} />
+      </motion.section>
 
       {/* CTA */}
       <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-4">
@@ -224,27 +223,32 @@ function OverviewTab({ viewMode }: { viewMode: ViewMode }) {
 
 /* ==================== キャラクタータブ ==================== */
 function CharactersTab({ viewMode }: { viewMode: ViewMode }) {
-  return (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between mb-2">
-        <h2 className="text-lg font-semibold text-white">主要キャラクター</h2>
-        <p className="text-xs text-slate-500">{CHARACTERS.length}名</p>
-      </div>
-      <div className="grid gap-4 lg:grid-cols-2">
-        {CHARACTERS.map((char, i) => (
-          <CharacterCard key={char.id} character={char} viewMode={viewMode} index={i} />
-        ))}
-      </div>
-    </div>
-  );
+  return <CharactersList viewMode={viewMode} />;
 }
 
 /* ==================== ストーリータブ ==================== */
 function StorylineTab({ viewMode }: { viewMode: ViewMode }) {
   return (
-    <div className="space-y-4">
-      <h2 className="text-lg font-semibold text-white">ストーリーライン</h2>
-      <StoryTimeline viewMode={viewMode} />
+    <div className="space-y-6">
+      {/* 3部構成セクション */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-lg font-semibold text-white mb-4">3部構成</h2>
+        <StoryPartsDisplay viewMode={viewMode} />
+      </motion.section>
+
+      {/* ターニングポイントセクション */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        <h2 className="text-lg font-semibold text-white mb-4 mt-8">ターニングポイント</h2>
+        <StoryTimeline viewMode={viewMode} />
+      </motion.section>
     </div>
   );
 }
@@ -356,6 +360,36 @@ function MeishikiTab({ viewMode }: { viewMode: ViewMode }) {
           </div>
         </section>
       )}
+    </div>
+  );
+}
+
+/* ==================== 13章タブ ==================== */
+function ThirteenChaptersTab({ viewMode }: { viewMode: ViewMode }) {
+  return (
+    <div className="space-y-6">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <ThirteenChapters viewMode={viewMode} />
+      </motion.section>
+    </div>
+  );
+}
+
+/* ==================== さくら回想タブ ==================== */
+function SakuraFlashbacksTab({ viewMode }: { viewMode: ViewMode }) {
+  return (
+    <div className="space-y-6">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <SakuraFlashbacks viewMode={viewMode} />
+      </motion.section>
     </div>
   );
 }

@@ -76,6 +76,12 @@ fonts/
 jsons/
 types/
 
+# local data files in src/data/
+src/data/characters.ts
+src/data/subthemes.ts
+src/data/chapters.ts
+src/data/flashbacks.ts
+
 # local development directories
 example/
 manga/
