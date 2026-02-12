@@ -12,8 +12,10 @@
     "verify:report": "tsx .tmp/scripts/sanmeigaku/report-generator.ts"
   },
   "dependencies": {
+    "@libsql/client": "^0.17.0",
     "@vercel/og": "^0.8.6",
     "clsx": "^2.1.1",
+    "dotenv": "^17.2.4",
     "framer-motion": "^12.23.26",
     "lucide-react": "^0.562.0",
     "next": "16.1.1",

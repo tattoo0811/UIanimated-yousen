@@ -88,3 +88,7 @@ bun.lock
 
 # config files (local)
 .textlintrc
+
+# Archived projects (preserved locally, not tracked)
+archive/
+claudedocs/legacy/

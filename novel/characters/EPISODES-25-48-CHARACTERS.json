@@ -1,0 +1,6576 @@
+{
+  "formatVersion": "1.0",
+  "lastUpdated": "2026-02-08",
+  "description": "エピソード25-48 キャラクター設計 - 中盤の展開",
+  "statistics": {
+    "totalCharacters": 24,
+    "recurringCharacters": 3,
+    "newCharacters": 21,
+    "themeDistribution": [
+      {
+        "theme": "成長と再発のサイクル",
+        "count": 1
+      },
+      {
+        "theme": "再挑戦と覚悟",
+        "count": 1
+      },
+      {
+        "theme": "夢実現後の現実",
+        "count": 1
+      },
+      {
+        "theme": "不倫と自己承認",
+        "count": 1
+      },
+      {
+        "theme": "DVと自立",
+        "count": 1
+      },
+      {
+        "theme": "介護と家族の修復",
+        "count": 1
+      },
+      {
+        "theme": "貧困と希望",
+        "count": 1
+      },
+      {
+        "theme": "孤独と再接続",
+        "count": 1
+      },
+      {
+        "theme": "疾患と生きる意味",
+        "count": 1
+      },
+      {
+        "theme": "自殺未遂と再生",
+        "count": 1
+      },
+      {
+        "theme": "親からの自立",
+        "count": 1
+      },
+      {
+        "theme": "仕事と人生の価値",
+        "count": 1
+      },
+      {
+        "theme": "アダルトチルドレンと回復",
+        "count": 1
+      },
+      {
+        "theme": "発達障害と自己受容",
+        "count": 1
+      },
+      {
+        "theme": "自己発見と第一歩",
+        "count": 1
+      },
+      {
+        "theme": "アイデンティティと母親",
+        "count": 1
+      },
+      {
+        "theme": "不登校と親の受容",
+        "count": 1
+      },
+      {
+        "theme": "更年期と女性のライフステージ",
+        "count": 1
+      },
+      {
+        "theme": "借金と再生",
+        "count": 1
+      },
+      {
+        "theme": "LGBTQ+と自己受容",
+        "count": 1
+      },
+      {
+        "theme": "親からの分離",
+        "count": 1
+      },
+      {
+        "theme": "スランプと創造性",
+        "count": 1
+      },
+      {
+        "theme": "夫婦関係の再生",
+        "count": 1
+      },
+      {
+        "theme": "人生の再設計",
+        "count": 1
+      }
+    ],
+    "tenchusatsuDistribution": [
+      {
+        "type": "寅卯天中殺",
+        "count": 5
+      },
+      {
+        "type": "申酉天中殺",
+        "count": 6
+      },
+      {
+        "type": "午未天中殺",
+        "count": 6
+      },
+      {
+        "type": "戌亥天中殺",
+        "count": 1
+      },
+      {
+        "type": "子丑天中殺",
+        "count": 5
+      },
+      {
+        "type": "辰巳天中殺",
+        "count": 1
+      }
+    ]
+  },
+  "characters": [
+    {
+      "episode": 25,
+      "name": "高橋美咲（再登場）",
+      "birthDate": "1995-03-15T14:30:00",
+      "age": 30,
+      "gender": "female",
+      "occupation": "美容師（独立準備中）",
+      "presentingIssue": "自己評価の低さにぶつかり、独立を迷う",
+      "background": "巡の処方箋（自己肯定感を高める呼吸法）を実践して半年。美容師の腕は認められ、独立の話が来ているが、いざとなると縮こまってしまう。「私に本当にできる？」「失敗したら元の場所にも戻れない」という恐怖。祖母の急病も重なり、自己犠牲模式が再発。",
+      "meguriPrescription": "処方箋アップデート：「自己犠牲」から「自己選択」へ。美咲は自分を犠牲にするのではなく、自分の選択で家族を支えていると気づく。独立は「逃げ」ではなく「選択」。美容師としての腕を「個性」として認め、自分の店を出すことを決意。ただし、祖母の介護と両立するため、地域密着型の小さな店から始める。",
+      "theme": "成長と再発のサイクル",
+      "isRecurring": true,
+      "previousEpisode": 1,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 2,
+            "branch": 6,
+            "stemStr": "乙",
+            "branchStr": "巳",
+            "name": "乙巳",
+            "id": 42,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 6,
+            "branch": 4,
+            "stemStr": "己",
+            "branchStr": "卯",
+            "name": "己卯",
+            "id": 16,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 2,
+            "branch": 12,
+            "stemStr": "乙",
+            "branchStr": "亥",
+            "name": "乙亥",
+            "id": 12,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 10,
+            "branch": 8,
+            "stemStr": "癸",
+            "branchStr": "未",
+            "name": "癸未",
+            "id": 20,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 63,
+          "fire": 13,
+          "earth": 28,
+          "metal": 24,
+          "water": 12
+        },
+        "yangSen": {
+          "head": "貫索星",
+          "rightHand": "牽牛星",
+          "chest": "貫索星",
+          "leftHand": "石門星",
+          "belly": "禄存星",
+          "leftShoulder": {
+            "name": "天極星",
+            "score": 2
+          },
+          "rightLeg": {
+            "name": "天恍星",
+            "score": 7
+          },
+          "leftLeg": {
+            "name": "天禄星",
+            "score": 11
+          }
+        },
+        "energyScore": 12,
+        "insen": {
+          "meta": {
+            "dayStem": "乙",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "乙",
+              "branch": "亥"
+            },
+            "month": {
+              "stem": "己",
+              "branch": "卯"
+            },
+            "day": {
+              "stem": "乙",
+              "branch": "巳"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "亥",
+              "type": "main",
+              "stem": "壬"
+            },
+            {
+              "pillar": "year",
+              "branch": "亥",
+              "type": "sub",
+              "stem": "甲"
+            },
+            {
+              "pillar": "month",
+              "branch": "卯",
+              "type": "main",
+              "stem": "乙"
+            },
+            {
+              "pillar": "day",
+              "branch": "巳",
+              "type": "main",
+              "stem": "丙"
+            },
+            {
+              "pillar": "day",
+              "branch": "巳",
+              "type": "sub",
+              "stem": "庚"
+            },
+            {
+              "pillar": "day",
+              "branch": "巳",
+              "type": "extra",
+              "stem": "戊"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "乙",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "己",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "乙",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "壬",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "甲",
+              "name": "石門星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "乙",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "丙",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "庚",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "司禄星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "亥",
+              "state": "天極星"
+            },
+            {
+              "pillar": "month",
+              "branch": "卯",
+              "state": "天禄星"
+            },
+            {
+              "pillar": "day",
+              "branch": "巳",
+              "state": "天恍星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 63,
+              "fire": 13,
+              "earth": 28,
+              "metal": 24,
+              "water": 12
+            },
+            "dayStemStrength": "strong"
+          },
+          "phaseRelations": [
+            {
+              "from": "year",
+              "to": "day",
+              "relation": "冲"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "寅卯天中殺",
+            "missingBranches": [
+              "寅",
+              "卯"
+            ]
+          }
+        },
+        "nikkan": "乙",
+        "gesshi": "亥",
+        "tenchusatsu": "戌亥天中殺",
+        "jugdais": [
+          "禄存星",
+          "貫索星",
+          "玉堂星",
+          "調舒星",
+          "貫索星"
+        ],
+        "junidai": [
+          "天極星",
+          "天禄星",
+          "天恍星"
+        ],
+        "total_energy": 20
+      }
+    },
+    {
+      "episode": 26,
+      "name": "村田健一（再登場）",
+      "birthDate": "1988-07-22T10:15:00",
+      "age": 37,
+      "gender": "male",
+      "occupation": "元営業・起業準備中",
+      "presentingIssue": "起業再挑戦だが、資金繰りで壁にぶつかる",
+      "background": "巡との出会いから退職し、ITツール開発に向けて動き出した。最初は順調だったが、共同創業者との意見対立が発生。「前の会社でもダメだった、俺はダメだ」というトラウマが蘇る。資金調達でも壁にぶつかり、「やっぱり定職につくべきか？」と迷う。妻から「また逃げるの？」と言われ、追い詰められる。",
+      "meguriPrescription": "処方箋アップデート：「挫折」から「学び」へ。健一の失敗は「ダメさ」の証明ではなく、成功へのプロセス。共同創業者との対立は、ビジョンの不一致を早期に発見できたラッキーな失敗。新しいパートナーを見つけ、より小さく始めることを決意。「完璧なスタート」ではなく「泥臭いスタート」を選ぶ。",
+      "theme": "再挑戦と覚悟",
+      "isRecurring": true,
+      "previousEpisode": 3,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 5,
+            "branch": 3,
+            "stemStr": "戊",
+            "branchStr": "寅",
+            "name": "戊寅",
+            "id": 15,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 6,
+            "branch": 8,
+            "stemStr": "己",
+            "branchStr": "未",
+            "name": "己未",
+            "id": 56,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 5,
+            "branch": 5,
+            "stemStr": "戊",
+            "branchStr": "辰",
+            "name": "戊辰",
+            "id": 5,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 4,
+            "branch": 6,
+            "stemStr": "丁",
+            "branchStr": "巳",
+            "name": "丁巳",
+            "id": 54,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 68,
+          "fire": 39,
+          "earth": 126,
+          "metal": 0,
+          "water": 15
+        },
+        "yangSen": {
+          "head": "貫索星",
+          "rightHand": "車騎星",
+          "chest": "石門星",
+          "leftHand": "貫索星",
+          "belly": "石門星",
+          "leftShoulder": {
+            "name": "天南星",
+            "score": 10
+          },
+          "rightLeg": {
+            "name": "天貴星",
+            "score": 9
+          },
+          "leftLeg": {
+            "name": "天堂星",
+            "score": 8
+          }
+        },
+        "energyScore": 24,
+        "insen": {
+          "meta": {
+            "dayStem": "戊",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "戊",
+              "branch": "辰"
+            },
+            "month": {
+              "stem": "己",
+              "branch": "未"
+            },
+            "day": {
+              "stem": "戊",
+              "branch": "寅"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "辰",
+              "type": "main",
+              "stem": "戊"
+            },
+            {
+              "pillar": "year",
+              "branch": "辰",
+              "type": "sub",
+              "stem": "乙"
+            },
+            {
+              "pillar": "year",
+              "branch": "辰",
+              "type": "extra",
+              "stem": "癸"
+            },
+            {
+              "pillar": "month",
+              "branch": "未",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "month",
+              "branch": "未",
+              "type": "sub",
+              "stem": "丁"
+            },
+            {
+              "pillar": "month",
+              "branch": "未",
+              "type": "extra",
+              "stem": "乙"
+            },
+            {
+              "pillar": "day",
+              "branch": "寅",
+              "type": "main",
+              "stem": "甲"
+            },
+            {
+              "pillar": "day",
+              "branch": "寅",
+              "type": "sub",
+              "stem": "丙"
+            },
+            {
+              "pillar": "day",
+              "branch": "寅",
+              "type": "extra",
+              "stem": "戊"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "戊",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "己",
+              "name": "石門星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "戊",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "戊",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "乙",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "癸",
+              "name": "司禄星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "石門星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丁",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "乙",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "甲",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丙",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "貫索星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "辰",
+              "state": "天南星"
+            },
+            {
+              "pillar": "month",
+              "branch": "未",
+              "state": "天堂星"
+            },
+            {
+              "pillar": "day",
+              "branch": "寅",
+              "state": "天貴星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 68,
+              "fire": 39,
+              "earth": 126,
+              "metal": 0,
+              "water": 15
+            },
+            "dayStemStrength": "strong"
+          },
+          "phaseRelations": [],
+          "tenchusatsu": {
+            "type": "申酉天中殺",
+            "missingBranches": [
+              "申",
+              "酉"
+            ]
+          }
+        },
+        "nikkan": "戊",
+        "gesshi": "辰",
+        "tenchusatsu": "辰巳天中殺",
+        "jugdais": [
+          "石門星",
+          "調舒星",
+          "司禄星",
+          "貫索星",
+          "貫索星"
+        ],
+        "junidai": [
+          "天南星",
+          "天貴星",
+          "天貴星"
+        ],
+        "total_energy": 28
+      }
+    },
+    {
+      "episode": 27,
+      "name": "森川陽菜（再登場）",
+      "birthDate": "2002-11-08T16:45:00",
+      "age": 23,
+      "gender": "female",
+      "occupation": "看護師（国家試験合格）",
+      "presentingIssue": "夢だった看護師になったが、現実とのギャップに苦しむ",
+      "background": "「飛ぶ準備」の処方箋を実践し、見事国家試験に合格。念願の看護師になった。しかし、現場は過酷で、先輩ナースのパワハラ、患者の死、遺族からのクレームに直面。「飛びたかったのに、落ちている」と絶望。夜泣きが再発し、「私には無理だった」と退職を考えるようになる。",
+      "meguriPrescription": "処方箋アップデート：「着陸」から「次の飛翔」へ。陽菜は「墜落」したのではなく、「着陸」した。看護師の現実は、テレビドラマとは違う。でも、患者から感謝される瞬間もある。「完璧な看護師」ではなく、「成長中の看護師」であることを受け入れる。異動願いを出し、新しい環境で再スタートを切る。",
+      "theme": "夢実現後の現実",
+      "isRecurring": true,
+      "previousEpisode": 5,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 7,
+            "branch": 5,
+            "stemStr": "庚",
+            "branchStr": "辰",
+            "name": "庚辰",
+            "id": 17,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 8,
+            "branch": 12,
+            "stemStr": "辛",
+            "branchStr": "亥",
+            "name": "辛亥",
+            "id": 48,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 9,
+            "branch": 7,
+            "stemStr": "壬",
+            "branchStr": "午",
+            "name": "壬午",
+            "id": 19,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 5,
+            "branch": 9,
+            "stemStr": "戊",
+            "branchStr": "申",
+            "name": "戊申",
+            "id": 45,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 43,
+          "fire": 11,
+          "earth": 30,
+          "metal": 38,
+          "water": 58
+        },
+        "yangSen": {
+          "head": "鳳閣星",
+          "rightHand": "司禄星",
+          "chest": "禄存星",
+          "leftHand": "車騎星",
+          "belly": "石門星",
+          "leftShoulder": {
+            "name": "天恍星",
+            "score": 7
+          },
+          "rightLeg": {
+            "name": "天印星",
+            "score": 6
+          },
+          "leftLeg": {
+            "name": "天胡星",
+            "score": 4
+          }
+        },
+        "energyScore": 16,
+        "insen": {
+          "meta": {
+            "dayStem": "庚",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "壬",
+              "branch": "午"
+            },
+            "month": {
+              "stem": "辛",
+              "branch": "亥"
+            },
+            "day": {
+              "stem": "庚",
+              "branch": "辰"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "午",
+              "type": "main",
+              "stem": "丁"
+            },
+            {
+              "pillar": "year",
+              "branch": "午",
+              "type": "sub",
+              "stem": "己"
+            },
+            {
+              "pillar": "month",
+              "branch": "亥",
+              "type": "main",
+              "stem": "壬"
+            },
+            {
+              "pillar": "month",
+              "branch": "亥",
+              "type": "sub",
+              "stem": "甲"
+            },
+            {
+              "pillar": "day",
+              "branch": "辰",
+              "type": "main",
+              "stem": "戊"
+            },
+            {
+              "pillar": "day",
+              "branch": "辰",
+              "type": "sub",
+              "stem": "乙"
+            },
+            {
+              "pillar": "day",
+              "branch": "辰",
+              "type": "extra",
+              "stem": "癸"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "壬",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "辛",
+              "name": "石門星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "庚",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "丁",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "己",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "壬",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "甲",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "戊",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "乙",
+              "name": "司禄星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "癸",
+              "name": "調舒星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "午",
+              "state": "天恍星"
+            },
+            {
+              "pillar": "month",
+              "branch": "亥",
+              "state": "天胡星"
+            },
+            {
+              "pillar": "day",
+              "branch": "辰",
+              "state": "天印星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 43,
+              "fire": 11,
+              "earth": 30,
+              "metal": 38,
+              "water": 58
+            },
+            "dayStemStrength": "balanced"
+          },
+          "phaseRelations": [],
+          "tenchusatsu": {
+            "type": "申酉天中殺",
+            "missingBranches": [
+              "申",
+              "酉"
+            ]
+          }
+        },
+        "nikkan": "壬",
+        "gesshi": "午",
+        "tenchusatsu": "午未天中殺",
+        "jugdais": [
+          "牽牛星",
+          "龍高星",
+          "司禄星",
+          "調舒星",
+          "車騎星"
+        ],
+        "junidai": [
+          "天報星",
+          "天禄星",
+          "天庫星"
+        ],
+        "total_energy": 19
+      }
+    },
+    {
+      "episode": 28,
+      "name": "佐々木玲子",
+      "birthDate": "1985-05-12T11:20:00",
+      "age": 40,
+      "gender": "female",
+      "occupation": "事務職・既婚者",
+      "presentingIssue": "既婚男性と不倫関係に。別れられない",
+      "background": "夫とはマンネリ状態。子供が生まれてから「母親」しか見られなくなった寂しさから、職場の上司（既婚）と不倫関係に。「週1回のランチ」だけだったが、徐々にのめり込み、別れられなくなる。夫にバレる恐怖と、上司に頼り切りの依存心の間で揺れ動く。「このままだに人生壊れる」と気づきながら、切ることができない。",
+      "meguriPrescription": "処方箋：「孤独に耐える力」を育む。玲子は「誰かに満たされないと私はダメ」と思っている。でも本当は、一人でいる時間を恐れている。不倫相手に別れを告げ、夫にカウンセリングを提案するまでの3ヶ月間、完全に「孤独な時間」を持つ。そこから「自分が求めているのは愛ではなく、承認」だったと気づく。",
+      "theme": "不倫と自己承認",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 8,
+            "branch": 12,
+            "stemStr": "辛",
+            "branchStr": "亥",
+            "name": "辛亥",
+            "id": 48,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 8,
+            "branch": 6,
+            "stemStr": "辛",
+            "branchStr": "巳",
+            "name": "辛巳",
+            "id": 18,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 2,
+            "branch": 2,
+            "stemStr": "乙",
+            "branchStr": "丑",
+            "name": "乙丑",
+            "id": 2,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 9,
+            "branch": 7,
+            "stemStr": "壬",
+            "branchStr": "午",
+            "name": "壬午",
+            "id": 19,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 39,
+          "fire": 12,
+          "earth": 26,
+          "metal": 90,
+          "water": 41
+        },
+        "yangSen": {
+          "head": "禄存星",
+          "rightHand": "司禄星",
+          "chest": "石門星",
+          "leftHand": "鳳閣星",
+          "belly": "貫索星",
+          "leftShoulder": {
+            "name": "天印星",
+            "score": 6
+          },
+          "rightLeg": {
+            "name": "天恍星",
+            "score": 7
+          },
+          "leftLeg": {
+            "name": "天極星",
+            "score": 2
+          }
+        },
+        "energyScore": 23,
+        "insen": {
+          "meta": {
+            "dayStem": "辛",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "乙",
+              "branch": "丑"
+            },
+            "month": {
+              "stem": "辛",
+              "branch": "巳"
+            },
+            "day": {
+              "stem": "辛",
+              "branch": "亥"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "丑",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "year",
+              "branch": "丑",
+              "type": "sub",
+              "stem": "癸"
+            },
+            {
+              "pillar": "year",
+              "branch": "丑",
+              "type": "extra",
+              "stem": "辛"
+            },
+            {
+              "pillar": "month",
+              "branch": "巳",
+              "type": "main",
+              "stem": "丙"
+            },
+            {
+              "pillar": "month",
+              "branch": "巳",
+              "type": "sub",
+              "stem": "庚"
+            },
+            {
+              "pillar": "month",
+              "branch": "巳",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "day",
+              "branch": "亥",
+              "type": "main",
+              "stem": "壬"
+            },
+            {
+              "pillar": "day",
+              "branch": "亥",
+              "type": "sub",
+              "stem": "甲"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "乙",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "辛",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "辛",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "癸",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "辛",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "丙",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "庚",
+              "name": "石門星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "壬",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "甲",
+              "name": "司禄星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "丑",
+              "state": "天印星"
+            },
+            {
+              "pillar": "month",
+              "branch": "巳",
+              "state": "天極星"
+            },
+            {
+              "pillar": "day",
+              "branch": "亥",
+              "state": "天恍星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 39,
+              "fire": 12,
+              "earth": 26,
+              "metal": 90,
+              "water": 41
+            },
+            "dayStemStrength": "strong"
+          },
+          "phaseRelations": [
+            {
+              "from": "month",
+              "to": "day",
+              "relation": "冲"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "寅卯天中殺",
+            "missingBranches": [
+              "寅",
+              "卯"
+            ]
+          }
+        },
+        "nikkan": "乙",
+        "gesshi": "丑",
+        "tenchusatsu": "子丑天中殺",
+        "jugdais": [
+          "車騎星",
+          "牽牛星",
+          "玉堂星",
+          "石門星",
+          "車騎星"
+        ],
+        "junidai": [
+          "天堂星",
+          "天恍星",
+          "天極星"
+        ],
+        "total_energy": 17
+      }
+    },
+    {
+      "episode": 29,
+      "name": "鍛冶 ルナ",
+      "name_reading": "かじ るな",
+      "birthDate": "1992-08-30T19:00:00",
+      "age": 33,
+      "gender": "female",
+      "episode_theme": "帰国子女の葛藤と和の伝統",
+      "background": "海外生活が長く、日本の「察する文化」に馴染めない。鍛冶職人の父を持ち、伝統と革新の狭間で揺れている。結婚当初は優しかった夫が、子供の誕生を機に暴力的に。「私も悪かった」と自分を責め、周囲にも言えない。夫の经济封鎖（お金を握る）もあり、逃げられない。「子供のために耐える」と言い聞かせるが、子供の前でも暴力が振るわれるようになり、限界を超える。巡の診断を受けに来たきっかけは、夫に強制された「占い」だった。",
+      "occupation": "パート勤務・主婦",
+      "presentingIssue": "夫からのDVに苦しむが、逃げられない",
+      "meguriPrescription": "処方箋：「安全の確保」が最優先。優子は「私も悪かった」と自分を責めるのをやめる。DVは100%加害者の責任。まずは子供と一緒にシェルターへ。そこで「一人で抱え込まない」ことを学ぶ。新しい生活への第一歩として、パート勤務をフルタイムに変更し、経済的自立をめざす。法律相談も開始。",
+      "theme": "DVと自立",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 5,
+            "branch": 3,
+            "stemStr": "戊",
+            "branchStr": "寅",
+            "name": "戊寅",
+            "id": 15,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 5,
+            "branch": 9,
+            "stemStr": "戊",
+            "branchStr": "申",
+            "name": "戊申",
+            "id": 45,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 9,
+            "branch": 9,
+            "stemStr": "壬",
+            "branchStr": "申",
+            "name": "壬申",
+            "id": 9,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 7,
+            "branch": 11,
+            "stemStr": "庚",
+            "branchStr": "戌",
+            "name": "庚戌",
+            "id": 47,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 21,
+          "fire": 29,
+          "earth": 145,
+          "metal": 46,
+          "water": 54
+        },
+        "yangSen": {
+          "head": "禄存星",
+          "rightHand": "車騎星",
+          "chest": "鳳閣星",
+          "leftHand": "鳳閣星",
+          "belly": "貫索星",
+          "leftShoulder": {
+            "name": "天胡星",
+            "score": 4
+          },
+          "rightLeg": {
+            "name": "天貴星",
+            "score": 9
+          },
+          "leftLeg": {
+            "name": "天胡星",
+            "score": 4
+          }
+        },
+        "energyScore": 29,
+        "insen": {
+          "meta": {
+            "dayStem": "戊",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "壬",
+              "branch": "申"
+            },
+            "month": {
+              "stem": "戊",
+              "branch": "申"
+            },
+            "day": {
+              "stem": "戊",
+              "branch": "寅"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "申",
+              "type": "main",
+              "stem": "庚"
+            },
+            {
+              "pillar": "year",
+              "branch": "申",
+              "type": "sub",
+              "stem": "壬"
+            },
+            {
+              "pillar": "year",
+              "branch": "申",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "month",
+              "branch": "申",
+              "type": "main",
+              "stem": "庚"
+            },
+            {
+              "pillar": "month",
+              "branch": "申",
+              "type": "sub",
+              "stem": "壬"
+            },
+            {
+              "pillar": "month",
+              "branch": "申",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "day",
+              "branch": "寅",
+              "type": "main",
+              "stem": "甲"
+            },
+            {
+              "pillar": "day",
+              "branch": "寅",
+              "type": "sub",
+              "stem": "丙"
+            },
+            {
+              "pillar": "day",
+              "branch": "寅",
+              "type": "extra",
+              "stem": "戊"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "壬",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "戊",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "戊",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "庚",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "壬",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "庚",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "壬",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "甲",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丙",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "貫索星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "申",
+              "state": "天胡星"
+            },
+            {
+              "pillar": "month",
+              "branch": "申",
+              "state": "天胡星"
+            },
+            {
+              "pillar": "day",
+              "branch": "寅",
+              "state": "天貴星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 21,
+              "fire": 29,
+              "earth": 145,
+              "metal": 46,
+              "water": 54
+            },
+            "dayStemStrength": "strong"
+          },
+          "phaseRelations": [
+            {
+              "from": "year",
+              "to": "month",
+              "relation": "刑"
+            },
+            {
+              "from": "year",
+              "to": "day",
+              "relation": "冲"
+            },
+            {
+              "from": "month",
+              "to": "day",
+              "relation": "冲"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "申酉天中殺",
+            "missingBranches": [
+              "申",
+              "酉"
+            ]
+          }
+        },
+        "nikkan": "壬",
+        "gesshi": "申",
+        "tenchusatsu": "申酉天中殺",
+        "jugdais": [
+          "禄存星",
+          "石門星",
+          "石門星",
+          "貫索星",
+          "禄存星"
+        ],
+        "junidai": [
+          "天堂星",
+          "天堂星",
+          "天胡星"
+        ],
+        "total_energy": 20
+      }
+    },
+    {
+      "episode": 30,
+      "name": "田中実",
+      "birthDate": "1975-02-14T08:30:00",
+      "age": 50,
+      "gender": "male",
+      "occupation": "会社員・介護中",
+      "presentingIssue": "両親の介護と仕事の両立で限界",
+      "background": "父（認知症）と母（半身麻痺）の介護を一人で担う。妹は「遠いから無理」と言って協力しない。仕事でもミスが増え、上司から注意される。睡眠不足でうつ状態。「親ができてくれた恩を返すのは当然」と自分に鞭打つが、ついに両親に暴力を振るってしまいそうになり、恐怖を感じて巡のもとへ。自殺も考えるようになっていた。",
+      "meguriPrescription": "処方箋：「無理」を認める勇気。実は「介護」ではなく「介護殺し」に近い状態。妹に徹底的に話し合いを持ち、月1万円でも出さないと告げる。介護保険のサービスを最大限利用し、デイサービスとショートステイを活用。実は両親も「息子の人生を奪っている」と感じていた。プロの手に委ねることで、実との関係が回復する。",
+      "theme": "介護と家族の修復",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 8,
+            "branch": 4,
+            "stemStr": "辛",
+            "branchStr": "卯",
+            "name": "辛卯",
+            "id": 28,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 5,
+            "branch": 3,
+            "stemStr": "戊",
+            "branchStr": "寅",
+            "name": "戊寅",
+            "id": 15,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 2,
+            "branch": 4,
+            "stemStr": "乙",
+            "branchStr": "卯",
+            "name": "乙卯",
+            "id": 52,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 7,
+            "branch": 5,
+            "stemStr": "庚",
+            "branchStr": "辰",
+            "name": "庚辰",
+            "id": 17,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 47,
+          "fire": 13,
+          "earth": 26,
+          "metal": 5,
+          "water": 0
+        },
+        "yangSen": {
+          "head": "禄存星",
+          "rightHand": "禄存星",
+          "chest": "牽牛星",
+          "leftHand": "禄存星",
+          "belly": "玉堂星",
+          "leftShoulder": {
+            "name": "天馳星",
+            "score": 1
+          },
+          "rightLeg": {
+            "name": "天馳星",
+            "score": 1
+          },
+          "leftLeg": {
+            "name": "天報星",
+            "score": 3
+          }
+        },
+        "energyScore": 5,
+        "insen": {
+          "meta": {
+            "dayStem": "辛",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "乙",
+              "branch": "卯"
+            },
+            "month": {
+              "stem": "戊",
+              "branch": "寅"
+            },
+            "day": {
+              "stem": "辛",
+              "branch": "卯"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "卯",
+              "type": "main",
+              "stem": "乙"
+            },
+            {
+              "pillar": "month",
+              "branch": "寅",
+              "type": "main",
+              "stem": "甲"
+            },
+            {
+              "pillar": "month",
+              "branch": "寅",
+              "type": "sub",
+              "stem": "丙"
+            },
+            {
+              "pillar": "month",
+              "branch": "寅",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "day",
+              "branch": "卯",
+              "type": "main",
+              "stem": "乙"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "乙",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "戊",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "辛",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "乙",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "甲",
+              "name": "司禄星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丙",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "乙",
+              "name": "禄存星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "卯",
+              "state": "天馳星"
+            },
+            {
+              "pillar": "month",
+              "branch": "寅",
+              "state": "天報星"
+            },
+            {
+              "pillar": "day",
+              "branch": "卯",
+              "state": "天馳星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 47,
+              "fire": 13,
+              "earth": 26,
+              "metal": 5,
+              "water": 0
+            },
+            "dayStemStrength": "weak"
+          },
+          "phaseRelations": [],
+          "tenchusatsu": {
+            "type": "午未天中殺",
+            "missingBranches": [
+              "午",
+              "未"
+            ]
+          }
+        },
+        "nikkan": "乙",
+        "gesshi": "卯",
+        "tenchusatsu": "寅卯天中殺",
+        "jugdais": [
+          "司禄星",
+          "調舒星",
+          "貫索星",
+          "貫索星",
+          "車騎星"
+        ],
+        "junidai": [
+          "天禄星",
+          "天将星",
+          "天禄星"
+        ],
+        "total_energy": 34
+      }
+    },
+    {
+      "episode": 31,
+      "name": "山本大輔",
+      "birthDate": "1998-12-25T03:30:00",
+      "age": 27,
+      "gender": "male",
+      "occupation": "Uber Eats配達員（ギグワーカー）",
+      "presentingIssue": "「自由な働き方」の裏にある孤立と不安定さ",
+      "background": "就職氷河期で正社員になれず、派遣を転々とした後、「人間関係に疲れた」とUber Eats配達員に。対人ストレスは減ったが、事故の保証もなく、アルゴリズムに支配される日々に「自分は社会の部品ですらない」と無力感。雨の日も走り続け、社会との接点が希薄になる中、孤独感が深まっている。",
+      "meguriPrescription": "処方箋：「孤立」から「連帯」へ。ギグワーク自体を否定せず、配達員のユニオン（組合）やコミュニティに参加することを提案。同じ悩みを持つ仲間とつながり、労働環境改善のアクションを起こす中で、「社会への働きかけ」ができる自分を取り戻す。",
+      "theme": "貧困と希望",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 3,
+            "branch": 7,
+            "stemStr": "丙",
+            "branchStr": "午",
+            "name": "丙午",
+            "id": 43,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 1,
+            "branch": 1,
+            "stemStr": "甲",
+            "branchStr": "子",
+            "name": "甲子",
+            "id": 1,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 5,
+            "branch": 3,
+            "stemStr": "戊",
+            "branchStr": "寅",
+            "name": "戊寅",
+            "id": 15,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 1,
+            "branch": 3,
+            "stemStr": "甲",
+            "branchStr": "寅",
+            "name": "甲寅",
+            "id": 51,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 42,
+          "fire": 69,
+          "earth": 69,
+          "metal": 0,
+          "water": 17
+        },
+        "yangSen": {
+          "head": "鳳閣星",
+          "rightHand": "調舒星",
+          "chest": "牽牛星",
+          "leftHand": "龍高星",
+          "belly": "龍高星",
+          "leftShoulder": {
+            "name": "天貴星",
+            "score": 9
+          },
+          "rightLeg": {
+            "name": "天将星",
+            "score": 12
+          },
+          "leftLeg": {
+            "name": "天報星",
+            "score": 3
+          }
+        },
+        "energyScore": 27,
+        "insen": {
+          "meta": {
+            "dayStem": "丙",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "戊",
+              "branch": "寅"
+            },
+            "month": {
+              "stem": "甲",
+              "branch": "子"
+            },
+            "day": {
+              "stem": "丙",
+              "branch": "午"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "寅",
+              "type": "main",
+              "stem": "甲"
+            },
+            {
+              "pillar": "year",
+              "branch": "寅",
+              "type": "sub",
+              "stem": "丙"
+            },
+            {
+              "pillar": "year",
+              "branch": "寅",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "month",
+              "branch": "子",
+              "type": "main",
+              "stem": "癸"
+            },
+            {
+              "pillar": "day",
+              "branch": "午",
+              "type": "main",
+              "stem": "丁"
+            },
+            {
+              "pillar": "day",
+              "branch": "午",
+              "type": "sub",
+              "stem": "己"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "戊",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "甲",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "丙",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "甲",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丙",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "癸",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "丁",
+              "name": "石門星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "己",
+              "name": "調舒星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "寅",
+              "state": "天貴星"
+            },
+            {
+              "pillar": "month",
+              "branch": "子",
+              "state": "天報星"
+            },
+            {
+              "pillar": "day",
+              "branch": "午",
+              "state": "天将星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 42,
+              "fire": 69,
+              "earth": 69,
+              "metal": 0,
+              "water": 17
+            },
+            "dayStemStrength": "strong"
+          },
+          "phaseRelations": [
+            {
+              "from": "month",
+              "to": "day",
+              "relation": "冲"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "寅卯天中殺",
+            "missingBranches": [
+              "寅",
+              "卯"
+            ]
+          }
+        },
+        "nikkan": "戊",
+        "gesshi": "寅",
+        "tenchusatsu": "寅卯天中殺",
+        "jugdais": [
+          "禄存星",
+          "玉堂星",
+          "禄存星",
+          "調舒星",
+          "鳳閣星"
+        ],
+        "junidai": [
+          "天貴星",
+          "天報星",
+          "天将星"
+        ],
+        "total_energy": 24
+      }
+    },
+    {
+      "episode": 32,
+      "name": "鈴木茂",
+      "birthDate": "1960-06-18T12:00:00",
+      "age": 65,
+      "gender": "male",
+      "occupation": "元会社員・無職",
+      "presentingIssue": "退職後、人間関係が途絶え孤独死を危惧される",
+      "background": "妻を亡くして5年、定年退職して2年。子供は遠方に住み、年1回しか会わない。地域の集まりには誘いがない。「誰も私のことなんて気にしていない」と諦めていたが、隣人が孤独死で発見されるニュースを見て、「私もそうなるかも」と恐怖を感じて巡のもとへ。実は「人付き合いが面倒」と思い込んでいただけで、本当は寂しかった。",
+      "meguriPrescription": "処方箋：「能動的な孤独の解消」。まずは公民館のサークルに週1回参加。そこで趣味（囲碁）を通じて友人を得る。子供にも「寂しい」と正直に伝え、月1回のビデオ通話を開始。孤独死は「誰とも関わらない」から起きるのであって、「一人でいること」とは違うと気づく。地域の見守りネットワークにも登録。",
+      "theme": "孤独と再接続",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 4,
+            "branch": 2,
+            "stemStr": "丁",
+            "branchStr": "丑",
+            "name": "丁丑",
+            "id": 14,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 9,
+            "branch": 7,
+            "stemStr": "壬",
+            "branchStr": "午",
+            "name": "壬午",
+            "id": 19,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 7,
+            "branch": 1,
+            "stemStr": "庚",
+            "branchStr": "子",
+            "name": "庚子",
+            "id": 37,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 9,
+            "branch": 7,
+            "stemStr": "壬",
+            "branchStr": "午",
+            "name": "壬午",
+            "id": 19,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 0,
+          "fire": 34,
+          "earth": 34,
+          "metal": 38,
+          "water": 73
+        },
+        "yangSen": {
+          "head": "司禄星",
+          "rightHand": "鳳閣星",
+          "chest": "鳳閣星",
+          "leftHand": "車騎星",
+          "belly": "牽牛星",
+          "leftShoulder": {
+            "name": "天馳星",
+            "score": 1
+          },
+          "rightLeg": {
+            "name": "天庫星",
+            "score": 5
+          },
+          "leftLeg": {
+            "name": "天禄星",
+            "score": 11
+          }
+        },
+        "energyScore": 17,
+        "insen": {
+          "meta": {
+            "dayStem": "丁",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "庚",
+              "branch": "子"
+            },
+            "month": {
+              "stem": "壬",
+              "branch": "午"
+            },
+            "day": {
+              "stem": "丁",
+              "branch": "丑"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "子",
+              "type": "main",
+              "stem": "癸"
+            },
+            {
+              "pillar": "month",
+              "branch": "午",
+              "type": "main",
+              "stem": "丁"
+            },
+            {
+              "pillar": "month",
+              "branch": "午",
+              "type": "sub",
+              "stem": "己"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "type": "sub",
+              "stem": "癸"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "type": "extra",
+              "stem": "辛"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "庚",
+              "name": "司禄星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "壬",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "丁",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "癸",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "丁",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "己",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "癸",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "辛",
+              "name": "禄存星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "子",
+              "state": "天馳星"
+            },
+            {
+              "pillar": "month",
+              "branch": "午",
+              "state": "天禄星"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "state": "天庫星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 0,
+              "fire": 34,
+              "earth": 34,
+              "metal": 38,
+              "water": 73
+            },
+            "dayStemStrength": "balanced"
+          },
+          "phaseRelations": [
+            {
+              "from": "year",
+              "to": "month",
+              "relation": "冲"
+            },
+            {
+              "from": "year",
+              "to": "day",
+              "relation": "合"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "申酉天中殺",
+            "missingBranches": [
+              "申",
+              "酉"
+            ]
+          }
+        },
+        "nikkan": "庚",
+        "gesshi": "子",
+        "tenchusatsu": "子丑天中殺",
+        "jugdais": [
+          "鳳閣星",
+          "玉堂星",
+          "調舒星",
+          "司禄星",
+          "玉堂星"
+        ],
+        "junidai": [
+          "天極星",
+          "天恍星",
+          "天庫星"
+        ],
+        "total_energy": 14
+      }
+    },
+    {
+      "episode": 33,
+      "name": "小川 彩",
+      "birthDate": "1990-09-05T15:45:00",
+      "age": 35,
+      "gender": "female",
+      "occupation": "会社員",
+      "presentingIssue": "乳がん告知。仕事も恋愛も諦めようとする",
+      "background": "仕事一筋で30歳。「結婚は35歳までに」と焦っていたところに、乳がんステージ2の告知。手術で乳房を失うこと、抗がん剤で不妊になる可能性があると言われ、「女性としての人生が終わった」と絶望。恋人に別れを切り出し、会社も退職届を出そうとする。「これから先、誰も私を愛してくれない」と思い込む。",
+      "meguriPrescription": "処方箋：「傷」を「物語」に変える。真理子の癌は「女性であること」を否定するものではない。手術後の身体も、命を繋いだ証。恋人には全てを話し、別れるかどうかは本人に選択させる（実は恋人は「選んだのはあなただ」と言って残る）。仕事も復職可能。癌体験をブログに綴り始めると、多くの共感を呼ぶ。",
+      "theme": "疾患と生きる意味",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 10,
+            "branch": 10,
+            "stemStr": "癸",
+            "branchStr": "酉",
+            "name": "癸酉",
+            "id": 10,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 1,
+            "branch": 9,
+            "stemStr": "甲",
+            "branchStr": "申",
+            "name": "甲申",
+            "id": 21,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 7,
+            "branch": 7,
+            "stemStr": "庚",
+            "branchStr": "午",
+            "name": "庚午",
+            "id": 7,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 1,
+            "branch": 9,
+            "stemStr": "甲",
+            "branchStr": "申",
+            "name": "甲申",
+            "id": 21,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 10,
+          "fire": 30,
+          "earth": 59,
+          "metal": 74,
+          "water": 24
+        },
+        "yangSen": {
+          "head": "玉堂星",
+          "rightHand": "龍高星",
+          "chest": "玉堂星",
+          "leftHand": "禄存星",
+          "belly": "調舒星",
+          "leftShoulder": {
+            "name": "天馳星",
+            "score": 1
+          },
+          "rightLeg": {
+            "name": "天胡星",
+            "score": 4
+          },
+          "leftLeg": {
+            "name": "天極星",
+            "score": 2
+          }
+        },
+        "energyScore": 13,
+        "insen": {
+          "meta": {
+            "dayStem": "癸",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "庚",
+              "branch": "午"
+            },
+            "month": {
+              "stem": "甲",
+              "branch": "申"
+            },
+            "day": {
+              "stem": "癸",
+              "branch": "酉"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "午",
+              "type": "main",
+              "stem": "丁"
+            },
+            {
+              "pillar": "year",
+              "branch": "午",
+              "type": "sub",
+              "stem": "己"
+            },
+            {
+              "pillar": "month",
+              "branch": "申",
+              "type": "main",
+              "stem": "庚"
+            },
+            {
+              "pillar": "month",
+              "branch": "申",
+              "type": "sub",
+              "stem": "壬"
+            },
+            {
+              "pillar": "month",
+              "branch": "申",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "day",
+              "branch": "酉",
+              "type": "main",
+              "stem": "辛"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "庚",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "甲",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "癸",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "丁",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "己",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "庚",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "壬",
+              "name": "石門星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "辛",
+              "name": "龍高星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "午",
+              "state": "天馳星"
+            },
+            {
+              "pillar": "month",
+              "branch": "申",
+              "state": "天極星"
+            },
+            {
+              "pillar": "day",
+              "branch": "酉",
+              "state": "天胡星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 10,
+              "fire": 30,
+              "earth": 59,
+              "metal": 74,
+              "water": 24
+            },
+            "dayStemStrength": "weak"
+          },
+          "phaseRelations": [],
+          "tenchusatsu": {
+            "type": "戌亥天中殺",
+            "missingBranches": [
+              "戌",
+              "亥"
+            ]
+          }
+        },
+        "nikkan": "庚",
+        "gesshi": "午",
+        "tenchusatsu": "午未天中殺",
+        "jugdais": [
+          "車騎星",
+          "鳳閣星",
+          "玉堂星",
+          "石門星",
+          "調舒星"
+        ],
+        "junidai": [
+          "天恍星",
+          "天禄星",
+          "天将星"
+        ],
+        "total_energy": 30
+      }
+    },
+    {
+      "episode": 34,
+      "name": "伊藤浩太",
+      "birthDate": "1997-04-20T22:15:00",
+      "age": 28,
+      "gender": "male",
+      "occupation": "大学生・休学中",
+      "presentingIssue": "自殺未遂から1ヶ月。生きる意味を見出せない",
+      "background": "大学4年で就職内定取り消し、彼女に振られ、多重債務。一気に全てを失い、飛び降り自殺を図るが、奇跡的に一命を取り留める（下半身麻痺の後遺症）。家族は「心配させない」と何も聞いてくれない。医師も「元気出しなさい」としか言わない。「死ねなかった罰」として生きている自分に苦しみ、再び自殺を考えるようになる。",
+      "meguriPrescription": "処方箋：「生き直す」選択。浩太の自殺未遂は「弱さ」ではなく、限界からの悲鳴。まずは傷ついた自分を責めるのをやめる。「死ねなかった」ではなく「死なずに済んだ」と捉え直す。リハビリの中で、車椅子でもできる仕事（Webデザイン）を学ぶ。同じ自殺未遂経験者のピアサポートグループに参加し、語り合うことで、「一人ではない」と気づく。",
+      "theme": "自殺未遂と再生",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 9,
+            "branch": 5,
+            "stemStr": "壬",
+            "branchStr": "辰",
+            "name": "壬辰",
+            "id": 29,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 1,
+            "branch": 5,
+            "stemStr": "甲",
+            "branchStr": "辰",
+            "name": "甲辰",
+            "id": 41,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 4,
+            "branch": 2,
+            "stemStr": "丁",
+            "branchStr": "丑",
+            "name": "丁丑",
+            "id": 14,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 8,
+            "branch": 12,
+            "stemStr": "辛",
+            "branchStr": "亥",
+            "name": "辛亥",
+            "id": 48,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 86,
+          "fire": 10,
+          "earth": 28,
+          "metal": 14,
+          "water": 101
+        },
+        "yangSen": {
+          "head": "司禄星",
+          "rightHand": "車騎星",
+          "chest": "車騎星",
+          "leftHand": "牽牛星",
+          "belly": "鳳閣星",
+          "leftShoulder": {
+            "name": "天堂星",
+            "score": 8
+          },
+          "rightLeg": {
+            "name": "天庫星",
+            "score": 5
+          },
+          "leftLeg": {
+            "name": "天庫星",
+            "score": 5
+          }
+        },
+        "energyScore": 29,
+        "insen": {
+          "meta": {
+            "dayStem": "壬",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "丁",
+              "branch": "丑"
+            },
+            "month": {
+              "stem": "甲",
+              "branch": "辰"
+            },
+            "day": {
+              "stem": "壬",
+              "branch": "辰"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "丑",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "year",
+              "branch": "丑",
+              "type": "sub",
+              "stem": "癸"
+            },
+            {
+              "pillar": "year",
+              "branch": "丑",
+              "type": "extra",
+              "stem": "辛"
+            },
+            {
+              "pillar": "month",
+              "branch": "辰",
+              "type": "main",
+              "stem": "戊"
+            },
+            {
+              "pillar": "month",
+              "branch": "辰",
+              "type": "sub",
+              "stem": "乙"
+            },
+            {
+              "pillar": "month",
+              "branch": "辰",
+              "type": "extra",
+              "stem": "癸"
+            },
+            {
+              "pillar": "day",
+              "branch": "辰",
+              "type": "main",
+              "stem": "戊"
+            },
+            {
+              "pillar": "day",
+              "branch": "辰",
+              "type": "sub",
+              "stem": "乙"
+            },
+            {
+              "pillar": "day",
+              "branch": "辰",
+              "type": "extra",
+              "stem": "癸"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "丁",
+              "name": "司禄星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "甲",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "壬",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "癸",
+              "name": "石門星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "辛",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "戊",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "乙",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "癸",
+              "name": "石門星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "戊",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "乙",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "癸",
+              "name": "石門星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "丑",
+              "state": "天堂星"
+            },
+            {
+              "pillar": "month",
+              "branch": "辰",
+              "state": "天庫星"
+            },
+            {
+              "pillar": "day",
+              "branch": "辰",
+              "state": "天庫星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 86,
+              "fire": 10,
+              "earth": 28,
+              "metal": 14,
+              "water": 101
+            },
+            "dayStemStrength": "strong"
+          },
+          "phaseRelations": [],
+          "tenchusatsu": {
+            "type": "午未天中殺",
+            "missingBranches": [
+              "午",
+              "未"
+            ]
+          }
+        },
+        "nikkan": "丁",
+        "gesshi": "丑",
+        "tenchusatsu": "子丑天中殺",
+        "jugdais": [
+          "調舒星",
+          "鳳閣星",
+          "車騎星",
+          "鳳閣星",
+          "玉堂星"
+        ],
+        "junidai": [
+          "天庫星",
+          "天堂星",
+          "天堂星"
+        ],
+        "total_energy": 21
+      }
+    },
+    {
+      "episode": 35,
+      "name": "渡辺裕子",
+      "birthDate": "1988-11-30T13:20:00",
+      "age": 37,
+      "gender": "female",
+      "occupation": "デザイナー",
+      "presentingIssue": "母親との関係が悪化。結婚を反対され続けている",
+      "background": "デモ活動家として有名な母親。「男性なんて必要ない」「結婚は女性の屈辱」と教えられて育つ。でも裕子は、穏やかな彼氏と結婚したい。母に激怒され、「裏切り者」と言われる。「母を裏切ってまで幸せになっていいのか？」と悩み続け、結婚前プレッシャーでうつ気味に。彼氏にも「母と選べ」と言われ、追い詰められている。",
+      "meguriPrescription": "処方箋：「親からの分離」を完了させる。裕子は母の「思想的コピー」ではなく、独立した人間。母の価値観は母のもので、裕子のものではない。まずは母に「私はあなたの分身ではない」と伝える。彼氏とは「母の許可」ではなく、「二人の選択」で結婚を進める。母との関係は修復不能かもしれないが、それは裕子の責任ではない。",
+      "theme": "親からの自立",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 6,
+            "branch": 2,
+            "stemStr": "己",
+            "branchStr": "丑",
+            "name": "己丑",
+            "id": 26,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 10,
+            "branch": 12,
+            "stemStr": "癸",
+            "branchStr": "亥",
+            "name": "癸亥",
+            "id": 60,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 5,
+            "branch": 5,
+            "stemStr": "戊",
+            "branchStr": "辰",
+            "name": "戊辰",
+            "id": 5,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 6,
+            "branch": 8,
+            "stemStr": "己",
+            "branchStr": "未",
+            "name": "己未",
+            "id": 56,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 47,
+          "fire": 0,
+          "earth": 32,
+          "metal": 17,
+          "water": 100
+        },
+        "yangSen": {
+          "head": "石門星",
+          "rightHand": "貫索星",
+          "chest": "司禄星",
+          "leftHand": "石門星",
+          "belly": "禄存星",
+          "leftShoulder": {
+            "name": "天堂星",
+            "score": 8
+          },
+          "rightLeg": {
+            "name": "天庫星",
+            "score": 5
+          },
+          "leftLeg": {
+            "name": "天報星",
+            "score": 3
+          }
+        },
+        "energyScore": 8,
+        "insen": {
+          "meta": {
+            "dayStem": "己",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "戊",
+              "branch": "辰"
+            },
+            "month": {
+              "stem": "癸",
+              "branch": "亥"
+            },
+            "day": {
+              "stem": "己",
+              "branch": "丑"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "辰",
+              "type": "main",
+              "stem": "戊"
+            },
+            {
+              "pillar": "year",
+              "branch": "辰",
+              "type": "sub",
+              "stem": "乙"
+            },
+            {
+              "pillar": "year",
+              "branch": "辰",
+              "type": "extra",
+              "stem": "癸"
+            },
+            {
+              "pillar": "month",
+              "branch": "亥",
+              "type": "main",
+              "stem": "壬"
+            },
+            {
+              "pillar": "month",
+              "branch": "亥",
+              "type": "sub",
+              "stem": "甲"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "type": "sub",
+              "stem": "癸"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "type": "extra",
+              "stem": "辛"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "戊",
+              "name": "石門星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "癸",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "己",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "戊",
+              "name": "石門星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "乙",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "癸",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "壬",
+              "name": "司禄星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "甲",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "癸",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "辛",
+              "name": "鳳閣星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "辰",
+              "state": "天堂星"
+            },
+            {
+              "pillar": "month",
+              "branch": "亥",
+              "state": "天報星"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "state": "天庫星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 47,
+              "fire": 0,
+              "earth": 32,
+              "metal": 17,
+              "water": 100
+            },
+            "dayStemStrength": "balanced"
+          },
+          "phaseRelations": [],
+          "tenchusatsu": {
+            "type": "午未天中殺",
+            "missingBranches": [
+              "午",
+              "未"
+            ]
+          }
+        },
+        "nikkan": "戊",
+        "gesshi": "辰",
+        "tenchusatsu": "辰巳天中殺",
+        "jugdais": [
+          "玉堂星",
+          "禄存星",
+          "玉堂星",
+          "龍高星",
+          "石門星"
+        ],
+        "junidai": [
+          "天南星",
+          "天馳星",
+          "天印星"
+        ],
+        "total_energy": 17
+      }
+    },
+    {
+      "episode": 36,
+      "name": "松本健太郎",
+      "birthDate": "1987-01-10T07:45:00",
+      "age": 38,
+      "gender": "male",
+      "occupation": "商社勤務",
+      "presentingIssue": "出世レースで燃え尽き症候群",
+      "background": "東大卒、証券トップの商社。同期は次々と部長や本社昇格。自分だけ係長止まり。「遅れを取っている」と焦り、残業続きで健康を崩す。妻との関係も冷え切り、子供の顔もほとんど見ていない。「ここで成果を出さないと、人生終わる」と思い込んでいるが、実際には胃潰瘍とうつで会社を休んでいる。「成功しない私には価値がない」と思い込む。",
+      "meguriPrescription": "処方箋：「成功」の定義を書き換える。健太郎の「成功」は、誰かが作った物差し。本当は「妻と子供との時間」を何より大切にしている自分に気づく。半年間の休職を決意。その間に家族との時間を取り、地方への移住も検討。復職後は「出世レース」から降り、「ワークライフバランス」を優先する部署へ異動。給料は減ったが、家族との時間が増えた。",
+      "theme": "仕事と人生の価値",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 6,
+            "branch": 8,
+            "stemStr": "己",
+            "branchStr": "未",
+            "name": "己未",
+            "id": 56,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 8,
+            "branch": 2,
+            "stemStr": "辛",
+            "branchStr": "丑",
+            "name": "辛丑",
+            "id": 38,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 3,
+            "branch": 3,
+            "stemStr": "丙",
+            "branchStr": "寅",
+            "name": "丙寅",
+            "id": 3,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 9,
+            "branch": 5,
+            "stemStr": "壬",
+            "branchStr": "辰",
+            "name": "壬辰",
+            "id": 29,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 36,
+          "fire": 58,
+          "earth": 69,
+          "metal": 42,
+          "water": 12
+        },
+        "yangSen": {
+          "head": "玉堂星",
+          "rightHand": "龍高星",
+          "chest": "禄存星",
+          "leftHand": "石門星",
+          "belly": "鳳閣星",
+          "leftShoulder": {
+            "name": "天極星",
+            "score": 2
+          },
+          "rightLeg": {
+            "name": "天南星",
+            "score": 10
+          },
+          "leftLeg": {
+            "name": "天庫星",
+            "score": 5
+          }
+        },
+        "energyScore": 16,
+        "insen": {
+          "meta": {
+            "dayStem": "己",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "丙",
+              "branch": "寅"
+            },
+            "month": {
+              "stem": "辛",
+              "branch": "丑"
+            },
+            "day": {
+              "stem": "己",
+              "branch": "未"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "寅",
+              "type": "main",
+              "stem": "甲"
+            },
+            {
+              "pillar": "year",
+              "branch": "寅",
+              "type": "sub",
+              "stem": "丙"
+            },
+            {
+              "pillar": "year",
+              "branch": "寅",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "month",
+              "branch": "丑",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "month",
+              "branch": "丑",
+              "type": "sub",
+              "stem": "癸"
+            },
+            {
+              "pillar": "month",
+              "branch": "丑",
+              "type": "extra",
+              "stem": "辛"
+            },
+            {
+              "pillar": "day",
+              "branch": "未",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "day",
+              "branch": "未",
+              "type": "sub",
+              "stem": "丁"
+            },
+            {
+              "pillar": "day",
+              "branch": "未",
+              "type": "extra",
+              "stem": "乙"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "丙",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "辛",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "己",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "甲",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丙",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "石門星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "癸",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "辛",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丁",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "乙",
+              "name": "車騎星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "寅",
+              "state": "天極星"
+            },
+            {
+              "pillar": "month",
+              "branch": "丑",
+              "state": "天庫星"
+            },
+            {
+              "pillar": "day",
+              "branch": "未",
+              "state": "天南星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 36,
+              "fire": 58,
+              "earth": 69,
+              "metal": 42,
+              "water": 12
+            },
+            "dayStemStrength": "balanced"
+          },
+          "phaseRelations": [
+            {
+              "from": "month",
+              "to": "day",
+              "relation": "冲"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "子丑天中殺",
+            "missingBranches": [
+              "子",
+              "丑"
+            ]
+          }
+        },
+        "nikkan": "丙",
+        "gesshi": "寅",
+        "tenchusatsu": "寅卯天中殺",
+        "jugdais": [
+          "牽牛星",
+          "司禄星",
+          "禄存星",
+          "車騎星",
+          "司禄星"
+        ],
+        "junidai": [
+          "天貴星",
+          "天印星",
+          "天堂星"
+        ],
+        "total_energy": 23
+      }
+    },
+    {
+      "episode": 37,
+      "name": "小林美和",
+      "birthDate": "1993-07-07T17:30:00",
+      "age": 32,
+      "gender": "female",
+      "occupation": "キャビンアテンダント",
+      "presentingIssue": "機能不全家族で育ち、対人関係がうまくいかない",
+      "background": "父はアル中、母はヒステリー。子供の頃から親の面倒を見てきた「親化した子供」。今も「迷惑をかけてはいけない」「自分の要求を言ってはいけない」という刷り込みが消えない。職場では「イエスマン」で疲弊。プライベートでは「嫌われたくない」と言えない人間が多く、搾取される。「自分には境界線がない」と気づき、巡のもとへ。",
+      "meguriPrescription": "処方箋：「境界線」を引く練習。まずは小さな「No」から。同僚の無理な頼みを「今日は忙しいから断る」。親に「今月電話できない」と伝える。徐々に「迷惑をかけてもいい」「自分の要求を言っていい」と学ぶ。AC（アダルトチルドレン）の自助グループに参加し、「一人ではない」と気づく。",
+      "theme": "アダルトチルドレンと回復",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 6,
+            "branch": 2,
+            "stemStr": "己",
+            "branchStr": "丑",
+            "name": "己丑",
+            "id": 26,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 6,
+            "branch": 8,
+            "stemStr": "己",
+            "branchStr": "未",
+            "name": "己未",
+            "id": 56,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 10,
+            "branch": 10,
+            "stemStr": "癸",
+            "branchStr": "酉",
+            "name": "癸酉",
+            "id": 10,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 8,
+            "branch": 10,
+            "stemStr": "辛",
+            "branchStr": "酉",
+            "name": "辛酉",
+            "id": 58,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 21,
+          "fire": 26,
+          "earth": 104,
+          "metal": 46,
+          "water": 36
+        },
+        "yangSen": {
+          "head": "禄存星",
+          "rightHand": "禄存星",
+          "chest": "龍高星",
+          "leftHand": "鳳閣星",
+          "belly": "貫索星",
+          "leftShoulder": {
+            "name": "天貴星",
+            "score": 9
+          },
+          "rightLeg": {
+            "name": "天庫星",
+            "score": 5
+          },
+          "leftLeg": {
+            "name": "天南星",
+            "score": 10
+          }
+        },
+        "energyScore": 26,
+        "insen": {
+          "meta": {
+            "dayStem": "己",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "癸",
+              "branch": "酉"
+            },
+            "month": {
+              "stem": "己",
+              "branch": "未"
+            },
+            "day": {
+              "stem": "己",
+              "branch": "丑"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "酉",
+              "type": "main",
+              "stem": "辛"
+            },
+            {
+              "pillar": "month",
+              "branch": "未",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "month",
+              "branch": "未",
+              "type": "sub",
+              "stem": "丁"
+            },
+            {
+              "pillar": "month",
+              "branch": "未",
+              "type": "extra",
+              "stem": "乙"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "type": "sub",
+              "stem": "癸"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "type": "extra",
+              "stem": "辛"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "癸",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "己",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "己",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "辛",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丁",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "乙",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "癸",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "辛",
+              "name": "鳳閣星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "酉",
+              "state": "天貴星"
+            },
+            {
+              "pillar": "month",
+              "branch": "未",
+              "state": "天南星"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "state": "天庫星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 21,
+              "fire": 26,
+              "earth": 104,
+              "metal": 46,
+              "water": 36
+            },
+            "dayStemStrength": "strong"
+          },
+          "phaseRelations": [
+            {
+              "from": "month",
+              "to": "day",
+              "relation": "冲"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "午未天中殺",
+            "missingBranches": [
+              "午",
+              "未"
+            ]
+          }
+        },
+        "nikkan": "癸",
+        "gesshi": "酉",
+        "tenchusatsu": "申酉天中殺",
+        "jugdais": [
+          "司禄星",
+          "石門星",
+          "鳳閣星",
+          "石門星",
+          "司禄星"
+        ],
+        "junidai": [
+          "天胡星",
+          "天恍星",
+          "天南星"
+        ],
+        "total_energy": 21
+      }
+    },
+    {
+      "episode": 38,
+      "name": "岡本拓也",
+      "birthDate": "1995-10-15T09:00:00",
+      "age": 30,
+      "gender": "male",
+      "occupation": "SE・休職中",
+      "presentingIssue": "発達障害の診断を受け、職場不適応で休職",
+      "background": "30歳で初めて自閉スペクトラム症と診断。これまで「変なやつ」「空気が読めない」と言われ続けてきた自分が、「障害」だったと知る。職場でもパワハラ被害を受け、うつで休職。「障害を理由に甘えている」と自分を責める。「普通の人が当たり前にできることが、私にはできない」と絶望。仕事に戻れるのか、人生を立て直せるのか、見通しが立たない。",
+      "meguriPrescription": "処方箋：「ニューロダイバーシティ」を受け入れる。拓也の「できない」は「怠け」ではなく、特性。職場環境を調整すれば、十分に活躍できる。まずは主治医と産業医と連携し、合理的配慮を要求。視覚的な指示、イヤーマップ、テレワークの導入。拓也の強み（集中力、詳細へのこだわり）を活かす部署へ異動。発達障害のコミュニティに参加し、自分と似た人々とつながる。",
+      "theme": "発達障害と自己受容",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 6,
+            "branch": 4,
+            "stemStr": "己",
+            "branchStr": "卯",
+            "name": "己卯",
+            "id": 16,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 3,
+            "branch": 11,
+            "stemStr": "丙",
+            "branchStr": "戌",
+            "name": "丙戌",
+            "id": 23,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 2,
+            "branch": 12,
+            "stemStr": "乙",
+            "branchStr": "亥",
+            "name": "乙亥",
+            "id": 12,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 8,
+            "branch": 6,
+            "stemStr": "辛",
+            "branchStr": "巳",
+            "name": "辛巳",
+            "id": 18,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 55,
+          "fire": 24,
+          "earth": 24,
+          "metal": 10,
+          "water": 17
+        },
+        "yangSen": {
+          "head": "車騎星",
+          "rightHand": "車騎星",
+          "chest": "鳳閣星",
+          "leftHand": "牽牛星",
+          "belly": "玉堂星",
+          "leftShoulder": {
+            "name": "天報星",
+            "score": 3
+          },
+          "rightLeg": {
+            "name": "天胡星",
+            "score": 4
+          },
+          "leftLeg": {
+            "name": "天印星",
+            "score": 6
+          }
+        },
+        "energyScore": 14,
+        "insen": {
+          "meta": {
+            "dayStem": "己",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "乙",
+              "branch": "亥"
+            },
+            "month": {
+              "stem": "丙",
+              "branch": "戌"
+            },
+            "day": {
+              "stem": "己",
+              "branch": "卯"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "亥",
+              "type": "main",
+              "stem": "壬"
+            },
+            {
+              "pillar": "year",
+              "branch": "亥",
+              "type": "sub",
+              "stem": "甲"
+            },
+            {
+              "pillar": "month",
+              "branch": "戌",
+              "type": "main",
+              "stem": "戊"
+            },
+            {
+              "pillar": "month",
+              "branch": "戌",
+              "type": "sub",
+              "stem": "辛"
+            },
+            {
+              "pillar": "month",
+              "branch": "戌",
+              "type": "extra",
+              "stem": "丁"
+            },
+            {
+              "pillar": "day",
+              "branch": "卯",
+              "type": "main",
+              "stem": "乙"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "乙",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "丙",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "己",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "壬",
+              "name": "司禄星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "甲",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "戊",
+              "name": "石門星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "辛",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "丁",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "乙",
+              "name": "車騎星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "亥",
+              "state": "天報星"
+            },
+            {
+              "pillar": "month",
+              "branch": "戌",
+              "state": "天印星"
+            },
+            {
+              "pillar": "day",
+              "branch": "卯",
+              "state": "天胡星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 55,
+              "fire": 24,
+              "earth": 24,
+              "metal": 10,
+              "water": 17
+            },
+            "dayStemStrength": "balanced"
+          },
+          "phaseRelations": [
+            {
+              "from": "month",
+              "to": "day",
+              "relation": "合"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "申酉天中殺",
+            "missingBranches": [
+              "申",
+              "酉"
+            ]
+          }
+        },
+        "nikkan": "乙",
+        "gesshi": "亥",
+        "tenchusatsu": "戌亥天中殺",
+        "jugdais": [
+          "調舒星",
+          "車騎星",
+          "石門星",
+          "貫索星",
+          "禄存星"
+        ],
+        "junidai": [
+          "天極星",
+          "天貴星",
+          "天禄星"
+        ],
+        "total_energy": 22
+      }
+    },
+    {
+      "episode": 39,
+      "name": "橘沙織",
+      "birthDate": "1996-03-25T23:50:00",
+      "age": 29,
+      "gender": "female",
+      "occupation": "フリーター",
+      "presentingIssue": "やりたいことが見つからず、26歳で漂流",
+      "background": "大学を中退し、アルバイトを転々。8年間で20職以上。「何がしたいかわからない」「でも今の生活は違う」。親からの仕送りが来月でストップ。焦りながらも、面接に行っても「やる気」が伝わらず不採用。「私には才能が何もない」と思い込む。SNSで同期の成功を見ては落ち込み、現実逃避でゲームやNetflixに没頭する日々。",
+      "meguriPrescription": "処方箋：「好き」を「仕事」にしない。沙織は「天職」を探しすぎている。まずは「嫌いではない」「続けられそう」なことでいい。短期間のインターンシップや職業体験を繰り返し、自分に合う仕事のスタイルを発見。実は「人の世話をすること」「手作業をすること」が好きだと気づく。介護福祉士の資格取得をめざす。",
+      "theme": "自己発見と第一歩",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 8,
+            "branch": 10,
+            "stemStr": "辛",
+            "branchStr": "酉",
+            "name": "辛酉",
+            "id": 58,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 8,
+            "branch": 4,
+            "stemStr": "辛",
+            "branchStr": "卯",
+            "name": "辛卯",
+            "id": 28,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 3,
+            "branch": 1,
+            "stemStr": "丙",
+            "branchStr": "子",
+            "name": "丙子",
+            "id": 13,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 5,
+            "branch": 1,
+            "stemStr": "戊",
+            "branchStr": "子",
+            "name": "戊子",
+            "id": 25,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 12,
+          "fire": 15,
+          "earth": 0,
+          "metal": 45,
+          "water": 22
+        },
+        "yangSen": {
+          "head": "牽牛星",
+          "rightHand": "貫索星",
+          "chest": "禄存星",
+          "leftHand": "鳳閣星",
+          "belly": "貫索星",
+          "leftShoulder": {
+            "name": "天貴星",
+            "score": 9
+          },
+          "rightLeg": {
+            "name": "天禄星",
+            "score": 11
+          },
+          "leftLeg": {
+            "name": "天馳星",
+            "score": 1
+          }
+        },
+        "energyScore": 15,
+        "insen": {
+          "meta": {
+            "dayStem": "辛",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "丙",
+              "branch": "子"
+            },
+            "month": {
+              "stem": "辛",
+              "branch": "卯"
+            },
+            "day": {
+              "stem": "辛",
+              "branch": "酉"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "子",
+              "type": "main",
+              "stem": "癸"
+            },
+            {
+              "pillar": "month",
+              "branch": "卯",
+              "type": "main",
+              "stem": "乙"
+            },
+            {
+              "pillar": "day",
+              "branch": "酉",
+              "type": "main",
+              "stem": "辛"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "丙",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "辛",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "辛",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "癸",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "乙",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "辛",
+              "name": "貫索星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "子",
+              "state": "天貴星"
+            },
+            {
+              "pillar": "month",
+              "branch": "卯",
+              "state": "天馳星"
+            },
+            {
+              "pillar": "day",
+              "branch": "酉",
+              "state": "天禄星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 12,
+              "fire": 15,
+              "earth": 0,
+              "metal": 45,
+              "water": 22
+            },
+            "dayStemStrength": "strong"
+          },
+          "phaseRelations": [
+            {
+              "from": "month",
+              "to": "day",
+              "relation": "冲"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "子丑天中殺",
+            "missingBranches": [
+              "子",
+              "丑"
+            ]
+          }
+        },
+        "nikkan": "丙",
+        "gesshi": "子",
+        "tenchusatsu": "子丑天中殺",
+        "jugdais": [
+          "牽牛星",
+          "調舒星",
+          "龍高星",
+          "牽牛星",
+          "牽牛星"
+        ],
+        "junidai": [
+          "天貴星",
+          "天恍星",
+          "天極星"
+        ],
+        "total_energy": 18
+      }
+    },
+    {
+      "episode": 40,
+      "name": "長谷川 愛",
+      "birthDate": "1991-06-22T04:20:00",
+      "age": 34,
+      "gender": "female",
+      "occupation": "SaaSカスタマーサクセス（完全リモート）",
+      "presentingIssue": "「新しい働き方」と「母親業」の境界線消失",
+      "background": "育休復帰を目指したが保育園全滅。キャリアを諦めかけた時、完全リモートのSaaSカスタマーサクセス職に転職。しかし、自宅で仕事と育児が混ざり合い、オンオフの切り替えができずに疲弊。「家で働けるのに、なぜ家事ができないの？」という夫の無理解にも苦しむ。常にチャット通知に追われる「繋がれっぱなし」のストレス。",
+      "meguriPrescription": "処方箋：「境界線（バウンダリー）」の再構築。物理的な境界（ワークスペースの確保）と、心理的な境界（就業時間外は通知オフ）を徹底。夫には「在宅ワークは家にいるが仕事中である」というルールを可視化して共有。コワーキングスペースの活用など、場所を変える工夫も提案。",
+      "theme": "アイデンティティと母親",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 10,
+            "branch": 12,
+            "stemStr": "癸",
+            "branchStr": "亥",
+            "name": "癸亥",
+            "id": 60,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 1,
+            "branch": 7,
+            "stemStr": "甲",
+            "branchStr": "午",
+            "name": "甲午",
+            "id": 31,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 8,
+            "branch": 8,
+            "stemStr": "辛",
+            "branchStr": "未",
+            "name": "辛未",
+            "id": 8,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 7,
+            "branch": 3,
+            "stemStr": "庚",
+            "branchStr": "寅",
+            "name": "庚寅",
+            "id": 27,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 44,
+          "fire": 36,
+          "earth": 36,
+          "metal": 30,
+          "water": 33
+        },
+        "yangSen": {
+          "head": "龍高星",
+          "rightHand": "石門星",
+          "chest": "車騎星",
+          "leftHand": "車騎星",
+          "belly": "調舒星",
+          "leftShoulder": {
+            "name": "天庫星",
+            "score": 5
+          },
+          "rightLeg": {
+            "name": "天将星",
+            "score": 12
+          },
+          "leftLeg": {
+            "name": "天馳星",
+            "score": 1
+          }
+        },
+        "energyScore": 20,
+        "insen": {
+          "meta": {
+            "dayStem": "癸",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "辛",
+              "branch": "未"
+            },
+            "month": {
+              "stem": "甲",
+              "branch": "午"
+            },
+            "day": {
+              "stem": "癸",
+              "branch": "亥"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "未",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "year",
+              "branch": "未",
+              "type": "sub",
+              "stem": "丁"
+            },
+            {
+              "pillar": "year",
+              "branch": "未",
+              "type": "extra",
+              "stem": "乙"
+            },
+            {
+              "pillar": "month",
+              "branch": "午",
+              "type": "main",
+              "stem": "丁"
+            },
+            {
+              "pillar": "month",
+              "branch": "午",
+              "type": "sub",
+              "stem": "己"
+            },
+            {
+              "pillar": "day",
+              "branch": "亥",
+              "type": "main",
+              "stem": "壬"
+            },
+            {
+              "pillar": "day",
+              "branch": "亥",
+              "type": "sub",
+              "stem": "甲"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "辛",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "甲",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "癸",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丁",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "乙",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "丁",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "己",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "壬",
+              "name": "石門星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "甲",
+              "name": "調舒星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "未",
+              "state": "天庫星"
+            },
+            {
+              "pillar": "month",
+              "branch": "午",
+              "state": "天馳星"
+            },
+            {
+              "pillar": "day",
+              "branch": "亥",
+              "state": "天将星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 44,
+              "fire": 36,
+              "earth": 36,
+              "metal": 30,
+              "water": 33
+            },
+            "dayStemStrength": "balanced"
+          },
+          "phaseRelations": [
+            {
+              "from": "year",
+              "to": "month",
+              "relation": "合"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "子丑天中殺",
+            "missingBranches": [
+              "子",
+              "丑"
+            ]
+          }
+        },
+        "nikkan": "辛",
+        "gesshi": "未",
+        "tenchusatsu": "午未天中殺",
+        "jugdais": [
+          "牽牛星",
+          "龍高星",
+          "龍高星",
+          "調舒星",
+          "鳳閣星"
+        ],
+        "junidai": [
+          "天堂星",
+          "天胡星",
+          "天恍星"
+        ],
+        "total_energy": 19
+      }
+    },
+    {
+      "episode": 41,
+      "name": "斎藤真一",
+      "birthDate": "1980-08-08T12:30:00",
+      "age": 45,
+      "gender": "male",
+      "occupation": "公務員",
+      "presentingIssue": "小学2年生の息子が不登校に。親としてどう対応すべきかわからない",
+      "background": "小学2年生の長男が3ヶ月前から学校に行けなくなっている。最初は「甘え」だと思っていたが、段々と深刻さを理解。妻は「学校に行かせなきゃ」と焦り、真一は「待てばいい」と思っていて対立。真一自身も子供の頃、いじめられて苦しんだ経験があり、同じ思いをさせたくない。「親としてどうすればいい？」と悩み抜く。",
+      "meguriPrescription": "処方箋：「待つ」と「支える」のバランス。真一は息子に「行かなくていい」と伝える。その代わり、「家でルールを作る」。家で勉強をしたり、趣味の時間を過ごしたり。学校側とも連携し、巡回相談や適応指導教室を利用。半年後、息子は「学校に行きたい」と言い出す。焦らなかったこと、親子関係が壊れなかったことが救いになった。",
+      "theme": "不登校と親の受容",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 10,
+            "branch": 2,
+            "stemStr": "癸",
+            "branchStr": "丑",
+            "name": "癸丑",
+            "id": 50,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 1,
+            "branch": 9,
+            "stemStr": "甲",
+            "branchStr": "申",
+            "name": "甲申",
+            "id": 21,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 7,
+            "branch": 9,
+            "stemStr": "庚",
+            "branchStr": "申",
+            "name": "庚申",
+            "id": 57,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 9,
+            "branch": 7,
+            "stemStr": "壬",
+            "branchStr": "午",
+            "name": "壬午",
+            "id": 19,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 18,
+          "fire": 0,
+          "earth": 68,
+          "metal": 106,
+          "water": 58
+        },
+        "yangSen": {
+          "head": "玉堂星",
+          "rightHand": "貫索星",
+          "chest": "牽牛星",
+          "leftHand": "牽牛星",
+          "belly": "調舒星",
+          "leftShoulder": {
+            "name": "天極星",
+            "score": 2
+          },
+          "rightLeg": {
+            "name": "天南星",
+            "score": 10
+          },
+          "leftLeg": {
+            "name": "天極星",
+            "score": 2
+          }
+        },
+        "energyScore": 10,
+        "insen": {
+          "meta": {
+            "dayStem": "癸",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "庚",
+              "branch": "申"
+            },
+            "month": {
+              "stem": "甲",
+              "branch": "申"
+            },
+            "day": {
+              "stem": "癸",
+              "branch": "丑"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "申",
+              "type": "main",
+              "stem": "庚"
+            },
+            {
+              "pillar": "year",
+              "branch": "申",
+              "type": "sub",
+              "stem": "壬"
+            },
+            {
+              "pillar": "year",
+              "branch": "申",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "month",
+              "branch": "申",
+              "type": "main",
+              "stem": "庚"
+            },
+            {
+              "pillar": "month",
+              "branch": "申",
+              "type": "sub",
+              "stem": "壬"
+            },
+            {
+              "pillar": "month",
+              "branch": "申",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "type": "sub",
+              "stem": "癸"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "type": "extra",
+              "stem": "辛"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "庚",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "甲",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "癸",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "庚",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "壬",
+              "name": "石門星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "庚",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "壬",
+              "name": "石門星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "癸",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "辛",
+              "name": "龍高星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "申",
+              "state": "天極星"
+            },
+            {
+              "pillar": "month",
+              "branch": "申",
+              "state": "天極星"
+            },
+            {
+              "pillar": "day",
+              "branch": "丑",
+              "state": "天南星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 18,
+              "fire": 0,
+              "earth": 68,
+              "metal": 106,
+              "water": 58
+            },
+            "dayStemStrength": "balanced"
+          },
+          "phaseRelations": [
+            {
+              "from": "year",
+              "to": "month",
+              "relation": "刑"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "寅卯天中殺",
+            "missingBranches": [
+              "寅",
+              "卯"
+            ]
+          }
+        },
+        "nikkan": "庚",
+        "gesshi": "申",
+        "tenchusatsu": "申酉天中殺",
+        "jugdais": [
+          "車騎星",
+          "玉堂星",
+          "玉堂星",
+          "司禄星",
+          "調舒星"
+        ],
+        "junidai": [
+          "天禄星",
+          "天禄星",
+          "天庫星"
+        ],
+        "total_energy": 27
+      }
+    },
+    {
+      "episode": 42,
+      "name": "土屋和子",
+      "birthDate": "1970-11-19T16:10:00",
+      "age": 54,
+      "gender": "female",
+      "occupation": "パート主婦",
+      "presentingIssue": "更年期障害と、反抗期の娘との板挟み",
+      "background": "更年期で情緒不安定。のぼせ、不眠、イライラ。その一方で、高校生の娘が「母うるさい」と激しく反抗。「子供の頃はあんな子じゃなかった」「私の育て方が悪かった？」と自己嫌悪。夫も「更年期だから」と問題を棚上げ。和子は「母親として失格」と思い込み、家事も手につかなくなる。巡の診断は娘に連れてこられた。",
+      "meguriPrescription": "処方箋：「更年期」を「次の世代への移行期」と捉え直す。和子の体調不良は「気のせい」ではなく、ホルモンバランスの変化。まずは婦人科で治療。娘には「今、母が体調が悪い。少し配慮して」と正直に伝える。更年期は「終わり」ではなく「次のフェーズ」の始まり。夫にも協力を求め、家事分担を見直す。",
+      "theme": "更年期と女性のライフステージ",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 10,
+            "branch": 4,
+            "stemStr": "癸",
+            "branchStr": "卯",
+            "name": "癸卯",
+            "id": 40,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 4,
+            "branch": 12,
+            "stemStr": "丁",
+            "branchStr": "亥",
+            "name": "丁亥",
+            "id": 24,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 7,
+            "branch": 11,
+            "stemStr": "庚",
+            "branchStr": "戌",
+            "name": "庚戌",
+            "id": 47,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 1,
+            "branch": 9,
+            "stemStr": "甲",
+            "branchStr": "申",
+            "name": "甲申",
+            "id": 21,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 40,
+          "fire": 28,
+          "earth": 10,
+          "metal": 29,
+          "water": 41
+        },
+        "yangSen": {
+          "head": "玉堂星",
+          "rightHand": "鳳閣星",
+          "chest": "石門星",
+          "leftHand": "牽牛星",
+          "belly": "禄存星",
+          "leftShoulder": {
+            "name": "天堂星",
+            "score": 8
+          },
+          "rightLeg": {
+            "name": "天貴星",
+            "score": 9
+          },
+          "leftLeg": {
+            "name": "天将星",
+            "score": 12
+          }
+        },
+        "energyScore": 24,
+        "insen": {
+          "meta": {
+            "dayStem": "癸",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "庚",
+              "branch": "戌"
+            },
+            "month": {
+              "stem": "丁",
+              "branch": "亥"
+            },
+            "day": {
+              "stem": "癸",
+              "branch": "卯"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "戌",
+              "type": "main",
+              "stem": "戊"
+            },
+            {
+              "pillar": "year",
+              "branch": "戌",
+              "type": "sub",
+              "stem": "辛"
+            },
+            {
+              "pillar": "year",
+              "branch": "戌",
+              "type": "extra",
+              "stem": "丁"
+            },
+            {
+              "pillar": "month",
+              "branch": "亥",
+              "type": "main",
+              "stem": "壬"
+            },
+            {
+              "pillar": "month",
+              "branch": "亥",
+              "type": "sub",
+              "stem": "甲"
+            },
+            {
+              "pillar": "day",
+              "branch": "卯",
+              "type": "main",
+              "stem": "乙"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "庚",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "丁",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "癸",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "戊",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "辛",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "丁",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "壬",
+              "name": "石門星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "甲",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "乙",
+              "name": "鳳閣星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "戌",
+              "state": "天堂星"
+            },
+            {
+              "pillar": "month",
+              "branch": "亥",
+              "state": "天将星"
+            },
+            {
+              "pillar": "day",
+              "branch": "卯",
+              "state": "天貴星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 40,
+              "fire": 28,
+              "earth": 10,
+              "metal": 29,
+              "water": 41
+            },
+            "dayStemStrength": "balanced"
+          },
+          "phaseRelations": [
+            {
+              "from": "year",
+              "to": "day",
+              "relation": "合"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "辰巳天中殺",
+            "missingBranches": [
+              "辰",
+              "巳"
+            ]
+          }
+        },
+        "nikkan": "庚",
+        "gesshi": "戌",
+        "tenchusatsu": "戌亥天中殺",
+        "jugdais": [
+          "玉堂星",
+          "車騎星",
+          "玉堂星",
+          "牽牛星",
+          "調舒星"
+        ],
+        "junidai": [
+          "天堂星",
+          "天胡星",
+          "天報星"
+        ],
+        "total_energy": 15
+      }
+    },
+    {
+      "episode": 43,
+      "name": "林哲也",
+      "birthDate": "1994-02-28T20:00:00",
+      "age": 31,
+      "gender": "male",
+      "occupation": "営業職",
+      "presentingIssue": "多額の借金を抱え、返済の目途が立たない",
+      "background": "友人の独立に投資したものの、詐欺に遭い500万円を損失。その穴を埋めるために消費者金融から借金を重ね、現在は借金総額800万円。複数の業者から借金し、返済だけで手いっぱい。親にも相談できず、「自殺するしかない」と考えている。営業成績も落ち、上司から警告を受けている。「もう逃げ場がない」と絶望して巡のもとへ。",
+      "meguriPrescription": "処方箋：「借金」を「人生のリセット」と捉える。まずは弁護士に相談し、債務整理を検討。親には事実を告白（初めは激怒されるが、最終的には援助を申し出る）。副業（配送ドライバー）を始め、収入を増やす。「一生かけて返す」と覚悟を決めた瞬間、胸のつかえが取れる。3年後、完済への道筋が立つ。",
+      "theme": "借金と再生",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 2,
+            "branch": 10,
+            "stemStr": "乙",
+            "branchStr": "酉",
+            "name": "乙酉",
+            "id": 22,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 3,
+            "branch": 3,
+            "stemStr": "丙",
+            "branchStr": "寅",
+            "name": "丙寅",
+            "id": 3,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 1,
+            "branch": 11,
+            "stemStr": "甲",
+            "branchStr": "戌",
+            "name": "甲戌",
+            "id": 11,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 1,
+            "branch": 11,
+            "stemStr": "甲",
+            "branchStr": "戌",
+            "name": "甲戌",
+            "id": 11,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 54,
+          "fire": 64,
+          "earth": 42,
+          "metal": 20,
+          "water": 0
+        },
+        "yangSen": {
+          "head": "石門星",
+          "rightHand": "車騎星",
+          "chest": "石門星",
+          "leftHand": "司禄星",
+          "belly": "調舒星",
+          "leftShoulder": {
+            "name": "天庫星",
+            "score": 5
+          },
+          "rightLeg": {
+            "name": "天馳星",
+            "score": 1
+          },
+          "leftLeg": {
+            "name": "天将星",
+            "score": 12
+          }
+        },
+        "energyScore": 20,
+        "insen": {
+          "meta": {
+            "dayStem": "乙",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "甲",
+              "branch": "戌"
+            },
+            "month": {
+              "stem": "丙",
+              "branch": "寅"
+            },
+            "day": {
+              "stem": "乙",
+              "branch": "酉"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "戌",
+              "type": "main",
+              "stem": "戊"
+            },
+            {
+              "pillar": "year",
+              "branch": "戌",
+              "type": "sub",
+              "stem": "辛"
+            },
+            {
+              "pillar": "year",
+              "branch": "戌",
+              "type": "extra",
+              "stem": "丁"
+            },
+            {
+              "pillar": "month",
+              "branch": "寅",
+              "type": "main",
+              "stem": "甲"
+            },
+            {
+              "pillar": "month",
+              "branch": "寅",
+              "type": "sub",
+              "stem": "丙"
+            },
+            {
+              "pillar": "month",
+              "branch": "寅",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "day",
+              "branch": "酉",
+              "type": "main",
+              "stem": "辛"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "甲",
+              "name": "石門星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "丙",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "乙",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "戊",
+              "name": "司禄星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "辛",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "丁",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "甲",
+              "name": "石門星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丙",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "司禄星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "辛",
+              "name": "車騎星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "戌",
+              "state": "天庫星"
+            },
+            {
+              "pillar": "month",
+              "branch": "寅",
+              "state": "天将星"
+            },
+            {
+              "pillar": "day",
+              "branch": "酉",
+              "state": "天馳星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 54,
+              "fire": 64,
+              "earth": 42,
+              "metal": 20,
+              "water": 0
+            },
+            "dayStemStrength": "balanced"
+          },
+          "phaseRelations": [],
+          "tenchusatsu": {
+            "type": "午未天中殺",
+            "missingBranches": [
+              "午",
+              "未"
+            ]
+          }
+        },
+        "nikkan": "甲",
+        "gesshi": "戌",
+        "tenchusatsu": "戌亥天中殺",
+        "jugdais": [
+          "鳳閣星",
+          "鳳閣星",
+          "調舒星",
+          "車騎星",
+          "鳳閣星"
+        ],
+        "junidai": [
+          "天印星",
+          "天禄星",
+          "天貴星"
+        ],
+        "total_energy": 26
+      }
+    },
+    {
+      "episode": 44,
+      "name": "三上結衣",
+      "birthDate": "1999-05-05T11:55:00",
+      "age": 26,
+      "gender": "female",
+      "occupation": "大学生",
+      "presentingIssue": "ゲイであることをカミングアウトしたいが、親にどう伝えていいかわからない",
+      "background": "大学生の時に同性を好きだと気づく。現在、女性パートナーがいるが、親には「友達」と紹介している。実家に帰省するたび、「いつ結婚するの？」と聞かれ、罪悪感。「親を傷つけたくない」「でも隠し続けるのは辛い」。両親は保守的で、LGBTQ+に理解がないかもしれないと心配。カミングアウトすべきか、生涯隠し通すか、悩み抜く。",
+      "meguriPrescription": "処方箋：「親へのカミングアウト」は「自分のため」ではなく「関係を深めるため」。まずは親の反応を探るため、LGBTQ+に関するニュースを一緒に見る。親の反応が悪ければ、無理にカミングアウトしない。「親に全てを明かす必要はない」。カミングアウトするとしても、タイミングは自分が決める。結衣は「親が受け入れられないなら、それは親の問題」と気づく。",
+      "theme": "LGBTQ+と自己受容",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 4,
+            "branch": 6,
+            "stemStr": "丁",
+            "branchStr": "巳",
+            "name": "丁巳",
+            "id": 54,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 5,
+            "branch": 5,
+            "stemStr": "戊",
+            "branchStr": "辰",
+            "name": "戊辰",
+            "id": 5,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 6,
+            "branch": 4,
+            "stemStr": "己",
+            "branchStr": "卯",
+            "name": "己卯",
+            "id": 16,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 7,
+            "branch": 7,
+            "stemStr": "庚",
+            "branchStr": "午",
+            "name": "庚午",
+            "id": 7,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 42,
+          "fire": 31,
+          "earth": 59,
+          "metal": 22,
+          "water": 20
+        },
+        "yangSen": {
+          "head": "鳳閣星",
+          "rightHand": "石門星",
+          "chest": "調舒星",
+          "leftHand": "龍高星",
+          "belly": "調舒星",
+          "leftShoulder": {
+            "name": "天胡星",
+            "score": 4
+          },
+          "rightLeg": {
+            "name": "天将星",
+            "score": 12
+          },
+          "leftLeg": {
+            "name": "天堂星",
+            "score": 8
+          }
+        },
+        "energyScore": 17,
+        "insen": {
+          "meta": {
+            "dayStem": "丁",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "己",
+              "branch": "卯"
+            },
+            "month": {
+              "stem": "戊",
+              "branch": "辰"
+            },
+            "day": {
+              "stem": "丁",
+              "branch": "巳"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "卯",
+              "type": "main",
+              "stem": "乙"
+            },
+            {
+              "pillar": "month",
+              "branch": "辰",
+              "type": "main",
+              "stem": "戊"
+            },
+            {
+              "pillar": "month",
+              "branch": "辰",
+              "type": "sub",
+              "stem": "乙"
+            },
+            {
+              "pillar": "month",
+              "branch": "辰",
+              "type": "extra",
+              "stem": "癸"
+            },
+            {
+              "pillar": "day",
+              "branch": "巳",
+              "type": "main",
+              "stem": "丙"
+            },
+            {
+              "pillar": "day",
+              "branch": "巳",
+              "type": "sub",
+              "stem": "庚"
+            },
+            {
+              "pillar": "day",
+              "branch": "巳",
+              "type": "extra",
+              "stem": "戊"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "己",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "戊",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "丁",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "乙",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "戊",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "乙",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "癸",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "丙",
+              "name": "石門星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "庚",
+              "name": "司禄星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "調舒星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "卯",
+              "state": "天胡星"
+            },
+            {
+              "pillar": "month",
+              "branch": "辰",
+              "state": "天堂星"
+            },
+            {
+              "pillar": "day",
+              "branch": "巳",
+              "state": "天将星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 42,
+              "fire": 31,
+              "earth": 59,
+              "metal": 22,
+              "water": 20
+            },
+            "dayStemStrength": "balanced"
+          },
+          "phaseRelations": [],
+          "tenchusatsu": {
+            "type": "子丑天中殺",
+            "missingBranches": [
+              "子",
+              "丑"
+            ]
+          }
+        },
+        "nikkan": "己",
+        "gesshi": "卯",
+        "tenchusatsu": "寅卯天中殺",
+        "jugdais": [
+          "調舒星",
+          "調舒星",
+          "調舒星",
+          "禄存星",
+          "調舒星"
+        ],
+        "junidai": [
+          "天貴星",
+          "天貴星",
+          "天将星"
+        ],
+        "total_energy": 30
+      }
+    },
+    {
+      "episode": 45,
+      "name": "森田剛",
+      "birthDate": "1992-12-12T18:40:00",
+      "age": 33,
+      "gender": "male",
+      "occupation": "公認会計士",
+      "presentingIssue": "過干渉な母親から精神的に自立したい",
+      "background": "30歳になっても、母親と週3回会い、母に服を買い、母に献身的。母も「息子は私の人生」と依存。最近、結婚を考え始めたが、母が「私のこと捨てるの？」と激しく反対。母に「NO」を言えない剛は、婚約者にプロポーズもできない。母との関係を壊したくないが、このまま一生独身でいるわけにもいかず、板挟みになっている。",
+      "meguriPrescription": "処方箋：「母子分離」を完了させる。剛は「親孝行」と「親への依存」を混同している。まずは「会う頻度」を週3回から週1回に減らす。母の反応は「捨てられた」という悲劇的なものだが、そこに付き合わない。「母の人生ではない」と伝え、婚約者との結婚を進める。母との関係は修復不可能かもしれないが、それは剛の責任ではない。",
+      "theme": "親からの分離",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 9,
+            "branch": 11,
+            "stemStr": "壬",
+            "branchStr": "戌",
+            "name": "壬戌",
+            "id": 59,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 9,
+            "branch": 1,
+            "stemStr": "壬",
+            "branchStr": "子",
+            "name": "壬子",
+            "id": 49,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 9,
+            "branch": 9,
+            "stemStr": "壬",
+            "branchStr": "申",
+            "name": "壬申",
+            "id": 9,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 6,
+            "branch": 10,
+            "stemStr": "己",
+            "branchStr": "酉",
+            "name": "己酉",
+            "id": 46,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 0,
+          "fire": 25,
+          "earth": 42,
+          "metal": 35,
+          "water": 120
+        },
+        "yangSen": {
+          "head": "貫索星",
+          "rightHand": "玉堂星",
+          "chest": "石門星",
+          "leftHand": "車騎星",
+          "belly": "貫索星",
+          "leftShoulder": {
+            "name": "天貴星",
+            "score": 9
+          },
+          "rightLeg": {
+            "name": "天南星",
+            "score": 10
+          },
+          "leftLeg": {
+            "name": "天将星",
+            "score": 12
+          }
+        },
+        "energyScore": 24,
+        "insen": {
+          "meta": {
+            "dayStem": "壬",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "壬",
+              "branch": "申"
+            },
+            "month": {
+              "stem": "壬",
+              "branch": "子"
+            },
+            "day": {
+              "stem": "壬",
+              "branch": "戌"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "申",
+              "type": "main",
+              "stem": "庚"
+            },
+            {
+              "pillar": "year",
+              "branch": "申",
+              "type": "sub",
+              "stem": "壬"
+            },
+            {
+              "pillar": "year",
+              "branch": "申",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "month",
+              "branch": "子",
+              "type": "main",
+              "stem": "癸"
+            },
+            {
+              "pillar": "day",
+              "branch": "戌",
+              "type": "main",
+              "stem": "戊"
+            },
+            {
+              "pillar": "day",
+              "branch": "戌",
+              "type": "sub",
+              "stem": "辛"
+            },
+            {
+              "pillar": "day",
+              "branch": "戌",
+              "type": "extra",
+              "stem": "丁"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "壬",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "壬",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "壬",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "庚",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "壬",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "癸",
+              "name": "石門星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "戊",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "辛",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "丁",
+              "name": "司禄星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "申",
+              "state": "天貴星"
+            },
+            {
+              "pillar": "month",
+              "branch": "子",
+              "state": "天将星"
+            },
+            {
+              "pillar": "day",
+              "branch": "戌",
+              "state": "天南星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 0,
+              "fire": 25,
+              "earth": 42,
+              "metal": 35,
+              "water": 120
+            },
+            "dayStemStrength": "strong"
+          },
+          "phaseRelations": [],
+          "tenchusatsu": {
+            "type": "子丑天中殺",
+            "missingBranches": [
+              "子",
+              "丑"
+            ]
+          }
+        },
+        "nikkan": "壬",
+        "gesshi": "申",
+        "tenchusatsu": "申酉天中殺",
+        "jugdais": [
+          "鳳閣星",
+          "調舒星",
+          "鳳閣星",
+          "禄存星",
+          "鳳閣星"
+        ],
+        "junidai": [
+          "天堂星",
+          "天将星",
+          "天南星"
+        ],
+        "total_energy": 30
+      }
+    },
+    {
+      "episode": 46,
+      "name": "木下葵",
+      "birthDate": "1989-07-30T02:15:00",
+      "age": 36,
+      "gender": "female",
+      "occupation": "小説家",
+      "presentingIssue": "2年間執筆できない。作家としてのアイデンティティが揺らぐ",
+      "background": "デビュー作が大ヒットし、期待されたが、第二作以降は全く書けない。編集者から「期限が過ぎています」と催促されるが、言葉が出てこない。「もう才能が枯渇したのではないか」「デビュー作はただのラックだったんじゃないか」と恐怖。SNSで「期待外れ」と書かれ、筆を折れかけている。作家以外の何者にもなれない自分に苦しむ。",
+      "meguriPrescription": "処方箋：「スランプ」は「終わり」ではなく「溜め」の期間。葵は「書けない自分」を責めているが、実は「出ない時は出ない」のが自然。半年間、執筆を完全に休み、完全に別のことをする（例えば、農業の手伝い、海外旅行）。その間に「作家以外の自分」を発見する。半年後、ふとした瞬間に新しい物語が浮かぶ。",
+      "theme": "スランプと創造性",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 8,
+            "branch": 4,
+            "stemStr": "辛",
+            "branchStr": "卯",
+            "name": "辛卯",
+            "id": 28,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 8,
+            "branch": 8,
+            "stemStr": "辛",
+            "branchStr": "未",
+            "name": "辛未",
+            "id": 8,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 6,
+            "branch": 6,
+            "stemStr": "己",
+            "branchStr": "巳",
+            "name": "己巳",
+            "id": 6,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 2,
+            "branch": 2,
+            "stemStr": "乙",
+            "branchStr": "丑",
+            "name": "乙丑",
+            "id": 2,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 36,
+          "fire": 45,
+          "earth": 69,
+          "metal": 75,
+          "water": 0
+        },
+        "yangSen": {
+          "head": "龍高星",
+          "rightHand": "禄存星",
+          "chest": "龍高星",
+          "leftHand": "牽牛星",
+          "belly": "貫索星",
+          "leftShoulder": {
+            "name": "天極星",
+            "score": 2
+          },
+          "rightLeg": {
+            "name": "天馳星",
+            "score": 1
+          },
+          "leftLeg": {
+            "name": "天堂星",
+            "score": 8
+          }
+        },
+        "energyScore": 23,
+        "insen": {
+          "meta": {
+            "dayStem": "辛",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "己",
+              "branch": "巳"
+            },
+            "month": {
+              "stem": "辛",
+              "branch": "未"
+            },
+            "day": {
+              "stem": "辛",
+              "branch": "卯"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "巳",
+              "type": "main",
+              "stem": "丙"
+            },
+            {
+              "pillar": "year",
+              "branch": "巳",
+              "type": "sub",
+              "stem": "庚"
+            },
+            {
+              "pillar": "year",
+              "branch": "巳",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "month",
+              "branch": "未",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "month",
+              "branch": "未",
+              "type": "sub",
+              "stem": "丁"
+            },
+            {
+              "pillar": "month",
+              "branch": "未",
+              "type": "extra",
+              "stem": "乙"
+            },
+            {
+              "pillar": "day",
+              "branch": "卯",
+              "type": "main",
+              "stem": "乙"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "己",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "辛",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "辛",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "丙",
+              "name": "牽牛星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "庚",
+              "name": "石門星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丁",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "乙",
+              "name": "禄存星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "乙",
+              "name": "禄存星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "巳",
+              "state": "天極星"
+            },
+            {
+              "pillar": "month",
+              "branch": "未",
+              "state": "天堂星"
+            },
+            {
+              "pillar": "day",
+              "branch": "卯",
+              "state": "天馳星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 36,
+              "fire": 45,
+              "earth": 69,
+              "metal": 75,
+              "water": 0
+            },
+            "dayStemStrength": "balanced"
+          },
+          "phaseRelations": [],
+          "tenchusatsu": {
+            "type": "午未天中殺",
+            "missingBranches": [
+              "午",
+              "未"
+            ]
+          }
+        },
+        "nikkan": "己",
+        "gesshi": "巳",
+        "tenchusatsu": "辰巳天中殺",
+        "jugdais": [
+          "調舒星",
+          "調舒星",
+          "調舒星",
+          "調舒星",
+          "調舒星"
+        ],
+        "junidai": [
+          "天将星",
+          "天印星",
+          "天貴星"
+        ],
+        "total_energy": 27
+      }
+    },
+    {
+      "episode": 47,
+      "name": "清水弘",
+      "birthDate": "1978-04-15T10:50:00",
+      "age": 47,
+      "gender": "male",
+      "occupation": "会社員",
+      "presentingIssue": "妻との会話がなく、家庭内離婚状態",
+      "background": "結納20年。子供が独立してから、夫婦の会話がほぼない。帰宅すると「お疲れ様」の一言。週末も別々に過ごす。寝室も別。「離婚」という言葉は出ないが、実質的に家庭内離婚。弘は「これでいいのか？」と問い続けているが、妻も「今のままが平和」と思っている。愛情はあるのか、慣れだけなのか、わからない。",
+      "meguriPrescription": "処方箋：「関係の再定義」からスタート。弘は「熱愛関係」に戻ろうとしているが、20年後の夫婦は「親友+パートナー」関係を目指す。まずは妻に「今の夫婦関係をどう思っているか」を正直に聞く。妻も「寂しい」と実は思っていた。二人で旅行に行き、再び「二人の時間」を持つことを決意。「週に一度はデート」から始める。",
+      "theme": "夫婦関係の再生",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 4,
+            "branch": 8,
+            "stemStr": "丁",
+            "branchStr": "未",
+            "name": "丁未",
+            "id": 44,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 3,
+            "branch": 5,
+            "stemStr": "丙",
+            "branchStr": "辰",
+            "name": "丙辰",
+            "id": 53,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 5,
+            "branch": 7,
+            "stemStr": "戊",
+            "branchStr": "午",
+            "name": "戊午",
+            "id": 55,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 4,
+            "branch": 6,
+            "stemStr": "丁",
+            "branchStr": "巳",
+            "name": "丁巳",
+            "id": 54,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 54,
+          "fire": 87,
+          "earth": 94,
+          "metal": 0,
+          "water": 18
+        },
+        "yangSen": {
+          "head": "調舒星",
+          "rightHand": "龍高星",
+          "chest": "車騎星",
+          "leftHand": "鳳閣星",
+          "belly": "石門星",
+          "leftShoulder": {
+            "name": "天禄星",
+            "score": 11
+          },
+          "rightLeg": {
+            "name": "天南星",
+            "score": 10
+          },
+          "leftLeg": {
+            "name": "天堂星",
+            "score": 8
+          }
+        },
+        "energyScore": 20,
+        "insen": {
+          "meta": {
+            "dayStem": "丁",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "戊",
+              "branch": "午"
+            },
+            "month": {
+              "stem": "丙",
+              "branch": "辰"
+            },
+            "day": {
+              "stem": "丁",
+              "branch": "未"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "午",
+              "type": "main",
+              "stem": "丁"
+            },
+            {
+              "pillar": "year",
+              "branch": "午",
+              "type": "sub",
+              "stem": "己"
+            },
+            {
+              "pillar": "month",
+              "branch": "辰",
+              "type": "main",
+              "stem": "戊"
+            },
+            {
+              "pillar": "month",
+              "branch": "辰",
+              "type": "sub",
+              "stem": "乙"
+            },
+            {
+              "pillar": "month",
+              "branch": "辰",
+              "type": "extra",
+              "stem": "癸"
+            },
+            {
+              "pillar": "day",
+              "branch": "未",
+              "type": "main",
+              "stem": "己"
+            },
+            {
+              "pillar": "day",
+              "branch": "未",
+              "type": "sub",
+              "stem": "丁"
+            },
+            {
+              "pillar": "day",
+              "branch": "未",
+              "type": "extra",
+              "stem": "乙"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "戊",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "丙",
+              "name": "石門星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "丁",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "丁",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "己",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "戊",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "乙",
+              "name": "龍高星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "癸",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "己",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丁",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "乙",
+              "name": "龍高星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "午",
+              "state": "天禄星"
+            },
+            {
+              "pillar": "month",
+              "branch": "辰",
+              "state": "天堂星"
+            },
+            {
+              "pillar": "day",
+              "branch": "未",
+              "state": "天南星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 54,
+              "fire": 87,
+              "earth": 94,
+              "metal": 0,
+              "water": 18
+            },
+            "dayStemStrength": "balanced"
+          },
+          "phaseRelations": [
+            {
+              "from": "year",
+              "to": "day",
+              "relation": "合"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "寅卯天中殺",
+            "missingBranches": [
+              "寅",
+              "卯"
+            ]
+          }
+        },
+        "nikkan": "戊",
+        "gesshi": "午",
+        "tenchusatsu": "午未天中殺",
+        "jugdais": [
+          "鳳閣星",
+          "司禄星",
+          "石門星",
+          "調舒星",
+          "調舒星"
+        ],
+        "junidai": [
+          "天将星",
+          "天南星",
+          "天貴星"
+        ],
+        "total_energy": 31
+      }
+    },
+    {
+      "episode": 48,
+      "name": "千堂あかり",
+      "birthDate": "1986-09-28T21:30:00",
+      "age": 38,
+      "gender": "female",
+      "occupation": "会社員",
+      "presentingIssue": "都会生活に疲れ、田舎移住を検討",
+      "background": "東京で15年働く。「成功」の定義は、高い給料、いいマンション、お洒落なカフェ。でも最近、「これが私の人生か？」という空虚感。通勤ラッシュ、満員電車、孤独な週末。SNSで田舎移住の投稿を見て、「私もやりたい」と思うが、「都会のキャリアを捨てるのは怖しい」「田舎でやっていけるのか？」と迷う。両親は「親の面倒を見てくれるなら」と支持してくれている。",
+      "meguriPrescription": "処方箋：「移住」は「逃げ」ではなく「選択」。あかりは「都会の成功」という物語に縛られている。まずは1ヶ月間、長期休暇を取得して移住先で暮らしてみる。実は「田舎で起業」したいという夢も持っていた。地元の関係者とつながり、移住1年後にカフェを開業。収入は減ったが、生活の質は劇的に向上した。",
+      "theme": "人生の再設計",
+      "isRecurring": false,
+      "kanshiData": {
+        "bazi": {
+          "year": {
+            "stem": 2,
+            "branch": 12,
+            "stemStr": "乙",
+            "branchStr": "亥",
+            "name": "乙亥",
+            "id": 12,
+            "hiddenStems": []
+          },
+          "month": {
+            "stem": 4,
+            "branch": 10,
+            "stemStr": "丁",
+            "branchStr": "酉",
+            "name": "丁酉",
+            "id": 34,
+            "hiddenStems": []
+          },
+          "day": {
+            "stem": 3,
+            "branch": 3,
+            "stemStr": "丙",
+            "branchStr": "寅",
+            "name": "丙寅",
+            "id": 3,
+            "hiddenStems": []
+          },
+          "hour": {
+            "stem": 6,
+            "branch": 12,
+            "stemStr": "己",
+            "branchStr": "亥",
+            "name": "己亥",
+            "id": 36,
+            "hiddenStems": []
+          }
+        },
+        "fiveElements": {
+          "wood": 56,
+          "fire": 53,
+          "earth": 19,
+          "metal": 15,
+          "water": 13
+        },
+        "yangSen": {
+          "head": "調舒星",
+          "rightHand": "玉堂星",
+          "chest": "車騎星",
+          "leftHand": "石門星",
+          "belly": "鳳閣星",
+          "leftShoulder": {
+            "name": "天将星",
+            "score": 12
+          },
+          "rightLeg": {
+            "name": "天極星",
+            "score": 2
+          },
+          "leftLeg": {
+            "name": "天馳星",
+            "score": 1
+          }
+        },
+        "energyScore": 12,
+        "insen": {
+          "meta": {
+            "dayStem": "乙",
+            "calendar": "solar"
+          },
+          "pillars": {
+            "year": {
+              "stem": "丙",
+              "branch": "寅"
+            },
+            "month": {
+              "stem": "丁",
+              "branch": "酉"
+            },
+            "day": {
+              "stem": "乙",
+              "branch": "亥"
+            }
+          },
+          "hiddenStems": [
+            {
+              "pillar": "year",
+              "branch": "寅",
+              "type": "main",
+              "stem": "甲"
+            },
+            {
+              "pillar": "year",
+              "branch": "寅",
+              "type": "sub",
+              "stem": "丙"
+            },
+            {
+              "pillar": "year",
+              "branch": "寅",
+              "type": "extra",
+              "stem": "戊"
+            },
+            {
+              "pillar": "month",
+              "branch": "酉",
+              "type": "main",
+              "stem": "辛"
+            },
+            {
+              "pillar": "day",
+              "branch": "亥",
+              "type": "main",
+              "stem": "壬"
+            },
+            {
+              "pillar": "day",
+              "branch": "亥",
+              "type": "sub",
+              "stem": "甲"
+            }
+          ],
+          "tsuhensei": [
+            {
+              "pillar": "year",
+              "source": "heavenlyStem",
+              "stem": "丙",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "month",
+              "source": "heavenlyStem",
+              "stem": "丁",
+              "name": "鳳閣星"
+            },
+            {
+              "pillar": "day",
+              "source": "heavenlyStem",
+              "stem": "乙",
+              "name": "貫索星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "甲",
+              "name": "石門星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "丙",
+              "name": "調舒星"
+            },
+            {
+              "pillar": "year",
+              "source": "hiddenStem",
+              "hiddenType": "extra",
+              "stem": "戊",
+              "name": "司禄星"
+            },
+            {
+              "pillar": "month",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "辛",
+              "name": "車騎星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "main",
+              "stem": "壬",
+              "name": "玉堂星"
+            },
+            {
+              "pillar": "day",
+              "source": "hiddenStem",
+              "hiddenType": "sub",
+              "stem": "甲",
+              "name": "石門星"
+            }
+          ],
+          "junishiUn": [
+            {
+              "pillar": "year",
+              "branch": "寅",
+              "state": "天将星"
+            },
+            {
+              "pillar": "month",
+              "branch": "酉",
+              "state": "天馳星"
+            },
+            {
+              "pillar": "day",
+              "branch": "亥",
+              "state": "天極星"
+            }
+          ],
+          "fiveElements": {
+            "distribution": {
+              "wood": 56,
+              "fire": 53,
+              "earth": 19,
+              "metal": 15,
+              "water": 13
+            },
+            "dayStemStrength": "strong"
+          },
+          "phaseRelations": [
+            {
+              "from": "year",
+              "to": "day",
+              "relation": "合"
+            }
+          ],
+          "tenchusatsu": {
+            "type": "申酉天中殺",
+            "missingBranches": [
+              "申",
+              "酉"
+            ]
+          }
+        },
+        "nikkan": "丙",
+        "gesshi": "寅",
+        "tenchusatsu": "寅卯天中殺",
+        "jugdais": [
+          "石門星",
+          "牽牛星",
+          "鳳閣星",
+          "龍高星",
+          "調舒星"
+        ],
+        "junidai": [
+          "天貴星",
+          "天極星",
+          "天馳星"
+        ],
+        "total_energy": 12
+      }
+    }
+  ]
+}
