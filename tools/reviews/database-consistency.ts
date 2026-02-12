@@ -11,7 +11,6 @@
 
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
-import { turso } from '../turso.js';
 
 interface Character {
   name: string;
@@ -168,8 +167,18 @@ function checkAgentsMDConsistency() {
  * Turso データベースとの整合性チェック
  */
 async function checkTursoConsistency() {
+  // 環境変数チェック
+  if (!process.env.TURSO_URL || !process.env.TURSO_TOKEN) {
+    console.log('\n⏭️  Turso データベースチェックをスキップ (環境変数未設定)');
+    console.log('   CI環境では Turso チェックはスキップされます');
+    return;
+  }
+
   try {
     console.log('\n🔍 Turso データベース整合性チェック...');
+
+    // 動的インポート
+    const { turso } = await import('../turso.js');
 
     // キャラクター数のチェック
     const charsResult = await turso.execute('SELECT COUNT(*) as count FROM characters');
