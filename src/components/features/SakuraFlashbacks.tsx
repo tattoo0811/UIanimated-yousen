@@ -111,13 +111,115 @@ const DistributionCard = ({
 };
 
 /**
+ * パートセパレーターコンポーネント（ThirteenChaptersから再利用）
+ * 3部構成の視覚的な区切りを表示
+ */
+const PartSeparator = ({ part }: { part: 'foundation' | 'conflict' | 'integration' }) => {
+  const config = {
+    foundation: {
+      name: '基礎編',
+      gradient: 'from-emerald-500/20 to-green-500/10',
+      borderColor: 'border-emerald-500/30',
+      textColor: 'text-emerald-400'
+    },
+    conflict: {
+      name: '葛藤編',
+      gradient: 'from-amber-500/20 to-orange-500/10',
+      borderColor: 'border-amber-500/30',
+      textColor: 'text-amber-400'
+    },
+    integration: {
+      name: '統合編',
+      gradient: 'from-violet-500/20 to-purple-500/10',
+      borderColor: 'border-violet-500/30',
+      textColor: 'text-violet-400'
+    }
+  }[part];
+
+  return (
+    <div className={`relative my-8 py-4 ${config.borderColor} border-t-2 border-b-2`}>
+      <div className={`absolute inset-0 bg-gradient-to-r ${config.gradient} opacity-50`} />
+      <div className="relative text-center">
+        <span className={`text-sm font-bold ${config.textColor} tracking-widest uppercase`}>
+          {config.name}
+        </span>
+        <span className="ml-2 text-xs text-slate-500">
+          {PART_MAPPING[part].name}
+        </span>
+      </div>
+    </div>
+  );
+};
+
+/**
+ * タイムラインマーカーコンポーネント
+ */
+const TimelineMarker = ({
+  flashback,
+  position,
+  onClick,
+  isSelected
+}: {
+  flashback: Flashback;
+  position: number; // 0-100 (percentage)
+  onClick: () => void;
+  isSelected: boolean;
+}) => {
+  const partColor = {
+    foundation: 'bg-emerald-500',
+    conflict: 'bg-amber-500',
+    integration: 'bg-violet-500'
+  }[flashback.part];
+
+  return (
+    <motion.div
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ delay: 0.3 + (flashback.id * 0.05) }}
+      className="relative"
+      style={{
+        position: 'absolute',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        top: `${position}%`
+      }}
+    >
+      {/* ツールチップ */}
+      <div className={`
+        absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+        px-3 py-2 rounded-lg bg-slate-800 border border-slate-700
+        text-xs text-slate-300 whitespace-nowrap opacity-0 group-hover:opacity-100
+        transition-opacity pointer-events-none group-hover:pointer-events-auto
+        z-10
+      `}>
+        <div className="font-medium text-white mb-1">{flashback.title}</div>
+        <div className="text-slate-400">第{flashback.episode}話</div>
+        {/* 小さな矢印 */}
+        <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800" />
+      </div>
+
+      {/* マーカー円 */}
+      <button
+        onClick={onClick}
+        className={`
+          w-4 h-4 rounded-full ${partColor} cursor-pointer
+          hover:scale-125 transition-transform duration-200
+          ${isSelected ? 'ring-2 ring-white ring-offset-2 ring-offset-slate-900' : ''}
+        `}
+        aria-label={`回想シーン: ${flashback.title}（第${flashback.episode}話）`}
+      />
+    </motion.div>
+  );
+};
+
+/**
  * さくらの回想シーン一覧表示コンポーネント
  * 20回の回想シーンを一覧表示し、出典別・3部構成別の分布をグラフ表示
  * 詳細パネル展開とタイムラインビューに対応
  */
 export function SakuraFlashbacks({ viewMode }: SakuraFlashbacksProps) {
   const [expandedFlashbackId, setExpandedFlashbackId] = useState<number | null>(null);
-  // const [selectedFlashback, setSelectedFlashback] = useState<Flashback | null>(null); // Task 2で使用
+  const [selectedFlashback, setSelectedFlashback] = useState<Flashback | null>(null);
   const [displayView, setDisplayView] = useState<DisplayView>('list');
 
   const sourceDistribution = getSourceDistribution();
@@ -132,19 +234,28 @@ export function SakuraFlashbacks({ viewMode }: SakuraFlashbacksProps) {
   const handleFlashbackClick = (flashback: Flashback) => {
     // 展開状態をトグル
     setExpandedFlashbackId(expandedFlashbackId === flashback.id ? null : flashback.id);
-    // 詳細表示のために選択状態をセット（Task 2で使用）
-    // setSelectedFlashback(flashback);
+    // 詳細表示のために選択状態をセット
+    setSelectedFlashback(flashback);
   };
 
   /**
-   * タイムラインマーカークリックハンドラー（Task 2で実装）
+   * タイムラインマーカークリックハンドラー
    */
-  // const handleTimelineMarkerClick = (flashback: Flashback) => {
-  //   setSelectedFlashback(flashback);
-  //   setExpandedFlashbackId(flashback.id);
-  //   // 一覧ビューに切り替えて展開
-  //   setDisplayView('list');
-  // };
+  const handleTimelineMarkerClick = (flashback: Flashback) => {
+    setSelectedFlashback(flashback);
+    setExpandedFlashbackId(flashback.id);
+    // 一覧ビューに切り替えて展開
+    setDisplayView('list');
+  };
+
+  /**
+   * タイムライン上のマーカー位置を計算
+   * @param episode - 話数（1-120）
+   * @returns 位置パーセンテージ（0-100）
+   */
+  const calculateMarkerPosition = (episode: number): number => {
+    return ((episode - 1) / 119) * 100;
+  };
 
   return (
     <div className="space-y-6">
@@ -381,10 +492,154 @@ export function SakuraFlashbacks({ viewMode }: SakuraFlashbacksProps) {
           </div>
         )}
 
-        {/* タイムラインビュー（Task 2で実装） */}
+        {/* タイムラインビュー */}
         {displayView === 'timeline' && (
-          <div className="py-8 text-center text-slate-400 text-sm">
-            タイムラインビューはTask 2で実装予定です
+          <div className="py-8">
+            {/* タイムラインコンテナ */}
+            <div className="relative bg-slate-800/40 border border-slate-700/40 rounded-xl p-6">
+              {/* 垂直タイムライン */}
+              <div className="relative h-[600px] border-l-2 border-slate-700 ml-6">
+                {/* 基礎編セパレーター（第40話後 = 33.3%） */}
+                <div
+                  className="absolute left-0 w-full border-t-2 border-emerald-500/30"
+                  style={{ top: `${calculateMarkerPosition(40)}%` }}
+                >
+                  <div className="absolute -top-3 left-0 px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-medium rounded">
+                    第40話
+                  </div>
+                </div>
+
+                {/* 葛藤編セパレーター（第80話後 = 66.6%） */}
+                <div
+                  className="absolute left-0 w-full border-t-2 border-amber-500/30"
+                  style={{ top: `${calculateMarkerPosition(80)}%` }}
+                >
+                  <div className="absolute -top-3 left-0 px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-medium rounded">
+                    第80話
+                  </div>
+                </div>
+
+                {/* 回想マーカー */}
+                {sortedFlashbacks.map((flashback) => (
+                  <div
+                    key={flashback.id}
+                    className="group"
+                    style={{
+                      position: 'absolute',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      top: `${calculateMarkerPosition(flashback.episode)}%`
+                    }}
+                  >
+                    {/* ツールチップ */}
+                    <div className={`
+                      absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+                      px-3 py-2 rounded-lg bg-slate-800 border border-slate-700
+                      text-xs text-slate-300 whitespace-nowrap opacity-0
+                      group-hover:opacity-100 transition-opacity pointer-events-none
+                      group-hover:pointer-events-auto z-10
+                    `}>
+                      <div className="font-medium text-white mb-1">{flashback.title}</div>
+                      <div className="text-slate-400">第{flashback.episode}話</div>
+                      {/* 小さな矢印 */}
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800" />
+                    </div>
+
+                    {/* マーカー円 */}
+                    <button
+                      onClick={() => handleTimelineMarkerClick(flashback)}
+                      className={`
+                        w-4 h-4 rounded-full cursor-pointer
+                        hover:scale-125 transition-transform duration-200
+                        ${
+                          {
+                            foundation: 'bg-emerald-500',
+                            conflict: 'bg-amber-500',
+                            integration: 'bg-violet-500'
+                          }[flashback.part]
+                        }
+                      `}
+                      aria-label={`回想シーン: ${flashback.title}（第${flashback.episode}話）`}
+                    />
+                  </div>
+                ))}
+
+                {/* 話数目盛（10話ごと） */}
+                {Array.from({ length: 12 }, (_, i) => i * 10 + 10).map((episode) => (
+                  <div
+                    key={episode}
+                    className="absolute right-0 -translate-y-1/2 pr-4 text-xs text-slate-500"
+                    style={{ top: `${calculateMarkerPosition(episode)}%` }}
+                  >
+                    第{episode}話
+                  </div>
+                ))}
+              </div>
+
+              {/* 選択中の回想シーン詳細パネル */}
+              <AnimatePresence>
+                {selectedFlashback && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-6 bg-slate-700/30 border-t border-slate-700/50 rounded-t-xl p-5"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-sm font-medium text-white">
+                        選択中の回想シーン
+                      </span>
+                      <button
+                        onClick={() => setSelectedFlashback(null)}
+                        className="text-xs text-slate-400 hover:text-slate-300"
+                      >
+                        閉じる
+                      </button>
+                    </div>
+
+                    <div className="space-y-3">
+                      {/* バッジ群 */}
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="px-2.5 py-1 rounded text-xs font-medium bg-violet-500/20 text-violet-300 border border-violet-500/30">
+                          第{selectedFlashback.episode}話
+                        </span>
+                        <SourceBadge source={selectedFlashback.source} />
+                        <span className={`
+                          px-2 py-0.5 rounded text-xs font-medium
+                          bg-gradient-to-r ${getPartColor(selectedFlashback.part)}
+                          text-white
+                        `}>
+                          {selectedFlashback.part === 'foundation' ? '基礎編' :
+                           selectedFlashback.part === 'conflict' ? '葛藤編' : '統合編'}
+                        </span>
+                      </div>
+
+                      {/* テーマタイトル */}
+                      <h5 className="text-base font-semibold text-white">
+                        {selectedFlashback.title}
+                      </h5>
+
+                      {/* 内容説明 */}
+                      <p className="text-sm text-slate-300 leading-relaxed">
+                        {selectedFlashback.content}
+                      </p>
+
+                      {/* アクションボタン */}
+                      <button
+                        onClick={() => {
+                          setDisplayView('list');
+                          setExpandedFlashbackId(selectedFlashback.id);
+                        }}
+                        className="text-xs text-violet-400 hover:text-violet-300"
+                      >
+                        一覧ビューで詳細を開く →
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
         )}
       </section>
