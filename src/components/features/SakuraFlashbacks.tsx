@@ -1,13 +1,14 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { BookOpen, BarChart3, Sparkles } from 'lucide-react';
-import { FLASHBACKS_DATA, getSourceDistribution, getPartDistribution } from '@/data/flashbacks';
-import { getPartColor } from '@/data/chapters';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { BookOpen, BarChart3, Sparkles, ChevronDown, ChevronUp, List, Clock } from 'lucide-react';
+import { FLASHBACKS_DATA, getSourceDistribution, getPartDistribution, type Flashback } from '@/data/flashbacks';
+import { getPartColor, PART_MAPPING } from '@/data/chapters';
 import type { PartType } from '@/data/chapters';
 
 type ViewMode = 'simple' | 'detailed';
+type DisplayView = 'list' | 'timeline';
 
 interface SakuraFlashbacksProps {
   viewMode: ViewMode;
@@ -112,13 +113,38 @@ const DistributionCard = ({
 /**
  * さくらの回想シーン一覧表示コンポーネント
  * 20回の回想シーンを一覧表示し、出典別・3部構成別の分布をグラフ表示
+ * 詳細パネル展開とタイムラインビューに対応
  */
 export function SakuraFlashbacks({ viewMode }: SakuraFlashbacksProps) {
+  const [expandedFlashbackId, setExpandedFlashbackId] = useState<number | null>(null);
+  // const [selectedFlashback, setSelectedFlashback] = useState<Flashback | null>(null); // Task 2で使用
+  const [displayView, setDisplayView] = useState<DisplayView>('list');
+
   const sourceDistribution = getSourceDistribution();
   const partDistribution = getPartDistribution();
 
   // 話数順にソート（既にソート済みだが明示的に）
   const sortedFlashbacks = [...FLASHBACKS_DATA].sort((a, b) => a.episode - b.episode);
+
+  /**
+   * フラッシュバックカードクリックハンドラー
+   */
+  const handleFlashbackClick = (flashback: Flashback) => {
+    // 展開状態をトグル
+    setExpandedFlashbackId(expandedFlashbackId === flashback.id ? null : flashback.id);
+    // 詳細表示のために選択状態をセット（Task 2で使用）
+    // setSelectedFlashback(flashback);
+  };
+
+  /**
+   * タイムラインマーカークリックハンドラー（Task 2で実装）
+   */
+  // const handleTimelineMarkerClick = (flashback: Flashback) => {
+  //   setSelectedFlashback(flashback);
+  //   setExpandedFlashbackId(flashback.id);
+  //   // 一覧ビューに切り替えて展開
+  //   setDisplayView('list');
+  // };
 
   return (
     <div className="space-y-6">
@@ -156,73 +182,211 @@ export function SakuraFlashbacks({ viewMode }: SakuraFlashbacksProps) {
 
       {/* 回想シーン一覧セクション */}
       <section>
-        <div className="flex items-center gap-2 mb-4">
-          <BookOpen className="w-4 h-4 text-violet-400" />
-          <h3 className="text-base font-semibold text-white">回想シーン一覧</h3>
-          <span className="text-xs text-slate-500">
-            全{FLASHBACKS_DATA.length}回
-          </span>
-        </div>
+        {/* ビュー切替ヘッダー */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <BookOpen className="w-4 h-4 text-violet-400" />
+            <h3 className="text-base font-semibold text-white">回想シーン一覧</h3>
+            <span className="text-xs text-slate-500">
+              全{FLASHBACKS_DATA.length}回
+            </span>
+          </div>
 
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
-          role="list"
-          aria-label="回想シーン一覧"
-        >
-          {sortedFlashbacks.map((flashback, index) => (
-            <motion.div
-              key={flashback.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + index * 0.03 }}
+          {/* ビュー切替ボタン */}
+          <div className="flex items-center gap-1 bg-slate-800/60 rounded-lg p-1">
+            <button
+              onClick={() => setDisplayView('list')}
               className={`
-                bg-slate-800/40 border border-slate-700/40 rounded-xl p-4
-                hover:bg-slate-800/60 hover:shadow-lg hover:ring-1 hover:ring-violet-500/20
-                transition-all duration-200
-              `}
-              role="listitem"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  // クリックハンドラーがあればここで呼び出し（03-02で実装予定）
+                flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium transition-all
+                ${displayView === 'list'
+                  ? 'bg-violet-500/20 text-violet-300'
+                  : 'text-slate-400 hover:text-slate-300'
                 }
-              }}
+              `}
+              aria-pressed={displayView === 'list'}
             >
-              {/* 話数バッジ */}
-              <div className="flex items-center gap-2 mb-2 flex-wrap">
-                <span className="px-2 py-0.5 rounded text-xs font-medium bg-violet-500/20 text-violet-300 border border-violet-500/30">
-                  第{flashback.episode}話
-                </span>
-
-                {/* 出典バッジ */}
-                <SourceBadge source={flashback.source} />
-
-                {/* パートバッジ */}
-                <span className={`
-                  px-2 py-0.5 rounded text-xs font-medium
-                  bg-gradient-to-r ${getPartColor(flashback.part)}
-                  text-white
-                `}>
-                  {flashback.part === 'foundation' ? '基礎編' :
-                   flashback.part === 'conflict' ? '葛藤編' : '統合編'}
-                </span>
-              </div>
-
-              {/* テーマタイトル */}
-              <h4 className="text-sm font-semibold text-white mb-2 leading-tight">
-                {flashback.title}
-              </h4>
-
-              {/* 内容説明（詳細モードのみ） */}
-              {viewMode === 'detailed' && (
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  {flashback.content}
-                </p>
-              )}
-            </motion.div>
-          ))}
+              <List className="w-3.5 h-3.5" />
+              一覧
+            </button>
+            <button
+              onClick={() => setDisplayView('timeline')}
+              className={`
+                flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium transition-all
+                ${displayView === 'timeline'
+                  ? 'bg-violet-500/20 text-violet-300'
+                  : 'text-slate-400 hover:text-slate-300'
+                }
+              `}
+              aria-pressed={displayView === 'timeline'}
+            >
+              <Clock className="w-3.5 h-3.5" />
+              タイムライン
+            </button>
+          </div>
         </div>
+
+        {/* 一覧ビュー */}
+        {displayView === 'list' && (
+          <div
+            className="grid grid-cols-1 gap-3"
+            role="list"
+            aria-label="回想シーン一覧"
+          >
+            {sortedFlashbacks.map((flashback, index) => (
+              <motion.div
+                key={flashback.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + index * 0.03 }}
+              >
+                {/* フラッシュバックカード（アコーディオンヘッダー） */}
+                <div
+                  onClick={() => handleFlashbackClick(flashback)}
+                  className={`
+                    cursor-pointer transition-all duration-200
+                    ${expandedFlashbackId === flashback.id
+                      ? 'bg-slate-800/60 ring-1 ring-violet-500/30'
+                      : 'hover:bg-slate-800/50 hover:shadow-lg'
+                    }
+                    bg-slate-800/40 border border-slate-700/40 rounded-xl overflow-hidden
+                  `}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={expandedFlashbackId === flashback.id}
+                  aria-controls={`flashback-${flashback.id}-content`}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleFlashbackClick(flashback);
+                    }
+                  }}
+                >
+                  {/* カードヘッダー */}
+                  <div className="p-4">
+                    <div className="flex items-start gap-4">
+                      {/* 話数バッジ */}
+                      <div className="shrink-0">
+                        <span className="px-2.5 py-1 rounded text-xs font-medium bg-violet-500/20 text-violet-300 border border-violet-500/30">
+                          第{flashback.episode}話
+                        </span>
+                      </div>
+
+                      {/* カード内容 */}
+                      <div className="flex-1 min-w-0">
+                        {/* バッジ群 */}
+                        <div className="flex items-center gap-2 mb-2 flex-wrap">
+                          {/* 出典バッジ */}
+                          <SourceBadge source={flashback.source} />
+
+                          {/* パートバッジ */}
+                          <span className={`
+                            px-2 py-0.5 rounded text-xs font-medium
+                            bg-gradient-to-r ${getPartColor(flashback.part)}
+                            text-white
+                          `}>
+                            {flashback.part === 'foundation' ? '基礎編' :
+                             flashback.part === 'conflict' ? '葛藤編' : '統合編'}
+                          </span>
+                        </div>
+
+                        {/* テーマタイトル */}
+                        <h4 className="text-sm font-semibold text-white mb-1 leading-tight">
+                          {flashback.title}
+                        </h4>
+
+                        {/* 内容の一部をプレビュー（折りたたみ時） */}
+                        {expandedFlashbackId !== flashback.id && (
+                          <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                            {flashback.content}
+                          </p>
+                        )}
+                      </div>
+
+                      {/* 展開インジケーター */}
+                      <div className="shrink-0">
+                        {expandedFlashbackId === flashback.id ? (
+                          <ChevronUp className="w-5 h-5 text-slate-400" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-slate-400" />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 詳細パネル（展開時） */}
+                <AnimatePresence>
+                  {expandedFlashbackId === flashback.id && (
+                    <motion.div
+                      id={`flashback-${flashback.id}-content`}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden border-t border-slate-700/50 bg-slate-700/30"
+                    >
+                      <div className="p-5 space-y-4">
+                        {/* ヘッダー情報 */}
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="text-sm font-medium text-white">
+                            第{flashback.episode}話
+                          </span>
+                          <span className="text-slate-500">•</span>
+                          <SourceBadge source={flashback.source} />
+                          <span className="text-slate-500">•</span>
+                          <span className={`
+                            px-2 py-0.5 rounded text-xs font-medium
+                            bg-gradient-to-r ${getPartColor(flashback.part)}
+                            text-white
+                          `}>
+                            {PART_MAPPING[flashback.part].name}
+                          </span>
+                        </div>
+
+                        {/* テーマタイトル */}
+                        <h5 className="text-base font-semibold text-white">
+                          {flashback.title}
+                        </h5>
+
+                        {/* 内容説明（フルテキスト） */}
+                        <p className="text-sm text-slate-300 leading-relaxed">
+                          {flashback.content}
+                        </p>
+
+                        {/* メタデータ（詳細モードのみ） */}
+                        {viewMode === 'detailed' && (
+                          <div className="pt-3 border-t border-slate-700/30 space-y-3">
+                            {/* 3部構成マッピング情報 */}
+                            <div className="flex items-center gap-2 text-xs">
+                              <span className="text-slate-400">3部構成所属:</span>
+                              <span className={`
+                                px-2 py-1 rounded font-medium
+                                bg-gradient-to-r ${getPartColor(flashback.part)}
+                                text-white
+                              `}>
+                                {PART_MAPPING[flashback.part].name}
+                              </span>
+                              <span className="text-slate-500">
+                                (第{PART_MAPPING[flashback.part].chapters.join(', ')}章)
+                              </span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
+        )}
+
+        {/* タイムラインビュー（Task 2で実装） */}
+        {displayView === 'timeline' && (
+          <div className="py-8 text-center text-slate-400 text-sm">
+            タイムラインビューはTask 2で実装予定です
+          </div>
+        )}
       </section>
     </div>
   );
