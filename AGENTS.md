@@ -120,3 +120,4 @@ npx tsx tools/verify-storyline.ts
 **CRITICAL**: `git push` が成功するまで作業完了ではない。
 故意のエラー
 故意のエラー
+検証2: 権限修正後のコメント投稿テスト
