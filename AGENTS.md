@@ -2,7 +2,7 @@
 agents:
   - name: StoryReviewer
     role: ストーリー整合性レビュアー
-    description: 算命学の制約とストーリーの理論的一貫性をチェックする専門エージェント
+    description: 算命学の制約とストーリーの理論的一貫性をチェック
     instructions: |
       1. novel/ 配下の STORYLINE v3 と DASHBOARD の同期チェック
       2. 算命学ツール (sanmei-with-energy-cli) を使用した命式の検証
@@ -15,15 +15,11 @@ agents:
       2. beads (bd) ワークフローの遵守確認
 ---
 
-# Agent Instructions
+# UIanimated — Agent Quick Reference
 
 This project uses **bd** (beads) for issue tracking. Run `bd onboard` to get started.
 
-## 🔴 最初にMANIFEST.jsonを読め
-
-`MANIFEST.json` がプロジェクトの SSoT(Single Source of Truth) マップ。作業前に必ず参照。
-
-## Quick Reference
+## 🚀 Quick Start
 
 ```bash
 bd ready              # Find available work
@@ -33,51 +29,46 @@ bd close <id>         # Complete work
 bd sync               # Sync with git
 ```
 
----
+## 📁 Project Structure (3 Pillars)
 
-## プロジェクト構造（3本柱）
-
-| 柱 | パス | 用途 |
-|----|------|------|
+| Pillar | Path | Purpose |
+|--------|------|---------|
 | **Story** | `novel/` | 小説の正典（SSoT） |
 | **Dashboard** | `src/app/dashboard/` | Turso管理者ダッシュボード |
 | **Tools** | `tools/` | CLI計算・検証ツール |
 
-## ドキュメントルール
+## 🔴 必読ドキュメント（優先順位）
 
-1. **novel/ が正典** — 矛盾がある場合、novel/ が正しい
-2. **claudedocs/active/** — 現在参照中の設定ドキュメント（15件）
-3. **claudedocs/legacy/** — 読み取り専用。書き込み禁止
-4. **新規ドキュメントは novel/ 配下に作成**
-5. **ファイル作成前に `bd create`** — beads issue を先に作る
-6. **beads/ は issue管理のみ** — キャラデータの正は novel/characters/
+1. **`MANIFEST.json`** — プロジェクトの SSoT(Single Source of Truth) マップ
+2. **`novel/settings/NOVEL-WRITING-AI-PROMPT-DESIGN.md`** — AIプロンプト設計書（※新規）
+3. **`novel/settings/CHARACTER-DESIGN-MANUAL.md`** — キャラクター設計マニュアル
+4. **`claudedocs/active/`** — 現在参照中の設定ドキュメント
 
----
+## 📖 ドキュメントルール
 
-## 主要キャラクター設定
+- `novel/` が正典 — 矛盾がある場合、novel/ が正しい
+- `claudedocs/legacy/` は読み取り専用
+- 新規ドキュメントは `novel/settings/` 配下に作成
+- ファイル作成前に `bd create` で issue を作成
+
+## 👥 主要キャラクター
 
 | キャラクター | 生年月日 | 性別 | 日柱 | エネルギー |
 |------------|---------|------|------|-----------|
-| 九条 巡 | 1990-03-02 | **男性** | 丙寅 | 267点 |
+| 九条 巡 | 1990-03-02 | 男性 | 丙寅 | 267点 |
 | 藤堂 慧 | 1990-05-25 | 男性 | 庚寅 | 255点 |
-| 九条 さくら | 1925-07-30 | 女性 | — | 204点 |
+| 九条 さくら | 1925-07-30 | 女性 | 乙卯 | 204点 |
 | 高橋 美咲 | 1999-05-03 | 女性 | 乙卯 | 196点 |
 
-### 大運の順行・逆行ルール（絶対遵守）
-
-- **男性**: 陽年干 → 順行、陰年干 → 逆行
-- **女性**: 陰年干 → 順行、陽年干 → 逆行
+### 大運ルール（絶対遵守）
+- 男性: 陽年干 → 順行、陰年干 → 逆行
+- 女性: 陰年干 → 順行、陽年干 → 逆行
 - ❌ 「女性はすべて逆行」は間違い
 
----
-
-## 算命学ツール
+## 🛠️ 算命学ツール
 
 ```bash
 # 基本CLI
-npx tsx tools/sanmei-with-energy-cli.ts <YYYY-MM-DD> <male|female>
-
-# エネルギー計算付き
 npx tsx tools/sanmei-with-energy-cli.ts <YYYY-MM-DD> <male|female>
 
 # ストーリー整合性検証
@@ -86,23 +77,18 @@ npx tsx tools/verify-storyline.ts
 
 詳細: `tools/sanmei-cli-README.md`
 
----
-
-## 検証プロセス
+## 🧪 検証プロセス
 
 ### 朱学院検証（命式データ）
-1. 必ずスクリーンショットを取得（目視確認禁止）
+1. スクリーンショットを取得（目視確認禁止）
 2. DOM抽出と照合
 3. 詳細: `.claude/skills/SHUGAKUIN-VERIFICATION.md`
 
 ### ストーリー検証
 - `npx tsx tools/verify-storyline.ts` で16項目チェック
 - PR時に自動実行（`.github/workflows/story-review.yml`）
-- ストーリー変更は `/story-workflow` を参照
 
----
-
-## Landing the Plane
+## ✅ Landing the Plane
 
 **セッション終了時の必須ワークフロー:**
 
@@ -118,4 +104,3 @@ npx tsx tools/verify-storyline.ts
 4. 次セッションへの引き継ぎコメント
 
 **CRITICAL**: `git push` が成功するまで作業完了ではない。
-
