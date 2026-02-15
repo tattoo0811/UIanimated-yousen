@@ -54,3 +54,10 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   min-height: 100vh;
 }
+
+/* 小説リーダー：モバイルsafe-area対応 */
+.safe-area-padding {
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
+  padding-bottom: max(8rem, env(safe-area-inset-bottom));
+}

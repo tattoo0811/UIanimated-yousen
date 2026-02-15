@@ -4,7 +4,7 @@
  * 実行: npx tsx tools/seed-characters.ts
  */
 import { turso } from "./turso.js";
-import { calculateSanmei } from "./sanmei-cli-v3.js";
+import { calculateSanmei } from "./sanmei-with-energy-cli.js";
 import type { CharacterProfile } from "./character-types.js";
 
 // ============================================================
@@ -554,12 +554,14 @@ async function main() {
             args: [
                 c.id,
                 i.year.gan, i.year.shi, i.month.gan, i.month.shi, i.day.gan, i.day.shi,
-                i.year.zokan.selected, i.month.zokan.selected, i.day.zokan.selected,
+                (typeof i.year.zokan === 'string' ? i.year.zokan : i.year.zokan?.selected),
+                (typeof i.month.zokan === 'string' ? i.month.zokan : i.month.zokan?.selected),
+                (typeof i.day.zokan === 'string' ? i.day.zokan : i.day.zokan?.selected),
                 yo.north, yo.south, yo.east, yo.west, yo.center,
                 yo.start.name, yo.start.score,
                 yo.middle.name, yo.middle.score,
                 yo.end.name, yo.end.score,
-                yo.start.score + yo.middle.score + yo.end.score,
+                (result as { suriho?: { total_energy: number } }).suriho?.total_energy ?? (yo.start.score + yo.middle.score + yo.end.score),
                 i.setsuiriDay,
             ],
         });

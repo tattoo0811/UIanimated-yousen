@@ -1,0 +1,237 @@
+{
+  "characterId": "murata",
+  "characterName": "村田健一",
+  "input": {
+    "date": "1980-5-6",
+    "gender": "male"
+  },
+  "insen": {
+    "year": "庚申",
+    "month": "辛巳",
+    "day": "己卯",
+    "tenchusatsu": "子丑"
+  },
+  "taiun": {
+    "isForward": true,
+    "ritsuun": 10,
+    "columns": [
+      "歳",
+      "西暦",
+      "干支",
+      "主星",
+      "従星",
+      "西方",
+      "中央",
+      "東方",
+      "天中殺"
+    ],
+    "list": [
+      {
+        "age": 10,
+        "year": 2000,
+        "eto": "壬午",
+        "star": "司禄星",
+        "jusei": "天禄星",
+        "west": "相生・破",
+        "center": "相剋・破",
+        "east": "相生",
+        "tenchusatsu": ""
+      },
+      {
+        "age": 20,
+        "year": 2010,
+        "eto": "癸未",
+        "star": "禄存星",
+        "jusei": "天南星",
+        "west": "相生",
+        "center": "相剋",
+        "east": "相生",
+        "tenchusatsu": ""
+      },
+      {
+        "age": 30,
+        "year": 2020,
+        "eto": "甲申",
+        "star": "牽牛星",
+        "jusei": "天恍星",
+        "west": "比",
+        "center": "干合",
+        "east": "相剋",
+        "tenchusatsu": ""
+      },
+      {
+        "age": 40,
+        "year": 2030,
+        "eto": "乙酉",
+        "star": "車騎星",
+        "jusei": "天貴星",
+        "west": "比・対冲",
+        "center": "相剋・対冲",
+        "east": "干合・半会",
+        "tenchusatsu": ""
+      },
+      {
+        "age": 50,
+        "year": 2040,
+        "eto": "丙戌",
+        "star": "玉堂星",
+        "jusei": "天印星",
+        "west": "相生・支合",
+        "center": "相生・支合",
+        "east": "相剋",
+        "tenchusatsu": ""
+      },
+      {
+        "age": 60,
+        "year": 2050,
+        "eto": "丁亥",
+        "star": "龍高星",
+        "jusei": "天報星",
+        "west": "相生",
+        "center": "相生",
+        "east": "相剋・害",
+        "tenchusatsu": ""
+      },
+      {
+        "age": 70,
+        "year": 2060,
+        "eto": "戊子",
+        "star": "石門星",
+        "jusei": "天馳星",
+        "west": "相剋・刑",
+        "center": "比・刑",
+        "east": "相生",
+        "tenchusatsu": "〇"
+      },
+      {
+        "age": 80,
+        "year": 2070,
+        "eto": "己丑",
+        "star": "貫索星",
+        "jusei": "天庫星",
+        "west": "相剋",
+        "center": "比",
+        "east": "相生",
+        "tenchusatsu": "〇"
+      },
+      {
+        "age": 90,
+        "year": 2080,
+        "eto": "庚寅",
+        "star": "調舒星",
+        "jusei": "天極星",
+        "west": "干合・半会",
+        "center": "相生・半会",
+        "east": "比・対冲・刑",
+        "tenchusatsu": ""
+      },
+      {
+        "age": 100,
+        "year": 2090,
+        "eto": "辛卯",
+        "star": "鳳閣星",
+        "jusei": "天胡星",
+        "west": "相剋",
+        "center": "相生",
+        "east": "比",
+        "tenchusatsu": ""
+      }
+    ]
+  },
+  "nenun": {
+    "range": [
+      2024,
+      2030
+    ],
+    "columns": [
+      "歳",
+      "西暦",
+      "干支",
+      "主星",
+      "従星",
+      "西方",
+      "中央",
+      "東方",
+      "天中殺"
+    ],
+    "list": [
+      {
+        "age": 44,
+        "year": 2024,
+        "eto": "乙丑",
+        "star": "車騎星",
+        "jusei": "天庫星",
+        "west": "比",
+        "center": "相剋",
+        "east": "干合",
+        "tenchusatsu": "〇"
+      },
+      {
+        "age": 45,
+        "year": 2025,
+        "eto": "丙寅",
+        "star": "玉堂星",
+        "jusei": "天極星",
+        "west": "相生・半会",
+        "center": "相生・半会",
+        "east": "相剋・対冲・刑",
+        "tenchusatsu": ""
+      },
+      {
+        "age": 46,
+        "year": 2026,
+        "eto": "丁卯",
+        "star": "龍高星",
+        "jusei": "天胡星",
+        "west": "相生",
+        "center": "相生",
+        "east": "相剋",
+        "tenchusatsu": ""
+      },
+      {
+        "age": 47,
+        "year": 2027,
+        "eto": "戊辰",
+        "star": "石門星",
+        "jusei": "天堂星",
+        "west": "相剋・半会・害",
+        "center": "比・半会・害",
+        "east": "相生",
+        "tenchusatsu": ""
+      },
+      {
+        "age": 48,
+        "year": 2028,
+        "eto": "己巳",
+        "star": "貫索星",
+        "jusei": "天将星",
+        "west": "相剋",
+        "center": "比",
+        "east": "相生・支合・刑・破",
+        "tenchusatsu": ""
+      },
+      {
+        "age": 49,
+        "year": 2029,
+        "eto": "庚午",
+        "star": "調舒星",
+        "jusei": "天禄星",
+        "west": "干合・破",
+        "center": "相生・破",
+        "east": "比",
+        "tenchusatsu": ""
+      },
+      {
+        "age": 50,
+        "year": 2030,
+        "eto": "辛未",
+        "star": "鳳閣星",
+        "jusei": "天南星",
+        "west": "相剋",
+        "center": "相生",
+        "east": "比",
+        "tenchusatsu": ""
+      }
+    ]
+  }
+}

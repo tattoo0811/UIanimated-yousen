@@ -3,7 +3,7 @@
  * 
  * 5つのチェック:
  * 1. 回想カウント — v3本文 vs ヘッダー分布表 vs DASHBOARD
- * 2. 命式照合   — ドキュメント記載 vs sanmei-cli-v3 実計算
+ * 2. 命式照合   — ドキュメント記載 vs sanmei-with-energy-cli 実計算
  * 3. 年齢・時系列 — キャラ年齢が (物語年 - 生年) と一致するか
  * 4. ドキュメント横断 — v3 と DASHBOARD の回想テーブル一致
  * 5. 重複検出   — DASHBOARD 詳細テーブルに重複行がないか
@@ -11,7 +11,7 @@
 
 import { readFileSync } from "fs";
 import { resolve } from "path";
-import { calculateSanmei } from "./sanmei-cli-v3.js";
+import { calculateSanmei } from "./sanmei-with-energy-cli.js";
 
 // ── Paths ──────────────────────────────────────────────
 const ROOT = resolve(__dirname, "..");

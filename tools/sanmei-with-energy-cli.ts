@@ -108,7 +108,15 @@ const ZOKAN_TABLE: Record<string, { days: number; gan: string }[]> = {
     "亥": [{ days: 7, gan: "甲" }, { days: 24, gan: "壬" }]
 };
 
-// 数理法用：蔵干表（数理法では各支に含まれる全ての干を使用）
+// 五大方（西・配偶者）用：本気蔵干（朱学院・通変星理論準拠）
+// 二十八元の細かい切替ではなく、各支の本気のみを使用
+const HONKI_ZOKAN: Record<string, string> = {
+    "子": "癸", "丑": "己", "寅": "甲", "卯": "乙", "辰": "戊", "巳": "丙",
+    "午": "丁", "未": "己", "申": "庚", "酉": "辛", "戌": "戊", "亥": "壬"
+};
+
+// 数理法用：蔵干表（二十八元の蔵干のみ。天干は別途 allStemsInDestiny に追加済み）
+// ※PDF 201804_数理法_rev2.0.2 準拠（1990-03-02 → 丙寅・267点で検証済み）
 const SURIHO_ZOKAN_TABLE: Record<string, string[]> = {
     '子': ['癸'],
     '丑': ['癸', '辛', '己'],
@@ -349,13 +357,14 @@ const calculateSanmei = (year: number, month: number, day: number, gender: Gende
     const yearZokan = getZokan(yearShi, daysFromSetsuiri);
     const monthZokan = getZokan(monthShi, daysFromSetsuiri);
     const dayZokan = getZokan(dayShi, daysFromSetsuiri);
+    const dayHonki = HONKI_ZOKAN[dayShi] ?? dayZokan; // 西（配偶者）は本気蔵干を使用
 
     // 6. 陽占構築
     const yousen: Yousen = {
         north: getJudaiShusei(dayGan, yearGan),
         south: getJudaiShusei(dayGan, monthGan),
         east: getJudaiShusei(dayGan, yearZokan),
-        west: getJudaiShusei(dayGan, dayZokan),
+        west: getJudaiShusei(dayGan, dayHonki), // 西: 本気蔵干（朱学院準拠）
         center: getJudaiShusei(dayGan, monthZokan),
         start: getJunidaiJusei(dayGan, yearShi),
         middle: getJunidaiJusei(dayGan, monthShi),
@@ -502,7 +511,7 @@ const main = () => {
     console.log(JSON.stringify(result, null, 2));
 };
 
-// 実行 (モジュールとしてインポートされた場合は実行しない)
+// 実行 (CLI直接実行時のみ。インポート時は実行しない)
 if (require.main === module) {
     main();
 }

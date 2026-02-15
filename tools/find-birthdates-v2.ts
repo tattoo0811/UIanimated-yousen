@@ -2,7 +2,7 @@
  * CLIの内部エンジンを直接使って、
  * 各患者の日柱に一致する生年月日を正確に探索する
  */
-import { calculateSanmei } from "./sanmei-cli-v3.js";
+import { calculateSanmei } from "./sanmei-with-energy-cli.js";
 
 interface PatientTarget {
     episode: number;

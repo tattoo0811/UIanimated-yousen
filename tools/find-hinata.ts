@@ -3,7 +3,7 @@
  * 丙午は構造的に天将星（帝旺@午）が出るため、別の丙○日柱を検討
  * 条件: 40歳前後、男性、丙火の日干
  */
-import { calculateSanmei } from "./sanmei-cli-v3.js";
+import { calculateSanmei } from "./sanmei-with-energy-cli.js";
 
 console.log("=== 日向陽一 丙火×天将星なし 探索 ===\n");
 

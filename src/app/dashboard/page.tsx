@@ -1,395 +1,679 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, Suspense, useMemo } from 'react';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { Users, BookOpen, ChevronRight, FileText, Sparkles, Tag, Home, Globe, Search, X } from 'lucide-react';
+import { EP1_120_CHARACTERS } from '@/data/ep1-120-characters';
+import { EPISODES_PHASE_DATA, getEpisodePhaseData } from '@/data/episodes-phase-data';
+import { calculateSanmei } from '@/lib/sanmei';
+import { SAKURA_TEACHINGS, getSakuraTeachingById } from '@/data/sakura-teachings';
+import { FORESHADOWS } from '@/data/foreshadows';
 import {
-  Sparkles, BookOpen, Eye, EyeOff, Users, Map,
-  BarChart3, Settings, ArrowRight
-} from 'lucide-react';
-import { CHARACTERS } from '@/data/characters';
-import { CharacterCard } from '@/components/features/CharacterCard';
-import { CharactersList } from '@/components/features/CharactersList';
-import { StoryTimeline } from '@/components/features/StoryTimeline';
-import { StoryPartsDisplay } from '@/components/features/StoryPartsDisplay';
+  DASHBOARD_STATS,
+  THREE_PARTS,
+  SOT_CANON,
+  MAJOR_MILESTONES,
+} from '@/data/dashboard-overview';
 import { GlossaryPanel } from '@/components/features/GlossaryPanel';
-import { OnboardingFlow } from '@/components/features/OnboardingFlow';
-import { OverviewStats } from '@/components/features/OverviewStats';
-import { SubthemesStats } from '@/components/features/SubthemesStats';
-import { ThirteenChapters } from '@/components/features/ThirteenChapters';
-import { SakuraFlashbacks } from '@/components/features/SakuraFlashbacks';
-import { Tooltip } from '@/components/ui/Tooltip';
-import { Badge } from '@/components/ui/Badge';
+import { CHAPTERS, getChapterForEpisode } from '@/data/chapter-data';
+import styles from './dashboard.module.css';
 
-type ViewMode = 'simple' | 'detailed';
-type Tab = 'overview' | 'characters' | 'storyline' | 'thirteen-chapters' | 'sakura-flashbacks' | 'meishiki';
+type Tab = 'overview' | 'characters' | 'episodes';
 
-const TABS: { id: Tab; label: string; icon: React.ElementType }[] = [
-  { id: 'overview', label: '概要', icon: BarChart3 },
-  { id: 'characters', label: 'キャラクター', icon: Users },
-  { id: 'storyline', label: 'ストーリー', icon: Map },
-  { id: 'thirteen-chapters', label: '13章', icon: BookOpen },
-  { id: 'sakura-flashbacks', label: 'さくら回想', icon: Sparkles },
-  { id: 'meishiki', label: '命式比較', icon: Sparkles },
-];
-
-export default function DashboardPage() {
-  const [viewMode, setViewMode] = useState<ViewMode>('simple');
-  const [activeTab, setActiveTab] = useState<Tab>('overview');
+function DashboardContent() {
+  const searchParams = useSearchParams();
+  const tabParam = searchParams.get('tab');
+  const [activeTab, setActiveTab] = useState<Tab>(
+    tabParam === 'episodes' ? 'episodes' : tabParam === 'characters' ? 'characters' : 'overview'
+  );
   const [glossaryOpen, setGlossaryOpen] = useState(false);
-  const [showOnboarding, setShowOnboarding] = useState(false);
 
-  // 初回アクセス判定
+  // クエリ変更時にタブを同期
   useEffect(() => {
-    const visited = sessionStorage.getItem('dashboard-visited');
-    if (!visited) {
-      setShowOnboarding(true);
-    }
-  }, []);
-
-  const handleOnboardingComplete = () => {
-    sessionStorage.setItem('dashboard-visited', 'true');
-    setShowOnboarding(false);
-  };
+    if (tabParam === 'episodes') setActiveTab('episodes');
+    else if (tabParam === 'characters') setActiveTab('characters');
+    else setActiveTab('overview');
+  }, [tabParam]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950">
-      {/* オンボーディングフロー */}
-      {showOnboarding && (
-        <OnboardingFlow
-          onComplete={handleOnboardingComplete}
-          onSkip={handleOnboardingComplete}
-        />
-      )}
-
-      {/* 用語集パネル */}
+    <div className="min-h-screen bg-[#f5f0e8] text-[#3d3629]">
       <GlossaryPanel isOpen={glossaryOpen} onClose={() => setGlossaryOpen(false)} />
 
-      {/* ヘッダー */}
-      <header className="sticky top-0 z-30 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Sparkles className="w-5 h-5 text-violet-400" />
-            <h1 className="text-lg font-semibold text-white tracking-wide">
-              巡の運命診断室
-            </h1>
-            <Badge size="sm">ダッシュボード</Badge>
-          </div>
-
-          <div className="flex items-center gap-2">
-            {/* 用語集ボタン */}
+      {/* 和風ヘッダー */}
+      <header className="sticky top-0 z-30 bg-[#e8dfd0] border-b-2 border-[#c4b8a8] shadow-sm">
+        <div className="max-w-4xl mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <h1 className="text-xl font-semibold tracking-wide">巡の運命診断室</h1>
             <button
               onClick={() => setGlossaryOpen(true)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors"
-              aria-label="用語集を開く"
+              className="text-sm text-[#6b5d4d] hover:text-[#3d3629] px-3 py-1.5 rounded border border-[#c4b8a8] hover:bg-white/50"
             >
-              <BookOpen className="w-4 h-4" />
-              <span className="hidden sm:inline">用語集</span>
+              <BookOpen className="w-4 h-4 inline mr-1 align-middle" />
+              用語集
             </button>
-
-            {/* 表示モード切替 */}
+          </div>
+          <nav className={styles.dashboardTabs}>
             <button
-              onClick={() => setViewMode(viewMode === 'simple' ? 'detailed' : 'simple')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-lg transition-colors ${
-                viewMode === 'detailed'
-                  ? 'bg-violet-600 text-white'
-                  : 'bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700'
-              }`}
-              aria-label={viewMode === 'simple' ? '詳細モードに切替' : 'シンプルモードに切替'}
-              aria-pressed={viewMode === 'detailed'}
+              onClick={() => setActiveTab('overview')}
+              className={styles.tabButton}
+              data-active={activeTab === 'overview'}
             >
-              {viewMode === 'simple' ? (
-                <><Eye className="w-4 h-4" /><span className="hidden sm:inline">詳細モード</span></>
-              ) : (
-                <><EyeOff className="w-4 h-4" /><span className="hidden sm:inline">シンプルモード</span></>
-              )}
+              <Home className="w-4 h-4" />
+              オーバービュー
             </button>
-          </div>
+            <button
+              onClick={() => setActiveTab('episodes')}
+              className={styles.tabButton}
+              data-active={activeTab === 'episodes'}
+            >
+              <FileText className="w-4 h-4" />
+              話
+            </button>
+            <button
+              onClick={() => setActiveTab('characters')}
+              className={styles.tabButton}
+              data-active={activeTab === 'characters'}
+            >
+              <Users className="w-4 h-4" />
+              キャラクター
+            </button>
+            <Link href="/dashboard/teachings" className={styles.tabButton} data-external>
+              <Sparkles className="w-4 h-4" />
+              さくらの教え
+            </Link>
+            <Link href="/dashboard/foreshadows" className={styles.tabButton} data-external>
+              <Tag className="w-4 h-4" />
+              伏線
+            </Link>
+            <Link href="/dashboard/worldview" className={styles.tabButton} data-external>
+              <Globe className="w-4 h-4" />
+              世界観
+            </Link>
+          </nav>
         </div>
-
-        {/* タブナビゲーション */}
-        <nav className="max-w-6xl mx-auto px-4" aria-label="ダッシュボードナビゲーション">
-          <div className="flex gap-1 overflow-x-auto pb-px">
-            {TABS.map(tab => {
-              const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
-                    activeTab === tab.id
-                      ? 'text-violet-400 border-violet-400'
-                      : 'text-slate-400 border-transparent hover:text-slate-300 hover:border-slate-600'
-                  }`}
-                  role="tab"
-                  aria-selected={activeTab === tab.id}
-                >
-                  <Icon className="w-4 h-4" />
-                  {tab.label}
-                </button>
-              );
-            })}
-          </div>
-        </nav>
       </header>
 
-      {/* メインコンテンツ */}
-      <main className="max-w-6xl mx-auto px-4 py-6">
-        {activeTab === 'overview' && <OverviewTab viewMode={viewMode} />}
-        {activeTab === 'characters' && <CharactersTab viewMode={viewMode} />}
-        {activeTab === 'storyline' && <StorylineTab viewMode={viewMode} />}
-        {activeTab === 'thirteen-chapters' && <ThirteenChaptersTab viewMode={viewMode} />}
-        {activeTab === 'sakura-flashbacks' && <SakuraFlashbacksTab viewMode={viewMode} />}
-        {activeTab === 'meishiki' && <MeishikiTab viewMode={viewMode} />}
+      <main className={`max-w-4xl mx-auto px-4 py-8 ${styles.dashboardContainer}`}>
+        {activeTab === 'overview' && <OverviewTab />}
+        {activeTab === 'characters' && <CharactersTab />}
+        {activeTab === 'episodes' && <EpisodesTab />}
       </main>
     </div>
   );
 }
 
-/* ==================== 概要タブ ==================== */
-function OverviewTab({ viewMode }: { viewMode: ViewMode }) {
+export default function DashboardPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-[#f5f0e8] flex items-center justify-center text-[#6b5d4d]">
+          読み込み中...
+        </div>
+      }
+    >
+      <DashboardContent />
+    </Suspense>
+  );
+}
+
+/* ==================== オーバービュータブ ==================== */
+function OverviewTab() {
   return (
     <div className="space-y-8">
-      {/* ヒーローセクション */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center py-8"
-      >
-        <h2 className="text-3xl sm:text-4xl font-thin tracking-wider text-white mb-3">
-          あなたの運命を知る旅に<br />出かけよう
-        </h2>
-        <p className="text-slate-400 max-w-md mx-auto leading-relaxed">
-          120話の物語を通じて、東洋の運命学{' '}
-          <Tooltip content="生年月日から運命を読み解く東洋占星術" position="bottom">
-            算命学
-          </Tooltip>
-          {' '}を学びます
+      {/* SSoT バナー */}
+      <section className={`${styles.dashboardCard} bg-amber-50/80 border-amber-200 p-4`}>
+        <h2 className="text-sm font-semibold text-amber-900 mb-2">📜 SSoT（正典）</h2>
+        <p className="text-[#3d3629]">
+          <strong>九条巡</strong> 生年月日: <code className="bg-amber-100 px-1 rounded">{SOT_CANON.meguruBirthDate}</code>{' '}
+          日柱: {SOT_CANON.meguruDayPillar} / エネルギー: {SOT_CANON.meguruEnergy}点
         </p>
-      </motion.section>
+        <p className="text-xs text-[#6b5d4d] mt-1">正典: {SOT_CANON.canonPath}</p>
+      </section>
 
-      {/* ベネフィットカード */}
-      <div className="grid gap-4 sm:grid-cols-3">
-        {[
-          { icon: BookOpen, color: 'text-emerald-400', title: '算命学を学べる', desc: '日本の伝統的な運命学を物語と共に学習' },
-          { icon: Users, color: 'text-cyan-400', title: 'キャラクターと共に成長', desc: '主人公・巡の17年間の旅路を追体験' },
-          { icon: Sparkles, color: 'text-amber-400', title: '自分の運命を知る', desc: '簡易診断で自分の運命傾向を確認' },
-        ].map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1 }}
-            className="bg-slate-800/40 border border-slate-700/40 rounded-xl p-5 hover:border-slate-600/50 transition-colors"
-          >
-            <item.icon className={`w-6 h-6 ${item.color} mb-3`} />
-            <h3 className="text-sm font-semibold text-white mb-1">{item.title}</h3>
-            <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
-          </motion.div>
-        ))}
-      </div>
+      {/* 全体統計 */}
+      <section>
+        <h2 className="text-lg font-semibold text-[#6b5d4d] border-b border-[#c4b8a8] pb-2 mb-4">
+          全体統計
+        </h2>
+        <div className={styles.statsGrid}>
+          <StatCard label="総エピソード数" value={`${DASHBOARD_STATS.totalEpisodes}話`} />
+          <StatCard label="物語期間" value={DASHBOARD_STATS.storyPeriod} />
+          <StatCard label="メインキャラ" value={`${DASHBOARD_STATS.mainCharacters}名`} />
+          <StatCard label="算命学テーマ" value={`${DASHBOARD_STATS.sanmeiThemes}テーマ`} />
+          <StatCard label="さくら回想" value={`${DASHBOARD_STATS.sakuraRecallScenes}回`} />
+          <StatCard
+            label="ライフイベント"
+            value={`${DASHBOARD_STATS.lifeEventCoverage.done}/${DASHBOARD_STATS.lifeEventCoverage.total} (${DASHBOARD_STATS.lifeEventCoverage.percent}%)`}
+          />
+        </div>
+      </section>
 
-      {/* 統計サマリー */}
-      <OverviewStats viewMode={viewMode} />
+      {/* 3部構成 */}
+      <section>
+        <h2 className="text-lg font-semibold text-[#6b5d4d] border-b border-[#c4b8a8] pb-2 mb-4">
+          3部構成
+        </h2>
+        <div className="space-y-4">
+          {THREE_PARTS.map((p) => (
+            <div key={p.part} className={styles.dashboardCard}>
+              <h3 className="font-semibold text-[#3d3629]">
+                {p.part}　{p.episodes}
+              </h3>
+              <p className="text-sm text-[#6b5d4d] mt-1">{p.period}</p>
+              <p className="text-sm text-[#3d3629] mt-2">{p.theme}</p>
+              <span className="inline-block mt-2 text-xs px-2 py-1 rounded bg-amber-100/80 text-amber-900">
+                さくら回想 {p.sakuraRecall}回
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* サブテーマ統計 */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        className="mt-8"
-      >
-        <SubthemesStats viewMode={viewMode} />
-      </motion.section>
+      {/* クイックリンク */}
+      <section>
+        <h2 className="text-lg font-semibold text-[#6b5d4d] border-b border-[#c4b8a8] pb-2 mb-4">
+          クイックリンク
+        </h2>
+        <div className={styles.quicklinksGrid}>
+          <QuickLink href="/dashboard?tab=episodes" icon={<FileText className="w-4 h-4" />} label="話（本編執筆）" />
+          <QuickLink href="/dashboard?tab=characters" icon={<Users className="w-4 h-4" />} label="キャラクター" />
+          <QuickLink href="/dashboard/teachings" icon={<Sparkles className="w-4 h-4" />} label="さくらの教え" />
+          <QuickLink href="/dashboard/foreshadows" icon={<Tag className="w-4 h-4" />} label="伏線逆算" />
+          <QuickLink href="/dashboard/worldview" icon={<Globe className="w-4 h-4" />} label="世界観" />
+        </div>
+      </section>
 
-      {/* CTA */}
-      <div className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-4">
-        <a
-          href="#characters"
-          onClick={(e) => { e.preventDefault(); }}
-          className="px-6 py-3 bg-violet-600 hover:bg-violet-500 text-white rounded-xl font-medium text-sm flex items-center gap-2 transition-colors"
-        >
-          キャラクターを見る <ArrowRight className="w-4 h-4" />
-        </a>
-        <a
-          href="/sanmei"
-          className="px-6 py-3 border border-slate-600 hover:border-slate-500 text-slate-300 hover:text-white rounded-xl font-medium text-sm transition-colors"
-        >
-          算命学アプリを試す
-        </a>
-      </div>
+      {/* 主要マイルストーン（抜粋） */}
+      <section>
+        <h2 className="text-lg font-semibold text-[#6b5d4d] border-b border-[#c4b8a8] pb-2 mb-4">
+          主要マイルストーン
+        </h2>
+        <div className="space-y-2">
+          {MAJOR_MILESTONES.filter((m) => [1, 25, 41, 70, 99, 120].includes(m.episode)).map((m) => (
+            <div key={m.episode} className="flex gap-4 text-sm">
+              <span className="font-mono w-12 text-[#6b5d4d]">第{m.episode}話</span>
+              <div>
+                <span className="font-medium">{m.title}</span>
+                <span className="text-[#6b5d4d] ml-2">— {m.description}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
+  );
+}
+
+function StatCard({ label, value }: { label: string; value: string }) {
+  return (
+    <div className={styles.dashboardCard}>
+      <div className="text-xs text-[#8a7d6d]">{label}</div>
+      <div className="font-semibold text-[#3d3629] mt-1">{value}</div>
+    </div>
+  );
+}
+
+function QuickLink({
+  href,
+  icon,
+  label,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className={`flex items-center gap-2 ${styles.quicklink}`}
+    >
+      {icon}
+      <span className="text-sm font-medium">{label}</span>
+    </Link>
   );
 }
 
 /* ==================== キャラクタータブ ==================== */
-function CharactersTab({ viewMode }: { viewMode: ViewMode }) {
-  return <CharactersList viewMode={viewMode} />;
-}
+const MAIN_CHAR_IDS = ['meguru', 'kei', 'sakura', 'misaki'];
+const CHARS_PER_PAGE = 16;
 
-/* ==================== ストーリータブ ==================== */
-function StorylineTab({ viewMode }: { viewMode: ViewMode }) {
+function CharactersTab() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [page, setPage] = useState(0);
+
+  const { mainChars, otherChars, filteredOthers } = useMemo(() => {
+    const main = EP1_120_CHARACTERS.filter((c) => MAIN_CHAR_IDS.includes(c.id));
+    const others = EP1_120_CHARACTERS.filter((c) => !MAIN_CHAR_IDS.includes(c.id));
+    if (!searchQuery.trim()) {
+      return { mainChars: main, otherChars: others, filteredOthers: others };
+    }
+    const q = searchQuery.toLowerCase();
+    const filtered = others.filter(
+      (char) =>
+        char.name.toLowerCase().includes(q) ||
+        char.id.toLowerCase().includes(q) ||
+        char.narrativeCore?.some((item) => item.toLowerCase().includes(q)) ||
+        char.ageLayerThemes?.some((item) => item.toLowerCase().includes(q)) ||
+        char.timeline?.some((e) => e.event.toLowerCase().includes(q)) ||
+        char.birthDate?.includes(q)
+    );
+    return { mainChars: main, otherChars: others, filteredOthers: filtered };
+  }, [searchQuery]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredOthers.length / CHARS_PER_PAGE));
+  const paginatedChars = filteredOthers.slice(page * CHARS_PER_PAGE, (page + 1) * CHARS_PER_PAGE);
+
+  // 検索変更でページリセット
+  useEffect(() => setPage(0), [searchQuery]);
+
   return (
     <div className="space-y-6">
-      {/* 3部構成セクション */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-lg font-semibold text-white mb-4">3部構成</h2>
-        <StoryPartsDisplay viewMode={viewMode} />
-      </motion.section>
+      <p className={styles.sectionSubtitle}>
+        EP1-120の登場人物。主役4人＋検索・ページネーションで管理
+      </p>
 
-      {/* ターニングポイントセクション */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        <h2 className="text-lg font-semibold text-white mb-4 mt-8">ターニングポイント</h2>
-        <StoryTimeline viewMode={viewMode} />
-      </motion.section>
-    </div>
-  );
-}
-
-/* ==================== 命式比較タブ ==================== */
-function MeishikiTab({ viewMode }: { viewMode: ViewMode }) {
-  return (
-    <div className="space-y-6">
-      <h2 className="text-lg font-semibold text-white">命式比較</h2>
-
-      {/* エネルギー比較 */}
-      <section className="bg-slate-800/40 border border-slate-700/40 rounded-xl p-5">
-        <h3 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-1.5">
-          <BarChart3 className="w-4 h-4 text-amber-400" />
-          <Tooltip content="命式のエネルギー値を数値化する手法" position="top">
-            数理法エネルギー比較
-          </Tooltip>
-        </h3>
-        <div className="space-y-3">
-          {CHARACTERS.map(char => {
-            const maxEnergy = 300;
-            const percentage = (char.meishiki.energy / maxEnergy) * 100;
+      {/* 主役4人ヒーロー */}
+      <section>
+        <h2 className={styles.sectionTitle}>主役</h2>
+        <div className={styles.heroChars}>
+          {mainChars.map((char) => {
+            const [y, m, d] = char.birthDate.split('-').map(Number);
+            const result = calculateSanmei(y, m, d, char.gender || 'male');
+            const dayPillar = `${result.insen.day.gan}${result.insen.day.shi}`;
             return (
-              <div key={char.id} className="flex items-center gap-3">
-                <div className="w-20 text-sm text-slate-300 shrink-0 truncate">{char.name.split(' ')[1]}</div>
-                <div className="flex-1 h-6 bg-slate-700/50 rounded-lg overflow-hidden relative">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${percentage}%` }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className={`absolute inset-y-0 left-0 bg-gradient-to-r ${char.color} rounded-lg`}
-                  />
-                  <span className="absolute inset-0 flex items-center justify-end pr-2 text-xs font-mono text-white/80">
-                    {char.meishiki.energy}点
-                  </span>
-                </div>
-              </div>
+              <Link
+                key={char.id}
+                href={`/dashboard/characters/${char.id}`}
+                className={styles.heroCharCard}
+              >
+                <h3>{char.name}</h3>
+                <p className="meta">
+                  {char.episode ? `EP${char.episode}` : '全話'}・{char.ageAtStory}歳
+                </p>
+                <span className="pill">{dayPillar} / {result.suriho.total_energy}点</span>
+              </Link>
             );
           })}
         </div>
       </section>
 
-      {/* 三運比較 */}
-      <section className="bg-slate-800/40 border border-slate-700/40 rounded-xl p-5">
-        <h3 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-1.5">
-          <Sparkles className="w-4 h-4 text-violet-400" />
-          <Tooltip content="人生のエネルギーレベルを示す12種類の星" position="top">
-            三運（十二大従星）比較
-          </Tooltip>
-        </h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm" role="table">
-            <thead>
-              <tr className="text-slate-500 text-xs">
-                <th className="text-left py-2 pr-4">キャラクター</th>
-                <th className="text-center py-2 px-2">始（頭）</th>
-                <th className="text-center py-2 px-2">中（胸）</th>
-                <th className="text-center py-2 px-2">終（腹）</th>
-                <th className="text-center py-2 pl-2">合計</th>
-              </tr>
-            </thead>
-            <tbody>
-              {CHARACTERS.map(char => {
-                const total = char.meishiki.sanun.reduce((s, v) => s + v.score, 0);
-                return (
-                  <tr key={char.id} className="border-t border-slate-700/30">
-                    <td className="py-2.5 pr-4 text-white font-medium">{char.name.split(' ')[1]}</td>
-                    {char.meishiki.sanun.map((s, i) => (
-                      <td key={i} className="text-center py-2.5 px-2">
-                        <span className="text-slate-300">{s.name}</span>
-                        <span className="text-xs text-amber-400 ml-1">({s.score})</span>
-                      </td>
-                    ))}
-                    <td className="text-center py-2.5 pl-2 font-bold text-white">{total}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+      {/* 検索＋一覧 */}
+      <section>
+        <h2 className={styles.sectionTitle}>登場人物一覧 ({filteredOthers.length}名)</h2>
+        <div className={styles.searchBar}>
+          <div className={styles.searchInputWrapper}>
+            <Search className={styles.searchIcon} size={18} />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="名前・エピソード・キーワードで検索..."
+              className={styles.searchInput}
+            />
+            {searchQuery && (
+              <button type="button" onClick={() => setSearchQuery('')} className={styles.searchClear} aria-label="クリア">
+                <X size={18} />
+              </button>
+            )}
+          </div>
         </div>
+
+        <div className={styles.charGrid}>
+          {paginatedChars.map((char) => {
+            const [y, m, d] = char.birthDate.split('-').map(Number);
+            const result = calculateSanmei(y, m, d, char.gender || 'male');
+            const dayPillar = `${result.insen.day.gan}${result.insen.day.shi}`;
+            return (
+              <Link key={char.id} href={`/dashboard/characters/${char.id}`} className={styles.charCard}>
+                <div className="min-w-0 flex-1">
+                  <div className={styles.charName}>{char.name}</div>
+                  <div className={styles.charMeta}>
+                    {char.episode ? `EP${char.episode}` : '全話'}・{char.ageAtStory}歳
+                  </div>
+                  <div className={styles.charBadges}>
+                    <span>{dayPillar}</span>
+                    <span>{result.suriho.total_energy}点</span>
+                  </div>
+                </div>
+                <ChevronRight className={styles.charChevron} size={20} />
+              </Link>
+            );
+          })}
+        </div>
+
+        {totalPages > 1 && (
+          <div className={styles.pagination}>
+            <button onClick={() => setPage((p) => Math.max(0, p - 1))} disabled={page === 0}>
+              前へ
+            </button>
+            <span className={styles.paginationInfo}>
+              {page * CHARS_PER_PAGE + 1}-{Math.min((page + 1) * CHARS_PER_PAGE, filteredOthers.length)} / {filteredOthers.length}
+            </span>
+            <button
+              onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+              disabled={page >= totalPages - 1}
+            >
+              次へ
+            </button>
+          </div>
+        )}
       </section>
 
-      {/* 大運情報 */}
-      {viewMode === 'detailed' && (
-        <section className="bg-slate-800/40 border border-slate-700/40 rounded-xl p-5">
-          <h3 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-1.5">
-            <Settings className="w-4 h-4 text-cyan-400" />
-            <Tooltip content="10年ごとに変わる人生の大きな流れ" position="top">
-              大運情報
-            </Tooltip>
-          </h3>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {CHARACTERS.map(char => (
-              <div key={char.id} className="bg-slate-700/30 rounded-lg p-3">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${char.color}`} />
-                  <span className="text-sm font-medium text-white">{char.name.split(' ')[1]}</span>
-                </div>
-                <div className="flex items-center gap-3 text-xs text-slate-400">
-                  <span>大運: <span className="text-slate-300">{char.meishiki.daiun === 'forward' ? '順行' : '逆行'}</span></span>
-                  <span>立運: <span className="text-slate-300">{char.meishiki.ritsuun}歳</span></span>
-                  <span>性別: <span className="text-slate-300">{char.gender === 'male' ? '男性' : '女性'}</span></span>
-                </div>
-                <p className="text-[10px] text-slate-500 mt-1">
-                  {char.meishiki.yearPillar.gan}({['甲', '丙', '戊', '庚', '壬'].includes(char.meishiki.yearPillar.gan) ? '陽' : '陰'}) × {char.gender === 'male' ? '男性' : '女性'} = {char.meishiki.daiun === 'forward' ? '順行' : '逆行'}
-                </p>
-              </div>
+      <div className="pt-6 border-t border-[#d4c9b8]">
+        <Link href="/sanmei" className="text-sm text-[#6b5d4d] hover:text-[#3d3629]">
+          算命学アプリを試す →
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+/* ==================== 話タブ（Phase 1-3） ==================== */
+type PhaseTab = 'phase1' | 'phase2' | 'phase3';
+
+type ManuscriptData = {
+  manifest: { drafts: { id: number; file: string; note: string; createdAt: string }[]; currentDraftId: number | null };
+  draft: { id: number; content: string; note: string } | null;
+  currentDraftId: number | null;
+};
+
+function DraftSaveForm({ episode, onSaved }: { episode: number; onSaved: () => void }) {
+  const [content, setContent] = useState('');
+  const [note, setNote] = useState('');
+  const [status, setStatus] = useState<'idle' | 'saving' | 'done' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!content.trim()) return;
+    setStatus('saving');
+    try {
+      const res = await fetch(`/api/episodes/${episode}/manuscript`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: content.trim(), note: note || '新規ドラフト' }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setStatus('done');
+        onSaved();
+      } else setStatus('error');
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="mt-3 space-y-2">
+      <textarea
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+        placeholder="本編テキストを貼り付け..."
+        className="w-full h-32 p-2 border border-[#c4b8a8] rounded text-sm"
+        rows={6}
+      />
+      <input
+        type="text"
+        value={note}
+        onChange={(e) => setNote(e.target.value)}
+        placeholder="メモ（例: ドラフト2・推敲）"
+        className="w-full p-2 border border-[#c4b8a8] rounded text-sm"
+      />
+      <button
+        type="submit"
+        disabled={status === 'saving' || !content.trim()}
+        className="px-4 py-2 bg-[#6b5d4d] text-white rounded text-sm disabled:opacity-50"
+      >
+        {status === 'saving' ? '保存中...' : status === 'done' ? '保存完了' : '新規ドラフト保存'}
+      </button>
+    </form>
+  );
+}
+
+function EpisodesTab() {
+  const [selectedEpisode, setSelectedEpisode] = useState<number | null>(null);
+  const [phaseTab, setPhaseTab] = useState<PhaseTab>('phase1');
+  const [manuscript, setManuscript] = useState<ManuscriptData | null>(null);
+  const [selectedDraftId, setSelectedDraftId] = useState<number | null>(null);
+  const [manuscriptRefresh, setManuscriptRefresh] = useState(0);
+  const [selectedChapter, setSelectedChapter] = useState<number | null>(null);
+  const data = selectedEpisode ? getEpisodePhaseData(selectedEpisode) : null;
+
+  // 章でフィルタリングされたエピソードリスト
+  const filteredEpisodes = useMemo(() => {
+    if (!selectedChapter) return EPISODES_PHASE_DATA;
+    return EPISODES_PHASE_DATA.filter(ep => {
+      const chapter = getChapterForEpisode(ep.episode);
+      return chapter?.id === selectedChapter;
+    });
+  }, [selectedChapter]);
+
+  useEffect(() => {
+    if (!selectedEpisode || phaseTab !== 'phase3') {
+      setManuscript(null);
+      return;
+    }
+    const draftParam = selectedDraftId ? `?draft=${selectedDraftId}` : '';
+    fetch(`/api/episodes/${selectedEpisode}/manuscript${draftParam}`)
+      .then((r) => r.json())
+      .then((res) => {
+        setManuscript({
+          manifest: res.manifest || { drafts: [], currentDraftId: null },
+          draft: res.draft,
+          currentDraftId: res.currentDraftId,
+        });
+      })
+      .catch(() => setManuscript(null));
+  }, [selectedEpisode, phaseTab, selectedDraftId, manuscriptRefresh]);
+
+  return (
+    <div className="space-y-6">
+      <p className="text-[#6b5d4d] text-sm">
+        各話の Phase1（宿命の履歴書）・Phase2（物語の骨格）・Phase3（本編執筆）を戦略的に確認
+      </p>
+
+      {/* 章フィルター */}
+      <div className={styles.chapterFilter}>
+        <div className={styles.chapterPills}>
+          <button
+            className={`${styles.chapterPill} ${!selectedChapter ? styles.chapterPillActive : ''}`}
+            onClick={() => setSelectedChapter(null)}
+          >
+            すべて
+          </button>
+          {CHAPTERS.map((chapter) => (
+            <button
+              key={chapter.id}
+              className={`${styles.chapterPill} ${selectedChapter === chapter.id ? styles.chapterPillActive : ''}`}
+              onClick={() => setSelectedChapter(chapter.id)}
+              style={{ '--chapter-color': chapter.color } as React.CSSProperties}
+            >
+              {chapter.name}
+              <span className={styles.episodeRange}>
+                E{chapter.episodeRange[0]} - {chapter.episodeRange[1]}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* 話一覧 */}
+      <div className="flex flex-wrap gap-2">
+        {filteredEpisodes.map((ep) => (
+          <button
+            key={ep.episode}
+            onClick={() => {
+              setSelectedEpisode(ep.episode);
+              setPhaseTab('phase1');
+              setSelectedDraftId(null);
+            }}
+            className={`px-4 py-2 rounded-lg border text-sm text-left ${
+              selectedEpisode === ep.episode
+                ? 'bg-[#6b5d4d] text-white border-[#6b5d4d]'
+                : 'bg-white/80 border-[#d4c9b8] text-[#3d3629] hover:border-[#b8a898]'
+            }`}
+          >
+            <span className="block">第{ep.episode}話 {ep.title}</span>
+            {(ep.sakuraTeachings?.length || ep.foreshadows?.length) ? (
+              <span className="block mt-1 opacity-80 text-xs flex flex-wrap gap-1">
+                {ep.sakuraTeachings?.slice(0,2).map(t => (
+                  <span key={t} className="px-1 rounded bg-white/30">🌸{t.startsWith('v2-') ? t.replace('v2-','') : (getSakuraTeachingById(t)?.title?.slice(0,8) || t)}</span>
+                ))}
+                {ep.foreshadows?.slice(0,2).map(f => (
+                  <span key={f} className="px-1 rounded bg-white/30">📌{f}</span>
+                ))}
+              </span>
+            ) : null}
+          </button>
+        ))}
+      </div>
+
+      {data && (
+        <>
+          {/* Phase サブタブ */}
+          <div className="flex gap-2 border-b border-[#c4b8a8] pb-2">
+            {(['phase1', 'phase2', 'phase3'] as PhaseTab[]).map((p) => (
+              <button
+                key={p}
+                onClick={() => setPhaseTab(p)}
+                className={`px-4 py-2 rounded-t text-sm ${
+                  phaseTab === p
+                    ? 'bg-white border border-[#c4b8a8] border-b-white -mb-[2px] text-[#3d3629] font-medium'
+                    : 'text-[#6b5d4d] hover:text-[#3d3629]'
+                }`}
+              >
+                {p === 'phase1' && 'Phase 1: 宿命の履歴書'}
+                {p === 'phase2' && 'Phase 2: 物語の骨格'}
+                {p === 'phase3' && 'Phase 3: 本編執筆'}
+              </button>
             ))}
           </div>
-        </section>
+
+          {/* Phase コンテンツ */}
+          <div className="bg-white/90 rounded-lg border border-[#d4c9b8] p-6 shadow-sm min-h-[320px]">
+            {phaseTab === 'phase1' && (
+              <section>
+                <h3 className="text-lg font-semibold text-[#3d3629] mb-4">宿命の履歴書</h3>
+                {data.phase1.characters.map((c) => (
+                  <div key={c.name} className="mb-6 last:mb-0">
+                    <h4 className="font-semibold text-[#6b5d4d] border-b border-[#e0d5c5] pb-1 mb-3">
+                      {c.name}
+                      {c.age != null && <span className="font-normal">（{c.age}歳）</span>}
+                    </h4>
+                    <dl className="grid gap-2 text-sm">
+                      <div>
+                        <dt className="text-[#8a7d6d]">生年月日</dt>
+                        <dd>{c.birthDate}</dd>
+                      </div>
+                      <div>
+                        <dt className="text-[#8a7d6d]">命式</dt>
+                        <dd>{c.meishiki}</dd>
+                      </div>
+                      <div>
+                        <dt className="text-[#8a7d6d]">本質（日干）</dt>
+                        <dd>{c.essence}</dd>
+                      </div>
+                      <div>
+                        <dt className="text-[#8a7d6d]">特徴</dt>
+                        <dd>{c.traits}</dd>
+                      </div>
+                      {c.contradiction && (
+                        <div>
+                          <dt className="text-[#8a7d6d]">宿命の矛盾</dt>
+                          <dd className="text-amber-900/90">{c.contradiction}</dd>
+                        </div>
+                      )}
+                    </dl>
+                  </div>
+                ))}
+              </section>
+            )}
+            {phaseTab === 'phase2' && (
+              <section>
+                <h3 className="text-lg font-semibold text-[#3d3629] mb-4">物語の骨格</h3>
+                <div className="mb-4">
+                  <span className="text-[#8a7d6d] text-sm">構成パターン: </span>
+                  <span className="font-medium bg-[#f5f0e8] px-2 py-1 rounded border border-[#d4c9b8]">
+                    {data.phase2.pattern}
+                  </span>
+                </div>
+                <p className="text-sm text-[#3d3629] mb-6">{data.phase2.premise}</p>
+                <div className="space-y-4">
+                  {data.phase2.plots.map((p) => (
+                    <div key={p.section} className="border-l-2 border-[#c4b8a8] pl-4">
+                      <div className="text-[#6b5d4d] font-medium text-sm mb-1">{p.section}</div>
+                      <p className="text-sm text-[#3d3629]">{p.content}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+            {phaseTab === 'phase3' && (
+              <section>
+                <h3 className="text-lg font-semibold text-[#3d3629] mb-4">本編執筆</h3>
+                {data.sakuraTeachings?.length || data.foreshadows?.length ? (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {data.sakuraTeachings?.map((t) => (
+                      <Link key={t} href="/dashboard/teachings" className="text-xs px-2 py-1 rounded bg-amber-100/80 text-amber-900 border border-amber-200">
+                        🌸 {t.startsWith('v2-') ? t.replace('v2-', '') : (getSakuraTeachingById(t)?.title || t)}
+                      </Link>
+                    ))}
+                    {data.foreshadows?.map((f) => {
+                      const fs = FORESHADOWS.find((x) => x.foreshadow_id === f);
+                      return (
+                        <Link key={f} href="/dashboard/foreshadows" className="text-xs px-2 py-1 rounded bg-sky-100/80 text-sky-900 border border-sky-200">
+                          📌 {f}: {fs?.surface_description?.slice(0, 12) || f}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ) : null}
+                <div className="text-[#8a7d6d] text-sm mb-2">文体・推敲のポイント</div>
+                <ul className="list-disc list-inside space-y-2 text-sm text-[#3d3629] mb-6">
+                  {data.phase3.styleNotes.map((n, i) => (
+                    <li key={i}>{n}</li>
+                  ))}
+                </ul>
+                <div className="border-t border-[#d4c9b8] pt-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[#8a7d6d] text-sm">本編</span>
+                    {manuscript?.manifest?.drafts?.length ? (
+                      <select
+                        value={selectedDraftId ?? manuscript?.currentDraftId ?? ''}
+                        onChange={(e) => setSelectedDraftId(e.target.value ? parseInt(e.target.value, 10) : null)}
+                        className="text-sm border border-[#c4b8a8] rounded px-2 py-1 bg-white"
+                      >
+                        {manuscript.manifest.drafts.map((d) => (
+                          <option key={d.id} value={d.id}>
+                            ドラフト{d.id}: {d.note}
+                          </option>
+                        ))}
+                      </select>
+                    ) : null}
+                  </div>
+                  {manuscript?.draft?.content ? (
+                    <div className="bg-[#faf6f0] rounded border border-[#e0d5c5] p-4 text-sm text-[#3d3629] whitespace-pre-wrap max-h-[400px] overflow-y-auto font-serif leading-relaxed">
+                      {manuscript.draft.content}
+                    </div>
+                  ) : (
+                    <p className="text-[#8a7d6d] text-sm italic">ドラフトがありません。下のフォームから保存するか、novel/episodes/manuscripts/ep{selectedEpisode}/ に手動で追加してください。</p>
+                  )}
+                  <details className="mt-4">
+                    <summary className="text-sm text-[#6b5d4d] cursor-pointer">新規ドラフトとして保存</summary>
+                    <DraftSaveForm episode={selectedEpisode!} onSaved={() => setManuscriptRefresh((r) => r + 1)} />
+                  </details>
+                </div>
+              </section>
+            )}
+          </div>
+        </>
       )}
-    </div>
-  );
-}
 
-/* ==================== 13章タブ ==================== */
-function ThirteenChaptersTab({ viewMode }: { viewMode: ViewMode }) {
-  return (
-    <div className="space-y-6">
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <ThirteenChapters viewMode={viewMode} />
-      </motion.section>
-    </div>
-  );
-}
-
-/* ==================== さくら回想タブ ==================== */
-function SakuraFlashbacksTab({ viewMode }: { viewMode: ViewMode }) {
-  return (
-    <div className="space-y-6">
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <SakuraFlashbacks viewMode={viewMode} />
-      </motion.section>
+      {!data && (
+        <div className="bg-white/60 rounded-lg border border-[#d4c9b8] p-12 text-center text-[#6b5d4d]">
+          話を選択してください
+        </div>
+      )}
     </div>
   );
 }

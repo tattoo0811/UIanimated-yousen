@@ -233,7 +233,7 @@ function checkShugakuinConsistency() {
     addIssue(
       'info',
       '命式検証',
-      `${char.name}: ${char.birthdate} (${char.gender}) → tools/sanmei-cli-v3.ts で検証`
+      `${char.name}: ${char.birthdate} (${char.gender}) → tools/sanmei-with-energy-cli.ts で検証`
     );
   }
 }

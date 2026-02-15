@@ -1,0 +1,11 @@
+{
+  "episode": 1,
+  "title": "土の下の春",
+  "rokujukkoushi": "己卯年 戊辰月 乙卯日",
+  "theme": "土と水",
+  "protagonist": "高橋美咲",
+  "drafts": [
+    {"id": 1, "file": "draft-1.md", "note": "初稿", "createdAt": "2026-02-14T12:00:00Z"}
+  ],
+  "currentDraftId": 1
+}

@@ -43,7 +43,7 @@ const YIN_STEMS = ['乙', '丁', '己', '辛', '癸'];
 
 function getDayStem(birthdate: string): string {
   // 簡易実装: 四柱推命計算が必要
-  // 実際には tools/sanmei-cli-v3.ts を使用
+  // 実際には tools/sanmei-with-energy-cli.ts を使用
   const date = new Date(birthdate);
   const yearStems = ['庚', '辛', '壬', '癸', '甲', '乙', '丙', '丁', '戊', '己'];
   return yearStems[date.getFullYear() % 10];

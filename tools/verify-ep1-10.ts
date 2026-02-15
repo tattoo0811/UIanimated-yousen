@@ -2,7 +2,7 @@
  * バッチ検証: 各患者の生年月日候補をCLIで算出し
  * v3ストーリーラインの要件と照合する
  */
-import { calculateSanmei } from "./sanmei-cli-v3.js";
+import { calculateSanmei } from "./sanmei-with-energy-cli.js";
 
 interface PatientCheck {
     episode: number;
@@ -24,7 +24,7 @@ const patients: PatientCheck[] = [
         notes: "確定済み。貫索星×2＋司禄星の組み合わせ"
     },
     {
-        episode: 2, name: "村田健一", birthDate: "1981-02-04", gender: "male",
+        episode: 2, name: "村田健一", birthDate: "1980-05-06", gender: "male",
         requiredDayPillar: "己卯",
         requiredJusei: "天将星", requiredJuseiScore: 12,
         notes: "天将星12点が必須（v3記載）"

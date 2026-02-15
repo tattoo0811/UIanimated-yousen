@@ -3,7 +3,7 @@
  * 己卯 + 天将星(12) の組み合わせを全年で探す
  * 40代前後（1975-1986年生まれ）が物語的に妥当
  */
-import { calculateSanmei } from "./sanmei-cli-v3.js";
+import { calculateSanmei } from "./sanmei-with-energy-cli.js";
 
 console.log("=== 村田健一 己卯+天将星(12) 探索 ===\n");
 

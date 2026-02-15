@@ -1,47 +1,48 @@
 {
-    "version": "3.0.0",
-    "lastUpdated": "2026-02-12",
-    "description": "UIanimated プロジェクト SSoT マップ。AIは作業前に必ずこのファイルを参照すること。",
-    "pillars": {
-        "story": "novel/",
-        "dashboard": "src/app/dashboard/",
-        "fortuneApp": "将来追加予定"
+  "version": "3.0.0",
+  "lastUpdated": "2026-02-12",
+  "description": "UIanimated プロジェクト SSoT マップ。AIは作業前に必ずこのファイルを参照すること。",
+  "pillars": {
+    "story": "novel/",
+    "dashboard": "src/app/dashboard/",
+    "fortuneApp": "将来追加予定"
+  },
+  "sourceOfTruth": {
+    "storyline": "novel/storyline-v3.md",
+    "characters": {
+      "ep1-10": "novel/characters/ep1-10.md",
+      "ep1-24": "novel/characters/EPISODES-1-24-CHARACTERS.json",
+      "ep25-48": "novel/characters/EPISODES-25-48-CHARACTERS.json",
+      "ep49-72": "novel/characters/EPISODES-49-72-CHARACTERS.json",
+      "ep73-96": "novel/characters/EPISODES-73-96-CHARACTERS.json",
+      "ep91-120": "novel/characters/EPISODES-91-120-CHARACTERS.json"
     },
-    "sourceOfTruth": {
-        "storyline": "novel/storyline-v3.md",
-        "characters": {
-            "ep1-10": "novel/characters/ep1-10.md",
-            "ep1-24": "novel/characters/EPISODES-1-24-CHARACTERS.json",
-            "ep25-48": "novel/characters/EPISODES-25-48-CHARACTERS.json",
-            "ep49-72": "novel/characters/EPISODES-49-72-CHARACTERS.json",
-            "ep73-96": "novel/characters/EPISODES-73-96-CHARACTERS.json",
-            "ep91-120": "novel/characters/EPISODES-91-120-CHARACTERS.json"
-        },
-        "sakuraTeachings": "novel/sakura-teachings/",
-        "familyBackground": "novel/settings/MEGURU-FAMILY-BACKGROUND-v3.md",
-        "dashboard": "novel/dashboards/DASHBOARD.md",
-        "verificationPrompt": "novel/dashboards/STORYLINE-VERIFICATION-PROMPT.md"
-    },
-    "taskManagement": {
-        "tool": "beads (bd)",
-        "data": ".beads/",
-        "canon": "beads/canon/",
-        "foreshadow": "beads/foreshadow/",
-        "astrology": "beads/astrology/"
-    },
-    "tools": {
-        "meishikiCalc": "tools/sanmei-cli-v3.ts",
-        "energyCalc": "tools/sanmei-with-energy-cli.ts",
-        "verify": "tools/verify-storyline.ts"
-    },
-    "deprecated": [
-        "claudedocs/legacy/",
-        "archive/"
-    ],
-    "rules": {
-        "newDocs": "novel/ 配下に作成",
-        "conflictResolution": "novel/ > beads/ > claudedocs/",
-        "beadsUsage": "issue/task管理のみ。キャラデータはnovel/characters/が正",
-        "claudedocsLegacy": "読み取り専用。書き込み禁止"
-    }
+    "sakuraTeachings": "novel/sakura-teachings/",
+    "familyBackground": "novel/settings/MEGURU-FAMILY-BACKGROUND-v3.md",
+    "dashboard": "novel/dashboards/DASHBOARD.md",
+    "verificationPrompt": "novel/dashboards/STORYLINE-VERIFICATION-PROMPT.md",
+    "sotCanon": "novel/SSoT-CANON-2026-02-14.md"
+  },
+  "taskManagement": {
+    "tool": "beads (bd)",
+    "data": ".beads/",
+    "canon": "beads/canon/",
+    "foreshadow": "beads/foreshadow/",
+    "astrology": "beads/astrology/"
+  },
+  "tools": {
+    "meishikiCalc": "tools/sanmei-with-energy-cli.ts",
+    "energyCalc": "tools/sanmei-with-energy-cli.ts",
+    "verify": "tools/verify-storyline.ts"
+  },
+  "deprecated": [
+    "claudedocs/legacy/",
+    "archive/"
+  ],
+  "rules": {
+    "newDocs": "novel/ 配下に作成",
+    "conflictResolution": "novel/ > beads/ > claudedocs/",
+    "beadsUsage": "issue/task管理のみ。キャラデータはnovel/characters/が正",
+    "claudedocsLegacy": "読み取り専用。書き込み禁止"
+  }
 }

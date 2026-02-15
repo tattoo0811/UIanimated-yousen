@@ -5,7 +5,7 @@ agents:
     description: 算命学の制約とストーリーの理論的一貫性をチェックする専門エージェント
     instructions: |
       1. novel/ 配下の STORYLINE v3 と DASHBOARD の同期チェック
-      2. 算命学ツール (sanmei-cli-v3) を使用した命式の検証
+      2. 算命学ツール (sanmei-with-energy-cli) を使用した命式の検証
       3. 伏線 (foreshadow) の回収漏れチェック
   - name: CodeReviewer
     role: 技術スタックレビュアー
@@ -75,10 +75,10 @@ bd sync               # Sync with git
 
 ```bash
 # 基本CLI
-npx tsx tools/sanmei-cli-v3.ts <YYYY-MM-DD> <male|female>
+npx tsx tools/sanmei-with-energy-cli.ts <YYYY-MM-DD> <male|female>
 
 # エネルギー計算付き
-npx tsx tools/sanmei-with-energy-cli.ts <YYYY-MM-DD> <male|female> --format json
+npx tsx tools/sanmei-with-energy-cli.ts <YYYY-MM-DD> <male|female>
 
 # ストーリー整合性検証
 npx tsx tools/verify-storyline.ts

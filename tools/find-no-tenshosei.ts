@@ -2,7 +2,7 @@
  * 天将星を含まない代替日付を探す
  * 対象: 陽菜(甲辰,15歳), 日向(丙午,40歳), 灯里(丁酉,25歳)
  */
-import { calculateSanmei } from "./sanmei-cli-v3.js";
+import { calculateSanmei } from "./sanmei-with-energy-cli.js";
 
 interface Target {
     name: string;
