@@ -1,0 +1,1354 @@
+{
+  "characters": [
+    {
+      "id": "epunknown--",
+      "episode": "unknown",
+      "name": {
+        "kanji": "藤堂七海",
+        "reading": "ふじどう ななみ",
+        "surname": "藤堂",
+        "given": "七海"
+      },
+      "birthDate": "2022-07-28",
+      "age": 5,
+      "occupation": "",
+      "family": "",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep1-fujido-nanami"
+    },
+    {
+      "id": "ep1--",
+      "episode": "1",
+      "name": {
+        "kanji": "高橋美咲",
+        "reading": "",
+        "surname": "高橋",
+        "given": "美咲"
+      },
+      "birthDate": "1999-05-03",
+      "age": 27,
+      "occupation": "",
+      "family": "27歳・女性",
+      "gender": "female",
+      "hasPersona": false
+    },
+    {
+      "id": "ep2--",
+      "episode": "2",
+      "name": {
+        "kanji": "村田健一",
+        "reading": "むらた けんいち",
+        "surname": "村田",
+        "given": "健一"
+      },
+      "birthDate": "1980-05-06",
+      "age": 46,
+      "occupation": "",
+      "family": "46歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep2-murata-kenichi",
+      "followUpStatus": "email_ep96",
+      "followUpDetails": "EP96で2年後のメール報告。『子供の創造性を伸ばす学習塾』を立ち上げ。"
+    },
+    {
+      "id": "ep3--",
+      "episode": "3",
+      "name": {
+        "kanji": "森川真紀",
+        "reading": "もりかわ まき",
+        "surname": "森川",
+        "given": "真紀"
+      },
+      "birthDate": "1983-01-12",
+      "age": 43,
+      "occupation": "",
+      "family": "43歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep3-morikawa-maki"
+    },
+    {
+      "id": "ep3-morikawa-hina",
+      "episode": "3",
+      "name": {
+        "kanji": "森川陽菜",
+        "reading": "もりかわ ひな",
+        "surname": "森川",
+        "given": "陽菜"
+      },
+      "birthDate": "2010-06-23",
+      "age": 15,
+      "ageAtReappearance": 21,
+      "reappearanceEpisode": "109",
+      "occupation": "美容師専門学校生（EP109で21歳で再登場）",
+      "family": "森川真紀の娘",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep3-morikawa-hina",
+      "followUpStatus": "reappearance_ep109",
+      "followUpDetails": "EP109で21歳として再登場。美容師専門学校2年生。EP3で巡が言った『龍は箱に入りきらん』が実現。"
+    },
+    {
+      "id": "ep4--",
+      "episode": "4",
+      "name": {
+        "kanji": "田中健太",
+        "reading": "たなか けんた",
+        "surname": "田中",
+        "given": "健太"
+      },
+      "birthDate": "1994-02-11",
+      "age": 32,
+      "occupation": "",
+      "family": "32歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep4-tanaka-kenta",
+      "followUpStatus": "email_ep86",
+      "followUpDetails": "EP86で3ヶ月後のメール報告。部下への接し方が変化。"
+    },
+    {
+      "id": "ep5--",
+      "episode": "5",
+      "name": {
+        "kanji": "佐藤雅人",
+        "reading": "さとう まさと",
+        "surname": "佐藤",
+        "given": "雅人"
+      },
+      "birthDate": "1988-01-18",
+      "age": 38,
+      "occupation": "",
+      "family": "38歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep5-sato-masato"
+    },
+    {
+      "id": "ep6--",
+      "episode": "6",
+      "name": {
+        "kanji": "大林拓也",
+        "reading": "おおばやし たくや",
+        "surname": "大林",
+        "given": "拓也"
+      },
+      "birthDate": "1992-02-08",
+      "age": 34,
+      "occupation": "",
+      "family": "34歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep6-obayashi-takuya",
+      "followUpStatus": "email_ep98",
+      "followUpDetails": "EP98で1年後のメール報告。娘の運動会参加、家族時間の確保。"
+    },
+    {
+      "id": "ep7--",
+      "episode": "7",
+      "name": {
+        "kanji": "草野千穂",
+        "reading": "くさの ちほ",
+        "surname": "草野",
+        "given": "千穂"
+      },
+      "birthDate": "1997-02-22",
+      "age": 29,
+      "occupation": "",
+      "family": "29歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep7-kusano-chiho",
+      "followUpStatus": "reunion_ep88",
+      "followUpDetails": "EP88で横浜美術館での再会。新しい表現方法との格闘。"
+    },
+    {
+      "id": "ep8--",
+      "episode": "8",
+      "name": {
+        "kanji": "日向陽一",
+        "reading": "ひゅうが よういち",
+        "surname": "日向",
+        "given": "陽一"
+      },
+      "birthDate": "1985-09-24",
+      "age": 40,
+      "occupation": "",
+      "family": "40歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep8-hyuga-yoichi"
+    },
+    {
+      "id": "ep9--",
+      "episode": "9",
+      "name": {
+        "kanji": "灯里奈々",
+        "reading": "あかり なな",
+        "surname": "灯里",
+        "given": "奈々"
+      },
+      "birthDate": "2000-08-07",
+      "age": 25,
+      "occupation": "",
+      "family": "25歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep9-akari-nana",
+      "followUpStatus": "reunion_ep99",
+      "followUpDetails": "EP99で公園での再会。ボランティア読み聞かせ、復職準備中。"
+    },
+    {
+      "id": "ep10--",
+      "episode": "10",
+      "name": {
+        "kanji": "岩田剛",
+        "reading": "いわた つよし",
+        "surname": "岩田",
+        "given": "剛"
+      },
+      "birthDate": "1976-02-16",
+      "age": 50,
+      "occupation": "",
+      "family": "50歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep10-iwata-tsuyoshi"
+    },
+    {
+      "id": "ep11--",
+      "episode": "11",
+      "name": {
+        "kanji": "畑中結衣",
+        "reading": "はたなか ゆい",
+        "surname": "畑中",
+        "given": "結衣"
+      },
+      "birthDate": "1971-03-05",
+      "age": 55,
+      "occupation": "",
+      "family": "55歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep11-hatanaka-yui"
+    },
+    {
+      "id": "ep12--",
+      "episode": "12",
+      "name": {
+        "kanji": "金城鉄也",
+        "reading": "かねしろ てつや",
+        "surname": "金城",
+        "given": "鉄也"
+      },
+      "birthDate": "1984-06-15",
+      "age": 42,
+      "occupation": "",
+      "family": "42歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep12-kaneshiro-tetsuya"
+    },
+    {
+      "id": "ep13--",
+      "episode": "13",
+      "name": {
+        "kanji": "白銀紗雪",
+        "reading": "しろがね さゆき",
+        "surname": "白銀",
+        "given": "紗雪"
+      },
+      "birthDate": "1995-06-19",
+      "age": 31,
+      "occupation": "",
+      "family": "31歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep13-shirogane-sayuki"
+    },
+    {
+      "id": "ep14--",
+      "episode": "14",
+      "name": {
+        "kanji": "海原洋介",
+        "reading": "うなばら ようすけ",
+        "surname": "海原",
+        "given": "洋介"
+      },
+      "birthDate": "1989-06-21",
+      "age": 37,
+      "occupation": "",
+      "family": "37歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep14-unabara-yosuke"
+    },
+    {
+      "id": "ep15--",
+      "episode": "15",
+      "name": {
+        "kanji": "水上澄子",
+        "reading": "みずかみ すみこ",
+        "surname": "水上",
+        "given": "澄子"
+      },
+      "birthDate": "1978-03-12",
+      "age": 48,
+      "occupation": "",
+      "family": "48歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep15-mizukami-sumiko"
+    },
+    {
+      "id": "ep16--",
+      "episode": "16",
+      "name": {
+        "kanji": "鬼頭誠一",
+        "reading": "きとう せいいち",
+        "surname": "鬼頭",
+        "given": "誠一"
+      },
+      "birthDate": "1968-05-04",
+      "age": 58,
+      "occupation": "",
+      "family": "58歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep16-kito-seiichi"
+    },
+    {
+      "id": "ep17--",
+      "episode": "17",
+      "name": {
+        "kanji": "花園麻衣",
+        "reading": "はなぞの まい",
+        "surname": "花園",
+        "given": "麻衣"
+      },
+      "birthDate": "1993-06-15",
+      "age": 33,
+      "occupation": "",
+      "family": "33歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep17-hanazono-mai"
+    },
+    {
+      "id": "ep18--",
+      "episode": "18",
+      "name": {
+        "kanji": "音無詩織",
+        "reading": "おとなし しおり",
+        "surname": "音無",
+        "given": "詩織"
+      },
+      "birthDate": "1990-05-06",
+      "age": 36,
+      "occupation": "",
+      "family": "36歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep18-otonashi-shiori"
+    },
+    {
+      "id": "ep19--",
+      "episode": "19",
+      "name": {
+        "kanji": "恵那幸子",
+        "reading": "えな さちこ",
+        "surname": "恵那",
+        "given": "幸子"
+      },
+      "birthDate": "1981-04-01",
+      "age": 45,
+      "occupation": "",
+      "family": "45歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep19-ena-sachiko"
+    },
+    {
+      "id": "ep20--",
+      "episode": "20",
+      "name": {
+        "kanji": "小早川理恵",
+        "reading": "こばやかわ りえ",
+        "surname": "小早川",
+        "given": "理恵"
+      },
+      "birthDate": "1984-05-25",
+      "age": 42,
+      "occupation": "",
+      "family": "42歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep20-kobayakawa-rie-ren"
+    },
+    {
+      "id": "ep21--",
+      "episode": "21",
+      "name": {
+        "kanji": "矢島隼人",
+        "reading": "やじま はやと",
+        "surname": "矢島",
+        "given": "隼人"
+      },
+      "birthDate": "1994-06-13",
+      "age": 32,
+      "occupation": "",
+      "family": "32歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep21-yajima-hayato"
+    },
+    {
+      "id": "ep22--",
+      "episode": "22",
+      "name": {
+        "kanji": "星川航",
+        "reading": "ほしかわ わたる",
+        "surname": "星川",
+        "given": "航"
+      },
+      "birthDate": "1998-05-05",
+      "age": 28,
+      "occupation": "",
+      "family": "28歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep22-hoshikawa-wataru"
+    },
+    {
+      "id": "ep23--",
+      "episode": "23",
+      "name": {
+        "kanji": "群司和人",
+        "reading": "",
+        "surname": "群司",
+        "given": "和人"
+      },
+      "birthDate": "1981-06-15",
+      "age": 45,
+      "occupation": "",
+      "family": "45歳・男性",
+      "gender": "male",
+      "hasPersona": false
+    },
+    {
+      "id": "ep24--",
+      "episode": "24",
+      "name": {
+        "kanji": "赤城義人",
+        "reading": "",
+        "surname": "赤城",
+        "given": "義人"
+      },
+      "birthDate": "1971-05-02",
+      "age": 55,
+      "occupation": "",
+      "family": "55歳・男性",
+      "gender": "male",
+      "hasPersona": false
+    },
+    {
+      "id": "ep25--",
+      "episode": "25",
+      "name": {
+        "kanji": "文月学",
+        "reading": "",
+        "surname": "文月",
+        "given": "学"
+      },
+      "birthDate": "1988-06-02",
+      "age": 38,
+      "occupation": "",
+      "family": "38歳・男性",
+      "gender": "male",
+      "hasPersona": false
+    },
+    {
+      "id": "ep26--",
+      "episode": "26",
+      "name": {
+        "kanji": "初瀬つむぎ",
+        "reading": "",
+        "surname": "初瀬",
+        "given": "つむぎ"
+      },
+      "birthDate": "1997-06-02",
+      "age": 29,
+      "occupation": "",
+      "family": "29歳・女性",
+      "gender": "female",
+      "hasPersona": false
+    },
+    {
+      "id": "ep27--",
+      "episode": "27",
+      "name": {
+        "kanji": "泡沫優斗",
+        "reading": "",
+        "surname": "泡沫",
+        "given": "優斗"
+      },
+      "birthDate": "2007-05-23",
+      "age": 19,
+      "occupation": "",
+      "family": "19歳・男性",
+      "gender": "male",
+      "hasPersona": false
+    },
+    {
+      "id": "ep28--",
+      "episode": "28",
+      "name": {
+        "kanji": "冠木拓真",
+        "reading": "",
+        "surname": "冠木",
+        "given": "拓真"
+      },
+      "birthDate": "1996-06-10",
+      "age": 30,
+      "occupation": "",
+      "family": "30歳・男性",
+      "gender": "male",
+      "hasPersona": false
+    },
+    {
+      "id": "ep29--",
+      "episode": "29",
+      "name": {
+        "kanji": "豊嶋建一",
+        "reading": "",
+        "surname": "豊嶋",
+        "given": "建一"
+      },
+      "birthDate": "1978-05-20",
+      "age": 48,
+      "occupation": "",
+      "family": "48歳・男性",
+      "gender": "male",
+      "hasPersona": false
+    },
+    {
+      "id": "ep30--",
+      "episode": "30",
+      "name": {
+        "kanji": "峰岸大悟",
+        "reading": "",
+        "surname": "峰岸",
+        "given": "大悟"
+      },
+      "birthDate": "1974-05-05",
+      "age": 52,
+      "occupation": "",
+      "family": "52歳・男性",
+      "gender": "male",
+      "hasPersona": false
+    },
+    {
+      "id": "ep31--",
+      "episode": "31",
+      "name": {
+        "kanji": "秋山陽介",
+        "reading": "あきやま ようすけ",
+        "surname": "秋山",
+        "given": "陽介"
+      },
+      "birthDate": "1983-05-23",
+      "age": 43,
+      "occupation": "",
+      "family": "43歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep31-akiyama-yosuke"
+    },
+    {
+      "id": "ep32--",
+      "episode": "32",
+      "name": {
+        "kanji": "霧島瑞希",
+        "reading": "きりしま みずき",
+        "surname": "霧島",
+        "given": "瑞希"
+      },
+      "birthDate": "1991-07-12",
+      "age": 35,
+      "occupation": "",
+      "family": "35歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep32-kirishima-mizuki"
+    },
+    {
+      "id": "ep33--",
+      "episode": "33",
+      "name": {
+        "kanji": "終之宮透",
+        "reading": "おわりのみや とおる",
+        "surname": "終之",
+        "given": "宮透"
+      },
+      "birthDate": "1954-06-02",
+      "age": 72,
+      "occupation": "",
+      "family": "72歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep33-owarinomiya-toru"
+    },
+    {
+      "id": "ep34--",
+      "episode": "34",
+      "name": {
+        "kanji": "灯谷翠〈旧姓: 森下〉",
+        "reading": "ひだに みどり",
+        "surname": "灯谷",
+        "given": "翠",
+        "maidenName": "森下"
+      },
+      "birthDate": "1988-05-29",
+      "age": 38,
+      "occupation": "",
+      "family": "38歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep34-morishita-midori"
+    },
+    {
+      "id": "ep35--",
+      "episode": "35",
+      "name": {
+        "kanji": "鉄矢剛",
+        "reading": "てつや つよし",
+        "surname": "鉄矢",
+        "given": "剛"
+      },
+      "birthDate": "1968-06-19",
+      "age": 58,
+      "occupation": "",
+      "family": "58歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep35-tetsuya-tsuyoshi"
+    },
+    {
+      "id": "ep36--",
+      "episode": "36",
+      "name": {
+        "kanji": "双見一真",
+        "reading": "ふたみ かずま",
+        "surname": "双見",
+        "given": "一真"
+      },
+      "birthDate": "1991-06-15",
+      "age": 35,
+      "occupation": "",
+      "family": "35歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep36-futami-kazuma"
+    },
+    {
+      "id": "ep37--",
+      "episode": "37",
+      "name": {
+        "kanji": "原田誠",
+        "reading": "はらだ まこと",
+        "surname": "原田",
+        "given": "誠"
+      },
+      "birthDate": "1996-05-11",
+      "age": 30,
+      "occupation": "",
+      "family": "30歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep37-harada-makoto"
+    },
+    {
+      "id": "ep38--",
+      "episode": "38",
+      "name": {
+        "kanji": "時任遥",
+        "reading": "ときとう はるか",
+        "surname": "時任",
+        "given": "遥"
+      },
+      "birthDate": "1984-06-12",
+      "age": 42,
+      "occupation": "",
+      "family": "42歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep38-tokitou-haruka"
+    },
+    {
+      "id": "ep39--",
+      "episode": "39",
+      "name": {
+        "kanji": "桃園千花",
+        "reading": "ももぞの ちか",
+        "surname": "桃園",
+        "given": "千花"
+      },
+      "birthDate": "2000-06-16",
+      "age": 26,
+      "occupation": "",
+      "family": "26歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep39-momozono-chika"
+    },
+    {
+      "id": "ep42--",
+      "episode": "42",
+      "name": {
+        "kanji": "青柳遼",
+        "reading": "あおやぎ りょう",
+        "surname": "青柳",
+        "given": "遼"
+      },
+      "birthDate": "1998-07-02",
+      "age": 28,
+      "occupation": "転職を繰り返す青年（三社を二年以内で退職）",
+      "family": "28歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep42-aoyagi-ryo"
+    },
+    {
+      "id": "ep43--",
+      "episode": "43",
+      "name": {
+        "kanji": "巳島恭子",
+        "reading": "みしま きょうこ",
+        "surname": "巳島",
+        "given": "恭子"
+      },
+      "birthDate": "1976-06-12",
+      "age": 50,
+      "occupation": "茶道家（三十年師事した師匠が急逝）",
+      "family": "50歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep43-mishima-kyoko"
+    },
+    {
+      "id": "ep44--",
+      "episode": "44",
+      "name": {
+        "kanji": "南風翼",
+        "reading": "はえ つばさ",
+        "surname": "南風",
+        "given": "翼"
+      },
+      "birthDate": "1986-06-17",
+      "age": 40,
+      "occupation": "大学研究者（難病治療の基礎研究20年）",
+      "family": "40歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep44-hae-tsubasa"
+    },
+    {
+      "id": "ep45--",
+      "episode": "45",
+      "name": {
+        "kanji": "西園寺亮",
+        "reading": "さいおんじ りょう",
+        "surname": "西園",
+        "given": "寺亮"
+      },
+      "birthDate": "1982-06-25",
+      "age": 44,
+      "occupation": "弁護士（共同経営の法律事務所で相方に裏切られる）",
+      "family": "44歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep45-saionji-ryo"
+    },
+    {
+      "id": "ep46--",
+      "episode": "46",
+      "name": {
+        "kanji": "犬塚慎一",
+        "reading": "いぬづか しんいち",
+        "surname": "犬塚",
+        "given": "慎一"
+      },
+      "birthDate": "1974-05-27",
+      "age": 52,
+      "occupation": "建築家（他人の家を設計するが自分の家庭は崩壊）",
+      "family": "52歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep46-inuzuka-shinichi"
+    },
+    {
+      "id": "ep47--",
+      "episode": "47",
+      "name": {
+        "kanji": "北原静香",
+        "reading": "きたはら しずか",
+        "surname": "北原",
+        "given": "静香"
+      },
+      "birthDate": "1978-06-28",
+      "age": 48,
+      "occupation": "化粧品会社社長（一代で創業。母に認められない）",
+      "family": "48歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep47-kitahara-shizuka"
+    },
+    {
+      "id": "ep50--",
+      "episode": "50",
+      "name": {
+        "kanji": "深沢未来",
+        "reading": "ふかざわ みき",
+        "surname": "深沢",
+        "given": "未来"
+      },
+      "birthDate": "1991-06-22",
+      "age": 35,
+      "occupation": "占い師（算命学を学んでいるが天中殺の応用に困惑）",
+      "family": "35歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep50-fukazawa-miki"
+    },
+    {
+      "id": "ep51--",
+      "episode": "51",
+      "name": {
+        "kanji": "小野田甲子",
+        "reading": "おのだ きねこ",
+        "surname": "小野田",
+        "given": "甲子"
+      },
+      "birthDate": "1972-03-20",
+      "age": 55,
+      "occupation": "不動産鑑定士（「価値を見定める」仕事）",
+      "family": "55歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep51-onoda-kineko"
+    },
+    {
+      "id": "ep52--",
+      "episode": "52",
+      "name": {
+        "kanji": "白波瀬蛍",
+        "reading": "しらはせ ほたる",
+        "surname": "白波瀬",
+        "given": "蛍"
+      },
+      "birthDate": "2000-04-03",
+      "age": 27,
+      "occupation": "プログラマー（天才的だが社会不適応。会社を三度クビ）",
+      "family": "27歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep52-shirahase-hotaru"
+    },
+    {
+      "id": "ep53--",
+      "episode": "53",
+      "name": {
+        "kanji": "海野珊瑚",
+        "reading": "うみの さんご",
+        "surname": "海野",
+        "given": "珊瑚"
+      },
+      "birthDate": "1995-05-11",
+      "age": 32,
+      "occupation": "ジュエリーデザイナー（壬寅の納音「金箔金」との共鳴）",
+      "family": "32歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep53-umino-sango"
+    },
+    {
+      "id": "ep54--",
+      "episode": "54",
+      "name": {
+        "kanji": "灯篭院明",
+        "reading": "とうろういん あきら",
+        "surname": "灯篭",
+        "given": "院明"
+      },
+      "birthDate": "1982-03-17",
+      "age": 45,
+      "occupation": "僧侶（実は小説家になりたい夢を隠している）",
+      "family": "45歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep54-tourouin-akira"
+    },
+    {
+      "id": "ep56--",
+      "episode": "56",
+      "name": {
+        "kanji": "丸山源蔵",
+        "reading": "",
+        "surname": "丸山",
+        "given": "源蔵"
+      },
+      "birthDate": "1967-03-13",
+      "age": 60,
+      "occupation": "",
+      "family": "60歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep56-maruyama-genzo"
+    },
+    {
+      "id": "ep57--",
+      "episode": "57",
+      "name": {
+        "kanji": "深津玲奈",
+        "reading": "ふかつ れいな",
+        "surname": "深津",
+        "given": "玲奈"
+      },
+      "birthDate": "1998-04-04",
+      "age": 29,
+      "occupation": "アクセサリー作家（辛金が巳に座る＝炎の中の宝石）",
+      "family": "29歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep57-fukatsu-reina"
+    },
+    {
+      "id": "ep58--",
+      "episode": "58",
+      "name": {
+        "kanji": "伊勢みやび",
+        "reading": "いせ みやび",
+        "surname": "伊勢",
+        "given": "みやび"
+      },
+      "birthDate": "2003-09-27",
+      "age": 24,
+      "occupation": "占い学校の生徒（十二支の意味が掴めない学習者）",
+      "family": "24歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep58-ise-miyabi"
+    },
+    {
+      "id": "ep59--",
+      "episode": "59",
+      "name": {
+        "kanji": "九鬼創",
+        "reading": "くき はじめ",
+        "surname": "九鬼",
+        "given": "創"
+      },
+      "birthDate": "1989-04-12",
+      "age": 38,
+      "occupation": "連続起業家（「人生全体の方向性を知りたい」という壮大な相談）",
+      "family": "38歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep59-kuki-hajime"
+    },
+    {
+      "id": "ep61--",
+      "episode": "61",
+      "name": {
+        "kanji": "朝倉聖",
+        "reading": "あさくら ひじり",
+        "surname": "朝倉",
+        "given": "聖"
+      },
+      "birthDate": "1994-06-20",
+      "age": 33,
+      "occupation": "数学者（天才的だが人間関係壊滅。三度の離婚）",
+      "family": "33歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep61-asakura-hijiri"
+    },
+    {
+      "id": "ep62--",
+      "episode": "62",
+      "name": {
+        "kanji": "水無瀬透",
+        "reading": "みなせ とおる",
+        "surname": "水無瀬",
+        "given": "透"
+      },
+      "birthDate": "1985-08-22",
+      "age": 42,
+      "occupation": "投資家（大成功後、農業に転身したい）",
+      "family": "42歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep62-minase-toru"
+    },
+    {
+      "id": "ep63--",
+      "episode": "63",
+      "name": {
+        "kanji": "東條真一",
+        "reading": "とうじょう しんいち",
+        "surname": "東條",
+        "given": "真一"
+      },
+      "birthDate": "1972-06-22",
+      "age": 55,
+      "occupation": "経営者（娘・結衣28歳は画家志望で対立中）",
+      "family": "55歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep63-tojo-shinichi"
+    },
+    {
+      "id": "ep64--",
+      "episode": "64",
+      "name": {
+        "kanji": "六条院雅",
+        "reading": "ろくじょういん みやび",
+        "surname": "六条",
+        "given": "院雅"
+      },
+      "birthDate": "1979-07-10",
+      "age": 48,
+      "occupation": "元政治家秘書→宗教法人代表→NPO→作家（「人を導く」テーマで転身を繰り返す）",
+      "family": "48歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep64-rokujoin-miyabi"
+    },
+    {
+      "id": "ep67--",
+      "episode": "67",
+      "name": {
+        "kanji": "霧島蓮",
+        "reading": "きりしま れん",
+        "surname": "霧島",
+        "given": "蓮"
+      },
+      "birthDate": "1992-07-19",
+      "age": 35,
+      "occupation": "（元恋人との復縁に迷い来院。美咲不在で巡が一人で診る）",
+      "family": "35歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep67-kirishima-ren"
+    },
+    {
+      "id": "ep68--",
+      "episode": "68",
+      "name": {
+        "kanji": "黒田凛太郎",
+        "reading": "くろだ りんたろう",
+        "surname": "黒田",
+        "given": "凛太郎"
+      },
+      "birthDate": "1977-08-11",
+      "age": 50,
+      "occupation": "元自衛官（PTSD。「空洞が埋まらない」）",
+      "family": "50歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep68-kuroda-rintaro"
+    },
+    {
+      "id": "ep69--",
+      "episode": "69",
+      "name": {
+        "kanji": "園部桃花",
+        "reading": "そのべ ももか",
+        "surname": "園部",
+        "given": "桃花"
+      },
+      "birthDate": "1989-06-18",
+      "age": 38,
+      "occupation": "ホスピス看護師（「自分の〈生〉が分からなくなる」）",
+      "family": "38歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep69-sonobe-momoka"
+    },
+    {
+      "id": "ep71--",
+      "episode": "71",
+      "name": {
+        "kanji": "菊池翔太",
+        "reading": "きくち しょうた",
+        "surname": "菊池",
+        "given": "翔太"
+      },
+      "birthDate": "1989-02-16",
+      "age": 37,
+      "occupation": "銀行中間管理職（飲食店を開きたい）",
+      "family": "37歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep71-kikuchi-shota"
+    },
+    {
+      "id": "ep72--",
+      "episode": "72",
+      "name": {
+        "kanji": "鶴見美帆",
+        "reading": "つるみ みほ",
+        "surname": "鶴見",
+        "given": "美帆"
+      },
+      "birthDate": "1986-02-13",
+      "age": 40,
+      "occupation": "専業主婦（不倫で悩む）",
+      "family": "40歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep72-tsurumi-miho"
+    },
+    {
+      "id": "ep73--",
+      "episode": "73",
+      "name": {
+        "kanji": "諸星忍",
+        "reading": "もろほし しのぶ",
+        "surname": "諸星",
+        "given": "忍"
+      },
+      "birthDate": "1981-02-02",
+      "age": 45,
+      "occupation": "介護者（独身。母の介護5年）",
+      "family": "45歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep73-morohoshi-shinobu"
+    },
+    {
+      "id": "ep74--",
+      "episode": "74",
+      "name": {
+        "kanji": "金森大地",
+        "reading": "かなもり だいち",
+        "surname": "金森",
+        "given": "大地"
+      },
+      "birthDate": "1983-01-20",
+      "age": 43,
+      "occupation": "元飲食店オーナー（借金3千万。「死にたい」）",
+      "family": "43歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep74-kanamori-daichi"
+    },
+    {
+      "id": "ep76--",
+      "episode": "76",
+      "name": {
+        "kanji": "雨宮悠斗",
+        "reading": "あめみや ゆうと",
+        "surname": "雨宮",
+        "given": "悠斗"
+      },
+      "birthDate": "1996-02-06",
+      "age": 30,
+      "occupation": "休職中（うつ。「朝が来るのが怖い」）",
+      "family": "30歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep76-amemiya-yuto"
+    },
+    {
+      "id": "ep77--",
+      "episode": "77",
+      "name": {
+        "kanji": "鉄田剛",
+        "reading": "てつだ つよし",
+        "surname": "鉄田",
+        "given": "剛"
+      },
+      "birthDate": "1974-02-17",
+      "age": 52,
+      "occupation": "工場長（上と下に挟まれて潰れそう）",
+      "family": "52歳・男性",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep77-tetsuda-tsuyoshi"
+    },
+    {
+      "id": "ep78--",
+      "episode": "78",
+      "name": {
+        "kanji": "小早川結",
+        "reading": "こばやかわ ゆい",
+        "surname": "小早川",
+        "given": "結"
+      },
+      "birthDate": "1988-01-07",
+      "age": 38,
+      "occupation": "シングルマザー（長女と2年間口を利かず）",
+      "family": "38歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep78-kobayakawa-yui"
+    },
+    {
+      "id": "ep79--",
+      "episode": "79",
+      "name": {
+        "kanji": "吉野つむぎ",
+        "reading": "よしの つむぎ",
+        "surname": "吉野",
+        "given": "つむぎ"
+      },
+      "birthDate": "2007-02-20",
+      "age": 19,
+      "occupation": "高校中退→天文台ボランティア（「研究者になりたい」）",
+      "family": "19歳・女性",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep79-yoshino-tsumugi"
+    },
+    {
+      "id": "ep80-shimizu-haruka",
+      "episode": "80",
+      "name": {
+        "kanji": "清水遥",
+        "reading": "しみず はるか",
+        "surname": "清水",
+        "given": "遥"
+      },
+      "birthDate": "1993-05-01",
+      "age": 33,
+      "occupation": "無職（元IT企業PM。地方移住2年）",
+      "family": "夫（38歳）、長女（小3）",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep80-shimizu-haruka"
+    },
+    {
+      "id": "ep86-nishimura-akiko",
+      "episode": "86",
+      "name": {
+        "kanji": "西村明子",
+        "reading": "にしむら あきこ",
+        "surname": "西村",
+        "given": "明子"
+      },
+      "birthDate": "1985-05-08",
+      "age": 41,
+      "occupation": "パート事務（元看護師。不妊治療中）",
+      "family": "夫（44歳、会社員）",
+      "gender": "female",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep86-nishimura-akiko"
+    },
+    {
+      "id": "ep90-kato-ryota",
+      "episode": "90",
+      "name": {
+        "kanji": "加藤涼太",
+        "reading": "かとう りょうた",
+        "surname": "加藤",
+        "given": "涼太"
+      },
+      "birthDate": "1998-04-08",
+      "age": 28,
+      "occupation": "コンビニ夜勤アルバイト（大学中退。奨学金残債480万円）",
+      "family": "独身",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep90-kato-ryota"
+    },
+    {
+      "id": "ep92-arai-tsutomu",
+      "episode": "92",
+      "name": {
+        "kanji": "荒井勉",
+        "reading": "あらい つとむ",
+        "surname": "荒井",
+        "given": "勉"
+      },
+      "birthDate": "1984-04-04",
+      "age": 42,
+      "occupation": "配送ドライバー（大手物流。勤続18年）",
+      "family": "独身",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep92-arai-tsutomu"
+    },
+    {
+      "id": "ep95-ogawa-shun",
+      "episode": "95",
+      "name": {
+        "kanji": "小川駿",
+        "reading": "おがわ しゅん",
+        "surname": "小川",
+        "given": "駿"
+      },
+      "birthDate": "1986-03-26",
+      "age": 40,
+      "occupation": "建築現場監督（妻と死別。息子3人を一人で育てる）",
+      "family": "長男（16歳）、次男（14歳）、三男（11歳）",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep95-ogawa-shun"
+    },
+    {
+      "id": "ep97-miyamoto-koji",
+      "episode": "97",
+      "name": {
+        "kanji": "宮本浩二",
+        "reading": "みやもと こうじ",
+        "surname": "宮本",
+        "given": "浩二"
+      },
+      "birthDate": "1971-03-17",
+      "age": 55,
+      "occupation": "無職（元大手メーカー部長。55歳で早期退職）",
+      "family": "妻・成人した息子2人",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep97-miyamoto-koji"
+    },
+    {
+      "id": "ep99-endo-sho",
+      "episode": "99",
+      "name": {
+        "kanji": "遠藤翔",
+        "reading": "えんどう しょう",
+        "surname": "遠藤",
+        "given": "翔"
+      },
+      "birthDate": "1991-05-13",
+      "age": 35,
+      "occupation": "特別支援学校教師（知的障害クラス担当）",
+      "family": "妻（32歳、教師）",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep99-endo-sho"
+    },
+    {
+      "id": "ep110-kitagawa-ren",
+      "episode": "110",
+      "name": {
+        "kanji": "北川蓮",
+        "reading": "きたがわ れん",
+        "surname": "北川",
+        "given": "蓮"
+      },
+      "birthDate": "1991-03-25",
+      "age": 35,
+      "occupation": "大学准教授（AI倫理専攻。政府AI倫理委員会委員）",
+      "family": "独身",
+      "gender": "male",
+      "hasPersona": true,
+      "personaPath": "novel/characters/personas/ep110-kitagawa-ren"
+    }
+  ],
+  "generatedAt": "2026-02-16T17:25:00.000Z"
+}

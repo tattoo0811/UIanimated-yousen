@@ -5,7 +5,11 @@
   "theme": "土と水",
   "protagonist": "高橋美咲",
   "drafts": [
-    {"id": 1, "file": "draft-1.md", "note": "初稿", "createdAt": "2026-02-14T12:00:00Z"}
+    {"id": 1, "file": "draft-1.md", "note": "初稿", "createdAt": "2026-02-14T12:00:00Z"},
+    {"id": 2, "file": "draft-2.md", "note": "文学的モード適用・改稿（Somatic/Logic/Tapestry統合、review-all反映）", "createdAt": "2026-02-17T00:00:00Z"},
+    {"id": 3, "file": "draft-3.md", "note": "完全新規執筆。余白重視・数字は内面のみ・リアリティ重視・Draft1/2非依存", "createdAt": "2026-02-17T00:00:00Z"},
+    {"id": 4, "file": "draft-4.md", "note": "DRAFT3-CRITIQUE反映。詩的冒頭復活・漢方薬店設定追加・診断フロー完備（B5カード/説明/料金5000円/同意）・昼休み+事後報告・巡の手の伏線・苦い余韻維持", "createdAt": "2026-02-17T00:00:00Z"},
+    {"id": 5, "file": "draft-5.md", "note": "宿命/運命の解説追加・カード比喩（配られた手札 vs 出し方）・スヌーピー引用で巡がほころぶシーン・エンディングにカード比喩の回収・陽菜残存参照を修正", "createdAt": "2026-02-17T00:00:00Z"}
   ],
-  "currentDraftId": 1
+  "currentDraftId": 5
 }

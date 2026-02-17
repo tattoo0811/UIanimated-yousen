@@ -67,8 +67,27 @@ done
 ### 🟡 注意（設定の不整合）
 - {キャラ名}: {ファイル1}では{事実A}だが、{ファイル2}では{事実B}
 
+### 🟠 苗字整合性（家族ペア）
+- {ペア名}: {関係性}なのに苗字が異なる。理由の記載: {あり/なし}
+
 ### 🟢 確認済み
 - {キャラ名}: 全データ一致
+```
+
+## Step 6: 家族ペア苗字整合性チェック
+
+1. ソースデータ（ep*.md）から「＆」を含む行を抽出（家族ペア候補）
+2. 各ペアの関係性（夫婦/親子/兄弟姉妹）を特定
+3. 苗字が異なる場合、identity.mdに以下のいずれかが記載されているか確認:
+   - 離婚（母方/父方の姓で育った等）
+   - 事実婚・旧姓使用
+   - 養子縁組
+   - その他ストーリー上の根拠
+4. **理由なく苗字が異なる場合は🟠警告**
+
+```bash
+# 家族ペアの苗字チェック
+grep '＆' novel/characters/ep*.md | grep -E '夫婦|父娘|母子|母娘|親子|兄弟|姉妹'
 ```
 
 ## 対象ファイル
@@ -76,6 +95,7 @@ done
 - `novel/characters/ep1-10.md`
 - `novel/characters/ep11-20.md`
 - `novel/characters/ep21-30.md`
+- `novel/characters/ep31-40.md`
 - `novel/characters/personas/*/identity.md`
 - `novel/characters/personas/*/soul.md`
 - `src/data/ep1-120-characters.ts`（ダッシュボードデータ）

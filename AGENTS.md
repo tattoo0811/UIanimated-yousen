@@ -4,9 +4,9 @@ agents:
     role: ストーリー整合性レビュアー
     description: 算命学の制約とストーリーの理論的一貫性をチェック
     instructions: |
-      1. novel/ 配下の STORYLINE v3 と DASHBOARD の同期チェック
+      1. novel-critique スキル (review-all) を使用した文学的モードの品質チェック
       2. 算命学ツール (sanmei-with-energy-cli) を使用した命式の検証
-      3. 伏線 (foreshadow) の回収漏れチェック
+      3. novel/ 配下の STORYLINE v3 と DASHBOARD の同期チェック
   - name: CodeReviewer
     role: 技術スタックレビュアー
     description: Next.js 15, Tailwind v4 等の最新技術スタックに準拠しているか確認
@@ -76,6 +76,37 @@ npx tsx tools/verify-storyline.ts
 ```
 
 詳細: `tools/sanmei-cli-README.md`
+
+## 🖋️ 小説執筆・批評スキル
+
+AIによる執筆と批評は、以下のスキルを使用して行います。
+
+```bash
+# 執筆 (Somatic/Logic/Tapestryモードを指定)
+# 例: "Somatic Modeで、巡の回想シーンを書いて"
+novel-writing-technique write-scene --mode somatic
+
+# 批評 (生成されたテキストの品質チェック)
+# 例: "このシーンの身体的描写をチェックして"
+novel-critique review-sensibility
+```
+
+## 📘 NotebookLM (知識ベース)
+
+複雑な算命学のルールや陰陽五行の理論背景を確認するために、NotebookLM MCP (`nlm`) を使用します。
+
+### 主要ノートブック ID
+- **陰陽五行**: `5c1dd305-31f4-4ff3-833a-e749ba10c665`
+
+### 使用例
+```bash
+# 特定のトピックについて質問する
+nlm query "大運の順行・逆行の決定ルールは？" --notebook 5c1dd305-31f4-4ff3-833a-e749ba10c665
+
+# ノートブック内のソースを確認
+nlm notebook sources 5c1dd305-31f4-4ff3-833a-e749ba10c665
+```
+
 
 ## 🧪 検証プロセス
 
